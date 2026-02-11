@@ -8,3 +8,9 @@ if (toggle && nav) {
     toggle.setAttribute("aria-expanded", String(!expanded));
   });
 }
+
+
+const formSuccess = document.getElementById("form-success");
+if (formSuccess && window.location.search.includes("submitted=1")) {
+  formSuccess.style.display = "block";
+}

@@ -13,17 +13,17 @@
   <meta property="og:description" content="Request a renovation quote in Hull, Beverley, Hessle or East Yorkshire.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.eastyorkshirerenovations.co.uk/contact.html">
-  <meta property="og:image" content="https://www.eastyorkshirerenovations.co.uk/assets/img/gallery-kitchen-01.jpg">
+  <meta property="og:image" content="https://www.eastyorkshirerenovations.co.uk/assets/img/logo-eyr.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact East Yorkshire Renovations">
   <meta name="twitter:description" content="Request a renovation quote in Hull, Beverley, Hessle or East Yorkshire.">
-  <meta name="twitter:image" content="https://www.eastyorkshirerenovations.co.uk/assets/img/gallery-kitchen-01.jpg">
+  <meta name="twitter:image" content="https://www.eastyorkshirerenovations.co.uk/assets/img/logo-eyr.jpg">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="container navbar">
-      <div class="brand">East Yorkshire Renovations</div>
+      <div class="brand"><img src="assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
@@ -31,7 +31,7 @@
         <a href="work.html">Recent Work</a>
         <a href="areas.html">Areas We Cover</a>
         <a href="about.html">About</a>
-        <a href="contact.html" class="nav-cta">Get a Quote</a>
+        <a href="contact.html#quote-form" class="nav-cta">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -42,10 +42,10 @@
         <div>
           <p class="kicker">Contact</p>
           <h1>Request a renovation quote.</h1>
-          <p>Call or WhatsApp for a quick response, or use the form below for detailed quotes in Hull, Beverley and the wider East Riding of Yorkshire.</p>
+          <p>Call or WhatsApp for a quick response, or use the form below for detailed quotes in Hessle, Hull, Beverley and the wider East Riding of Yorkshire.</p>
           <div class="button-group">
-            <a class="btn primary" href="tel:0XXXXXXXXX">Call 0XXX XXX XXX</a>
-            <a class="btn secondary" href="https://wa.me/0XXXXXXXXX">WhatsApp us</a>
+            <a class="btn primary" href="contact.html#quote-form">Send an enquiry</a>
+            <a class="btn secondary" href="contact.html#quote-form">Get a quote via form</a>
           </div>
         </div>
         <div>
@@ -60,7 +60,8 @@
           <p class="kicker">Contact form</p>
           <h2 class="section-title">Tell us about your project.</h2>
           <!-- Replace with your real form handler endpoint -->
-          <form action="#" method="post">
+          <form id="quote-form" action="/api/contact" method="post">
+            <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your enquiry has been sent and we will be in touch shortly.</div>
             <div class="form-grid">
               <label>
                 Name
@@ -83,14 +84,14 @@
               Message
               <textarea name="message" required></textarea>
             </label>
-            <button type="submit">Send enquiry</button>
+            <button type="submit">Send enquiry to our team</button>
           </form>
         </div>
         <div class="card">
           <h3>Direct contact</h3>
-          <p><strong>Phone:</strong> 0XXX XXX XXX</p>
-          <p><strong>WhatsApp:</strong> 0XXX XXX XXX</p>
-          <p><strong>Email:</strong> hello@eastyorkshirerenovations.co.uk</p>
+          <p><strong>Phone:</strong> +44 7356 045498</p>
+          <p><strong>WhatsApp:</strong> +44 7356 045498</p>
+          <p><strong>Email:</strong> info@eastyorkshirerenovations.co.uk</p>
           <p><strong>Service area:</strong> Hull, Beverley, Hessle, Cottingham, Anlaby, East Riding.</p>
           <p><a href="areas.html">See all service areas</a></p>
         </div>
@@ -101,22 +102,23 @@
   <footer>
     <div class="container footer-grid">
       <div>
+        <img class="footer-logo" src="assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo">
         <h3>East Yorkshire Renovations</h3>
         <!-- Update business name, address and phone numbers here -->
-        <p>123 Example Street, Hull, HU1 1AA</p>
-        <p>Phone: 0XXX XXX XXX</p>
-        <p>WhatsApp: 0XXX XXX XXX</p>
+        <p>1 Example Road, Hessle, East Yorkshire, HU13 0XX</p>
+        <p>Phone: +44 7356 045498</p>
+        <p>WhatsApp: +44 7356 045498</p>
       </div>
       <div>
         <h4>Opening hours</h4>
-        <p>Mon–Fri: 8:00–18:00</p>
-        <p>Sat: 9:00–14:00</p>
+        <p>Mon-Fri: 8:00-18:00</p>
+        <p>Sat: 9:00-14:00</p>
       </div>
       <div>
         <h4>Explore</h4>
         <p><a href="services.html">Renovation services</a></p>
         <p><a href="work.html">Recent renovation work</a></p>
-        <p><a href="contact.html">Request a quote</a></p>
+        <p><a href="contact.html#quote-form">Request a quote</a></p>
       </div>
     </div>
   </footer>
@@ -128,13 +130,13 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "East Yorkshire Renovations",
-    "image": "https://www.eastyorkshirerenovations.co.uk/assets/img/gallery-kitchen-01.jpg",
-    "telephone": "0XXX XXX XXX",
+    "image": "https://www.eastyorkshirerenovations.co.uk/assets/img/logo-eyr.jpg",
+    "telephone": "+44 7356 045498",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "123 Example Street",
-      "addressLocality": "Hull",
-      "postalCode": "HU1 1AA",
+      "streetAddress": "1 Example Road",
+      "addressLocality": "Hessle",
+      "postalCode": "HU13 0XX",
       "addressCountry": "GB"
     },
     "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
