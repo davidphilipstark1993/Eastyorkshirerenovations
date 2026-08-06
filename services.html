@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Renovation Services in Hull, Beverley & East Yorkshire | East Yorkshire Renovations</title>
-  <meta name="description" content="Explore kitchen, bathroom, tiling, flooring and full refurbishment services in Hull, Beverley, Hessle and East Yorkshire. Quality trades and clear timelines.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Renovation Services in Hull & East Yorkshire | EYR</title>
+  <meta name="description" content="Kitchen, bathroom, plastering, joinery and full renovation services in Hull, Beverley, Hessle and East Yorkshire. Quality trades, clear timelines.">
+  <link rel="canonical" href="https://www.eastyorkshirerenovation.com/services.html">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,11 +14,13 @@
   <meta property="og:description" content="Kitchen, bathroom and full refurbishment services delivered by a premium local renovation team.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.eastyorkshirerenovation.com/services.html">
-  <meta property="og:image" content="https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg">
+  <meta property="og:image" content="https://www.eastyorkshirerenovation.com/assets/img/og/services.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Renovation Services in Hull, Beverley & East Yorkshire">
   <meta name="twitter:description" content="Kitchen, bathroom and full refurbishment services delivered by a premium local renovation team.">
-  <meta name="twitter:image" content="https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg">
+  <meta name="twitter:image" content="https://www.eastyorkshirerenovation.com/assets/img/og/services.jpg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W48LSE6YBN"></script>
   <script>
@@ -32,15 +35,16 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="container navbar">
-      <div class="brand"><img src="assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
+      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="services.html">Renovation Services</a>
-        <a href="work.html">Recent Work</a>
-        <a href="areas.html">Areas We Cover</a>
-        <a href="about.html">About</a>
-        <a href="contact.html#quote-form" class="nav-cta">Get a Quote</a>
+        <a href="/">Home</a>
+        <a href="/services.html">Renovation Services</a>
+        <a href="/work.html">Recent Work</a>
+        <a href="/areas.html">Areas We Cover</a>
+        <a href="/about.html">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact.html#quote-form" class="nav-cta">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -53,12 +57,15 @@
           <h1>Kitchen, bathroom and refurbishment services across East Yorkshire.</h1>
           <p>From detailed tiling and flooring to full home refurbishments, we coordinate trusted trades so your project stays on schedule and looks exceptional.</p>
           <div class="button-group">
-            <a class="btn primary" href="contact.html#quote-form">Book a site visit</a>
-            <a class="btn secondary" href="areas.html">See local areas we cover</a>
+            <a class="btn primary" href="/contact.html#quote-form">Book a site visit</a>
+            <a class="btn secondary" href="/areas.html">See local areas we cover</a>
           </div>
         </div>
         <div>
-          <img src="assets/img/gallery-refurb-01.jpg" width="1200" height="800" alt="Refurbished open-plan living space" loading="lazy">
+          <picture>
+            <source srcset="/assets/img/project/loft-finished-2.webp" type="image/webp">
+            <img src="/assets/img/project/loft-finished-2.jpg" width="1200" height="800" alt="Finished renovation, East Yorkshire" loading="eager" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </section>
@@ -68,41 +75,75 @@
         <p class="kicker">What we do</p>
         <h2 class="section-title">Complete renovation services for East Yorkshire homes.</h2>
         <div class="cards">
-          <article class="card">
-            <h3>Kitchens</h3>
-            <p>Layout planning, cabinetry, worktops, lighting, electrics and appliances.</p>
+          <article class="card service-card">
+            <!-- Place kitchen.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/kitchen.webp" type="image/webp">
+              <img src="/assets/img/services/kitchen.jpg" width="600" height="400" alt="Kitchen installs in Hull and Hessle, East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/kitchen-installs.html">Kitchen Installs</a></h3>
+            <p>Expert kitchen installs across Hull, Hessle and East Yorkshire. From full rip-outs to fresh layouts, we handle cabinetry, worktops, electrics and appliances to deliver a kitchen built around the way you live.</p>
+            <p><a href="/kitchen-installs.html">More about kitchen installs</a></p>
           </article>
-          <article class="card">
-            <h3>Bathrooms</h3>
-            <p>Wet rooms, walk-in showers, waterproofing and premium tile finishes.</p>
+          <article class="card service-card">
+            <!-- Place bathroom.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/bathroom.webp" type="image/webp">
+              <img src="/assets/img/services/bathroom.jpg" width="600" height="400" alt="Bathroom installs in Hull and Hessle, East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/bathroom-installs.html">Bathroom Installs</a></h3>
+            <p>Quality bathroom installs in Hull, Hessle and across East Yorkshire. We fit complete bathrooms and wet rooms from scratch, including tiling, waterproofing, plumbing and fixtures for a premium finish.</p>
+            <p><a href="/bathroom-installs.html">More about bathroom installs</a></p>
           </article>
-          <article class="card">
-            <h3>Full Refurbishments</h3>
-            <p>Whole-home refurbishments with a single point of contact and tidy trades.</p>
+          <article class="card service-card">
+            <!-- Place full-house.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/full-house.webp" type="image/webp">
+              <img src="/assets/img/services/full-house.jpg" width="600" height="400" alt="Full house renovations in East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/full-house-renovations.html">Full House Renovations</a></h3>
+            <p>Full house renovations across East Yorkshire, including Hull and Hessle. We manage every trade under one roof — from structural work to final decoration — delivering a complete transformation with a single point of contact.</p>
+            <p><a href="/full-house-renovations.html">More about full house renovations</a></p>
           </article>
-          <article class="card">
-            <h3>Loft Conversions</h3>
-            <p>Practical loft conversions with insulation, electrics and well-planned layouts.</p>
+          <article class="card service-card">
+            <!-- Place plastering.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/plastering.webp" type="image/webp">
+              <img src="/assets/img/services/plastering.jpg" width="600" height="400" alt="Plastering services in Hull and East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/plastering.html">Plastering</a></h3>
+            <p>Skilled plastering in Hull, Hessle and the wider East Yorkshire area. Whether it's a fresh skim, patch repair or full replaster, we deliver smooth, durable finishes ready for decorating.</p>
+            <p><a href="/plastering.html">More about plastering</a></p>
           </article>
-          <article class="card">
-            <h3>Garage Conversions</h3>
-            <p>Turn unused garage space into a functional room with a seamless finish.</p>
+          <article class="card service-card">
+            <!-- Place decorating.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/decorating.webp" type="image/webp">
+              <img src="/assets/img/services/decorating.jpg" width="600" height="400" alt="Decorating services in Hull and East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/decorating.html">Decorating</a></h3>
+            <p>Professional decorating in Hull, Hessle and across East Yorkshire. Crisp paintwork, clean lines and expert preparation — we finish every room to a high standard that lasts.</p>
+            <p><a href="/decorating.html">More about decorating</a></p>
           </article>
-          <article class="card">
-            <h3>Tiling</h3>
-            <p>Porcelain, ceramic and natural stone tiling for floors and walls.</p>
+          <article class="card service-card">
+            <!-- Place joinery.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/joinery.webp" type="image/webp">
+              <img src="/assets/img/services/joinery.jpg" width="600" height="400" alt="Joinery work in Hull, Hessle and East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/joinery.html">Joinery Work</a></h3>
+            <p>Bespoke joinery across East Yorkshire, including Hull and Hessle. From fitted wardrobes and staircase repairs to door frames and skirting, our skilled joiners work to precise, quality standards.</p>
+            <p><a href="/joinery.html">More about joinery work</a></p>
           </article>
-          <article class="card">
-            <h3>Flooring</h3>
-            <p>Engineered timber, luxury vinyl and tiled flooring installations.</p>
-          </article>
-          <article class="card">
-            <h3>Plumbing</h3>
-            <p>Re-plumbs, fixture upgrades and efficient heating improvements.</p>
-          </article>
-          <article class="card">
-            <h3>Plastering &amp; Decorating</h3>
-            <p>Clean, smooth finishes and crisp paintwork throughout the home.</p>
+          <article class="card service-card">
+            <!-- Place electrical.jpg in assets/img/services/ to activate this image slot -->
+            <picture>
+              <source srcset="/assets/img/services/electrical.webp" type="image/webp">
+              <img src="/assets/img/services/electrical.jpg" width="600" height="400" alt="Electrical work in Hull, Hessle and East Yorkshire" loading="lazy">
+            </picture>
+            <h3><a href="/electrical.html">Electrical Work</a></h3>
+            <p>Certified electrical work in Hull, Hessle and throughout East Yorkshire. We carry out first and second fix electrics, consumer unit upgrades, lighting installations and safe, compliant rewiring.</p>
+            <p><a href="/electrical.html">More about electrical work</a></p>
           </article>
         </div>
       </div>
@@ -122,7 +163,7 @@
         <div class="callout">
           <h3>Need renovation advice?</h3>
           <p>Call <strong>+44 7356 045498</strong> or WhatsApp <strong>+44 7356 045498</strong> for guidance on layouts, materials and planning.</p>
-          <p><a class="btn" href="contact.html#quote-form">Request renovation advice</a></p>
+          <p><a class="btn" href="/contact.html#quote-form">Request renovation advice</a></p>
         </div>
       </div>
     </section>
@@ -160,51 +201,86 @@
   <footer>
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo">
+        <img class="footer-logo" src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo">
         <h3>East Yorkshire Renovations</h3>
-        <!-- Update business name, address and phone numbers here -->
-        <p>1 Example Road, Hessle, East Yorkshire, HU13 0XX</p>
+        <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
+        <p>Station Road, Hessle, HU13 0BG</p>
         <p>Phone: +44 7356 045498</p>
         <p>WhatsApp: +44 7356 045498</p>
+        <p>Email: <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a></p>
       </div>
       <div>
         <h4>Opening hours</h4>
-        <p>Mon-Fri: 8:00-18:00</p>
-        <p>Sat: 9:00-14:00</p>
+        <p>Mon–Fri: 08:00–16:30</p>
+        <p>Closed weekends</p>
+      </div>
+      <div>
+        <h4>Credentials</h4>
+        <p>Fully insured local tradespeople.</p>
+        <!-- TODO: add accreditation badges/numbers once confirmed - e.g. TrustMark registration number, FMB (Federation of Master Builders) membership number, NICEIC registration number, Part P registration number. -->
+        <!-- TODO: add public liability insurance details (insurer + cover level) once confirmed. -->
+        <!-- TODO: add Companies House company registration number once confirmed. -->
+        <!-- TODO: add "Established [year]" once confirmed. -->
       </div>
       <div>
         <h4>Explore</h4>
-        <p><a href="work.html">Recent renovation work</a></p>
-        <p><a href="areas.html">East Yorkshire coverage</a></p>
-        <p><a href="contact.html#quote-form">Request a renovation quote</a></p>
+        <p><a href="/work.html">Recent renovation work</a></p>
+        <p><a href="/areas.html">East Yorkshire coverage</a></p>
+        <p><a href="/contact.html#quote-form">Request a renovation quote</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HomeAndConstructionBusiness",
     "name": "East Yorkshire Renovations",
     "image": "https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg",
+    "logo": "https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg",
     "telephone": "+44 7356 045498",
+    "email": "info@eastyorkshirerenovation.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1 Example Road",
+      "streetAddress": "Station Road",
       "addressLocality": "Hessle",
-      "postalCode": "HU13 0XX",
+      "postalCode": "HU13 0BG",
       "addressCountry": "GB"
     },
-    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "00.0000",
-      "longitude": "00.0000"
-    },
-    "areaServed": ["Hull", "Beverley", "Hessle", "Cottingham", "Anlaby", "East Riding of Yorkshire"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "16:30"
+      }
+    ],
+    "areaServed": ["Hull", "Beverley", "Hessle", "Cottingham", "Anlaby", "East Riding of Yorkshire", "Willerby", "Kirk Ella", "Swanland", "Brough", "North Ferriby", "Walkington", "Hornsea", "Driffield"],
     "url": "https://www.eastyorkshirerenovation.com/services.html"
+  }
+  </script>
+  <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->
+  <!-- TODO: add a "sameAs" array with verified social profile URLs (Facebook, Instagram, etc.) once confirmed. -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.eastyorkshirerenovation.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Renovation Services"
+      }
+    ]
   }
   </script>
 

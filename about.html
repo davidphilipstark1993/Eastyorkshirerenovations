@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About East Yorkshire Renovations | Local Renovation Team</title>
   <meta name="description" content="Meet East Yorkshire Renovations, a premium local renovation team serving Hull, Beverley, Hessle and the wider East Riding.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="canonical" href="https://www.eastyorkshirerenovation.com/about.html">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,11 +14,13 @@
   <meta property="og:description" content="A premium local renovation team serving Hull, Beverley and East Yorkshire.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.eastyorkshirerenovation.com/about.html">
-  <meta property="og:image" content="https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg">
+  <meta property="og:image" content="https://www.eastyorkshirerenovation.com/assets/img/og/about.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About East Yorkshire Renovations">
   <meta name="twitter:description" content="A premium local renovation team serving Hull, Beverley and East Yorkshire.">
-  <meta name="twitter:image" content="https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg">
+  <meta name="twitter:image" content="https://www.eastyorkshirerenovation.com/assets/img/og/about.jpg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W48LSE6YBN"></script>
   <script>
@@ -32,15 +35,16 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="container navbar">
-      <div class="brand"><img src="assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
+      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="services.html">Renovation Services</a>
-        <a href="work.html">Recent Work</a>
-        <a href="areas.html">Areas We Cover</a>
-        <a href="about.html">About</a>
-        <a href="contact.html#quote-form" class="nav-cta">Get a Quote</a>
+        <a href="/">Home</a>
+        <a href="/services.html">Renovation Services</a>
+        <a href="/work.html">Recent Work</a>
+        <a href="/areas.html">Areas We Cover</a>
+        <a href="/about.html">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact.html#quote-form" class="nav-cta">Get a Quote</a>
       </nav>
     </div>
   </header>
@@ -53,12 +57,15 @@
           <h1>Local renovation specialists you can trust.</h1>
           <p>East Yorkshire Renovations is a hands-on team delivering premium refurbishments with respect for your space, schedule and budget.</p>
           <div class="button-group">
-            <a class="btn primary" href="contact.html#quote-form">Book a consultation</a>
-            <a class="btn secondary" href="work.html">View recent work</a>
+            <a class="btn primary" href="/contact.html#quote-form">Book a consultation</a>
+            <a class="btn secondary" href="/work.html">View recent work</a>
           </div>
         </div>
         <div>
-          <img src="assets/img/hero-renovation.jpg" width="1200" height="800" alt="Renovation team working on a premium interior" loading="lazy">
+          <picture>
+            <source srcset="/assets/img/project/bathroom-finished-howden.webp" type="image/webp">
+            <img src="/assets/img/project/bathroom-finished-howden.jpg" width="1200" height="800" alt="Finished bathroom renovation, East Yorkshire" loading="eager" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </section>
@@ -88,7 +95,31 @@
         <p class="kicker">Local reputation</p>
         <h2 class="section-title">Trusted across East Yorkshire.</h2>
         <p>Our work spans family homes, period terraces and modern developments throughout Hull, Beverley, Cottingham and surrounding villages.</p>
-        <p><a href="areas.html">See the full list of areas we cover</a></p>
+        <p><a href="/areas.html">See the full list of areas we cover</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="kicker">Credentials</p>
+        <h2 class="section-title">Insured, accredited local tradespeople.</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Insurance</h3>
+            <p>We carry public liability insurance for every job we take on.</p>
+            <!-- TODO: add insurer name and cover level once confirmed (a Certificate of Insurance PDF already exists locally - pull the figures from that). -->
+          </article>
+          <article class="card">
+            <h3>Accreditations</h3>
+            <p>Our trades work to recognised industry standards.</p>
+            <!-- TODO: add specific accreditation logos/numbers once confirmed - e.g. TrustMark registration number, FMB (Federation of Master Builders) membership number, NICEIC registration number, Part P registration number. Only add the badges that are actually held. -->
+          </article>
+          <article class="card">
+            <h3>Company details</h3>
+            <p>East Yorkshire Renovations, based in Hessle.</p>
+            <!-- TODO: add Companies House company registration number and "Established [year]" once confirmed. -->
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -96,51 +127,86 @@
   <footer>
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo">
+        <img class="footer-logo" src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo">
         <h3>East Yorkshire Renovations</h3>
-        <!-- Update business name, address and phone numbers here -->
-        <p>1 Example Road, Hessle, East Yorkshire, HU13 0XX</p>
+        <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
+        <p>Station Road, Hessle, HU13 0BG</p>
         <p>Phone: +44 7356 045498</p>
         <p>WhatsApp: +44 7356 045498</p>
+        <p>Email: <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a></p>
       </div>
       <div>
         <h4>Opening hours</h4>
-        <p>Mon-Fri: 8:00-18:00</p>
-        <p>Sat: 9:00-14:00</p>
+        <p>Mon–Fri: 08:00–16:30</p>
+        <p>Closed weekends</p>
+      </div>
+      <div>
+        <h4>Credentials</h4>
+        <p>Fully insured local tradespeople.</p>
+        <!-- TODO: add accreditation badges/numbers once confirmed - e.g. TrustMark registration number, FMB (Federation of Master Builders) membership number, NICEIC registration number, Part P registration number. -->
+        <!-- TODO: add public liability insurance details (insurer + cover level) once confirmed. -->
+        <!-- TODO: add Companies House company registration number once confirmed. -->
+        <!-- TODO: add "Established [year]" once confirmed. -->
       </div>
       <div>
         <h4>Explore</h4>
-        <p><a href="services.html">Renovation services</a></p>
-        <p><a href="work.html">Recent renovation work</a></p>
-        <p><a href="contact.html#quote-form">Request a quote</a></p>
+        <p><a href="/services.html">Renovation services</a></p>
+        <p><a href="/work.html">Recent renovation work</a></p>
+        <p><a href="/contact.html#quote-form">Request a quote</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HomeAndConstructionBusiness",
     "name": "East Yorkshire Renovations",
     "image": "https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg",
+    "logo": "https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg",
     "telephone": "+44 7356 045498",
+    "email": "info@eastyorkshirerenovation.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1 Example Road",
+      "streetAddress": "Station Road",
       "addressLocality": "Hessle",
-      "postalCode": "HU13 0XX",
+      "postalCode": "HU13 0BG",
       "addressCountry": "GB"
     },
-    "openingHours": "Mo-Fr 08:00-18:00, Sa 09:00-14:00",
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "00.0000",
-      "longitude": "00.0000"
-    },
-    "areaServed": ["Hull", "Beverley", "Hessle", "Cottingham", "Anlaby", "East Riding of Yorkshire"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "16:30"
+      }
+    ],
+    "areaServed": ["Hull", "Beverley", "Hessle", "Cottingham", "Anlaby", "East Riding of Yorkshire", "Willerby", "Kirk Ella", "Swanland", "Brough", "North Ferriby", "Walkington", "Hornsea", "Driffield"],
     "url": "https://www.eastyorkshirerenovation.com/about.html"
+  }
+  </script>
+  <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->
+  <!-- TODO: add a "sameAs" array with verified social profile URLs (Facebook, Instagram, etc.) once confirmed. -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.eastyorkshirerenovation.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About"
+      }
+    ]
   }
   </script>
 </body>
