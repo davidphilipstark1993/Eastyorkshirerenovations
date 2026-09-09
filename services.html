@@ -39,7 +39,13 @@
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/services.html">Renovation Services</a>
+        <div class="nav-dropdown">
+          <a href="/services.html" class="nav-dropdown-toggle">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/services.html">Renovation Services</a>
+            <a href="/water-treatment.html">Water Treatment</a>
+          </div>
+        </div>
         <a href="/work.html">Recent Work</a>
         <a href="/areas.html">Areas We Cover</a>
         <a href="/about.html">About</a>
@@ -145,6 +151,12 @@
             <p>Certified electrical work in Hull, Hessle and throughout East Yorkshire. We carry out first and second fix electrics, consumer unit upgrades, lighting installations and safe, compliant rewiring.</p>
             <p><a href="/electrical.html">More about electrical work</a></p>
           </article>
+          <article class="card">
+            <p class="kicker">New</p>
+            <h3><a href="/water-treatment.html">Home Water Treatment</a></h3>
+            <p>Water softening, limescale protection and home water filtration for properties across Hull and East Yorkshire, starting with a free home water assessment.</p>
+            <p><a href="/water-treatment.html">More about home water treatment</a></p>
+          </article>
         </div>
       </div>
     </section>
@@ -224,6 +236,7 @@
       </div>
       <div>
         <h4>Explore</h4>
+        <p><a href="/water-treatment.html">Water treatment</a></p>
         <p><a href="/work.html">Recent renovation work</a></p>
         <p><a href="/areas.html">East Yorkshire coverage</a></p>
         <p><a href="/contact.html#quote-form">Request a renovation quote</a></p>

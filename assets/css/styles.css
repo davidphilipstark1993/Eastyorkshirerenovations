@@ -111,6 +111,58 @@ header {
   box-shadow: 0 8px 16px rgba(192, 122, 61, 0.25);
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-dropdown-toggle::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: 0.55;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.6rem;
+  min-width: 210px;
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown-menu a {
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus {
+  background: var(--soft-grey);
+}
+
 .nav-toggle {
   display: none;
   border: none;
@@ -130,6 +182,18 @@ header {
   align-items: center;
 }
 
+.hero-grid picture,
+.hero-grid img {
+  max-height: 420px;
+  width: 100%;
+}
+
+.hero-grid img {
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 .hero h1 {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
@@ -139,6 +203,17 @@ header {
 .hero p {
   font-size: 1.05rem;
   margin: 0 0 1.5rem;
+}
+
+.hero-call-line {
+  font-size: 0.95rem;
+  margin: 1rem 0 0;
+}
+
+.hero-call-line a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .button-group {
@@ -165,13 +240,21 @@ header {
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 4.5rem 0;
+}
+
+/* Alternating tint gives consecutive sections visual separation without
+   needing a hard border - applies automatically to every page since every
+   top-level block inside <main> is a <section>, hero included. */
+main > section:nth-of-type(even) {
+  background: var(--soft-grey);
 }
 
 .section-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(1.8rem, 2.6vw, 2.4rem);
-  margin: 0 0 1.2rem;
+  line-height: 1.25;
+  margin: 0 0 1.4rem;
 }
 
 .kicker {
@@ -180,6 +263,13 @@ header {
   font-size: 0.75rem;
   color: var(--accent);
   font-weight: 700;
+  margin: 0 0 0.6rem;
+}
+
+/* Cap body-copy line length for readability on wide screens - the single
+   biggest reason full-width paragraphs read as a "wall of text." */
+.container > p:not(.kicker):not(.investment-range) {
+  max-width: 700px;
 }
 
 .cards {
@@ -191,7 +281,7 @@ header {
 .card {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.85rem;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: var(--shadow);
 }
@@ -218,6 +308,32 @@ header {
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+.concept-badge {
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.6rem;
+  background: rgba(31, 35, 40, 0.82);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
 }
 
 .service-card {
@@ -269,6 +385,12 @@ header {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-next-step {
+  font-size: 0.85rem;
+  color: #4a4f55;
+  margin: 0.75rem 0 1rem;
 }
 
 form input,
@@ -335,6 +457,20 @@ footer a {
     display: flex;
   }
 
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-menu {
+    display: flex;
+    position: static;
+    margin-top: 0.4rem;
+    padding: 0 0 0 1rem;
+    min-width: 0;
+    border: none;
+    box-shadow: none;
+  }
+
   .nav-toggle {
     display: inline-flex;
     align-items: center;
@@ -345,5 +481,361 @@ footer a {
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Water Treatment page components                                        */
+/* ---------------------------------------------------------------------- */
+
+.trust-note {
+  background: var(--soft-grey);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.system-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.system-card {
+  border-top: 4px solid var(--accent);
+}
+
+.system-card h3 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+}
+
+.system-card .system-purpose {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.package-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.package-card--popular {
+  border: 2px solid var(--accent);
+  box-shadow: 0 18px 40px rgba(192, 122, 61, 0.16);
+}
+
+.package-badge {
+  position: absolute;
+  top: -0.75rem;
+  right: 1.25rem;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+.package-price {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.package-features {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  flex-grow: 1;
+}
+
+.package-features li {
+  margin-bottom: 0.35rem;
+}
+
+.package-ideal-for {
+  font-size: 0.92rem;
+  color: #4a4f55;
+}
+
+.package-cta {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.pricing-note {
+  font-size: 0.85rem;
+  color: #4a4f55;
+  margin-top: 1rem;
+}
+
+.investment-range {
+  display: inline-block;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--soft-grey);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  margin: 0 0 1.5rem;
+}
+
+.symptom-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.symptom-grid li {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.symptom-grid li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.before-after {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.before-after-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.before-after-placeholder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 160px;
+}
+
+.before-after-placeholder span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  color: var(--white);
+}
+
+.before-after-placeholder .before {
+  background: repeating-linear-gradient(45deg, #9aa0a6, #9aa0a6 10px, #82878d 10px, #82878d 20px);
+}
+
+.before-after-placeholder .after {
+  background: linear-gradient(135deg, var(--accent), #d99a5f);
+}
+
+.before-after-card p {
+  padding: 0.9rem 1.2rem;
+  margin: 0;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: #4a4f55;
+}
+
+.before-after-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 160px;
+}
+
+.before-after-images img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.steps {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step-counter;
+}
+
+.steps li {
+  counter-increment: step-counter;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.steps li::before {
+  content: counter(step-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.checker-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.checker-form input {
+  flex: 1 1 200px;
+}
+
+.checker-result {
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: var(--soft-grey);
+  border-left: 4px solid var(--accent);
+}
+
+.checker-result--error {
+  border-left-color: #b3432b;
+}
+
+.faq-list {
+  max-width: 760px;
+}
+
+.faq-list details {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.1rem 0;
+}
+
+.faq-list details:first-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.faq-list summary {
+  font-weight: 600;
+  cursor: pointer;
+  padding-right: 1.5rem;
+}
+
+.faq-list summary::marker {
+  color: var(--accent);
+}
+
+.faq-list details p {
+  margin: 0.75rem 0 0;
+  color: #33383e;
+  max-width: 640px;
+}
+
+.hero-assessment-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hero-assessment-card h3 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  margin-top: 0;
+}
+
+.hero-assessment-card ul {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.hero-assessment-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero-assessment-card li::before {
+  content: "✓";
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.aftercare-callout {
+  background: var(--soft-grey);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.aftercare-callout ul {
+  columns: 2;
+  padding-left: 1.2rem;
+}
+
+.mobile-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .mobile-sticky-cta {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    background: var(--white);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-sticky-cta a {
+    flex: 1;
+    text-align: center;
+    padding: 0.85rem 0.5rem;
+    font-size: 0.92rem;
+  }
+
+  body {
+    padding-bottom: 4.5rem;
+  }
+
+  .aftercare-callout ul {
+    columns: 1;
   }
 }

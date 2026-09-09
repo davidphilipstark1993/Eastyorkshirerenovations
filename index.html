@@ -39,7 +39,13 @@
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/services.html">Renovation Services</a>
+        <div class="nav-dropdown">
+          <a href="/services.html" class="nav-dropdown-toggle">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/services.html">Renovation Services</a>
+            <a href="/water-treatment.html">Water Treatment</a>
+          </div>
+        </div>
         <a href="/work.html">Recent Work</a>
         <a href="/areas.html">Areas We Cover</a>
         <a href="/about.html">About</a>
@@ -63,8 +69,7 @@
         </div>
         <div>
           <picture>
-            <source srcset="/assets/img/project/loft-finished.webp" type="image/webp">
-            <img src="/assets/img/project/loft-finished.jpg" width="1200" height="800" alt="Finished loft bedroom renovation, East Yorkshire" loading="eager" fetchpriority="high">
+            <img src="/assets/img/project/concept-kitchen-hero.jpg" width="1200" height="800" alt="Concept image - premium kitchen renovation style" loading="eager" fetchpriority="high">
           </picture>
         </div>
       </div>
@@ -89,6 +94,22 @@
           </article>
         </div>
         <p><a class="btn secondary" href="/services.html">Explore all renovation services</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="kicker">New</p>
+          <h2 class="section-title">New: Home Water Treatment</h2>
+          <p>Hard water and limescale can be frustrating. We now provide home water-treatment solutions including water softeners, filtration and drinking-water systems across East Yorkshire.</p>
+          <p><a class="btn secondary" href="/water-treatment.html">Explore Water Treatment</a></p>
+        </div>
+        <div class="callout">
+          <h3>Water softening, limescale protection and filtration</h3>
+          <p>For properties across Hull and East Yorkshire, starting with a free home water assessment.</p>
+          <p><a class="btn" href="/water-treatment.html#water-assessment-form">Book a Free Water Assessment</a></p>
+        </div>
       </div>
     </section>
 
@@ -130,42 +151,30 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <p class="kicker">Reviews</p>
-        <h2 class="section-title">What homeowners say about our work.</h2>
-        <div class="cards">
-          <!-- Replace with real customer reviews -->
-          <article class="card review">
-            <h3>"Outstanding kitchen renovation"</h3>
-            <p>"The team kept the house spotless and the finish is flawless. We love the new layout and storage."</p>
-            <p><strong>- Emma, Beverley</strong></p>
-          </article>
-          <article class="card review">
-            <h3>"Reliable and organised"</h3>
-            <p>"Our bathroom was completed ahead of schedule with excellent communication throughout."</p>
-            <p><strong>- Chris, Hull</strong></p>
-          </article>
-          <article class="card review">
-            <h3>"Quality craftsmanship"</h3>
-            <p>"The refurbishment transformed our home. Great advice on materials and finishing."</p>
-            <p><strong>- Sara, Hessle</strong></p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- TODO: Add a genuine customer-reviews section here once real, verifiable reviews exist.
+         A previous version of this section displayed three example reviews (Emma/Beverley,
+         Chris/Hull, Sara/Hessle) that were placeholder content, not verified real customers -
+         removed because unverified testimonials should never be shown to visitors as if genuine.
+         Do not replace with invented names/quotes - only add real reviews, ideally linked to a
+         verifiable source (Google, Trustpilot, Facebook) once they exist. -->
 
     <section class="section">
       <div class="container">
         <p class="kicker">Recent work</p>
         <h2 class="section-title">Browse recent renovations in East Yorkshire.</h2>
         <div class="gallery">
-          <picture><source srcset="/assets/img/project/kitchen-finished.webp" type="image/webp"><img src="/assets/img/project/kitchen-finished.jpg" width="600" height="400" alt="Kitchen renovation in Cottingham" loading="lazy"></picture>
           <picture><source srcset="/assets/img/project/bathroom-finished-hessle.webp" type="image/webp"><img src="/assets/img/project/bathroom-finished-hessle.jpg" width="600" height="400" alt="Bathroom renovation in Hessle" loading="lazy"></picture>
           <picture><source srcset="/assets/img/project/loft-finished-2.webp" type="image/webp"><img src="/assets/img/project/loft-finished-2.jpg" width="600" height="400" alt="Loft room renovation, East Yorkshire" loading="lazy"></picture>
           <picture><source srcset="/assets/img/project/tiling-in-progress.webp" type="image/webp"><img src="/assets/img/project/tiling-in-progress.jpg" width="600" height="400" alt="Tiling installation in Howden" loading="lazy"></picture>
-          <picture><source srcset="/assets/img/project/decorating-finished.webp" type="image/webp"><img src="/assets/img/project/decorating-finished.jpg" width="600" height="400" alt="Freshly decorated room, East Yorkshire" loading="lazy"></picture>
-          <picture><source srcset="/assets/img/project/plastering-finished-hull.webp" type="image/webp"><img src="/assets/img/project/plastering-finished-hull.jpg" width="600" height="400" alt="Plastering in Hull" loading="lazy"></picture>
+          <!-- Concept images: AI-generated style references, not photos of completed EYR jobs - kept clearly labelled, both visibly and in alt text. -->
+          <div class="gallery-item">
+            <img src="/assets/img/project/concept-kitchen-gallery.jpg" width="600" height="400" alt="Concept image - kitchen renovation style, not a completed EYR project" loading="lazy">
+            <span class="concept-badge">Concept image</span>
+          </div>
+          <div class="gallery-item">
+            <img src="/assets/img/project/concept-bathroom-gallery.jpg" width="600" height="400" alt="Concept image - bathroom renovation style, not a completed EYR project" loading="lazy">
+            <span class="concept-badge">Concept image</span>
+          </div>
         </div>
         <p><a class="btn secondary" href="/work.html">See all gallery images and case studies</a></p>
       </div>
@@ -199,6 +208,7 @@
       <div>
         <h4>Explore</h4>
         <p><a href="/services.html">Renovation services</a></p>
+        <p><a href="/water-treatment.html">Water treatment</a></p>
         <p><a href="/work.html">Kitchen & bathroom case studies</a></p>
         <p><a href="/areas.html">Areas we cover in East Yorkshire</a></p>
         <p><a href="/contact.html#quote-form">Contact & quote requests</a></p>

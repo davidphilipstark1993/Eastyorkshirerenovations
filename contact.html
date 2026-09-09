@@ -39,7 +39,13 @@
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
         <a href="/">Home</a>
-        <a href="/services.html">Renovation Services</a>
+        <div class="nav-dropdown">
+          <a href="/services.html" class="nav-dropdown-toggle">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/services.html">Renovation Services</a>
+            <a href="/water-treatment.html">Water Treatment</a>
+          </div>
+        </div>
         <a href="/work.html">Recent Work</a>
         <a href="/areas.html">Areas We Cover</a>
         <a href="/about.html">About</a>
@@ -75,7 +81,6 @@
         <div>
           <p class="kicker">Contact form</p>
           <h2 class="section-title">Tell us about your project.</h2>
-          <!-- Replace with your real form handler endpoint -->
           <form id="quote-form" action="/api/contact" method="post">
             <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your enquiry has been sent and we will be in touch shortly.</div>
             <div class="form-grid">
@@ -142,6 +147,7 @@
       <div>
         <h4>Explore</h4>
         <p><a href="/services.html">Renovation services</a></p>
+        <p><a href="/water-treatment.html">Water treatment</a></p>
         <p><a href="/work.html">Recent renovation work</a></p>
         <p><a href="/contact.html#quote-form">Request a quote</a></p>
       </div>
