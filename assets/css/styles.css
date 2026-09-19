@@ -59,6 +59,29 @@ a {
   border-radius: 999px;
 }
 
+/* Consistent, visible focus indicator for every interactive element -
+   keyboard-only users get the same outline everywhere (WCAG 2.4.7 / 2.4.11).
+   Uses :focus-visible so mouse/touch clicks don't show the ring, only
+   keyboard and other non-pointer focus. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+form input:focus-visible,
+form textarea:focus-visible,
+form select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -360,6 +383,30 @@ main > section:nth-of-type(even) {
 
 .card h3 {
   margin-top: 0;
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 1rem;
+  padding: 0;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+}
+
+.testimonial-attribution {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.testimonial-date {
+  color: #4a4f55;
+  font-size: 0.85rem;
+}
+
+.testimonial-source {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
 }
 
 .split {

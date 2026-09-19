@@ -1,5 +1,5 @@
 import { mkdirSync, writeFileSync } from "fs";
-import { page, heroTextOnly, stepsList, faqList, quoteCallout } from "./lib/layout.mjs";
+import { page, heroTextOnly, stepsList, faqList, quoteCallout, testimonialsSection } from "./lib/layout.mjs";
 import { SITE } from "./lib/constants.mjs";
 
 const OUT_MAIN = "orangeries";
@@ -155,6 +155,8 @@ const mainBody = `${heroTextOnly({
         <p>We're building our library of completed orangery projects and will publish real photos and case studies here as they're finished &mdash; see our <a href="/projects/orangeries/">orangery projects page</a> for what to expect. In the meantime, you can see genuine completed kitchen, bathroom and refurbishment work on our <a href="/work.html">recent work page</a>.</p>
       </div>
     </section>
+
+${testimonialsSection()}
 
     <section class="section">
       <div class="container">
