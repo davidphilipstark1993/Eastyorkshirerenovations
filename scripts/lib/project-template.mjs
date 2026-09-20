@@ -39,21 +39,36 @@ export function projectPage(project) {
     <section class="section">
       <div class="container split">
         <div>
-          <p class="kicker">Project details</p>
-          <h2 class="section-title">The brief.</h2>
-          <p>${project.workCompleted}</p>
-          <p>${project.outcome}</p>
-          ${project.materials && project.materials.length
-            ? `<h3>Materials &amp; features</h3>
-          <ul>
-            ${project.materials.map((m) => `<li>${m}</li>`).join("\n            ")}
-          </ul>`
-            : ""}
+          <p class="kicker">The brief</p>
+          <h2 class="section-title">What the customer needed.</h2>
+          <p>${project.brief}</p>
         </div>
         <div class="callout">
           <h3>Project facts</h3>
           ${factsRows.map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`).join("\n          ")}
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="kicker">Work carried out</p>
+        <h2 class="section-title">What we did.</h2>
+        <p>${project.workCompleted}</p>
+        ${project.materials && project.materials.length
+          ? `<h3>Materials &amp; approach</h3>
+        <ul>
+          ${project.materials.map((m) => `<li>${m}</li>`).join("\n          ")}
+        </ul>`
+          : ""}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="kicker">The outcome</p>
+        <h2 class="section-title">The result.</h2>
+        <p>${project.outcome}</p>
       </div>
     </section>
 

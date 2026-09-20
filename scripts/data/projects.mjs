@@ -17,6 +17,7 @@
  *     after:  [{ src, alt }],
  *   },
  *   summary: string,           // one-line standfirst
+ *   brief: string,             // the problem/context before work started — what the customer needed and why. Use a "[ADD DETAIL: ...]" placeholder if not yet known — never invent it.
  *   workCompleted: string,     // what was actually done — genuine only
  *   outcome: string,           // the result, in the customer's/site's own words
  *   materials: string[] | null,  // optional
@@ -54,6 +55,7 @@ export const projects = [
       after: [{ src: "/assets/img/project/bathroom-finished-hessle", alt: "Finished bathroom renovation in Hessle" }],
     },
     summary: "A bright, fully tiled bathroom with a modern walk-in shower enclosure.",
+    brief: "[ADD DETAIL: what did the customer want to change about their old bathroom, and why - e.g. dated suite, no shower, poor layout, planning a house sale? A sentence or two on the starting point/problem.]",
     workCompleted: "Full bathroom refit with marble-effect tiling and a walk-in shower.",
     outcome: "A bright, fully tiled bathroom with a modern walk-in shower enclosure.",
     materials: ["Marble-effect wall and floor tiling", "Walk-in shower enclosure"],
@@ -74,6 +76,7 @@ export const projects = [
       after: [{ src: "/assets/img/project/bathroom-finished-hull", alt: "Finished bathroom renovation in Hull" }],
     },
     summary: "A dated bathroom rebuilt into a modern space with a dark vanity unit and glass shower screen.",
+    brief: "[ADD DETAIL: what was wrong with the bathroom before the strip-out - age of the suite, condition, damp/leaks, or just an outdated look? What prompted the customer to get in touch?]",
     workCompleted: "Complete strip-out to bare floorboards, followed by a full retile and refit.",
     outcome: "A dated bathroom rebuilt into a modern space with a dark vanity unit and glass shower screen.",
     materials: ["Full retile", "Dark vanity unit", "Glass shower screen"],
@@ -94,6 +97,7 @@ export const projects = [
       after: [{ src: "/assets/img/project/kitchen-finished", alt: "Finished kitchen renovation in Cottingham" }],
     },
     summary: "A bright, modern kitchen with plenty of storage and worktop space.",
+    brief: "[ADD DETAIL: what did the customer want from the new kitchen - more storage, better layout, replacing an old/worn kitchen, opening up the space? What was the starting point?]",
     workCompleted: "New shaker-style cabinetry, marble-effect worktops and integrated appliances.",
     outcome: "A bright, modern kitchen with plenty of storage and worktop space.",
     materials: ["Shaker-style cabinetry", "Marble-effect worktops", "Integrated appliances"],
@@ -117,6 +121,7 @@ export const projects = [
       ],
     },
     summary: "A bright, carpeted loft room with a Velux window, ready to use as a bedroom or study.",
+    brief: "[ADD DETAIL: what was the loft space used for before (storage, unused void), and what did the customer want it to become - extra bedroom, home office, study? Any structural/access work needed before the room could be used?]",
     workCompleted: "Full plastering, decorating and carpet fit to convert a bare loft space into a usable room.",
     outcome: "A bright, carpeted loft room with a Velux window, ready to use as a bedroom or study.",
     materials: ["Plastering", "Decorating", "Carpet", "Velux window"],

@@ -1,4 +1,5 @@
 import { SITE, BUSINESS_NAME, EMAIL, ADDRESS_LINE, GA4_ID, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
+import { testimonials } from "../data/testimonials.mjs";
 
 export function headBlock({ title, description, canonical, ogImage }) {
   const ogImageTags = ogImage
@@ -100,9 +101,8 @@ export function footer() {
       </div>
       <div>
         <h4>Credentials</h4>
-        <p>Fully insured local tradespeople.</p>
+        <p>Fully insured local tradespeople &mdash; public liability cover up to &pound;2,000,000.</p>
         <!-- TODO: add accreditation badges/numbers once confirmed - e.g. TrustMark registration number, FMB (Federation of Master Builders) membership number, NICEIC registration number, Part P registration number. -->
-        <!-- TODO: add public liability insurance details (insurer + cover level) once confirmed. -->
         <!-- TODO: add Companies House company registration number once confirmed. -->
         <!-- TODO: add "Established [year]" once confirmed. -->
       </div>
@@ -335,6 +335,40 @@ ${faqs && faqs.length
     ],
     faq: faqs,
   });
+}
+
+// Renders nothing at all until scripts/data/testimonials.mjs has at least
+// one real, verifiable entry - never shows placeholder/example reviews.
+export function testimonialsSection({ heading = "Reviews from East Yorkshire homeowners." } = {}) {
+  if (!testimonials || testimonials.length === 0) return "";
+
+  const cards = testimonials
+    .map((t) => {
+      const meta = [t.projectType, t.location].filter(Boolean).join(" &middot; ");
+      const dateStr = t.date
+        ? new Date(t.date).toLocaleDateString("en-GB", { month: "long", year: "numeric" })
+        : "";
+      const sourceLink = t.source
+        ? `<p class="testimonial-source"><a href="${t.source.href}">See this review on ${t.source.label}</a></p>`
+        : "";
+      return `          <article class="card testimonial-card">
+            <blockquote>&ldquo;${t.quote}&rdquo;</blockquote>
+            <p class="testimonial-attribution"><strong>${t.name}</strong>${meta ? ` &mdash; ${meta}` : ""}${dateStr ? `<br><span class="testimonial-date">${dateStr}</span>` : ""}</p>
+            ${sourceLink}
+          </article>`;
+    })
+    .join("\n");
+
+  return `    <section class="section testimonials">
+      <div class="container">
+        <p class="kicker">What our customers say</p>
+        <h2 class="section-title">${heading}</h2>
+        <div class="cards">
+${cards}
+        </div>
+      </div>
+    </section>
+`;
 }
 
 export function quoteCallout({ heading, body: bodyText, ctaLabel = "Request a quote", ctaHref = "/contact.html#quote-form" }) {
