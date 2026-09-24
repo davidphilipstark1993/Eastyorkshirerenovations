@@ -201,8 +201,11 @@ function photoSlot(slug, stage, caption) {
           </div>` };
 }
 
-function photoSlots(slug, captions) {
-  const slots = [photoSlot(slug, "before", captions[0]), photoSlot(slug, "after", captions[1])];
+// Pass one caption for a single image (uses the <slug>-before file) with its
+// own heading, or two captions for a before/after pair.
+function photoSlots(slug, captions, single) {
+  const slots = [photoSlot(slug, "before", captions[0])];
+  if (captions[1]) slots.push(photoSlot(slug, "after", captions[1]));
   const hasAi = slots.some((s) => s.kind === "ai");
   const allReal = slots.every((s) => s.kind === "real");
   const note = hasAi
@@ -212,9 +215,9 @@ function photoSlots(slug, captions) {
       : "We&rsquo;ll add photos from real jobs here as they&rsquo;re completed. We don&rsquo;t use stock images of other people&rsquo;s work.";
   return `    <section class="section">
       <div class="container">
-        <p class="kicker">Before &amp; after</p>
-        <h2 class="section-title">${hasAi ? "What it looks like before and after." : "Photos from our damp work."}</h2>
-        <div class="photo-placeholder-grid">
+        <p class="kicker">${single ? single.kicker : "Before &amp; after"}</p>
+        <h2 class="section-title">${single ? single.h2 : hasAi ? "What it looks like before and after." : "Photos from our damp work."}</h2>
+        <div class="photo-placeholder-grid${slots.length === 1 ? " photo-placeholder-grid--single" : ""}">
 ${slots.map((s) => s.html).join("\n")}
         </div>${note ? `\n        <p>${note}</p>` : ""}
       </div>
@@ -296,12 +299,12 @@ function writePage({ path, title, description, crumb, body, faqs, service }) {
 
 // Service page wrapper: hero, body sections, making good, photos,
 // related links + booking callout, FAQs.
-function servicePage({ slug, kicker, title, description, h1, intro, sections, makingGoodText, photos, related, callout, faqH2, faqs, service }) {
+function servicePage({ slug, kicker, title, description, h1, intro, sections, makingGoodText, photos, photoHeading, related, callout, faqH2, faqs, service }) {
   const body = [
     hero({ kicker, h1, intro, service: slug }),
     ...sections.map(section),
     makingGood(makingGoodText),
-    photoSlots(slug, photos),
+    photoSlots(slug, photos, photoHeading),
     relatedAndBook({ related, callout, service: slug }),
     faqSection(faqH2, faqs),
   ].join("\n");
@@ -504,7 +507,8 @@ servicePage({
     },
   ],
   makingGoodText: "If the survey shows work is needed, we can carry it out from start to finish: the damp treatment itself, then hacking off and replastering, making good around sockets and fittings, and decorating if you want us to.",
-  photos: ["Before: damp patch on internal wall", "After: cause fixed, wall replastered"],
+  photos: ["Taking moisture readings on a damp wall"],
+  photoHeading: { kicker: "On the survey", h2: "Finding out what the damp is doing." },
   related: ["rising-damp-treatment", "condensation-control"],
   callout: { body: `Surveys cost ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Tell us where the damp is and we&rsquo;ll arrange a visit.` },
   faqH2: "Damp survey FAQs.",

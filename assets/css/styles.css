@@ -1015,6 +1015,10 @@ html {
   color: var(--charcoal);
 }
 
+.photo-placeholder-grid--single {
+  max-width: 600px;
+}
+
 .photo-slot {
   position: relative;
   margin: 0;

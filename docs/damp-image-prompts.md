@@ -1,6 +1,6 @@
 # Damp proofing before/after images: filenames and AI prompts
 
-There are 18 image slots across the damp proofing pages: a before and an after on the hub and on each of the 8 service pages.
+There are 17 image slots across the damp proofing pages: a before and an after on the hub and on 7 of the service pages, plus a single image on the damp surveys page.
 
 ## How to add images
 
@@ -34,11 +34,8 @@ There are 18 image slots across the damp proofing pages: a before and an after o
 
 ## Damp surveys: /damp-proofing/damp-surveys/
 
-**`damp-surveys-before-ai.jpg`**, captioned "Before: damp patch on internal wall"
+**`damp-surveys-before-ai.jpg`**, captioned "Taking moisture readings on a damp wall" (this page has a single image, not a before/after pair)
 > Close-up of an internal plastered wall in a UK 1930s semi-detached house with an irregular brown damp patch and flaking magnolia paint, a hand-held pin-type moisture meter pressed against the damp area, daylight.
-
-**`damp-surveys-after-ai.jpg`**, captioned "After: cause fixed, wall replastered"
-> The same wall and camera angle, now smooth freshly skimmed plaster painted in magnolia, dry and even, no staining.
 
 ## Pre-purchase damp survey: /damp-proofing/pre-purchase-damp-survey/
 
