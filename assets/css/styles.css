@@ -179,6 +179,12 @@ header {
   box-shadow: var(--shadow);
   padding: 0.6rem;
   z-index: 1001;
+  /* The header is sticky, so a long panel can't be reached by scrolling the
+     page - let the panel scroll itself instead. */
+  max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .nav-links.open {
@@ -545,6 +551,14 @@ footer a {
   }
 }
 
+/* The header wraps onto more height on narrow screens. */
+@media (max-width: 640px) {
+  .nav-links {
+    max-height: calc(100vh - 190px);
+    max-height: calc(100dvh - 190px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto;
@@ -904,5 +918,61 @@ footer a {
 
   .aftercare-callout ul {
     columns: 1;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Damp proofing pages                                                     */
+/* ---------------------------------------------------------------------- */
+
+/* Visible marker for copy the business still needs to supply. */
+.placeholder {
+  background: #fff1c2;
+  color: var(--charcoal);
+  border-radius: 4px;
+  padding: 0 0.25em;
+  font-weight: 600;
+}
+
+.guarantee-line {
+  font-weight: 600;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.photo-placeholder-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 1.2rem 0;
+}
+
+.photo-placeholder {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 1.2rem;
+  border: 2px dashed var(--mid-grey);
+  border-radius: var(--radius);
+  background: var(--soft-grey);
+  color: #5b5f64;
+}
+
+.photo-placeholder strong {
+  color: var(--charcoal);
+}
+
+.area-list {
+  columns: 2;
+  max-width: 520px;
+}
+
+@media (min-width: 720px) {
+  .area-list {
+    columns: 3;
   }
 }

@@ -1,4 +1,4 @@
-import { SITE, BUSINESS_NAME, EMAIL, ADDRESS_LINE, GA4_ID, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
+import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, GA4_ID, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
 
 export function headBlock({ title, description, canonical, ogImage }) {
   const ogImageTags = ogImage
@@ -68,6 +68,20 @@ export function header() {
             <a href="/services.html">View all services</a>
           </div>
         </div>
+        <div class="nav-dropdown">
+          <a href="/damp-proofing/" class="nav-dropdown-toggle">Damp Proofing</a>
+          <div class="nav-dropdown-menu">
+            <a href="/damp-proofing/damp-surveys/">Damp Surveys</a>
+            <a href="/damp-proofing/pre-purchase-damp-survey/">Pre-Purchase Damp Surveys</a>
+            <a href="/damp-proofing/landlord-damp-mould-reports/">Landlord Damp &amp; Mould Reports</a>
+            <a href="/damp-proofing/rising-damp-treatment/">Rising Damp Treatment</a>
+            <a href="/damp-proofing/penetrating-damp/">Penetrating Damp</a>
+            <a href="/damp-proofing/condensation-control/">Condensation Control</a>
+            <a href="/damp-proofing/mould-treatment/">Mould Treatment</a>
+            <a href="/damp-proofing/cellar-tanking/">Cellar Tanking</a>
+            <a href="/damp-proofing/">All damp proofing services</a>
+          </div>
+        </div>
         <a href="/work.html">Recent Work</a>
         <a href="/areas.html">Areas We Cover</a>
         <a href="/projects/">Projects</a>
@@ -125,6 +139,7 @@ export function ldBusiness(canonical) {
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": "${BUSINESS_ID}",
     "name": "${BUSINESS_NAME}",
     "image": "${SITE}${LOGO_PATH}",
     "logo": "${SITE}${LOGO_PATH}",
