@@ -3,7 +3,7 @@
 // Copy the business still needs to supply is wrapped in ph("...") so it
 // renders as a highlighted [PLACEHOLDER] on the page - search this file for
 // "ph(" to find them all.
-import { mkdirSync, writeFileSync } from "fs";
+import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
 
@@ -170,23 +170,53 @@ function makingGood(text) {
 `;
 }
 
-function photoSlots(captions) {
-  const slots = captions
-    .map(
-      (c) => `          <div class="photo-placeholder" role="img" aria-label="Photo to follow: ${plain(c)}">
-            <strong>${c}</strong>
+// Before/after slots. Drop images into assets/img/damp/ named
+// <slug>-before.jpg / <slug>-after.jpg for real job photos, or with an -ai
+// suffix (<slug>-before-ai.jpg) for AI-generated illustrations, which get a
+// visible "AI-generated illustration" badge and a disclaimer - the same
+// convention as the site's other *-ai.jpg concept images. Real photos take
+// priority. Slots with no image show a placeholder. Images should be 4:3.
+// docs/damp-image-prompts.md has a prompt for each slot.
+const IMG_DIR = "assets/img/damp";
+
+function photoSlot(slug, stage, caption) {
+  const real = `${IMG_DIR}/${slug}-${stage}.jpg`;
+  const ai = `${IMG_DIR}/${slug}-${stage}-ai.jpg`;
+  if (existsSync(real)) {
+    return { kind: "real", html: `          <figure class="photo-slot">
+            <img src="/${real}" width="1200" height="900" alt="${plain(caption)}" loading="lazy">
+            <figcaption>${caption}</figcaption>
+          </figure>` };
+  }
+  if (existsSync(ai)) {
+    return { kind: "ai", html: `          <figure class="photo-slot">
+            <img src="/${ai}" width="1200" height="900" alt="AI-generated illustration - ${plain(caption)}, not a photo of an EYR job" loading="lazy">
+            <span class="concept-badge">AI-generated illustration</span>
+            <figcaption>${caption}</figcaption>
+          </figure>` };
+  }
+  return { kind: "empty", html: `          <div class="photo-placeholder" role="img" aria-label="Photo to follow: ${plain(caption)}">
+            <strong>${caption}</strong>
             <span class="placeholder">[PLACEHOLDER: add real photo from an EYR job]</span>
-          </div>`
-    )
-    .join("\n");
+          </div>` };
+}
+
+function photoSlots(slug, captions) {
+  const slots = [photoSlot(slug, "before", captions[0]), photoSlot(slug, "after", captions[1])];
+  const hasAi = slots.some((s) => s.kind === "ai");
+  const allReal = slots.every((s) => s.kind === "real");
+  const note = hasAi
+    ? "Images marked &ldquo;AI-generated illustration&rdquo; show typical damp problems and repairs. They aren&rsquo;t photos of our own work, and we&rsquo;ll replace them with photos from real jobs as they&rsquo;re completed."
+    : allReal
+      ? ""
+      : "We&rsquo;ll add photos from real jobs here as they&rsquo;re completed. We don&rsquo;t use stock images of other people&rsquo;s work.";
   return `    <section class="section">
       <div class="container">
         <p class="kicker">Before &amp; after</p>
-        <h2 class="section-title">Photos from our damp work.</h2>
+        <h2 class="section-title">${hasAi ? "What it looks like before and after." : "Photos from our damp work."}</h2>
         <div class="photo-placeholder-grid">
-${slots}
-        </div>
-        <p>We&rsquo;ll add photos from real jobs here as they&rsquo;re completed. We don&rsquo;t use stock images of other people&rsquo;s work.</p>
+${slots.map((s) => s.html).join("\n")}
+        </div>${note ? `\n        <p>${note}</p>` : ""}
       </div>
     </section>
 `;
@@ -271,7 +301,7 @@ function servicePage({ slug, kicker, title, description, h1, intro, sections, ma
     hero({ kicker, h1, intro, service: slug }),
     ...sections.map(section),
     makingGood(makingGoodText),
-    photoSlots(photos),
+    photoSlots(slug, photos),
     relatedAndBook({ related, callout, service: slug }),
     faqSection(faqH2, faqs),
   ].join("\n");
@@ -395,7 +425,7 @@ ${GUARANTEES.map((g) => `          <li><strong>${g.work}:</strong> ${g.period}</
       </div>
     </section>
 `,
-  photoSlots(["Before: damp or mould damage", "After: treated, replastered and redecorated"]),
+  photoSlots("damp-proofing", ["Before: damp or mould damage", "After: treated, replastered and redecorated"]),
   `    <section class="section">
       <div class="container">
         <p class="kicker">Areas covered</p>
@@ -534,7 +564,7 @@ servicePage({
       paras: [
         `Property purchases run to tight timescales, so we aim to get your written report to you within ${REPORT_DAYS} of the survey.`,
         "As the property isn&rsquo;t yours yet, we&rsquo;ll need the seller&rsquo;s permission to visit. Usually the easiest way is for you to ask the estate agent to arrange access, and we&rsquo;ll work around the time they give us.",
-        `A pre-purchase damp survey costs ${ph("PRE-PURCHASE SURVEY PRICE")}.`,
+        `A pre-purchase damp survey costs ${SURVEY_PRICE}. If you buy the property and go ahead with our quote for treatment, the ${SURVEY_PRICE} is deducted from the cost of the work.`,
       ],
     },
   ],
