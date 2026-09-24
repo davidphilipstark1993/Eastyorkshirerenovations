@@ -69,7 +69,7 @@ There are 18 image slots across the damp proofing pages: a before and an after o
 **`penetrating-damp-before-ai.jpg`**, captioned "Before: damp patch from failed pointing"
 > Exterior of a UK solid-walled red-brick house, close-up of weathered brickwork with eroded, crumbling and missing mortar joints and green algae staining below a leaking cast-iron downpipe, overcast sky.
 
-**`penetrating-damp-after-ai.jpg`**, captioned "After: repointed and made good inside"
+**`penetrating-damp-after-ai.jpg`**, captioned "After: repointed, with a new downpipe"
 > The same brick wall and camera angle, now neatly repointed with fresh, lighter lime mortar joints, clean brickwork and a new black downpipe, dry weather.
 
 ## Condensation control: /damp-proofing/condensation-control/

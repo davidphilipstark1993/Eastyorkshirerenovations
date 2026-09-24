@@ -754,7 +754,7 @@ servicePage({
     },
   ],
   makingGoodText: "Once the outside is fixed and the wall has had a chance to dry, we replaster any damaged or salt-stained areas inside, make good and redecorate, so the room is finished as well as dry.",
-  photos: ["Before: damp patch from failed pointing", "After: repointed and made good inside"],
+  photos: ["Before: damp patch from failed pointing", "After: repointed, with a new downpipe"],
   related: ["damp-surveys", "rising-damp-treatment"],
   callout: { body: "We&rsquo;ll trace where the water is getting in and fix that first." },
   faqH2: "Penetrating damp FAQs.",
