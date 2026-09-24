@@ -27,6 +27,7 @@ const DAMP_NAV = `        <div class="nav-dropdown">
             <a href="/damp-proofing/condensation-control/">Condensation Control</a>
             <a href="/damp-proofing/mould-treatment/">Mould Treatment</a>
             <a href="/damp-proofing/cellar-tanking/">Cellar Tanking</a>
+            <a href="/damp-proofing/book-a-survey/">Book a damp survey</a>
             <a href="/damp-proofing/">All damp proofing services</a>
           </div>
         </div>
@@ -102,6 +103,7 @@ const DAMP_URLS = [
   "/damp-proofing/condensation-control/",
   "/damp-proofing/mould-treatment/",
   "/damp-proofing/cellar-tanking/",
+  "/damp-proofing/book-a-survey/",
 ].map((p) => `${SITE}${p}`);
 
 let sitemap = readFileSync("sitemap.xml", "utf8");

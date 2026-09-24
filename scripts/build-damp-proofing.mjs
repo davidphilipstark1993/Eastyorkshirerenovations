@@ -8,7 +8,12 @@ import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, 
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
 
 const HUB = "/damp-proofing/";
-const QUOTE = "/contact.html#quote-form";
+const BOOK = "/damp-proofing/book-a-survey/";
+const bookHref = (slug) => (slug ? `${BOOK}?service=${slug}` : BOOK);
+const SURVEY_PRICE = "&pound;119";
+const SURVEY_DEDUCTION = "deducted from the cost of any treatment if you accept our quote";
+const REPORT_DAYS = "3 days";
+const RESPONSE_TIME = "5 days";
 const GUARANTEE_LINE = "Backed by guarantees of up to 30 years.";
 
 // Damp-specific coverage. Hull, Beverley, Hessle and Cottingham have their
@@ -27,6 +32,29 @@ const AREAS = [
   { name: "Barton-upon-Humber" },
 ];
 const AREA_SERVED = [...AREAS.map((a) => a.name), "East Riding of Yorkshire", "North Lincolnshire"];
+
+// Guarantee periods. The hub's guarantee section sets out the full terms;
+// each service page's booking callout repeats the line relevant to it.
+const GUARANTEES = [
+  { work: "Rising damp treatment (chemical damp-proof course injection)", period: "30 years" },
+  { work: "Salt-resistant replastering carried out with rising damp treatment", period: "10 years" },
+  { work: "Cellar tanking and cavity drain membrane systems", period: "10 years" },
+  { work: "Masonry water-repellent treatments", period: "10 years" },
+  { work: "Penetrating damp repairs (repointing, render repairs, gutter and downpipe work)", period: "2 years" },
+  { work: "Condensation control installations (PIV units, extractor fans, trickle vents)", period: "2 years on our installation, plus the manufacturer&rsquo;s warranty on the unit" },
+  { work: "Mould treatment, plastering, making good and decorating", period: "2 years" },
+];
+const TERMS = `${HUB}#guarantee`;
+const PAGE_GUARANTEE = {
+  "damp-surveys": "Any treatment we carry out after the survey comes with a written guarantee.",
+  "pre-purchase-damp-survey": "Any treatment we carry out once you own the property comes with a written guarantee.",
+  "landlord-damp-mould-reports": "Remedial work we carry out comes with a written guarantee, which stays with the property.",
+  "rising-damp-treatment": "Damp-proof course injection: 30-year guarantee. Replastering: 10 years.",
+  "penetrating-damp": "Water-repellent treatments: 10-year guarantee. Repairs: 2 years.",
+  "condensation-control": "Installation: 2-year guarantee, plus the manufacturer&rsquo;s warranty on the unit.",
+  "mould-treatment": "Treatment, plastering and decorating: 2-year guarantee.",
+  "cellar-tanking": "Tanking and membrane systems: 10-year guarantee.",
+};
 
 const ph = (text) => `<span class="placeholder">[${text}]</span>`;
 
@@ -92,7 +120,7 @@ const link = (slug, text) => `<a href="${url(slug)}">${text || PAGES[slug].label
 // ---------------------------------------------------------------------------
 // Shared blocks
 // ---------------------------------------------------------------------------
-function hero({ kicker, h1, intro, secondary = { label: "All damp proofing services", href: HUB } }) {
+function hero({ kicker, h1, intro, service, secondary = { label: "All damp proofing services", href: HUB } }) {
   return `    <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -101,7 +129,7 @@ function hero({ kicker, h1, intro, secondary = { label: "All damp proofing servi
           <p>${intro}</p>
           <p class="guarantee-line">${GUARANTEE_LINE}</p>
           <div class="button-group">
-            <a class="btn primary" href="${QUOTE}">Book a damp survey</a>
+            <a class="btn primary" href="${bookHref(service)}">Book a damp survey</a>
             <a class="btn secondary" href="${secondary.href}">${secondary.label}</a>
           </div>
         </div>
@@ -120,12 +148,12 @@ function section({ kicker, h2, paras = [], list, after = [] }) {
 `;
 }
 
-function bookingCallout({ heading = "Book a damp survey", body }) {
+function bookingCallout({ heading = "Book a damp survey", body, service }) {
   return `        <div class="callout">
           <h3>${heading}</h3>
           <p>${body}</p>
           <p class="guarantee-line">${GUARANTEE_LINE}</p>
-          <p><a class="btn" href="${QUOTE}">Book a damp survey</a></p>
+          ${service ? `<p>${PAGE_GUARANTEE[service]} <a href="${TERMS}">Guarantee terms</a>.</p>\n          ` : ""}<p><a class="btn" href="${bookHref(service)}">Book a damp survey</a></p>
         </div>
 `;
 }
@@ -164,7 +192,7 @@ ${slots}
 `;
 }
 
-function relatedAndBook({ related, callout }) {
+function relatedAndBook({ related, callout, service }) {
   const items = [`<a href="${HUB}">All damp proofing services</a>`, ...related.map((s) => link(s))];
   return `    <section class="section">
       <div class="container split">
@@ -175,7 +203,7 @@ function relatedAndBook({ related, callout }) {
 ${items.map((i) => `            <li>${i}</li>`).join("\n")}
           </ul>
         </div>
-${bookingCallout(callout)}      </div>
+${bookingCallout({ ...callout, service })}      </div>
     </section>
 `;
 }
@@ -219,13 +247,14 @@ function writePage({ path, title, description, crumb, body, faqs, service }) {
 
   const html = [
     headBlock({ title, description, canonical }),
-    header(),
+    // On damp pages the header's "Get a Quote" button goes to the damp form.
+    header().replace('<a href="/contact.html#quote-form" class="nav-cta">', `<a href="${BOOK}" class="nav-cta">`),
     body,
     footer(),
     ldBusiness(canonical),
     ldBreadcrumb(breadcrumbs),
-    ldFAQ(faqs.map((f) => ({ q: plain(f.q), a: plain(f.a) }))),
-    ldService({ ...service, canonical }),
+    faqs ? ldFAQ(faqs.map((f) => ({ q: plain(f.q), a: plain(f.a) }))) : "",
+    service ? ldService({ ...service, canonical }) : "",
     `</body>\n</html>\n`,
   ].join("\n");
 
@@ -239,11 +268,11 @@ function writePage({ path, title, description, crumb, body, faqs, service }) {
 // related links + booking callout, FAQs.
 function servicePage({ slug, kicker, title, description, h1, intro, sections, makingGoodText, photos, related, callout, faqH2, faqs, service }) {
   const body = [
-    hero({ kicker, h1, intro }),
+    hero({ kicker, h1, intro, service: slug }),
     ...sections.map(section),
     makingGood(makingGoodText),
     photoSlots(photos),
-    relatedAndBook({ related, callout }),
+    relatedAndBook({ related, callout, service: slug }),
     faqSection(faqH2, faqs),
   ].join("\n");
   writePage({ path: url(slug), title, description, crumb: PAGES[slug].label.replace(/&amp;/g, "&"), body, faqs, service });
@@ -277,7 +306,7 @@ const hubFaqs = [
   },
   {
     q: "What does the guarantee cover?",
-    a: "Our damp work is backed by guarantees of up to 30 years. The length depends on the type of work, and we&rsquo;ll set out exactly what&rsquo;s covered, in writing, with your quote.",
+    a: "If work we carried out fails within the guarantee period, we inspect it free of charge and put it right at no cost. Guarantees run from 2 years for repairs and ventilation up to 30 years for a damp-proof course. They don&rsquo;t cover damp from a different cause, or later work that bridges the damp-proof course. The full terms are in our guarantee section above.",
   },
   {
     q: "Do you do the plastering afterwards?",
@@ -322,7 +351,7 @@ ${hubCards("treatment")}      </div>
           <p>A lot of damp work involves stripping out plaster, and that&rsquo;s where jobs often stall: the damp specialist leaves, and you&rsquo;re left with bare walls, waiting for a plasterer and a decorator.</p>
           <p>We&rsquo;re a renovation firm, so we do the <a href="/plastering.html">plastering</a>, making good and <a href="/decorating.html">decorating</a> ourselves. One firm diagnoses the problem, carries out the treatment and puts the room back together, with one point of contact and one price.</p>
         </div>
-${bookingCallout({ body: `Tell us where the damp is and what you&rsquo;ve noticed, and we&rsquo;ll arrange a visit. Surveys from ${ph("SURVEY PRICE")}.` })}      </div>
+${bookingCallout({ body: `Tell us where the damp is and what you&rsquo;ve noticed, and we&rsquo;ll arrange a visit. Surveys cost ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}.` })}      </div>
     </section>
 `,
   `    <section class="section" id="how-it-works">
@@ -332,20 +361,40 @@ ${bookingCallout({ body: `Tell us where the damp is and what you&rsquo;ve notice
 ${stepsList([
   { title: "Survey", body: "We inspect the affected areas inside and out, take moisture readings and work out the cause." },
   { title: "Written report", body: "You get a plain-English report of what we found, what&rsquo;s causing it and what we recommend." },
-  { title: "Quote", body: "If work is needed, we give you a clear written quote covering the treatment, replastering and making good." },
+  { title: "Quote", body: `If work is needed, we give you a clear written quote covering the treatment, replastering and making good. Accept it and your ${SURVEY_PRICE} survey fee is deducted.` },
   { title: "The work", body: "We carry out the repair or treatment, then replaster, make good and decorate where needed." },
   { title: "Guarantee", body: "Completed work is backed by a written guarantee of up to 30 years, depending on the treatment." },
 ])}      </div>
     </section>
 `,
-  section({
-    kicker: "Guarantee",
-    h2: "Guarantees of up to 30 years.",
-    paras: [
-      "Our damp proofing work is backed by guarantees of up to 30 years. The length depends on the type of work carried out, and we&rsquo;ll confirm the terms in writing with your quote so you know exactly what&rsquo;s covered before you agree to anything.",
-      `${ph("GUARANTEE TERMS: confirm which treatments carry which guarantee length, and what the guarantee covers")}`,
-    ],
-  }),
+  `    <section class="section" id="guarantee">
+      <div class="container">
+        <p class="kicker">Guarantee</p>
+        <h2 class="section-title">Guarantees of up to 30 years.</h2>
+        <p>Our damp proofing work is backed by written guarantees of up to 30 years. The length depends on the work. A damp-proof course is designed to last for decades, while repairs and ventilation depend more on how the house is used and looked after:</p>
+        <ul>
+${GUARANTEES.map((g) => `          <li><strong>${g.work}:</strong> ${g.period}</li>`).join("\n")}
+        </ul>
+        <h3>What the guarantee covers</h3>
+        <p>If the work we carried out fails within the guarantee period, we&rsquo;ll inspect it free of charge and put it right, including re-treating and making good the affected area, at no cost to you.</p>
+        <h3>What it doesn&rsquo;t cover</h3>
+        <ul>
+          <li>Damp from a different cause than the one we treated. For example, a rising damp guarantee doesn&rsquo;t cover condensation or a leaking gutter.</li>
+          <li>Areas of the property we didn&rsquo;t treat.</li>
+          <li>The damp-proof course being bridged after our work, for example by raising soil, path or patio levels, or rendering over it.</li>
+          <li>Structural movement, flooding, burst or leaking pipes, and alterations or damage by others.</li>
+          <li>Problems caused by a lack of reasonable maintenance, such as blocked gutters or, on membrane systems, a sump pump that hasn&rsquo;t had its annual service.</li>
+        </ul>
+        <h3>Conditions</h3>
+        <ul>
+          <li>We issue your guarantee certificate in writing once the work has been paid for in full.</li>
+          <li>The guarantee stays with the property. If you sell, it passes to the new owner at no charge. Just give them the certificate.</li>
+          <li>Follow the drying-out and decorating advice we give you for newly plastered walls.</li>
+        </ul>
+        <p>The guarantee is provided by ${BUSINESS_NAME}. We&rsquo;ll give you the full terms in writing with your quote, so you know exactly what&rsquo;s covered before you agree to anything.</p>
+      </div>
+    </section>
+`,
   photoSlots(["Before: damp or mould damage", "After: treated, replastered and redecorated"]),
   `    <section class="section">
       <div class="container">
@@ -355,7 +404,7 @@ ${stepsList([
         <ul class="area-list">
 ${AREAS.map((a) => `          <li>${a.href ? `<a href="${a.href}">${a.name}</a>` : a.name}</li>`).join("\n")}
         </ul>
-        <p>We also cover the villages in between. If you&rsquo;re not sure whether we reach you, <a href="${QUOTE}">get in touch</a> with your postcode or see <a href="/areas.html">all the areas we cover</a>.</p>
+        <p>We also cover the villages in between. If you&rsquo;re not sure whether we reach you, <a href="${BOOK}">get in touch</a> with your postcode or see <a href="/areas.html">all the areas we cover</a>.</p>
       </div>
     </section>
 `,
@@ -421,16 +470,16 @@ servicePage({
         "What we recommend, in order of priority, including simple fixes you can do yourself",
         "A quote for any work you&rsquo;d like us to carry out, including replastering and making good",
       ],
-      after: [`A standard damp survey costs ${ph("SURVEY PRICE")}.`],
+      after: [`A damp survey costs ${SURVEY_PRICE}. If you go ahead with treatment, the ${SURVEY_PRICE} is deducted from the cost of the work when you accept our quote.`],
     },
   ],
   makingGoodText: "If the survey shows work is needed, we can carry it out from start to finish: the damp treatment itself, then hacking off and replastering, making good around sockets and fittings, and decorating if you want us to.",
   photos: ["Before: damp patch on internal wall", "After: cause fixed, wall replastered"],
   related: ["rising-damp-treatment", "condensation-control"],
-  callout: { body: `Surveys cost ${ph("SURVEY PRICE")}. Tell us where the damp is and we&rsquo;ll arrange a visit.` },
+  callout: { body: `Surveys cost ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Tell us where the damp is and we&rsquo;ll arrange a visit.` },
   faqH2: "Damp survey FAQs.",
   faqs: [
-    { q: "How much does a damp survey cost?", a: `A standard damp survey costs ${ph("SURVEY PRICE")}. We&rsquo;ll confirm the price when you book, before we visit.` },
+    { q: "How much does a damp survey cost?", a: `A damp survey costs ${SURVEY_PRICE}. If you accept our quote for treatment, the ${SURVEY_PRICE} is deducted from the cost of the work.` },
     { q: "How long does a damp survey take?", a: "It depends on the size of the house and how many areas are affected. We&rsquo;ll give you an idea of timing when you book." },
     { q: "Will you just try to sell me a damp-proof course?", a: "No. A lot of damp isn&rsquo;t rising damp at all, and a new damp-proof course won&rsquo;t fix condensation or a leaking gutter. We recommend what the evidence points to, and if no treatment is needed we&rsquo;ll say so." },
     { q: "Do I need to do anything before the survey?", a: "Where possible, clear furniture away from the affected walls and let us know about any past damp work, leaks or building work. Don&rsquo;t redecorate over the damp beforehand, as it hides the evidence we need to see." },
@@ -470,10 +519,20 @@ servicePage({
       ],
     },
     {
+      kicker: "How it differs",
+      h2: "How it differs from a standard damp survey.",
+      paras: ["The inspection itself is the same. What changes is that you don&rsquo;t own the property yet, and you&rsquo;re working to a deadline:"],
+      list: [
+        "<strong>Access through the seller.</strong> We arrange the visit through the estate agent, and we can&rsquo;t move heavy furniture, lift floor coverings or remove plaster in someone else&rsquo;s home. The report is clear about anything we couldn&rsquo;t see.",
+        `<strong>Faster turnaround.</strong> Your report is with you within ${REPORT_DAYS}, so it fits around your mortgage offer and exchange dates.`,
+        "<strong>Written for a buying decision.</strong> The report sets out what the damp means for the purchase, with a quote for putting it right that you can share with the seller, your lender or your solicitor.",
+      ],
+    },
+    {
       kicker: "Timing &amp; access",
       h2: "Turnaround and arranging access.",
       paras: [
-        `Property purchases run to tight timescales, so we aim to get your written report to you within ${ph("X DAYS")} of the survey.`,
+        `Property purchases run to tight timescales, so we aim to get your written report to you within ${REPORT_DAYS} of the survey.`,
         "As the property isn&rsquo;t yours yet, we&rsquo;ll need the seller&rsquo;s permission to visit. Usually the easiest way is for you to ask the estate agent to arrange access, and we&rsquo;ll work around the time they give us.",
         `A pre-purchase damp survey costs ${ph("PRE-PURCHASE SURVEY PRICE")}.`,
       ],
@@ -482,11 +541,11 @@ servicePage({
   makingGoodText: "If you go ahead with the purchase, we can carry out the work in the report once you own the property, including the replastering and making good. That often fits well alongside other renovation work you&rsquo;re planning before you move in.",
   photos: ["Before: damp flagged on a buyer&rsquo;s survey", "After: cause fixed and wall made good"],
   related: ["damp-surveys", "rising-damp-treatment"],
-  callout: { heading: "Buying a property with damp?", body: `Send us the address, the relevant part of your survey and your timescales, and we&rsquo;ll arrange a visit. Reports within ${ph("X DAYS")}.` },
+  callout: { heading: "Buying a property with damp?", body: `Send us the address, the relevant part of your survey and your timescales, and we&rsquo;ll arrange a visit. Reports within ${REPORT_DAYS}.` },
   faqH2: "Pre-purchase damp survey FAQs.",
   faqs: [
     { q: "My survey says “damp noted”. Should I pull out of the purchase?", a: "Not necessarily. Many damp problems have simple causes and straightforward fixes. A specialist survey tells you what you&rsquo;re dealing with, so you can decide with the facts in front of you." },
-    { q: "How quickly will I get the report?", a: `We aim to send the written report within ${ph("X DAYS")} of the survey. Let us know your deadlines when you book.` },
+    { q: "How quickly will I get the report?", a: `We aim to send the written report within ${REPORT_DAYS} of the survey. Let us know your deadlines when you book.` },
     { q: "Can I use your report to negotiate on price?", a: "The report includes our findings and a quote for any work needed, which many buyers share with the seller or agent. How you use it is up to you." },
     { q: "Do I need to be at the survey?", a: "No, though you&rsquo;re welcome to come. We need access arranged through the seller or estate agent, and we&rsquo;ll talk you through the findings afterwards." },
   ],
@@ -512,7 +571,7 @@ servicePage({
       kicker: "Fast response",
       h2: "Quick inspections when a tenant reports damp or mould.",
       paras: [
-        `Damp and mould complaints shouldn&rsquo;t be left to sit. We aim to inspect within ${ph("RESPONSE TIME")} of your request, and we can arrange access directly with the tenant or through your letting agent.`,
+        `Damp and mould complaints shouldn&rsquo;t be left to sit. We aim to inspect within ${RESPONSE_TIME} of your request, and we can arrange access directly with the tenant or through your letting agent.`,
         `Our inspection is the same thorough process as our standard ${link("damp-surveys", "damp survey")}. We take moisture readings, inspect the property inside and out, and check ventilation and extraction, so the report deals with the cause and not just the mould on the surface.`,
       ],
     },
@@ -528,7 +587,7 @@ servicePage({
       ],
       after: [
         "We&rsquo;re honest about causes. Condensation is often made worse by things that are the landlord&rsquo;s to fix, such as weak or missing extractor fans, no background ventilation or cold walls, and we&rsquo;ll say so rather than defaulting to blaming the tenant. Where the tenant&rsquo;s habits are part of the picture, we&rsquo;ll say that too, fairly.",
-        `A landlord damp and mould report costs ${ph("LANDLORD REPORT PRICE")}.`,
+        `A landlord damp and mould report costs &pound;99.`,
       ],
     },
     {
@@ -550,10 +609,10 @@ servicePage({
   makingGoodText: "Once the cause is dealt with, we treat and remove the mould, replaster any damaged areas and redecorate, so the property is ready for the tenant to use normally again, without you having to arrange separate trades.",
   photos: ["Before: mould reported by tenant", "After: cause fixed, treated and redecorated"],
   related: ["mould-treatment", "condensation-control"],
-  callout: { heading: "Landlord or letting agent?", body: `Send us the property address, tenant contact details and a description or photos of the problem. We aim to inspect within ${ph("RESPONSE TIME")}.` },
+  callout: { heading: "Landlord or letting agent?", body: `Send us the property address, tenant contact details and a description or photos of the problem. We aim to inspect within ${RESPONSE_TIME}.` },
   faqH2: "Landlord damp and mould FAQs.",
   faqs: [
-    { q: "How quickly can you inspect?", a: `We aim to inspect within ${ph("RESPONSE TIME")} of your request, depending on when the tenant can give us access.` },
+    { q: "How quickly can you inspect?", a: `We aim to inspect within ${RESPONSE_TIME} of your request, depending on when the tenant can give us access.` },
     { q: "Can you deal with the tenant directly?", a: "Yes. With your permission, we&rsquo;ll contact the tenant to arrange access and keep you or your agent updated." },
     { q: "Will the report blame the tenant for condensation?", a: "Only if the evidence shows it. Condensation usually has several causes, including extraction, ventilation, heating and insulation, and the report sets out each one fairly." },
     { q: "Do you provide evidence that the work has been done?", a: "Yes. After the work we provide a completion record with photos and a description of what was carried out, along with any guarantee paperwork." },
@@ -611,7 +670,7 @@ servicePage({
     {
       kicker: "Guarantee",
       h2: "Guaranteed work.",
-      paras: ["Rising damp treatment is backed by guarantees of up to 30 years, with the terms confirmed in writing with your quote."],
+      paras: [`The chemical damp-proof course is guaranteed for 30 years, and the salt-resistant replastering we carry out with it for 10 years. The guarantee stays with the property if you sell. See our <a href="${TERMS}">full guarantee terms</a>.`],
     },
   ],
   makingGoodText: "We do the hacking off, replastering, making good around sockets, radiators and fittings, and decorating ourselves, so you&rsquo;re not left with a half-finished room waiting for a separate plasterer.",
@@ -623,7 +682,7 @@ servicePage({
     { q: "How do I know if I have rising damp?", a: "Typical signs are damp and a tide mark low on ground-floor walls, salt staining and blown plaster or paint near the floor. But several other problems look similar, so a survey is the only way to be sure." },
     { q: "Why do you need to remove the plaster?", a: "Old plaster affected by rising damp is contaminated with salts that keep drawing in moisture. Unless it&rsquo;s removed and replaced with a salt-resistant plaster, the wall can stay damp and stained after treatment." },
     { q: "How long before I can decorate?", a: "Once the new plaster has dried you can use a breathable, water-based emulsion. Hold off on vinyl wallpaper and oil-based paints until the wall behind has fully dried out, which can take several months." },
-    { q: "Is the treatment guaranteed?", a: "Yes. Rising damp treatment is backed by guarantees of up to 30 years, with the terms set out in writing with your quote." },
+    { q: "Is the treatment guaranteed?", a: "Yes. The damp-proof course injection is guaranteed for 30 years and the replastering for 10 years. The guarantee passes to the new owner if you sell." },
   ],
   service: {
     name: "Rising Damp Treatment in Hull & East Yorkshire",
@@ -837,4 +896,93 @@ servicePage({
     serviceType: "Cellar tanking and basement waterproofing",
     description: "Cellar and basement waterproofing using cementitious tanking and cavity drain membrane systems, with plastering and making good, across Hull, East Yorkshire and North Lincolnshire.",
   },
+});
+
+// ---------------------------------------------------------------------------
+// Damp enquiry form - posts to api/damp-enquiry.js. Every "Book a damp
+// survey" button links here with ?service=<slug>, which main.js uses to
+// preselect the dropdown.
+// ---------------------------------------------------------------------------
+const SERVICE_OPTIONS = [
+  ...Object.entries(PAGES).map(([slug, p]) => ({ value: slug, label: p.label })),
+  { value: "not-sure", label: "Not sure &ndash; I need advice" },
+];
+
+const bookBody = `    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Damp proofing</p>
+          <h1>Book a damp survey or get a damp quote.</h1>
+          <p>Tell us what you need and where the damp is. We&rsquo;ll get back to you to arrange a visit.</p>
+          <p class="guarantee-line">${GUARANTEE_LINE}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="kicker">Damp enquiry form</p>
+          <h2 class="section-title">Tell us about the damp.</h2>
+          <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
+            <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
+            <label>
+              What would you like a quote for?
+              <select name="service" required>
+                <option value="">Please select</option>
+${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.label}</option>`).join("\n")}
+              </select>
+            </label>
+            <div class="form-grid">
+              <label>
+                Name
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" autocomplete="tel" required>
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+              <label>
+                Postcode of the property
+                <input type="text" name="postcode" autocomplete="postal-code" required>
+              </label>
+            </div>
+            <label>
+              I am a
+              <select name="customerType">
+                <option value="">Please select</option>
+                <option value="Homeowner">Homeowner</option>
+                <option value="Buyer">Buying the property</option>
+                <option value="Landlord or letting agent">Landlord or letting agent</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>
+              Where is the damp, and what have you noticed?
+              <textarea name="message"></textarea>
+            </label>
+            <button type="submit">Send damp enquiry</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>What happens next</h3>
+          <p>We&rsquo;ll contact you to arrange a survey. A damp survey costs ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}.</p>
+          <p>Landlord damp and mould reports cost &pound;99, and we aim to inspect within ${RESPONSE_TIME}. Pre-purchase survey reports are with you within ${REPORT_DAYS}.</p>
+          <p>Not a damp enquiry? Use our <a href="/contact.html#quote-form">general quote form</a>.</p>
+          <p><a href="${HUB}">All damp proofing services</a></p>
+        </div>
+      </div>
+    </section>
+`;
+
+writePage({
+  path: BOOK,
+  title: "Book a Damp Survey Hull & East Yorkshire | EYR",
+  description: "Book a damp survey or get a quote for damp proofing, condensation, mould or cellar tanking in Hull, East Yorkshire and North Lincolnshire.",
+  crumb: "Book a Damp Survey",
+  body: bookBody,
 });
