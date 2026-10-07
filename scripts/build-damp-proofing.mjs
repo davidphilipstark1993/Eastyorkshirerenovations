@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
-import { wrap, replyTime, phoneLink } from "./lib/site.mjs";
+import { wrap, replyTime, formPrivacy, phoneLink } from "./lib/site.mjs";
 
 const HUB = "/damp-proofing/";
 const BOOK = "/damp-proofing/book-a-survey/";
@@ -1002,6 +1002,7 @@ ${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.lab
               <textarea name="message"></textarea>
             </label>
             <button type="submit">Send damp enquiry</button>
+            ${wrap("form-privacy", formPrivacy())}
           </form>
         </div>
         <div class="card">

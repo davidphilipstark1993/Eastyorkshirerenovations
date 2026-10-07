@@ -1116,3 +1116,92 @@ html {
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
+
+/* ---------------------------------------------------------------------- */
+/* Cookie consent banner (built by assets/js/consent.js)                   */
+/* ---------------------------------------------------------------------- */
+
+.consent-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1100;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem;
+  background: var(--white);
+  color: var(--charcoal);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.consent-banner[hidden] {
+  display: none;
+}
+
+.consent-banner p {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+}
+
+.consent-banner a {
+  text-decoration: underline;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Accept and Reject are deliberately given equal weight. */
+.consent-actions button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--charcoal);
+  background: var(--white);
+  color: var(--charcoal);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.consent-actions button:hover,
+.consent-actions button:focus-visible {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #4a4f55;
+  margin-top: 0.75rem;
+}
+
+.form-note a {
+  text-decoration: underline;
+}
+
+/* Long-form text pages (privacy policy, guides) */
+.prose {
+  max-width: 760px;
+}
+
+.prose h2 {
+  margin-top: 2.2rem;
+  font-size: 1.5rem;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.draft-notice {
+  border-left: 6px solid #b3432b;
+}

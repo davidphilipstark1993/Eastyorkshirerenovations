@@ -7,12 +7,12 @@
 // between each pair of <!-- site:NAME --> ... <!-- /site:NAME --> markers.
 // To change the header, footer or tracking site-wide: edit this file, then
 // run `node scripts/sync-layout.mjs`.
-import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, GA4_ID, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
+import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
 import { PHONE, WHATSAPP, REPLY_TIME, sameAs } from "../data/business.mjs";
 
 export const BLOCKS = ["tracking", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
-export const OPTIONAL_BLOCKS = ["reply-time"];
+export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy"];
 export const wrap = (name, html) => `<!-- site:${name} -->\n${html}\n<!-- /site:${name} -->`;
 
 // What kind of page this is, from its path relative to the site root
@@ -43,33 +43,10 @@ export const phoneLink = (cls = "", label = PHONE.display) =>
 // ---------------------------------------------------------------------------
 // <head> tracking
 // ---------------------------------------------------------------------------
+// GA4 and the Meta Pixel are only loaded by consent.js, after the visitor
+// accepts cookies. Nothing else in the page may load them.
 export function tracking() {
-  return `  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '${GA4_ID}');
-  </script>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '931428319606975');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=931428319606975&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->`;
+  return `  <script src="/assets/js/consent.js" defer></script>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -180,6 +157,8 @@ export function footer(ctx) {
         <p><a href="/areas.html">Areas we cover</a></p>
         <p><a href="/work.html">Recent work</a></p>
         <p><a href="/contact.html#quote-form">Request a quote</a></p>
+        <p><a href="/privacy.html">Privacy policy</a></p>
+        <p><a href="/privacy.html#cookies" data-cookie-settings>Cookie settings</a></p>
       </div>
     </div>
   </footer>`;
@@ -234,6 +213,11 @@ export function replyTime() {
     : `<!-- TODO(owner): reply-time promise appears here once REPLY_TIME is set in scripts/data/business.mjs -->`;
 }
 
+// One line under each form, pointing to the privacy policy.
+export function formPrivacy() {
+  return `<p class="form-note">We only use these details to reply to your enquiry. See our <a href="/privacy.html">privacy policy</a>.</p>`;
+}
+
 // All blocks for a page, already wrapped in their markers.
 export function blocksFor(path, canonical) {
   const ctx = pageContext(path);
@@ -243,5 +227,6 @@ export function blocksFor(path, canonical) {
     footer: wrap("footer", footer(ctx)),
     business: wrap("business", business(canonical)),
     "reply-time": wrap("reply-time", replyTime()),
+    "form-privacy": wrap("form-privacy", formPrivacy()),
   };
 }
