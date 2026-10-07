@@ -1220,3 +1220,74 @@ html {
   font-weight: 600;
   font-size: 0.92rem;
 }
+
+/* ---------------------------------------------------------------------- */
+/* Homepage: photo cards and captions                                      */
+/* ---------------------------------------------------------------------- */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.service-card-media {
+  position: relative;
+  display: block;
+  margin: -1.85rem -1.85rem 1.2rem;
+}
+
+.service-card-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.service-card-media .concept-badge {
+  top: 0.6rem;
+  bottom: auto;
+}
+
+.cards-tight {
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.cards-five {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.cards-tight .card {
+  padding: 1.4rem;
+}
+
+.hero-photo,
+.side-photo {
+  margin: 0;
+}
+
+.hero-photo figcaption,
+.side-photo figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a4f55;
+}
+
+.side-photo img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.also-links {
+  margin-top: 1.5rem;
+}
+
+.also-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
