@@ -157,7 +157,7 @@ ${mainSection}
   writeFileSync(
     `projects/${categorySlug}/index.html`,
     page({
-      title: `${category.label} Projects | East Yorkshire Renovations`,
+      title: `${category.label} Projects in East Yorkshire | EYR`,
       description: `${category.label} projects completed by East Yorkshire Renovations in Hull and East Yorkshire.`,
       canonical,
       ogImage: SHARE_IMAGES[categorySlug],
