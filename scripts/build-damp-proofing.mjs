@@ -57,6 +57,16 @@ const PAGE_GUARANTEE = {
   "cellar-tanking": "Tanking and membrane systems: 10-year guarantee.",
 };
 
+// The five steps from survey to guarantee, shown on the hub and the
+// booking page.
+const HOW_IT_WORKS = [
+  { title: "Survey", body: "We inspect the affected areas inside and out, take moisture readings and work out the cause." },
+  { title: "Written report", body: "You get a plain-English report of what we found, what&rsquo;s causing it and what we recommend." },
+  { title: "Quote", body: `If work is needed, we give you a clear written quote covering the treatment, replastering and making good. Accept it and your ${SURVEY_PRICE} survey fee is deducted.` },
+  { title: "The work", body: "We carry out the repair or treatment, then replaster, make good and decorate where needed." },
+  { title: "Guarantee", body: "Completed work is backed by a written guarantee of up to 30 years, depending on the treatment." },
+];
+
 const ph = (text) => `<span class="placeholder">[${text}]</span>`;
 
 // FAQ answers can hold links and entities for the page; JSON-LD wants plain text.
@@ -412,13 +422,7 @@ ${bookingCallout({ body: `Tell us where the damp is and what you&rsquo;ve notice
       <div class="container">
         <p class="kicker">How it works</p>
         <h2 class="section-title">From survey to guarantee.</h2>
-${stepsList([
-  { title: "Survey", body: "We inspect the affected areas inside and out, take moisture readings and work out the cause." },
-  { title: "Written report", body: "You get a plain-English report of what we found, what&rsquo;s causing it and what we recommend." },
-  { title: "Quote", body: `If work is needed, we give you a clear written quote covering the treatment, replastering and making good. Accept it and your ${SURVEY_PRICE} survey fee is deducted.` },
-  { title: "The work", body: "We carry out the repair or treatment, then replaster, make good and decorate where needed." },
-  { title: "Guarantee", body: "Completed work is backed by a written guarantee of up to 30 years, depending on the treatment." },
-])}      </div>
+${stepsList(HOW_IT_WORKS)}      </div>
     </section>
 `,
   `    <section class="section" id="guarantee">
@@ -964,14 +968,81 @@ const SERVICE_OPTIONS = [
   { value: "not-sure", label: "Not sure &ndash; I need advice" },
 ];
 
-const bookBody = `    <section class="hero">
-      <div class="container hero-grid">
+const dampForm = `${wrap("reply-time", replyTime())}
+      <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
+        <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
+        <label>
+          What would you like a quote for?
+          <select name="service" required>
+            <option value="">Please select</option>
+${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.label}</option>`).join("\n")}
+          </select>
+        </label>
+        <div class="form-grid">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Postcode of the property
+            <input type="text" name="postcode" autocomplete="postal-code" required>
+          </label>
+        </div>
+        <label>
+          I am a
+          <select name="customerType">
+            <option value="">Please select</option>
+            <option value="Homeowner">Homeowner</option>
+            <option value="Buyer">Buying the property</option>
+            <option value="Landlord or letting agent">Landlord or letting agent</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>
+          Where is the damp, and what have you noticed?
+          <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Send damp enquiry</button>
+        ${wrap("form-privacy", formPrivacy())}
+      </form>`;
+
+const SYMPTOMS = [
+  "Damp patches or tide marks on walls",
+  "Black mould on walls, ceilings or window reveals",
+  "Peeling paint or bubbling wallpaper",
+  "A musty smell that doesn&rsquo;t go away",
+  "Crumbling or blown plaster, or white salt deposits",
+  "Damp or condensation around windows",
+  "&ldquo;Damp noted&rdquo; on a mortgage or home survey",
+];
+
+// This is the page Meta ads land on: offer and form above the fold on
+// desktop, then reasons to trust the survey, then a second call to action.
+const bookBody = `    <section class="hero landing-hero">
+      <div class="container hero-grid landing-grid">
         <div>
-          <p class="kicker">Damp proofing</p>
-          <h1>Book a damp survey or get a damp quote.</h1>
-          <p>Tell us what you need and where the damp is. We&rsquo;ll get back to you to arrange a visit.</p>
-          <p class="contact-phone">Or call ${phoneLink()}</p>
+          <p class="kicker">Damp surveys in Hull, East Yorkshire &amp; North Lincolnshire</p>
+          <h1>A &pound;119 damp survey that finds the real cause.</h1>
+          <p class="landing-offer">The &pound;119 is deducted from the cost of any treatment if you go ahead with our quote.</p>
+          <ul class="tick-list">
+            <li>Moisture readings and an inspection inside and out</li>
+            <li>A written report in plain English, with photos</li>
+            <li>We do the replastering and making good ourselves</li>
+          </ul>
+          <p class="contact-phone">Call ${phoneLink()}</p>
           <p class="guarantee-line">${GUARANTEE_LINE}</p>
+        </div>
+        <div class="card landing-form">
+          <h2>Book your survey</h2>
+          ${dampForm}
         </div>
       </div>
     </section>
@@ -979,71 +1050,51 @@ const bookBody = `    <section class="hero">
     <section class="section">
       <div class="container split">
         <div>
-          <p class="kicker">Damp enquiry form</p>
-          <h2 class="section-title">Tell us about the damp.</h2>
-          ${wrap("reply-time", replyTime())}
-          <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
-            <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
-            <label>
-              What would you like a quote for?
-              <select name="service" required>
-                <option value="">Please select</option>
-${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.label}</option>`).join("\n")}
-              </select>
-            </label>
-            <div class="form-grid">
-              <label>
-                Name
-                <input type="text" name="name" autocomplete="name" required>
-              </label>
-              <label>
-                Phone
-                <input type="tel" name="phone" autocomplete="tel" required>
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" autocomplete="email" required>
-              </label>
-              <label>
-                Postcode of the property
-                <input type="text" name="postcode" autocomplete="postal-code" required>
-              </label>
-            </div>
-            <label>
-              I am a
-              <select name="customerType">
-                <option value="">Please select</option>
-                <option value="Homeowner">Homeowner</option>
-                <option value="Buyer">Buying the property</option>
-                <option value="Landlord or letting agent">Landlord or letting agent</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-            <label>
-              Where is the damp, and what have you noticed?
-              <textarea name="message"></textarea>
-            </label>
-            <button type="submit">Send damp enquiry</button>
-            ${wrap("form-privacy", formPrivacy())}
-          </form>
+          <p class="kicker">Signs of damp</p>
+          <h2 class="section-title">Do you have any of these?</h2>
+          <ul class="tick-list">
+${SYMPTOMS.map((t) => `            <li>${t}</li>`).join("\n")}
+          </ul>
+          <p>Any one of them is worth a survey. The earlier the cause is found, the less there usually is to put right.</p>
         </div>
-        <div class="card">
-          <h3>What happens next</h3>
-          <p>Prefer to talk? Call ${phoneLink()}.</p>
-          <p>We&rsquo;ll contact you to arrange a survey. A damp survey costs ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}.</p>
-          <p>Landlord damp and mould reports cost &pound;99, and we aim to inspect within ${RESPONSE_TIME}. Pre-purchase survey reports are with you within ${REPORT_DAYS}.</p>
-          <p>Not a damp enquiry? Use our <a href="/contact.html#quote-form">general quote form</a>.</p>
-          <p><a href="${HUB}">All damp proofing services</a></p>
+        <div>
+          <p class="kicker">Cause first</p>
+          <h2 class="section-title">Don&rsquo;t assume it&rsquo;s rising damp.</h2>
+          <p>Damp low on a wall is often blamed on rising damp, but it is just as often a leaking gutter or downpipe, soil or a patio built up against the wall, failed pointing, or condensation. A new damp-proof course won&rsquo;t fix any of those.</p>
+          <p>That is why we survey first and tell you what is actually causing it. If the fix is simple, or no treatment is needed, the report will say so. <a href="/damp-proofing/damp-surveys/">How we tell the types of damp apart</a>.</p>
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="kicker">How it works</p>
+        <h2 class="section-title">From survey to guarantee, in five steps.</h2>
+${stepsList(HOW_IT_WORKS)}      </div>
+    </section>
 ${wrap("reviews", reviews())}
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="kicker">Book now</p>
+          <h2 class="section-title">Find out what&rsquo;s causing your damp.</h2>
+          <p>A damp survey costs ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Buying a house? Pre-purchase survey reports are with you within ${REPORT_DAYS}. Landlords: damp and mould reports cost &pound;99, and we aim to inspect within ${RESPONSE_TIME}.</p>
+          <p>Not a damp problem? Use our <a href="/contact.html#quote-form">general quote form</a>, or see <a href="${HUB}">all our damp proofing services</a>.</p>
+        </div>
+        <div class="callout">
+          <h3>Book your &pound;119 damp survey</h3>
+          <p>Call ${phoneLink()} or send the form and we&rsquo;ll arrange a visit.</p>
+          <p><a class="btn" href="#damp-enquiry-form">Book a damp survey</a></p>
+        </div>
+      </div>
+    </section>
 `;
 
 writePage({
   path: BOOK,
-  title: "Book a Damp Survey Hull & East Yorkshire | EYR",
-  description: "Book a damp survey or get a quote for damp proofing, condensation, mould or cellar tanking in Hull, East Yorkshire and North Lincolnshire.",
+  title: "Book a £119 Damp Survey | Hull & East Yorkshire | EYR",
+  description: "A £119 damp survey that finds the real cause, deducted from treatment if you go ahead. Hull, East Yorkshire and North Lincolnshire. Book online or call.",
   crumb: "Book a Damp Survey",
   body: bookBody,
 });

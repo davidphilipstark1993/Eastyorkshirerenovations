@@ -1409,3 +1409,83 @@ html {
     display: none;
   }
 }
+
+/* ---------------------------------------------------------------------- */
+/* Damp survey landing page (/damp-proofing/book-a-survey/)                */
+/* ---------------------------------------------------------------------- */
+
+.landing-hero {
+  padding: 2.5rem 0 3rem;
+}
+
+.landing-grid {
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .landing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.landing-offer {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.landing-form {
+  padding: 1.4rem 1.5rem;
+}
+
+.landing-form h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.landing-form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.landing-form .form-grid {
+  gap: 0 0.75rem;
+}
+
+.landing-form input,
+.landing-form select {
+  padding: 0.6rem 0.75rem;
+}
+
+.landing-form textarea {
+  min-height: 72px;
+}
+
+.landing-form button {
+  width: 100%;
+  font-size: 1.05rem;
+}
+
+.tick-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+}
+
+.tick-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.55rem;
+}
+
+.tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.35em;
+  width: 0.45rem;
+  height: 0.8rem;
+  border: solid var(--accent);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
