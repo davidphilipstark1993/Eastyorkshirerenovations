@@ -6,6 +6,7 @@
 import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
+import { wrap, replyTime, phoneLink } from "./lib/site.mjs";
 
 const HUB = "/damp-proofing/";
 const BOOK = "/damp-proofing/book-a-survey/";
@@ -280,10 +281,9 @@ function writePage({ path, title, description, crumb, body, faqs, service }) {
 
   const html = [
     headBlock({ title, description, canonical }),
-    // On damp pages the header's "Get a Quote" button goes to the damp form.
-    header().replace('<a href="/contact.html#quote-form" class="nav-cta">', `<a href="${BOOK}" class="nav-cta">`),
+    header(canonical),
     body,
-    footer(),
+    footer(canonical),
     ldBusiness(canonical),
     ldBreadcrumb(breadcrumbs),
     faqs ? ldFAQ(faqs.map((f) => ({ q: plain(f.q), a: plain(f.a) }))) : "",
@@ -948,6 +948,7 @@ const bookBody = `    <section class="hero">
           <p class="kicker">Damp proofing</p>
           <h1>Book a damp survey or get a damp quote.</h1>
           <p>Tell us what you need and where the damp is. We&rsquo;ll get back to you to arrange a visit.</p>
+          <p class="contact-phone">Or call ${phoneLink()}</p>
           <p class="guarantee-line">${GUARANTEE_LINE}</p>
         </div>
       </div>
@@ -958,6 +959,7 @@ const bookBody = `    <section class="hero">
         <div>
           <p class="kicker">Damp enquiry form</p>
           <h2 class="section-title">Tell us about the damp.</h2>
+          ${wrap("reply-time", replyTime())}
           <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
             <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
             <label>
@@ -1004,6 +1006,7 @@ ${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.lab
         </div>
         <div class="card">
           <h3>What happens next</h3>
+          <p>Prefer to talk? Call ${phoneLink()}.</p>
           <p>We&rsquo;ll contact you to arrange a survey. A damp survey costs ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}.</p>
           <p>Landlord damp and mould reports cost &pound;99, and we aim to inspect within ${RESPONSE_TIME}. Pre-purchase survey reports are with you within ${REPORT_DAYS}.</p>
           <p>Not a damp enquiry? Use our <a href="/contact.html#quote-form">general quote form</a>.</p>

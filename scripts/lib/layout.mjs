@@ -1,6 +1,14 @@
 import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, GA4_ID, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
+import { wrap, pageContext, tracking, header as siteHeader, footer as siteFooter, business as siteBusiness } from "./site.mjs";
+
+// "https://.../damp-proofing/x/" -> "damp-proofing/x/index.html"
+export function pathFromCanonical(canonical) {
+  const p = canonical.replace(SITE, "").replace(/^\//, "");
+  return !p || p.endsWith("/") ? `${p}index.html` : p;
+}
 
 export function headBlock({ title, description, canonical, ogImage }) {
+  const ctx = pageContext(pathFromCanonical(canonical));
   const ogImageTags = ogImage
     ? `
   <meta property="og:image" content="${SITE}${ogImage}">
@@ -29,161 +37,29 @@ export function headBlock({ title, description, canonical, ogImage }) {
   <meta property="og:url" content="${canonical}">${ogImageTags}
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${description}">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '${GA4_ID}');
-  </script>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '931428319606975');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=931428319606975&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+${wrap("tracking", tracking(ctx))}
 </head>`;
 }
 
-export function header() {
+export function header(canonical) {
   return `<body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <div class="container navbar">
-      <a class="brand" href="/"><img src="${LOGO_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>
-      <div class="navbar-actions">
-        <a href="/contact.html#quote-form" class="nav-cta">Get a Quote</a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-icon"></span>Menu</button>
-      </div>
-      <nav id="primary-navigation" class="nav-links" aria-label="Primary">
-        <a href="/">Home</a>
-        <div class="nav-dropdown">
-          <a href="/services.html" class="nav-dropdown-toggle">Services</a>
-          <div class="nav-dropdown-menu">
-            <a href="/kitchen-installs.html">Kitchen Installs</a>
-            <a href="/bathroom-installs.html">Bathroom Installs</a>
-            <a href="/full-house-renovations.html">Full House Renovations</a>
-            <a href="/orangeries/">Orangeries</a>
-            <a href="/conservatory-transformations/">Conservatory Transformations</a>
-            <a href="/garden-rooms/">Garden Rooms</a>
-            <a href="/garage-conversions/">Garage Conversions</a>
-            <a href="/outdoor-kitchens/">Outdoor Kitchens</a>
-            <a href="/water-treatment.html">Water Treatment</a>
-            <a href="/services.html">View all services</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="/damp-proofing/" class="nav-dropdown-toggle">Damp Proofing</a>
-          <div class="nav-dropdown-menu">
-            <a href="/damp-proofing/damp-surveys/">Damp Surveys</a>
-            <a href="/damp-proofing/pre-purchase-damp-survey/">Pre-Purchase Damp Surveys</a>
-            <a href="/damp-proofing/landlord-damp-mould-reports/">Landlord Damp &amp; Mould Reports</a>
-            <a href="/damp-proofing/rising-damp-treatment/">Rising Damp Treatment</a>
-            <a href="/damp-proofing/penetrating-damp/">Penetrating Damp</a>
-            <a href="/damp-proofing/condensation-control/">Condensation Control</a>
-            <a href="/damp-proofing/mould-treatment/">Mould Treatment</a>
-            <a href="/damp-proofing/cellar-tanking/">Cellar Tanking</a>
-            <a href="/damp-proofing/book-a-survey/">Book a damp survey</a>
-            <a href="/damp-proofing/">All damp proofing services</a>
-          </div>
-        </div>
-        <a href="/work.html">Recent Work</a>
-        <a href="/areas.html">Areas We Cover</a>
-        <a href="/projects/">Projects</a>
-        <a href="/guides/">Guides</a>
-        <a href="/about.html">About</a>
-        <a href="/blog/">Blog</a>
-      </nav>
-    </div>
-  </header>
+${wrap("header", siteHeader(pageContext(pathFromCanonical(canonical))))}
 
   <main id="main">`;
 }
 
-export function footer() {
+export function footer(canonical) {
   return `  </main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="${LOGO_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo">
-        <h3>${BUSINESS_NAME}</h3>
-        <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
-        <p>${ADDRESS_LINE}</p>
-        <p>Email: <a href="mailto:${EMAIL}">${EMAIL}</a></p>
-      </div>
-      <div>
-        <h4>Opening hours</h4>
-        <p>Mon&ndash;Fri: 08:00&ndash;16:30</p>
-        <p>Closed weekends</p>
-      </div>
-      <div>
-        <h4>Credentials</h4>
-        <p>Fully insured local tradespeople.</p>
-        <!-- TODO: add accreditation badges/numbers once confirmed - e.g. TrustMark registration number, FMB (Federation of Master Builders) membership number, NICEIC registration number, Part P registration number. -->
-        <!-- TODO: add public liability insurance details (insurer + cover level) once confirmed. -->
-        <!-- TODO: add Companies House company registration number once confirmed. -->
-        <!-- TODO: add "Established [year]" once confirmed. -->
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <p><a href="/services.html">Renovation services</a></p>
-        <p><a href="/areas.html">Areas we cover</a></p>
-        <p><a href="/work.html">Recent work</a></p>
-        <p><a href="/contact.html#quote-form">Request a quote</a></p>
-      </div>
-    </div>
-  </footer>
+${wrap("footer", siteFooter(pageContext(pathFromCanonical(canonical))))}
 
   <script src="/assets/js/main.js" defer></script>
 `;
 }
 
 export function ldBusiness(canonical) {
-  return `  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "@id": "${BUSINESS_ID}",
-    "name": "${BUSINESS_NAME}",
-    "image": "${SITE}${LOGO_PATH}",
-    "logo": "${SITE}${LOGO_PATH}",
-    "email": "${EMAIL}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Station Road",
-      "addressLocality": "Hessle",
-      "postalCode": "HU13 0BG",
-      "addressCountry": "GB"
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "16:30"
-      }
-    ],
-    "areaServed": ${JSON.stringify(AREA_SERVED)},
-    "url": "${canonical}"
-  }
-  </script>
-  <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->
-  <!-- TODO: add a "sameAs" array with verified social profile URLs (Facebook, Instagram, etc.) once confirmed. -->
-`;
+  return `${wrap("business", siteBusiness(canonical))}\n`;
 }
 
 export function ldBreadcrumb(items) {
@@ -259,9 +135,9 @@ export function ldService({ name, description, canonical, areaServed }) {
 export function page({ title, description, canonical, ogImage, body, breadcrumbs, faq, service }) {
   const parts = [
     headBlock({ title, description, canonical, ogImage }),
-    header(),
+    header(canonical),
     body,
-    footer(),
+    footer(canonical),
     ldBusiness(canonical),
   ];
   if (breadcrumbs) parts.push(ldBreadcrumb(breadcrumbs));

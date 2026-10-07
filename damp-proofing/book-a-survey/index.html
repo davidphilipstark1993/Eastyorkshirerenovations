@@ -17,6 +17,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Book a Damp Survey Hull & East Yorkshire | EYR">
   <meta name="twitter:description" content="Book a damp survey or get a quote for damp proofing, condensation, mould or cellar tanking in Hull, East Yorkshire and North Lincolnshire.">
+<!-- site:tracking -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W48LSE6YBN"></script>
   <script>
@@ -43,14 +44,17 @@
   src="https://www.facebook.com/tr?id=931428319606975&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+<!-- /site:tracking -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+<!-- site:header -->
   <header>
     <div class="container navbar">
       <a class="brand" href="/"><img src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>
       <div class="navbar-actions">
-        <a href="/damp-proofing/book-a-survey/" class="nav-cta">Get a Quote</a>
+        <a class="nav-phone" href="tel:+447498951487" data-contact="phone"><span class="nav-phone-label">Call</span>07498 951487</a>
+        <a href="/damp-proofing/book-a-survey/" class="nav-cta">Book a damp survey</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-icon"></span>Menu</button>
       </div>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
@@ -94,6 +98,7 @@
       </nav>
     </div>
   </header>
+<!-- /site:header -->
 
   <main id="main">
     <section class="hero">
@@ -102,6 +107,7 @@
           <p class="kicker">Damp proofing</p>
           <h1>Book a damp survey or get a damp quote.</h1>
           <p>Tell us what you need and where the damp is. We&rsquo;ll get back to you to arrange a visit.</p>
+          <p class="contact-phone">Or call <a href="tel:+447498951487" data-contact="phone">07498 951487</a></p>
           <p class="guarantee-line">Backed by guarantees of up to 30 years.</p>
         </div>
       </div>
@@ -112,6 +118,9 @@
         <div>
           <p class="kicker">Damp enquiry form</p>
           <h2 class="section-title">Tell us about the damp.</h2>
+          <!-- site:reply-time -->
+<!-- TODO(owner): reply-time promise appears here once REPLY_TIME is set in scripts/data/business.mjs -->
+<!-- /site:reply-time -->
           <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
             <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
             <label>
@@ -166,6 +175,7 @@
         </div>
         <div class="card">
           <h3>What happens next</h3>
+          <p>Prefer to talk? Call <a href="tel:+447498951487" data-contact="phone">07498 951487</a>.</p>
           <p>We&rsquo;ll contact you to arrange a survey. A damp survey costs &pound;119, deducted from the cost of any treatment if you accept our quote.</p>
           <p>Landlord damp and mould reports cost &pound;99, and we aim to inspect within 5 days. Pre-purchase survey reports are with you within 3 days.</p>
           <p>Not a damp enquiry? Use our <a href="/contact.html#quote-form">general quote form</a>.</p>
@@ -176,6 +186,13 @@
 
   </main>
 
+<!-- site:footer -->
+  <nav class="mobile-bar" aria-label="Quick contact">
+    <a class="mobile-bar-call" href="tel:+447498951487" data-contact="phone">Call</a>
+    <!-- TODO(owner): WhatsApp button appears here once WHATSAPP is set in scripts/data/business.mjs -->
+    <a class="mobile-bar-cta" href="#damp-enquiry-form">Book a damp survey</a>
+  </nav>
+
   <footer>
     <div class="container footer-grid">
       <div>
@@ -183,6 +200,7 @@
         <h3>East Yorkshire Renovations</h3>
         <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
         <p>Station Road, Hessle, HU13 0BG</p>
+        <p>Phone: <a href="tel:+447498951487" data-contact="phone">07498 951487</a></p>
         <p>Email: <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a></p>
       </div>
       <div>
@@ -201,15 +219,18 @@
       <div>
         <h4>Explore</h4>
         <p><a href="/services.html">Renovation services</a></p>
+        <p><a href="/damp-proofing/">Damp proofing</a></p>
         <p><a href="/areas.html">Areas we cover</a></p>
         <p><a href="/work.html">Recent work</a></p>
         <p><a href="/contact.html#quote-form">Request a quote</a></p>
       </div>
     </div>
   </footer>
+<!-- /site:footer -->
 
   <script src="/assets/js/main.js" defer></script>
 
+<!-- site:business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -219,6 +240,7 @@
     "image": "https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg",
     "logo": "https://www.eastyorkshirerenovation.com/assets/img/logo-eyr.jpg",
     "email": "info@eastyorkshirerenovation.com",
+    "telephone": "+44 7498 951487",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Station Road",
@@ -229,17 +251,46 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
         "opens": "08:00",
         "closes": "16:30"
       }
     ],
-    "areaServed": ["Hull","Beverley","Hessle","Cottingham","Anlaby","East Riding of Yorkshire","Willerby","Kirk Ella","Swanland","Brough","North Ferriby","Walkington","Hornsea","Driffield","Bridlington","Goole","Scunthorpe","Brigg","Barton-upon-Humber","North Lincolnshire","Grimsby"],
+    "areaServed": [
+      "Hull",
+      "Beverley",
+      "Hessle",
+      "Cottingham",
+      "Anlaby",
+      "East Riding of Yorkshire",
+      "Willerby",
+      "Kirk Ella",
+      "Swanland",
+      "Brough",
+      "North Ferriby",
+      "Walkington",
+      "Hornsea",
+      "Driffield",
+      "Bridlington",
+      "Goole",
+      "Scunthorpe",
+      "Brigg",
+      "Barton-upon-Humber",
+      "North Lincolnshire",
+      "Grimsby"
+    ],
     "url": "https://www.eastyorkshirerenovation.com/damp-proofing/book-a-survey/"
   }
   </script>
   <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->
-  <!-- TODO: add a "sameAs" array with verified social profile URLs (Facebook, Instagram, etc.) once confirmed. -->
+  <!-- TODO(owner): sameAs links appear here once GOOGLE_PROFILE / SOCIAL_PROFILES are set in scripts/data/business.mjs. -->
+<!-- /site:business -->
 
 
   <script type="application/ld+json">
