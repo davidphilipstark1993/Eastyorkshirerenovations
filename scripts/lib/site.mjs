@@ -8,11 +8,11 @@
 // To change the header, footer or tracking site-wide: edit this file, then
 // run `node scripts/sync-layout.mjs`.
 import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
-import { PHONE, WHATSAPP, REPLY_TIME, sameAs } from "../data/business.mjs";
+import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, sameAs } from "../data/business.mjs";
 
 export const BLOCKS = ["tracking", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
-export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy"];
+export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy", "reviews"];
 export const wrap = (name, html) => `<!-- site:${name} -->\n${html}\n<!-- /site:${name} -->`;
 
 // What kind of page this is, from its path relative to the site root
@@ -124,6 +124,32 @@ function mobileBar(ctx) {
   </nav>`;
 }
 
+// Only facts the owner has supplied (scripts/data/business.mjs). Until there
+// are some, the column shows the damp guarantee, which is a published term.
+export function credentialLines() {
+  const lines = [];
+  if (PUBLIC_LIABILITY) lines.push(`Public liability insurance: ${PUBLIC_LIABILITY} cover.`);
+  for (const c of CREDENTIALS) lines.push(c.detail ? `${c.name} (${c.detail})` : c.name);
+  if (COMPANY.legalName) lines.push(`${COMPANY.legalName}${COMPANY.companyNumber ? `, company no. ${COMPANY.companyNumber}` : ""}`);
+  if (COMPANY.established) lines.push(`Trading since ${COMPANY.established}.`);
+  return lines;
+}
+
+function credentialsColumn() {
+  const lines = credentialLines();
+  if (lines.length) {
+    return `      <div>
+        <h4>Credentials</h4>
+${lines.map((l) => `        <p>${l}</p>`).join("\n")}
+      </div>`;
+  }
+  return `      <div>
+        <h4>Guarantees</h4>
+        <p>Damp proofing work backed by written guarantees of up to 30 years. <a href="/damp-proofing/#guarantee">Guarantee terms</a></p>
+        <!-- TODO(owner): insurance cover, qualifications, memberships and company details appear here once set in scripts/data/business.mjs. -->
+      </div>`;
+}
+
 export function footer(ctx) {
   return `${mobileBar(ctx)}
 
@@ -142,14 +168,7 @@ export function footer(ctx) {
         <p>Mon&ndash;Fri: 08:00&ndash;16:30</p>
         <p>Closed weekends</p>
       </div>
-      <div>
-        <h4>Credentials</h4>
-        <p>Fully insured local tradespeople.</p>
-        <!-- TODO: add accreditation badges/numbers once confirmed - e.g. TrustMark registration number, FMB (Federation of Master Builders) membership number, NICEIC registration number, Part P registration number. -->
-        <!-- TODO: add public liability insurance details (insurer + cover level) once confirmed. -->
-        <!-- TODO: add Companies House company registration number once confirmed. -->
-        <!-- TODO: add "Established [year]" once confirmed. -->
-      </div>
+${credentialsColumn()}
       <div>
         <h4>Explore</h4>
         <p><a href="/services.html">Renovation services</a></p>
@@ -213,6 +232,33 @@ export function replyTime() {
     : `<!-- TODO(owner): reply-time promise appears here once REPLY_TIME is set in scripts/data/business.mjs -->`;
 }
 
+// ---------------------------------------------------------------------------
+// Reviews: real ones only, from scripts/data/business.mjs. Renders nothing
+// (just a TODO comment) while the list is empty.
+// ---------------------------------------------------------------------------
+const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+
+export function reviews({ heading = "What customers say.", service } = {}) {
+  const list = service ? REVIEWS.filter((r) => r.service === service).concat(REVIEWS.filter((r) => r.service !== service)) : REVIEWS;
+  if (!list.length) {
+    return `<!-- TODO(owner): a reviews block appears here once real reviews are added to REVIEWS in scripts/data/business.mjs. -->`;
+  }
+  const cards = list.slice(0, 3).map((r) => `          <figure class="review card">
+            <blockquote>${esc(r.text)}</blockquote>
+            <figcaption>${esc(r.name)}, ${esc(r.town)}${r.service ? ` &middot; ${esc(r.service)}` : ""}</figcaption>
+          </figure>`).join("\n");
+  return `    <section class="section reviews">
+      <div class="container">
+        <p class="kicker">Reviews</p>
+        <h2 class="section-title">${heading}</h2>
+        <div class="cards">
+${cards}
+        </div>${GOOGLE_PROFILE ? `
+        <p><a href="${GOOGLE_PROFILE}" rel="noopener">Read all our reviews on Google</a></p>` : ""}
+      </div>
+    </section>`;
+}
+
 // One line under each form, pointing to the privacy policy.
 export function formPrivacy() {
   return `<p class="form-note">We only use these details to reply to your enquiry. See our <a href="/privacy.html">privacy policy</a>.</p>`;
@@ -228,5 +274,6 @@ export function blocksFor(path, canonical) {
     business: wrap("business", business(canonical)),
     "reply-time": wrap("reply-time", replyTime()),
     "form-privacy": wrap("form-privacy", formPrivacy()),
+    reviews: wrap("reviews", reviews()),
   };
 }

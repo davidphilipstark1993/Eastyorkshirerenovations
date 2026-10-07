@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
-import { wrap, replyTime, formPrivacy, phoneLink } from "./lib/site.mjs";
+import { wrap, replyTime, formPrivacy, phoneLink, reviews } from "./lib/site.mjs";
 
 const HUB = "/damp-proofing/";
 const BOOK = "/damp-proofing/book-a-survey/";
@@ -306,6 +306,7 @@ function servicePage({ slug, kicker, title, description, h1, intro, sections, ma
     makingGood(makingGoodText),
     photoSlots(slug, photos, photoHeading),
     relatedAndBook({ related, callout, service: slug }),
+    wrap("reviews", reviews()),
     faqSection(faqH2, faqs),
   ].join("\n");
   writePage({ path: url(slug), title, description, crumb: PAGES[slug].label.replace(/&amp;/g, "&"), body, faqs, service });
@@ -441,6 +442,7 @@ ${AREAS.map((a) => `          <li>${a.href ? `<a href="${a.href}">${a.name}</a>`
       </div>
     </section>
 `,
+  wrap("reviews", reviews()),
   faqSection("Damp proofing FAQs.", hubFaqs),
 ].join("\n");
 
@@ -1015,6 +1017,7 @@ ${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.lab
         </div>
       </div>
     </section>
+${wrap("reviews", reviews())}
 `;
 
 writePage({
