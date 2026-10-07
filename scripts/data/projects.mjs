@@ -20,8 +20,14 @@
  *   workCompleted: string,     // what was actually done — genuine only
  *   outcome: string,           // the result, in the customer's/site's own words
  *   materials: string[] | null,  // optional
- *   cost: string | null,       // optional, only if the business has confirmed a figure to publish
- *   timescale: string | null,  // optional, only if confirmed
+ *   heading: string,           // descriptive H1, e.g. "Hessle bathroom with a walk-in shower"
+ *   seoTitle: string,          // <title>, under 60 characters
+ *   problem: string | null,    // what the customer came to us with - only if known
+ *   found: string | null,      // what we found on the first visit - only if known
+ *   priceBand: string | null,  // e.g. "£8,000-£10,000" - only if the owner confirms it
+ *   duration: string | null,   // time on site - only if confirmed
+ *   quote: { text, name } | null, // the customer's own words - only with their permission
+ *   related: [{ label, href }], // related service pages
  *   faqs: [{ q, a }] | null,   // optional, project-specific FAQs
  * }
  */
@@ -57,8 +63,16 @@ export const projects = [
     workCompleted: "Full bathroom refit with marble-effect tiling and a walk-in shower.",
     outcome: "A bright, fully tiled bathroom with a modern walk-in shower enclosure.",
     materials: ["Marble-effect wall and floor tiling", "Walk-in shower enclosure"],
-    cost: null,
-    timescale: null,
+    heading: "Hessle bathroom with marble-effect tiling and a walk-in shower",
+    seoTitle: "Hessle Bathroom Renovation with Walk-in Shower | EYR",
+    // TODO(owner): add the customer's problem, what we found, the time on site,
+    // a price band and (with permission) a customer quote, if known.
+    problem: null,
+    found: null,
+    duration: null,
+    priceBand: null,
+    quote: null,
+    related: [{ label: "Bathroom Installs", href: "/bathroom-installs.html" }, { label: "Plastering", href: "/plastering.html" }],
     faqs: null,
   },
   {
@@ -77,8 +91,16 @@ export const projects = [
     workCompleted: "Complete strip-out to bare floorboards, followed by a full retile and refit.",
     outcome: "A dated bathroom rebuilt into a modern space with a dark vanity unit and glass shower screen.",
     materials: ["Full retile", "Dark vanity unit", "Glass shower screen"],
-    cost: null,
-    timescale: null,
+    heading: "Hull bathroom stripped back to the floorboards and rebuilt",
+    seoTitle: "Hull Bathroom Renovation: Full Strip-out and Refit | EYR",
+    // TODO(owner): add the customer's problem, what we found, the time on site,
+    // a price band and (with permission) a customer quote, if known.
+    problem: null,
+    found: null,
+    duration: null,
+    priceBand: null,
+    quote: null,
+    related: [{ label: "Bathroom Installs", href: "/bathroom-installs.html" }, { label: "Full House Renovations", href: "/full-house-renovations.html" }],
     faqs: null,
   },
   {
@@ -97,8 +119,16 @@ export const projects = [
     workCompleted: "New shaker-style cabinetry, marble-effect worktops and integrated appliances.",
     outcome: "A bright, modern kitchen with plenty of storage and worktop space.",
     materials: ["Shaker-style cabinetry", "Marble-effect worktops", "Integrated appliances"],
-    cost: null,
-    timescale: null,
+    heading: "Cottingham kitchen with shaker units and marble-effect worktops",
+    seoTitle: "Cottingham Kitchen Renovation, Shaker Style | EYR",
+    // TODO(owner): add the customer's problem, what we found, the time on site,
+    // a price band and (with permission) a customer quote, if known.
+    problem: null,
+    found: null,
+    duration: null,
+    priceBand: null,
+    quote: null,
+    related: [{ label: "Kitchen Installs", href: "/kitchen-installs.html" }, { label: "Electrical work", href: "/electrical.html" }],
     faqs: null,
   },
   {
@@ -120,8 +150,16 @@ export const projects = [
     workCompleted: "Full plastering, decorating and carpet fit to convert a bare loft space into a usable room.",
     outcome: "A bright, carpeted loft room with a Velux window, ready to use as a bedroom or study.",
     materials: ["Plastering", "Decorating", "Carpet", "Velux window"],
-    cost: null,
-    timescale: null,
+    heading: "A bare loft turned into a usable bedroom or study",
+    seoTitle: "Loft Room Renovation, East Yorkshire | EYR",
+    // TODO(owner): add the customer's problem, what we found, the time on site,
+    // a price band and (with permission) a customer quote, if known.
+    problem: null,
+    found: null,
+    duration: null,
+    priceBand: null,
+    quote: null,
+    related: [{ label: "Full House Renovations", href: "/full-house-renovations.html" }, { label: "Plastering", href: "/plastering.html" }, { label: "Decorating", href: "/decorating.html" }],
     faqs: null,
   },
 ];

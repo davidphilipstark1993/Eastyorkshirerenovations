@@ -7,52 +7,61 @@ function pictureTag({ src, alt }, { width = 600, height = 400, loading = "lazy" 
   return `<picture><source srcset="${src}.webp" type="image/webp"><img src="${src}.jpg" width="${width}" height="${height}" alt="${alt}" loading="${loading}"></picture>`;
 }
 
-function imageStage(label, images) {
-  if (!images || images.length === 0) return "";
-  return `        <p class="kicker">${label}</p>
-        <div class="gallery">
-          ${images.map((img) => pictureTag(img)).join("\n          ")}
-        </div>
-`;
-}
 
+// A project page, in this order: problem, what we found, work carried
+// out, result, location/duration/price band, photos, customer quote,
+// related services. Any detail that hasn't been supplied is left out of the
+// page and marked with a TODO in the source - nothing is invented.
 export function projectPage(project) {
   const category = CATEGORIES[project.category];
   if (!category) throw new Error(`Unknown project category: ${project.category}`);
 
   const canonical = `${SITE}/projects/${project.category}/${project.slug}/`;
   const heroImage = project.images.after[0] || project.images.during[0] || project.images.before[0] || null;
+  const todo = (what) => `<!-- TODO(owner): ${what} for this project, if known - add it in scripts/data/projects.mjs -->`;
+  const block = (kicker, h2, html) => `    <section class="section">
+      <div class="container">
+        <p class="kicker">${kicker}</p>
+        <h2 class="section-title">${h2}</h2>
+        ${html}
+      </div>
+    </section>
+`;
 
-  const factsRows = [
+  const facts = [
     ["Location", project.locationLink ? `<a href="${project.locationLink.href}">${project.locationLink.label}</a>` : project.location],
+    project.duration ? ["Time on site", project.duration] : null,
+    project.priceBand ? ["Price band", project.priceBand] : null,
     ["Service", `<a href="${project.service.href}">${project.service.label}</a>`],
-    project.cost ? ["Cost", project.cost] : null,
-    project.timescale ? ["Timescale", project.timescale] : null,
   ].filter(Boolean);
 
   const body = `${heroTextOnly({
     kicker: category.label,
-    h1: `${project.title}.`,
+    h1: `${project.heading}.`,
     intro: project.summary,
-    secondaryCta: { label: `More ${category.label} projects`, href: `/projects/${project.category}/` },
+    secondaryCta: { label: `More ${category.label.toLowerCase()} projects`, href: `/projects/${project.category}/` },
+    image: heroImage ? { src: `${heroImage.src}.jpg`, alt: heroImage.alt } : undefined,
   })}
+${project.problem ? block("The problem", "What the customer needed.", `<p>${project.problem}</p>`) : `    ${todo("the problem the customer came to us with")}\n`}${project.found ? block("What we found", "What we found on the first visit.", `<p>${project.found}</p>`) : `    ${todo("what we found on the first visit")}\n`}
     <section class="section">
       <div class="container split">
         <div>
-          <p class="kicker">Project details</p>
-          <h2 class="section-title">The brief.</h2>
+          <p class="kicker">Work carried out</p>
+          <h2 class="section-title">What we did.</h2>
           <p>${project.workCompleted}</p>
-          <p>${project.outcome}</p>
           ${project.materials && project.materials.length
-            ? `<h3>Materials &amp; features</h3>
-          <ul>
+            ? `<ul>
             ${project.materials.map((m) => `<li>${m}</li>`).join("\n            ")}
           </ul>`
             : ""}
+          <h3>The result</h3>
+          <p>${project.outcome}</p>
         </div>
         <div class="callout">
-          <h3>Project facts</h3>
-          ${factsRows.map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`).join("\n          ")}
+          <h3>Project details</h3>
+          ${facts.map(([k, v]) => `<p><strong>${k}:</strong> ${v}</p>`).join("\n          ")}
+          ${project.duration ? "" : todo("time on site")}
+          ${project.priceBand ? "" : todo("a price band")}
         </div>
       </div>
     </section>
@@ -60,10 +69,27 @@ export function projectPage(project) {
     <section class="section">
       <div class="container">
         <p class="kicker">Photos</p>
-        <h2 class="section-title">Before, during and after.</h2>
-${imageStage("Before", project.images.before)}${imageStage("During", project.images.during)}${imageStage("After", project.images.after)}      </div>
+        <h2 class="section-title">${project.images.before.length ? "Before and after." : "The finished job."}</h2>
+        <div class="gallery gallery-large">
+${[["Before", project.images.before], ["During", project.images.during], ["After", project.images.after]]
+  .flatMap(([stage, imgs]) => imgs.map((img) => `          <figure class="photo-slot">
+            ${pictureTag(img)}
+            <figcaption>${stage}</figcaption>
+          </figure>`))
+  .join("\n")}
+        </div>
+      </div>
     </section>
-${project.faqs && project.faqs.length
+${project.quote ? `
+    <section class="section">
+      <div class="container">
+        <figure class="review card project-quote">
+          <blockquote>${project.quote.text}</blockquote>
+          <figcaption>${project.quote.name}, ${project.location}</figcaption>
+        </figure>
+      </div>
+    </section>
+` : `    ${todo("a customer quote (with their permission)")}\n`}${project.faqs && project.faqs.length
   ? `
     <section class="section">
       <div class="container">
@@ -77,21 +103,25 @@ ${project.faqs && project.faqs.length
     <section class="section">
       <div class="container split">
         <div>
-          <p class="kicker">Considering something similar?</p>
-          <h2 class="section-title">Talk to us about your project.</h2>
-          <p>See more <a href="/projects/${project.category}/">${category.label.toLowerCase()} projects</a>, read about our <a href="${category.serviceHref}">${category.label.toLowerCase()} service</a>, or get in touch to talk through your own.</p>
+          <p class="kicker">Related services</p>
+          <h2 class="section-title">Considering something similar?</h2>
+          <ul>
+            ${project.related.map((r) => `<li><a href="${r.href}">${r.label}</a></li>`).join("\n            ")}
+            <li><a href="/projects/${project.category}/">More ${category.label.toLowerCase()} projects</a></li>
+          </ul>
         </div>
         ${quoteCallout({
-          heading: "Ready to talk through your project?",
-          body: "Email <strong>info@eastyorkshirerenovation.com</strong> to arrange a site visit.",
+          heading: "Talk to us about your project",
+          body: `Call <a href="tel:+447498951487" data-contact="phone">07498 951487</a> or send us the details.`,
+          ctaLabel: "Get a quote",
         })}
       </div>
     </section>
 `;
 
   return page({
-    title: `${project.title} | ${category.label} | East Yorkshire Renovations`,
-    description: `${project.summary} A ${category.label.toLowerCase()} project completed by East Yorkshire Renovations${project.locationLink ? ` in ${project.location}` : ""}.`,
+    title: project.seoTitle,
+    description: `${project.summary} ${category.label === "Full House Renovations" ? "A renovation" : `A ${category.label.toLowerCase().replace(/s$/, "")} project`} by East Yorkshire Renovations${project.locationLink ? ` in ${project.location}` : ""}.`,
     canonical,
     ogImage: heroImage ? `${heroImage.src}.jpg` : undefined,
     body,

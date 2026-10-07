@@ -24,7 +24,7 @@ const OLD = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width=
         <a href="/projects/">Projects</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
-        <a href="/blog/">Blog</a>
+        <a href="/guides/">Blog</a>
         <a href="/contact.html#quote-form" class="nav-cta">Get a Quote</a>
       </nav>`;
 
@@ -55,7 +55,7 @@ const NEW = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width=
         <a href="/projects/">Projects</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
-        <a href="/blog/">Blog</a>
+        <a href="/guides/">Blog</a>
       </nav>`;
 
 const rootHtml = readdirSync(".").filter((f) => f.endsWith(".html"));

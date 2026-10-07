@@ -1,0 +1,1271 @@
+{
+ "conservatory-planning-permission": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Do you need planning permission for a conservatory transformation?",
+  "intro": "Most transformations don't need planning permission, since they reuse the existing footprint &mdash; here's when that changes.",
+  "sections": [
+   {
+    "h2": "When permission usually isn't needed",
+    "html": "<p>Because a conservatory transformation typically keeps the existing dwarf walls and footprint, it's usually treated as an internal and roof upgrade rather than a new structure, meaning planning permission generally isn't required.</p>"
+   },
+   {
+    "h2": "When it might be",
+    "html": "<p>This changes if you're also extending the structure's size or footprint, or if the property is listed. It's worth checking with Hull City Council or East Riding of Yorkshire Council for your specific property if you're unsure.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does a roof-only replacement ever need planning permission?",
+    "a": "Rarely, since it doesn't change the building's footprint, though we'll confirm this for your specific property."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-planning-permission/"
+ },
+ "conservatory-roof-building-regulations": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Do conservatory roof replacements need building regulations approval?",
+  "intro": "This comes down to the conservatory exemption &mdash; whether your finished room still qualifies for it, or whether the transformation removes that status.",
+  "sections": [
+   {
+    "h2": "The conservatory exemption",
+    "html": "<p>Conservatories can be exempt from building regulations if they meet specific criteria, broadly: they're independently heated with separate controls, thermally separated from the main house by external-quality doors, and under a certain floor area.</p>"
+   },
+   {
+    "h2": "When a roof replacement changes that",
+    "html": "<p>A straightforward roof-only replacement that keeps the room's heating and thermal separation as it was often doesn't affect the exemption. A fuller transformation that removes that separation &mdash; for example, opening the room fully into the house or putting it on the main heating system &mdash; can mean building regulations now apply to the new roof, glazing and electrics.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "How do I know if my conservatory currently qualifies for the exemption?",
+    "a": "We assess this as part of the survey, based on how it's currently heated and separated from the rest of the house."
+   },
+   {
+    "q": "Will a full rebuild always need building regulations approval?",
+    "a": "In most cases, yes, since a full rebuild typically changes the heating and thermal separation arrangement."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-roof-building-regulations/"
+ },
+ "conservatory-roof-replacement": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Conservatory roof replacement: your options.",
+  "intro": "Replacing the roof is usually the single most effective conservatory upgrade. Here's what the main options actually involve.",
+  "sections": [
+   {
+    "h2": "Tiled or insulated panel roof",
+    "html": "<p>A solid, fully insulated roof finished with tiles or an insulated panel system gives the best thermal performance and the closest experience to a normal room. The trade-off is losing the fully glazed ceiling and the light that comes with it.</p>"
+   },
+   {
+    "h2": "High-performance glazed roof",
+    "html": "<p>Modern high-performance glazing with solar control and improved insulation keeps more of the original light-filled feel while significantly outperforming an older single-glazed or polycarbonate roof. It's a middle-ground option between keeping full glazing and going fully solid.</p>"
+   },
+   {
+    "h2": "Hybrid designs",
+    "html": "<p>Some roof systems combine solid sections with glazed panels, giving a partial view of the sky while improving insulation compared with a fully glazed original roof.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I lose all the light with a solid roof replacement?",
+    "a": "You lose the fully glazed ceiling, but well-designed solid roofs often include rooflights or lantern sections to retain some overhead light."
+   },
+   {
+    "q": "How long does a roof-only replacement take?",
+    "a": "Typically 1-2 weeks for a straightforward replacement, depending on the roof system chosen and the size of the conservatory."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-roof-replacement/"
+ },
+ "conservatory-to-dining-room": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Turning a conservatory into a dining room.",
+  "intro": "A conservatory dining room needs to work for entertaining in the evening as much as in bright daylight, which changes a few priorities compared with a living room conversion.",
+  "sections": [
+   {
+    "h2": "Lighting and atmosphere",
+    "html": "<p>Good pendant or spotlight lighting matters more here than in a daytime-only space, since a dining room gets used through the evening. A solid or hybrid roof also helps avoid the glare and heat that make dining uncomfortable on sunny days.</p>"
+   },
+   {
+    "h2": "Flooring and finish",
+    "html": "<p>Durable, easy-to-clean flooring suited to regular use around a dining table &mdash; tiling or engineered wood are common choices &mdash; alongside proper heating so the room's comfortable for long dinners in winter.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need to replace the roof for a dining room conversion?",
+    "a": "It's strongly recommended, since a fully glazed roof makes a dining room uncomfortable in both bright sun and winter cold."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-to-dining-room/"
+ },
+ "conservatory-to-living-room": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Turning a conservatory into a living room.",
+  "intro": "This is one of the most common conservatory transformation requests we get &mdash; here's what it typically involves.",
+  "sections": [
+   {
+    "h2": "What changes",
+    "html": "<p>A roof upgrade is the starting point, since a living room needs to be comfortable in both summer and winter. Underfloor heating or radiators, proper flooring (carpet or engineered wood rather than a hard conservatory-style floor), plastered walls and decorating bring the room up to the same standard as the rest of the house.</p>"
+   },
+   {
+    "h2": "Doors and layout",
+    "html": "<p>Upgrading old sliding patio doors to bi-fold or French doors is a popular addition, both for the look and for better insulation and sealing than older units.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need building regulations approval to use my conservatory as a living room?",
+    "a": "It depends on the finished specification &mdash; if the transformation removes the conservatory's thermal separation from the house (for example, opening it fully into a hallway with shared heating), building regulations are more likely to apply."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-to-living-room/"
+ },
+ "conservatory-too-cold-in-winter": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Why is my conservatory too cold in winter?",
+  "intro": "The same roof that lets your conservatory overheat in summer is usually why it's freezing in winter &mdash; a fully glazed or thin polycarbonate roof loses heat fast.",
+  "sections": [
+   {
+    "h2": "Where the heat is escaping",
+    "html": "<p>Roof, floor and older single-glazed windows or doors are the three main culprits. A thin or ageing roof loses heat quickly, an uninsulated floor slab pulls warmth down and out, and older sliding patio doors are rarely as well sealed as modern equivalents.</p>"
+   },
+   {
+    "h2": "What to prioritise",
+    "html": "<p>Roof insulation makes the biggest single difference, followed by floor insulation if you're doing a fuller transformation. Upgrading doors and windows to modern, well-sealed units helps too, particularly if the existing ones are original to an older conservatory.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I just add a heater instead of upgrading the roof?",
+    "a": "You can, but you'll be heating a room that loses warmth quickly, which costs more to run long-term than fixing the insulation properly."
+   },
+   {
+    "q": "Does floor insulation make a noticeable difference?",
+    "a": "Yes, particularly on an older conservatory with a thin, uninsulated slab &mdash; it's a common part of a fuller conservatory transformation."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-too-cold-in-winter/"
+ },
+ "conservatory-too-hot-in-summer": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "Why is my conservatory too hot in summer?",
+  "intro": "It's almost always the roof. A fully glazed or polycarbonate roof acts like a greenhouse in direct sun, and no amount of blinds or fans fully solves that on their own.",
+  "sections": [
+   {
+    "h2": "The main cause",
+    "html": "<p>A glass or polycarbonate roof lets solar heat straight through, and with nowhere for that heat to escape, the room quickly climbs well above outside temperature on a sunny day. Older single-glazed or thin polycarbonate roofs are the worst offenders.</p>"
+   },
+   {
+    "h2": "What actually fixes it",
+    "html": "<p>Replacing the roof with an insulated tiled or panel system, or a high-performance solar-control glazed roof, is the single biggest improvement you can make &mdash; see our guide on <a href=\"/guides/insulated-conservatory-roof/\">insulated conservatory roofs</a>. Ventilation upgrades, solar control film and external blinds can help at the margins, but they're managing the symptom rather than fixing the cause.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Will blinds alone fix a hot conservatory?",
+    "a": "They help reduce direct glare and some heat gain, but they don't address the underlying issue of heat building up under a fully glazed roof. A roof upgrade makes the biggest difference."
+   },
+   {
+    "q": "Is a roof replacement a big project?",
+    "a": "It's usually one of the quicker conservatory transformation options, often completed in 1-2 weeks for a straightforward roof-only replacement."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-too-hot-in-summer/"
+ },
+ "conservatory-transformation-cost": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "How much does a conservatory transformation cost?",
+  "intro": "Cost depends almost entirely on how much of the existing structure you're replacing, so it's worth thinking in terms of scope rather than a single average figure.",
+  "sections": [
+   {
+    "h2": "General cost ranges",
+    "html": "<p>As general UK market guidance: a roof-only replacement typically runs &pound;5,000&ndash;&pound;12,000. A fuller transformation adding flooring, insulation, electrics and decorating typically runs &pound;12,000&ndash;&pound;25,000. A complete rebuild including new bi-fold doors, walls and underfloor heating can run &pound;25,000&ndash;&pound;40,000 or more.</p>\n<p>These are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing.</p>"
+   },
+   {
+    "h2": "What moves the price",
+    "html": "<p>Roof system choice (tiled/panel vs. high-performance glazing) is usually the biggest factor, followed by whether doors and windows are being replaced and how much of the interior fit-out (flooring, electrics, plastering) is included.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is it cheaper to transform a conservatory or build a new orangery?",
+    "a": "Transforming an existing conservatory is generally cheaper than building a new orangery, since you're reusing the existing footprint and dwarf walls rather than starting from foundations."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/conservatory-transformation-cost/"
+ },
+ "garage-conversion-building-regulations": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "What building regulations apply to a garage conversion?",
+  "intro": "Unlike planning permission, building regulations approval is required for a garage conversion regardless of whether planning permission is needed.",
+  "sections": [
+   {
+    "h2": "What's covered",
+    "html": "<p>Building regulations for a garage conversion cover structural work (particularly around the former garage door opening), insulation standards, damp-proofing, fire safety (especially important where there's a room above the garage), ventilation and electrical work.</p>"
+   },
+   {
+    "h2": "Fire safety",
+    "html": "<p>Fire safety requirements are a bigger consideration for garage conversions than for many other home improvement projects, particularly where the garage sits below a bedroom or is part of an escape route, and this is assessed as part of the building regulations process.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need building control sign-off even for a small conversion?",
+    "a": "Yes, building regulations approval applies regardless of the conversion's size, since it covers structural and safety requirements rather than being size-dependent in the way some planning rules are."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-building-regulations/"
+ },
+ "garage-conversion-cost": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "How much does a garage conversion cost?",
+  "intro": "Cost depends mainly on the garage's existing condition and whether plumbing is needed &mdash; here's general guidance to help you budget.",
+  "sections": [
+   {
+    "h2": "General cost ranges",
+    "html": "<p>As general UK market guidance: a basic conversion (insulation, flooring, plastering and electrics only) often runs &pound;6,000&ndash;&pound;12,000. A mid-spec conversion including heating, new windows and a higher-quality finish typically runs &pound;12,000&ndash;&pound;20,000. A higher-spec conversion including plumbing for an en-suite or kitchenette can run &pound;20,000&ndash;&pound;35,000 or more.</p>\n<p>These are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing.</p>"
+   },
+   {
+    "h2": "What moves the price",
+    "html": "<p>Existing damp and floor level issues can add cost if they need addressing before the conversion can proceed. Plumbing, if included, is usually the next biggest factor, followed by window and door replacement and the interior finish specified.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is a detached garage conversion more expensive than an integral one?",
+    "a": "Often, yes, since a detached garage typically needs its own services run out to it, similar to a garden room, which adds cost compared with an integral garage already close to existing supplies."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-cost/"
+ },
+ "garage-conversion-damp-proofing": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "Do garage conversions need damp-proofing?",
+  "intro": "This is one of the most common issues we find during a garage conversion survey, and it needs addressing properly before any finishing work starts.",
+  "sections": [
+   {
+    "h2": "Why it's an issue",
+    "html": "<p>Garage floors often sit below the damp-proof course of the main house, since garages weren't originally built as habitable space. Left unaddressed, this can lead to persistent damp in the converted room.</p>"
+   },
+   {
+    "h2": "How it's fixed",
+    "html": "<p>Damp-proofing typically involves raising the floor level, installing a proper damp-proof membrane, and addressing any damp-proof course issues in the walls. This is assessed during the survey and priced into the conversion from the outset.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "How do I know if my garage has a damp problem before converting it?",
+    "a": "We check for this as part of the survey, looking at floor level relative to the damp-proof course and any visible signs of damp in the walls."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-damp-proofing/"
+ },
+ "garage-conversion-electrics": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "What electrics does a garage conversion need?",
+  "intro": "Electrics are planned around the room's intended use, whether that's a bedroom, office, gym or playroom.",
+  "sections": [
+   {
+    "h2": "Sockets and lighting",
+    "html": "<p>First and second fix electrics are extended from the main house, with sockets, lighting and data points positioned around the room's planned layout and use.</p>"
+   },
+   {
+    "h2": "Consumer unit capacity",
+    "html": "<p>We check whether your existing consumer unit has capacity for the extra circuits a conversion needs, particularly if the room includes heating, an en-suite, or equipment such as a home gym setup.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does garage conversion electrical work need to be certified?",
+    "a": "Yes, all electrical work must meet Part P requirements and be certified by a competent, registered electrician."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-electrics/"
+ },
+ "garage-conversion-heating": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "How is a garage conversion heated?",
+  "intro": "Heating is usually extended from the main house's existing system, which is more straightforward for an integral garage than a detached one.",
+  "sections": [
+   {
+    "h2": "Extending the existing system",
+    "html": "<p>For an integral garage, extending the central heating system with a new radiator or underfloor heating loop is usually the most practical option, since the pipework doesn't have far to travel.</p>"
+   },
+   {
+    "h2": "Detached garages",
+    "html": "<p>A detached garage conversion may need its own heating solution, such as electric heating, if extending pipework from the house isn't practical, similar to the approach used for garden rooms.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is underfloor heating a good option for a garage conversion?",
+    "a": "It can be, particularly since floor insulation and levelling are usually being done anyway as part of the conversion, making it a practical time to add it."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-heating/"
+ },
+ "garage-conversion-insulation": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "How is a garage conversion insulated?",
+  "intro": "Garages are rarely built to the same insulation standard as the rest of the house, so bringing this up to scratch is a standard part of most conversions.",
+  "sections": [
+   {
+    "h2": "Floor and walls",
+    "html": "<p>The existing floor is usually raised and insulated as part of the conversion, since garage floors are typically lower than the house floor level and poorly insulated. Wall insulation is added to bring the room in line with the rest of the house's thermal performance.</p>"
+   },
+   {
+    "h2": "Roof and door opening",
+    "html": "<p>Roof insulation is checked and upgraded where needed, and the former garage door opening &mdash; whether bricked up or replaced with a window &mdash; is insulated and detailed to avoid becoming a cold spot or source of draughts.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is garage insulation different from house insulation?",
+    "a": "The principles are the same, but garages often need more remedial work first, since they weren't originally built to the same standard as the main house."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-insulation/"
+ },
+ "garage-conversion-planning-permission": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "Do you need planning permission for a garage conversion?",
+  "intro": "Converting an integral garage usually doesn't need planning permission &mdash; here's the general position and where it can differ.",
+  "sections": [
+   {
+    "h2": "Integral and attached garages",
+    "html": "<p>Converting an integral or attached garage into living space is usually treated as an internal change of use within the existing footprint, which doesn't normally need planning permission. This can change if you're also altering the garage door opening to a full window, or changing the roofline.</p>"
+   },
+   {
+    "h2": "Detached garages",
+    "html": "<p>Detached garage conversions follow similar building regulations requirements, but may be more likely to need planning permission if the intended use, height or external appearance is changing significantly.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does changing my garage door to a window need planning permission?",
+    "a": "It can do, depending on your property and the extent of the change. We check this for your specific garage as part of the consultation."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-planning-permission/"
+ },
+ "garage-conversion-windows": {
+  "type": "guide",
+  "kicker": "Garage conversion guides",
+  "h1": "What happens to the garage door and windows in a conversion?",
+  "intro": "The old garage door opening is one of the first things to sort out, and it shapes how the finished room looks from outside.",
+  "sections": [
+   {
+    "h2": "The garage door opening",
+    "html": "<p>This is typically either bricked up with matching brickwork, or replaced with a window, depending on the room's new use and how much natural light you want. Matching the new brickwork to the existing house is worth doing properly rather than leaving an obvious patch.</p>"
+   },
+   {
+    "h2": "Additional windows",
+    "html": "<p>Depending on the room's use and how much natural light the existing structure allows, additional windows may be added &mdash; a bedroom conversion in particular may need a window that meets minimum size and opening requirements for fire escape.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can the garage door opening be kept as a feature, like a large window?",
+    "a": "Yes, some conversions keep a large glazed opening where the garage door was, rather than bricking it up entirely, depending on the design and how much light is wanted."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garage-conversion-windows/"
+ },
+ "garden-bar-ideas": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Garden bar design ideas.",
+  "intro": "A garden bar is one of the few garden room types that usually benefits from plumbing, alongside careful thought about power and lighting for entertaining.",
+  "sections": [
+   {
+    "h2": "Plumbing and power",
+    "html": "<p>Running water and drainage from the house supports a sink and drinks fridge, though this adds cost and complexity compared with an electrics-only build. Extra sockets for a fridge, drinks unit or sound system are worth planning in from the start.</p>"
+   },
+   {
+    "h2": "Lighting and atmosphere",
+    "html": "<p>Dimmable lighting and a few well-placed sockets do more for a garden bar's atmosphere than expensive finishes. Bi-fold or large sliding doors let the space open onto the garden for entertaining in good weather.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need plumbing for a garden bar?",
+    "a": "Not strictly, but a sink and drinks fridge are popular additions that need water and drainage run from the house."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-bar-ideas/"
+ },
+ "garden-gym-ideas": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Garden gym design ideas.",
+  "intro": "A garden gym has different priorities to most garden rooms &mdash; durability and ventilation matter more than a polished interior finish.",
+  "sections": [
+   {
+    "h2": "Flooring and equipment",
+    "html": "<p>Reinforced subflooring topped with rubber gym flooring protects both the floor and any dropped weights. Check ceiling height against your intended equipment &mdash; pull-up rigs and overhead press movements need more headroom than most garden rooms are built with as standard.</p>"
+   },
+   {
+    "h2": "Ventilation and mirrors",
+    "html": "<p>Good ventilation or extraction prevents the space feeling stuffy and protects mirrors and equipment from condensation. Mirrors are usually fitted once walls and flooring are finished, positioned to suit your main exercise area.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need extra electrics for a garden gym?",
+    "a": "Usually yes, for equipment, a TV or sound system, and good lighting &mdash; worth planning these in at design stage rather than adding sockets later."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-gym-ideas/"
+ },
+ "garden-office-cost": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "How much does a garden office cost?",
+  "intro": "A garden office is usually the simplest, most cost-effective garden room build, since it typically needs electrics only and no plumbing.",
+  "sections": [
+   {
+    "h2": "General cost range",
+    "html": "<p>As general UK market guidance, a small, well-insulated garden office with electrics and data cabling typically runs &pound;10,000&ndash;&pound;18,000, rising with size, glazing specification and interior finish. This is indicative of the wider UK market, not East Yorkshire Renovations' confirmed pricing.</p>"
+   },
+   {
+    "h2": "What's worth spending on",
+    "html": "<p>Good insulation and glazing matter more for a working space than premium interior finishes &mdash; a comfortable, well-lit, properly heated office you'll use every day is a better investment than expensive but unnecessary fittings.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Do I need planning permission for a garden office?",
+    "a": "Often not, if it falls under permitted development as a single-storey outbuilding within height and coverage limits."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-office-cost/"
+ },
+ "garden-office-ideas": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Garden office design ideas.",
+  "intro": "A few design choices make the biggest difference to how well a garden office actually works day to day.",
+  "sections": [
+   {
+    "h2": "Layout and light",
+    "html": "<p>Position your desk to get good natural light without screen glare &mdash; usually side-on to a large window rather than directly facing it. Bi-fold or large sliding doors work well if you want the option to open the space up in good weather.</p>"
+   },
+   {
+    "h2": "Storage and connectivity",
+    "html": "<p>Built-in shelving and a dedicated cable management plan keep a small office tidy. Running network cabling back to your house's router, rather than relying on Wi-Fi through a garden structure, gives more reliable connectivity for video calls.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Should a garden office have air conditioning?",
+    "a": "Not usually necessary if insulation and glazing are specified well, though it's an option for larger rooms or particularly sunny positions."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-office-ideas/"
+ },
+ "garden-room-building-regulations": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Do garden rooms need building regulations approval?",
+  "intro": "Most straightforward garden rooms under typical size thresholds don't need building regulations approval, but there are exceptions worth knowing about.",
+  "sections": [
+   {
+    "h2": "The general exemption",
+    "html": "<p>Detached single-storey buildings used incidental to the main house (a garden room, office or gym) are often exempt from building regulations provided they're under a set floor area and meet other conditions.</p>"
+   },
+   {
+    "h2": "When it changes",
+    "html": "<p>Building regulations are more likely to apply if the garden room includes sleeping accommodation, exceeds relevant size thresholds, or sits very close to a boundary, which brings in additional fire safety considerations.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does adding electrics to a garden room trigger building regulations?",
+    "a": "Electrical work still needs to comply with Part P requirements and be carried out or certified appropriately, even where the overall structure is otherwise exempt."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-building-regulations/"
+ },
+ "garden-room-cost": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "How much does a garden room cost?",
+  "intro": "Size, glazing and whether plumbing is included are the three biggest factors in garden room cost &mdash; here's general guidance to help you budget.",
+  "sections": [
+   {
+    "h2": "General cost ranges",
+    "html": "<p>As general UK market guidance: a small, well-insulated garden room with electrics only (a typical spec for a home office) often runs &pound;10,000&ndash;&pound;18,000. A larger, mid-spec room with higher-spec glazing and bi-fold doors typically runs &pound;18,000&ndash;&pound;30,000. A bespoke design with plumbing for a bar or kitchenette can run &pound;30,000&ndash;&pound;50,000 or more.</p>\n<p>These are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing.</p>"
+   },
+   {
+    "h2": "What moves the price",
+    "html": "<p>Foundation type (concrete base vs. screw piles) depends on ground conditions and can affect cost. Glazing specification and door choice (bi-fold vs. a single door and fixed windows) are also significant, as is whether plumbing is included for a kitchenette, bar or WC.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is a garden office cheaper than a garden gym?",
+    "a": "Often similarly priced for a comparable size and spec, though a gym may need reinforced flooring, and a bar or kitchenette adds plumbing cost neither typically needs."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-cost/"
+ },
+ "garden-room-electrics": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "What electrics does a garden room need?",
+  "intro": "Getting electrics right at design stage avoids expensive retrofitting later &mdash; here's what's typically involved.",
+  "sections": [
+   {
+    "h2": "Supply and circuits",
+    "html": "<p>Power is usually run from the main house's consumer unit via an armoured cable, sized appropriately for the garden room's expected load (heating, equipment, lighting). We check your existing consumer unit has capacity as part of the survey.</p>"
+   },
+   {
+    "h2": "Sockets, lighting and data",
+    "html": "<p>Sockets and lighting circuits are planned around the room's use &mdash; more sockets for an office or gym, dimmable lighting for a bar. Network cabling is worth including for an office, giving more reliable connectivity than relying on Wi-Fi alone.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does garden room electrical work need certification?",
+    "a": "Yes, electrical work must comply with Part P requirements and be carried out or certified by a competent, registered electrician."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-electrics/"
+ },
+ "garden-room-foundations": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "What foundations does a garden room need?",
+  "intro": "Foundation choice depends mainly on your garden's ground conditions, and it's assessed on-site before the design is finalised.",
+  "sections": [
+   {
+    "h2": "Concrete base",
+    "html": "<p>A traditional poured concrete base or slab gives a solid, long-lasting foundation, well suited to most ground conditions, though it takes longer to cure before construction can continue.</p>"
+   },
+   {
+    "h2": "Screw-pile foundations",
+    "html": "<p>Screw piles are quicker to install, cause less disruption to the surrounding garden, and work well on a range of ground types, though they're not always suitable depending on soil conditions, which we assess on-site.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Which foundation type is better for a garden room?",
+    "a": "It depends on your specific ground conditions and garden access &mdash; we assess this on-site and recommend the appropriate option for your project."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-foundations/"
+ },
+ "garden-room-heating": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "How is a garden room heated?",
+  "intro": "Heating choice usually comes down to how the room's used and how it's powered, more than personal preference alone.",
+  "sections": [
+   {
+    "h2": "Electric panel heaters",
+    "html": "<p>A common, straightforward choice for garden rooms already running on an electric supply from the house. Modern panel heaters are efficient and can be controlled individually or via a thermostat.</p>"
+   },
+   {
+    "h2": "Small radiator systems",
+    "html": "<p>Where a garden room already has water services run to it (for a kitchenette or WC), a small radiator circuit can be a practical addition, though it adds plumbing complexity compared with electric heating alone.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is electric heating expensive to run in a garden room?",
+    "a": "Running cost depends on usage and how well the room is insulated &mdash; a well-insulated garden room needs relatively little heating to stay comfortable."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-heating/"
+ },
+ "garden-room-insulation": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "How is a garden room insulated for year-round use?",
+  "intro": "Insulation is what separates a proper garden room from a garden shed &mdash; here's what a well-specified build includes.",
+  "sections": [
+   {
+    "h2": "Floor, walls and roof",
+    "html": "<p>A well-built garden room insulates all three elements: an insulated floor over the foundation, insulated timber or SIPs-based wall panels, and a properly insulated roof structure. Skimping on any one of these tends to show up as a cold spot or condensation issue later.</p>"
+   },
+   {
+    "h2": "Glazing and heating",
+    "html": "<p>Double or triple glazed windows and doors matter as much as the fabric insulation, since a garden room typically has more glazing proportionally than a house extension. Electric panel heaters or a small radiator system, sized to the room, complete a genuinely year-round space.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can an existing summer house be insulated to the same standard?",
+    "a": "Not usually without significant rebuilding &mdash; most summer houses aren't built with insulation-ready wall and roof structures, which is why a purpose-built garden room performs differently."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-insulation/"
+ },
+ "garden-room-planning-permission": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Do you need planning permission for a garden room?",
+  "intro": "Most garden rooms fall under permitted development as an outbuilding, but the details matter &mdash; here's the general position.",
+  "sections": [
+   {
+    "h2": "When permitted development applies",
+    "html": "<p>Single-storey outbuildings, including garden rooms, generally fall under permitted development provided they stay within height limits, sit behind the principal elevation of the house, and don't push the total coverage of outbuildings and extensions in the garden over the permitted limit.</p>"
+   },
+   {
+    "h2": "When you're more likely to need an application",
+    "html": "<p>Using the garden room as separate, self-contained living accommodation &mdash; with its own bathroom and kitchen, or as somewhere someone sleeps &mdash; is more likely to need planning permission. Listed buildings and conservation areas can also bring tighter restrictions.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I use a garden room as a guest bedroom without planning permission?",
+    "a": "Occasional guest use is generally treated differently from permanent, self-contained living accommodation, but this is worth checking for your specific plans and property."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-planning-permission/"
+ },
+ "garden-room-roof-options": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Garden room roof options.",
+  "intro": "Roof choice affects both how the garden room looks from the house and how it performs.",
+  "sections": [
+   {
+    "h2": "Flat roofs",
+    "html": "<p>A flat roof with a single-ply or felt membrane is the most common choice for a clean, modern look, and tends to be the most cost-effective option.</p>"
+   },
+   {
+    "h2": "Pitched and green roofs",
+    "html": "<p>A pitched roof can suit a garden room designed to match the style of the main house more closely. A green (planted) roof adds visual interest and some environmental benefit, though it needs a structure designed to take the extra weight.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is a green roof more expensive than a standard flat roof?",
+    "a": "Generally, yes, due to the additional structural and waterproofing requirements, but it's an option we can design in if it suits your garden."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-roof-options/"
+ },
+ "garden-room-vs-extension": {
+  "type": "guide",
+  "kicker": "Garden room guides",
+  "h1": "Garden room vs extension: which is right for you?",
+  "intro": "Both add usable space, but they solve different problems &mdash; here's how to think about the choice.",
+  "sections": [
+   {
+    "h2": "Disruption and timescale",
+    "html": "<p>A garden room is built separately from the house, which usually means far less disruption to your daily life during construction compared with an extension that involves knocking through existing walls.</p>"
+   },
+   {
+    "h2": "Connection to the house",
+    "html": "<p>An extension becomes part of your home's internal layout, which suits a kitchen or bedroom that needs to connect directly to the rest of the house. A garden room works better as genuinely separate space &mdash; an office, gym or studio &mdash; where separation from the house is actually the point.</p>"
+   },
+   {
+    "h2": "Cost",
+    "html": "<p>Garden rooms are often cheaper than an equivalent-sized extension, since they avoid the cost of tying into an existing structure, though this varies with specification and plumbing requirements.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does a garden room add as much value as an extension?",
+    "a": "This varies by property and local market, and is worth discussing with a local estate agent for your specific situation rather than assuming either option automatically adds more value."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/garden-room-vs-extension/"
+ },
+ "how-long-does-an-orangery-take": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "How long does an orangery take to build?",
+  "intro": "Total project time is usually split fairly evenly between design and approvals, and the actual construction itself &mdash; both matter for planning your timeline realistically.",
+  "sections": [
+   {
+    "h2": "Design and approvals",
+    "html": "<p>Initial design typically takes a few weeks, covering layout, glazing and roof options. If a planning application is needed, that process adds several weeks on top, since local authorities have statutory determination periods. Building regulations drawings and approval run in parallel with this in most cases.</p>"
+   },
+   {
+    "h2": "Construction",
+    "html": "<p>Once on site, a standard-sized orangery usually takes around 8&ndash;12 weeks to build, covering foundations, brickwork, roof and glazing installation, then electrics, heating and finishes. Larger or more complex designs, or those with bespoke glazing, can take longer. Weather can also affect groundworks and brickwork stages.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can an orangery be built faster if planning permission isn't needed?",
+    "a": "Yes, skipping the planning application stage can save several weeks, though building regulations approval is still required regardless."
+   },
+   {
+    "q": "What's the best time of year to start an orangery project?",
+    "a": "Groundworks and brickwork are easier to schedule reliably outside the wettest winter months, though we build throughout the year and plan around weather where needed."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/how-long-does-an-orangery-take/"
+ },
+ "how-much-does-an-orangery-cost": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "How much does an orangery cost?",
+  "intro": "Orangery cost depends heavily on size, glazing specification and roof design, so treat any figure you see online &mdash; including ours &mdash; as a starting point for budgeting, not a quote.",
+  "sections": [
+   {
+    "h2": "General cost ranges",
+    "html": "<p>As general UK market guidance: a smaller, entry-level orangery (around 3m x 3m with a standard specification) often falls in the region of &pound;25,000&ndash;&pound;40,000. A mid-size, mid-spec orangery (around 4m x 4m to 5m x 4m with bi-fold doors and a higher glazing specification) typically runs &pound;40,000&ndash;&pound;70,000. Larger, bespoke designs with premium brickwork detailing and higher-spec insulation and heating can run &pound;70,000&ndash;&pound;120,000 or more.</p>\n<p>These are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing.</p>"
+   },
+   {
+    "h2": "What moves the price",
+    "html": "<p>The roof lantern size and glazing specification tend to be the biggest single cost driver, followed by door choice (bi-fold doors cost more than French doors), brickwork detailing, and whether underfloor heating is included. Ground conditions and how much groundwork is needed for foundations can also add unplanned cost if not assessed properly upfront.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does an orangery cost more than a conservatory?",
+    "a": "Generally, yes, because of the brickwork and structural roof involved, though a high-spec conservatory and a basic orangery can sometimes land in a similar range."
+   },
+   {
+    "q": "What's the best way to get an accurate orangery quote?",
+    "a": "A site visit and design conversation, since cost depends heavily on your specific plot, foundations and specification. Get in touch for a free, tailored quote."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/how-much-does-an-orangery-cost/"
+ },
+ "insulated-conservatory-roof": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "What is an insulated conservatory roof?",
+  "intro": "An insulated conservatory roof replaces a fully glazed or polycarbonate roof with a solid, thermally efficient structure &mdash; the single change that does most to fix summer overheating and winter cold.",
+  "sections": [
+   {
+    "h2": "How it works",
+    "html": "<p>Insulated roof systems typically use lightweight insulated panels or a tiled roof structure built over the existing conservatory frame, incorporating proper insulation layers rather than relying on glazing alone. Some systems retain a smaller glazed section or rooflight to keep some natural light.</p>"
+   },
+   {
+    "h2": "What it changes",
+    "html": "<p>The main benefit is thermal performance &mdash; a properly insulated roof dramatically reduces summer heat gain and winter heat loss compared with glass or polycarbonate. It also tends to reduce noise from rain, which is a common complaint with older glazed conservatory roofs.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can any conservatory have its roof upgraded to an insulated system?",
+    "a": "Most can, though the existing frame needs to be assessed to confirm it can support the new roof structure. We check this as part of the survey."
+   },
+   {
+    "q": "Does an insulated roof need planning permission?",
+    "a": "Usually not, since it typically doesn't change the conservatory's footprint. Building regulations position depends on the finished specification &mdash; see our conservatory transformations page for details."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/insulated-conservatory-roof/"
+ },
+ "make-conservatory-usable-all-year": {
+  "type": "guide",
+  "kicker": "Conservatory guides",
+  "h1": "How to make a conservatory usable all year round.",
+  "intro": "There's no single fix that does everything, but a handful of changes consistently make the biggest difference to year-round usability.",
+  "sections": [
+   {
+    "h2": "Priority order",
+    "html": "<p>Start with the roof &mdash; this addresses both summer overheating and winter cold more than any other single change. Floor insulation and heating come next, followed by upgrading doors and windows if they're original to an older conservatory. Electrics and lighting matter more for how the room gets used day-to-day than for temperature control.</p>"
+   },
+   {
+    "h2": "Don't need to do it all at once",
+    "html": "<p>A roof-only replacement is a sensible first step if budget is tight, since it addresses the biggest single issue. A fuller transformation can follow later if needed, though doing more of the work in one project is usually more cost-effective than staging it over several separate jobs.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What's the minimum I need to do to use my conservatory year-round?",
+    "a": "For most conservatories, a proper insulated roof replacement makes the biggest single difference and is a reasonable starting point if you can't do a full transformation straight away."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/make-conservatory-usable-all-year/"
+ },
+ "orangery-ideas": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "Orangery ideas: what to use the extra space for.",
+  "intro": "Most orangery enquiries come down to one of a handful of common uses &mdash; here's what tends to work well for each, and what to think about at design stage.",
+  "sections": [
+   {
+    "h2": "Kitchen-diner",
+    "html": "<p>The most common use we see. The extra light from the roof lantern suits a kitchen well, and the room's size usually allows for a proper dining area alongside cooking and prep space. Worth planning electrics and plumbing runs carefully at design stage, since retrofitting them later is far more disruptive.</p>"
+   },
+   {
+    "h2": "Family living room",
+    "html": "<p>A garden-facing living space with bi-fold or French doors onto the garden works well as an orangery, particularly where the existing house layout is short on a bright, sociable room. Underfloor heating and good glazing specification matter more here, since it's a room people want to relax in through the evening.</p>"
+   },
+   {
+    "h2": "Garden room or snug",
+    "html": "<p>A smaller orangery used as a quiet garden-facing room &mdash; for reading, working from home, or simply a change of scenery from the rest of the house &mdash; is a popular, lower-cost option than a full kitchen-diner conversion.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can an orangery be used as a home office?",
+    "a": "Yes, though for a dedicated, separate workspace many homeowners prefer a detached garden room instead &mdash; see our garden rooms page for that option."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/orangery-ideas/"
+ },
+ "orangery-insulation": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "How well insulated is an orangery?",
+  "intro": "Because an orangery has genuine wall and roof structure rather than being mostly glass, it can be insulated close to the same standard as the rest of your house &mdash; this is the main reason it stays usable through winter.",
+  "sections": [
+   {
+    "h2": "Roof and wall insulation",
+    "html": "<p>The solid perimeter roof is built as a warm roof construction, with insulation above the rafters, matching current thermal performance expectations for extensions. Brick walls and piers are insulated in the same way as a standard cavity wall extension.</p>"
+   },
+   {
+    "h2": "Glazing and floor",
+    "html": "<p>Double or triple glazing with a good thermal specification is standard for both the lantern and the full-height windows and doors. Underfloor heating, run beneath an insulated floor slab, is a popular choice in orangeries since it frees up wall space that would otherwise be needed for radiators.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Will an orangery be as warm as the rest of my house in winter?",
+    "a": "A well-specified orangery, with proper roof, wall, floor and glazing insulation, should be comfortable to use year-round, though it won't perform identically to a solid-walled room with no glazing at all."
+   },
+   {
+    "q": "Is underfloor heating necessary in an orangery?",
+    "a": "Not necessary, but it's a popular choice because it frees up wall space for glazing rather than radiators."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/orangery-insulation/"
+ },
+ "orangery-planning-permission": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "Do you need planning permission for an orangery?",
+  "intro": "Many orangery projects fall within permitted development, but it's genuinely property-specific &mdash; here's the general position, and where it tends to change.",
+  "sections": [
+   {
+    "h2": "When permitted development usually applies",
+    "html": "<p>Single-storey rear extensions, including orangeries, often fall under permitted development rights provided they stay within height and depth limits, and don't take the total area of extensions and outbuildings over a set proportion of the garden. This means many orangery projects don't need a full planning application.</p>"
+   },
+   {
+    "h2": "When you're more likely to need an application",
+    "html": "<p>Conservation areas &mdash; including parts of the Avenues in Hull and several East Yorkshire villages &mdash; often have tighter permitted development restrictions, meaning a project that wouldn't need permission elsewhere might need a full application there. The same applies to listed buildings, and to designs that exceed standard permitted development size or height limits.</p>\n<p>Building regulations approval is required regardless of the planning position, since an orangery is a structural, brick-built room.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "How do I find out if my property is in a conservation area?",
+    "a": "Your local council's planning department (Hull City Council or East Riding of Yorkshire Council) can confirm this, or we can check as part of our initial consultation."
+   },
+   {
+    "q": "Do you handle the planning application for me?",
+    "a": "Yes, where an application is needed, we advise on what applies and manage the relevant drawings and submission."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/orangery-planning-permission/"
+ },
+ "orangery-roof-options": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "Orangery roof options explained.",
+  "intro": "The roof is what makes an orangery an orangery &mdash; the balance between solid roof and glazed lantern shapes both how bright the room feels and how well it performs thermally.",
+  "sections": [
+   {
+    "h2": "Lantern size and position",
+    "html": "<p>A larger lantern brings in more light but increases both cost and heat loss/gain if not properly specified. Positioning it centrally over a kitchen island or seating area is a common approach, though it can also be offset depending on the room's layout and where you want the light to fall.</p>"
+   },
+   {
+    "h2": "Pitch and perimeter roof",
+    "html": "<p>The solid perimeter roof around the lantern is usually flat or shallow-pitched, finished with a warm roof construction that includes proper insulation above the rafters. This is what gives an orangery its year-round usability, compared with a conservatory's fully glazed roof.</p>"
+   },
+   {
+    "h2": "Glazing specification",
+    "html": "<p>Double or triple glazing, low-emissivity coatings and solar control glass all affect how much heat the lantern lets in during summer and retains in winter. Higher-spec glazing costs more upfront but makes a real difference to comfort, particularly on south-facing rooms.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Should an orangery lantern be centred or offset?",
+    "a": "It depends on your room layout &mdash; a centred lantern suits a symmetrical design, while an offset lantern can direct light towards a specific feature such as a kitchen island or seating area."
+   },
+   {
+    "q": "Does a bigger lantern mean a colder room in winter?",
+    "a": "Not necessarily, provided the glazing specification is high enough, but it is a factor we account for at design stage."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/orangery-roof-options/"
+ },
+ "orangery-vs-conservatory": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "Orangery vs conservatory: what's the difference?",
+  "intro": "The two get confused constantly, and the honest answer is they overlap more than most marketing suggests &mdash; but there are real structural differences worth understanding before you commit to either.",
+  "sections": [
+   {
+    "h2": "Structure and glazing",
+    "html": "<p>A conservatory is predominantly glass, built on a low dwarf wall with a fully glazed pitched or lean-to roof. An orangery is brick-built, with proper masonry walls and piers, and a glazed roof lantern set into a solid, insulated perimeter roof rather than a fully glazed one. That structural difference &mdash; more brick, less glass overhead &mdash; is really what separates the two.</p>\n<p>In practice this means an orangery reads more like a permanent extension from the outside, while a conservatory reads as a lighter, more clearly \"added on\" garden room.</p>"
+   },
+   {
+    "h2": "Heat retention and year-round use",
+    "html": "<p>This is usually the deciding factor for people who've lived with a conservatory. A fully glazed roof loses heat fast in winter and lets a room overheat in direct summer sun, which is why so many conservatories end up used for six months of the year rather than twelve. An orangery's solid perimeter roof and smaller glazed lantern area give it noticeably better thermal performance, closer to a standard extension.</p>\n<p>If you already have a conservatory and don't want to rebuild it as an orangery, a roof replacement can close a lot of this gap &mdash; see our guide on <a href=\"/guides/insulated-conservatory-roof/\">insulated conservatory roofs</a>.</p>"
+   },
+   {
+    "h2": "Cost",
+    "html": "<p>A conservatory is generally the cheaper of the two to build, since there's less brickwork and structural work involved. An orangery sits closer to a good-quality extension in price. As a general guide, budget conservatories can start from a few thousand pounds for a small structure, while orangeries typically start in the tens of thousands &mdash; see our full <a href=\"/orangeries/\">orangery cost guidance</a> for indicative ranges.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is an orangery classed as an extension for planning purposes?",
+    "a": "It's treated similarly to a single-storey extension in planning terms, and often falls under permitted development, but this depends on your specific property and location."
+   },
+   {
+    "q": "Can a conservatory be converted into an orangery?",
+    "a": "Not directly &mdash; an orangery's brick structure means it's effectively a different build. What's often done instead is a full conservatory transformation, replacing the roof and adding brickwork detailing to get a similar look and performance. See our conservatory transformations page for details."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/orangery-vs-conservatory/"
+ },
+ "orangery-vs-extension": {
+  "type": "guide",
+  "kicker": "Orangery guides",
+  "h1": "Orangery vs extension: which is right for your home?",
+  "intro": "Both are brick-built, both need similar foundations, and both typically fall into a similar planning category &mdash; so the choice usually comes down to light, layout and how the room will be used.",
+  "sections": [
+   {
+    "h2": "Natural light",
+    "html": "<p>This is the clearest difference. An orangery's glazed roof lantern and full-height glazing bring in far more natural light than a standard extension with a solid roof and conventional windows, which is why orangeries are so often chosen for kitchen-diners and garden rooms where light matters more than privacy or wall space.</p>"
+   },
+   {
+    "h2": "Layout and wall space",
+    "html": "<p>A traditional extension gives you more usable wall space for kitchen units, storage or furniture, since it isn't built around large areas of glazing. If your priority is a fully enclosed kitchen, utility room or bedroom rather than a bright, garden-facing living space, a standard extension is often the more practical choice.</p>"
+   },
+   {
+    "h2": "Cost and thermal performance",
+    "html": "<p>A well-built orangery and a well-built extension tend to land in a similar cost bracket once you account for the orangery's glazing and roof lantern versus the extension's brickwork and roofing. Thermally, a solid-roofed extension is generally the more efficient of the two, though a properly specified orangery with good insulation and glazing isn't far behind.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is an orangery cheaper than an extension?",
+    "a": "Not necessarily &mdash; costs are broadly comparable once you account for the different mix of brickwork, glazing and roofing in each. See our orangery cost guidance for indicative ranges."
+   },
+   {
+    "q": "Which is better for a kitchen-diner, an orangery or an extension?",
+    "a": "An orangery is often preferred for a kitchen-diner because of the extra natural light from the roof lantern, though this depends on your layout and how much wall space you need for units and storage."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/orangery-vs-extension/"
+ },
+ "outdoor-kitchen-bbq": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "Choosing a BBQ for your outdoor kitchen.",
+  "intro": "The BBQ is usually the centrepiece of an outdoor kitchen, and the choice between gas, charcoal and hybrid comes down to how you actually like to cook.",
+  "sections": [
+   {
+    "h2": "Gas, charcoal or hybrid",
+    "html": "<p>Gas BBQs offer convenience and consistent temperature control, and need a certified gas supply installed by a Gas Safe registered engineer. Charcoal BBQs give more traditional flavour but need more hands-on management. Hybrid units combine both, giving flexibility at a higher cost.</p>"
+   },
+   {
+    "h2": "Built-in housing",
+    "html": "<p>A built-in BBQ needs proper housing with adequate ventilation, both for safety and to protect surrounding cabinetry and worktops from heat damage. This is planned as part of the overall outdoor kitchen design rather than added as an afterthought.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I add a pizza oven alongside a BBQ?",
+    "a": "Yes, this is a popular addition, usually built into the same run of units alongside the main BBQ."
+   },
+   {
+    "q": "Does a gas BBQ need to be professionally installed?",
+    "a": "Yes, any gas supply to a BBQ or pizza oven must be installed and certified by a Gas Safe registered engineer."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-bbq/"
+ },
+ "outdoor-kitchen-electrics": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "What electrics does an outdoor kitchen need?",
+  "intro": "Outdoor electrics have different safety requirements to indoor ones, and need planning in properly rather than treating as an afterthought.",
+  "sections": [
+   {
+    "h2": "Weatherproof sockets and lighting",
+    "html": "<p>Outdoor-rated sockets and fittings are essential, providing power for fridges, blenders or additional appliances, and lighting extends the space's usability into the evening.</p>"
+   },
+   {
+    "h2": "Part P compliance",
+    "html": "<p>All outdoor electrical work should be carried out or certified to Part P requirements by a competent, registered electrician, given the additional safety considerations of an outdoor environment.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I run outdoor kitchen electrics myself?",
+    "a": "No, outdoor electrical work should be carried out or certified by a competent, registered electrician to meet Part P requirements."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-electrics/"
+ },
+ "outdoor-kitchen-ideas": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "Outdoor kitchen ideas for UK gardens.",
+  "intro": "The best outdoor kitchen designs for UK gardens tend to prioritise weatherproofing and flexibility over the fully open-air look you see in warmer-climate design magazines.",
+  "sections": [
+   {
+    "h2": "Design ideas worth considering",
+    "html": "<p>A partial cover, such as a pergola, extends usability into more of the year without the cost of a full roof structure. Positioning the kitchen against a wall or fence gives some natural wind shelter, which matters more in the UK than in a hot, still climate.</p>\n<p>Built-in storage for utensils and gas bottles keeps the space tidy, and a small prep and dining zone alongside the cooking area makes the kitchen more usable for entertaining rather than just grilling.</p>"
+   },
+   {
+    "h2": "Materials that suit UK weather",
+    "html": "<p>Weatherproof worktops such as porcelain or granite and marine-grade or powder-coated cabinetry stand up better to UK rain and damp than materials designed primarily for drier climates.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What outdoor kitchen layout works best for a typical UK garden?",
+    "a": "A single-run or L-shaped layout against a wall or fence tends to work well for typical UK garden sizes, giving some natural shelter while keeping the design compact."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-ideas/"
+ },
+ "outdoor-kitchen-plumbing": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "Do you need plumbing for an outdoor kitchen?",
+  "intro": "Plumbing isn't essential for every outdoor kitchen, but it's one of the bigger factors in both cost and what the space can do.",
+  "sections": [
+   {
+    "h2": "When it's worth it",
+    "html": "<p>A sink and cold water supply save constant trips back to the indoor kitchen during entertaining, which is the main reason people add plumbing. It's a bigger addition for a kitchen some distance from the house, since pipework has further to travel.</p>"
+   },
+   {
+    "h2": "What's involved",
+    "html": "<p>Running water and drainage to an outdoor kitchen means groundworks to lay pipework, insulated or frost-protected where needed for winter, and connecting into the house's existing supply and drainage system.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does outdoor kitchen plumbing need winterising?",
+    "a": "Exposed outdoor pipework can be vulnerable to frost, so it's worth discussing frost protection or a simple isolation and drain-down routine for winter as part of the design."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-plumbing/"
+ },
+ "outdoor-kitchen-storage": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "Outdoor kitchen storage ideas.",
+  "intro": "Good storage keeps an outdoor kitchen usable and tidy, rather than becoming a place where everything from utensils to cushions ends up dumped.",
+  "sections": [
+   {
+    "h2": "Weatherproof cabinetry",
+    "html": "<p>Built-in cabinetry made from weather-resistant materials keeps utensils, crockery and cooking accessories close to hand and protected from the elements, unlike freestanding storage boxes.</p>"
+   },
+   {
+    "h2": "Gas bottle housing",
+    "html": "<p>Where a gas BBQ is used, dedicated, ventilated housing for the gas bottle is both a practical and safety consideration, planned in alongside the rest of the storage design.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Should outdoor kitchen storage be lockable?",
+    "a": "It's worth considering, particularly for expensive utensils or accessories you'd rather not leave accessible when the kitchen isn't in use."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-storage/"
+ },
+ "outdoor-kitchen-winter": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "Can an outdoor kitchen be used in winter?",
+  "intro": "It depends mainly on whether the kitchen is covered, and a few sensible maintenance steps make a real difference either way.",
+  "sections": [
+   {
+    "h2": "Covered vs open-air",
+    "html": "<p>A covered outdoor kitchen with a solid roof can generally be used year-round, protected from rain and reducing the practical barriers to cooking outside in colder months. An open-air setup is more realistically a spring-to-autumn space.</p>"
+   },
+   {
+    "h2": "Winter maintenance",
+    "html": "<p>Covering exposed appliances, checking gas connections before the colder months, and protecting or draining down any exposed plumbing are worth doing each winter regardless of whether the kitchen is covered.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Should I cover my outdoor kitchen appliances in winter?",
+    "a": "Yes, protective covers for the BBQ and any exposed appliances help prevent weather damage even when the kitchen itself isn't in regular use."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-winter/"
+ },
+ "outdoor-kitchen-worktops": {
+  "type": "guide",
+  "kicker": "Outdoor kitchen guides",
+  "h1": "Best worktop materials for an outdoor kitchen.",
+  "intro": "Not every worktop material that works indoors holds up outside &mdash; here's what to look for.",
+  "sections": [
+   {
+    "h2": "Porcelain",
+    "html": "<p>A popular, hard-wearing choice for outdoor kitchens, resistant to UV fading, staining and frost damage, and generally the more budget-friendly of the two most common weatherproof options.</p>"
+   },
+   {
+    "h2": "Granite and natural stone",
+    "html": "<p>Extremely durable and weather-resistant, with a natural look many homeowners prefer, though it sits at the premium end of the cost range and may need periodic sealing depending on the specific stone.</p>"
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I use standard kitchen worktop material outside?",
+    "a": "Not recommended &mdash; materials designed for indoor use often aren't rated for UV exposure, frost and constant weathering, and will deteriorate faster outdoors."
+   }
+  ],
+  "published": "2026-09-18",
+  "path": "/guides/outdoor-kitchen-worktops/"
+ },
+ "blog-bathroom-renovation-cost-east-yorkshire": {
+  "type": "blog",
+  "h1": "How Much Does a Bathroom Renovation Cost in East Yorkshire?",
+  "intro": "What drives bathroom renovation pricing in Hull and East Yorkshire, and the hidden costs worth planning for.",
+  "lead": "<p>Bathroom renovation costs vary more than most people expect, mainly because of what's happening behind the tiles rather than what you can see. This guide covers the main cost drivers so you can budget realistically before getting quotes.</p>",
+  "sections": [
+   {
+    "h2": "What affects the cost of a bathroom renovation",
+    "html": "<ul>\n<li><strong>Room size:</strong> a small ensuite costs less to renovate than a full family bathroom.</li>\n<li><strong>Suite quality:</strong> budget bath, basin and toilet suites cost less than premium fixtures and designer fittings.</li>\n<li><strong>Wet room vs standard shower:</strong> a level-access wet room conversion involves more structural and waterproofing work than fitting a shower over a bath.</li>\n<li><strong>Tiling extent:</strong> full-height tiling on every wall costs more than half-height tiling with painted walls above.</li>\n<li><strong>Waterproofing and tanking:</strong> proper tanking behind tiled shower areas is essential and adds to the cost, but it's not somewhere to cut corners.</li>\n<li><strong>Moving plumbing:</strong> relocating the toilet, bath or basin adds plumbing work compared with replacing fittings in the same positions.</li>\n<li><strong>Ventilation:</strong> extractor fan installation or upgrades, particularly in bathrooms without an external window.</li>\n</ul>"
+   },
+   {
+    "h2": "Typical cost tiers",
+    "html": "<ul>\n<li><strong>Budget refit (like-for-like suite swap):</strong> <!-- TODO: insert a realistic budget-tier price range once confirmed --> [price range to be confirmed]</li>\n<li><strong>Mid-range renovation (new layout, standard tiling):</strong> <!-- TODO: insert a realistic mid-range price range once confirmed --> [price range to be confirmed]</li>\n<li><strong>Premium renovation or wet room conversion:</strong> <!-- TODO: insert a realistic premium-tier price range once confirmed --> [price range to be confirmed]</li>\n</ul>"
+   },
+   {
+    "h2": "Hidden costs to budget for",
+    "html": "<ul>\n<li>Rotten or damaged subfloor discovered once old flooring is removed.</li>\n<li>Old plumbing needing full replacement rather than reuse.</li>\n<li>Bringing ventilation up to current building regulations.</li>\n<li>Making good the ceiling below if pipework needs to be accessed from underneath.</li>\n</ul>"
+   },
+   {
+    "h2": "How long does a bathroom renovation take?",
+    "html": "<p><!-- TODO: insert a typical project duration once confirmed, e.g. \"a standard bathroom renovation typically takes X-Y weeks.\" --></p>"
+   },
+   {
+    "h2": "Getting an accurate quote",
+    "html": "<p>Because so much of a bathroom renovation happens behind the tiles, an accurate quote needs a site visit rather than a phone estimate. We'll check the existing plumbing, discuss layout options and give you an itemised price.</p>"
+   }
+  ],
+  "faqs": [],
+  "published": "2026-08-06",
+  "path": "/blog/bathroom-renovation-cost-east-yorkshire.html"
+ },
+ "blog-full-house-renovation-planning-guide": {
+  "type": "blog",
+  "h1": "Planning a Full House Renovation in Hull & East Yorkshire: What to Expect",
+  "intro": "What actually happens on a full house renovation, in what order, and what to plan for before work starts.",
+  "lead": "<p>A full house renovation involves more trades, in a stricter order, than most people expect. Getting the sequence right is one of the biggest factors in keeping a renovation on schedule, so this guide walks through what typically happens and when.</p>",
+  "sections": [
+   {
+    "h2": "The typical renovation sequence",
+    "html": "<ol>\n<li><strong>Structural work and strip-out:</strong> removing anything being replaced, and any structural alterations (e.g. removing a wall), signed off against building regulations where required.</li>\n<li><strong>First-fix plumbing, electrics and insulation:</strong> pipework and cabling run before walls are closed up, plus any insulation upgrades.</li>\n<li><strong>Plastering:</strong> skimming walls and ceilings once first-fix work is complete and inspected.</li>\n<li><strong>Kitchen and bathroom installation:</strong> cabinetry, tiling and fixtures fitted once plaster has cured.</li>\n<li><strong>Flooring:</strong> fitted once messier trades are finished.</li>\n<li><strong>Decorating:</strong> the final stage - filling, painting and finishing throughout.</li>\n<li><strong>Second-fix and snagging:</strong> sockets, switches, door furniture and a final walk-through to catch any outstanding details.</li>\n</ol>"
+   },
+   {
+    "h2": "Do you need planning permission or building regulations approval?",
+    "html": "<p>Most internal renovation work - new kitchens, bathrooms, re-plastering, rewiring - doesn't need planning permission. Structural changes, such as removing a load-bearing wall, loft conversions and some electrical or plumbing work, do need to meet building regulations, and some may need a building control inspection. Properties in conservation areas (parts of Beverley, for example) or listed buildings may have additional restrictions on materials and alterations.</p>\n<p><!-- TODO: this is general guidance only, not legal advice - consider linking to or citing East Riding of Yorkshire Council's planning portal for anything project-specific. --></p>"
+   },
+   {
+    "h2": "How to budget and plan",
+    "html": "<ul>\n<li>Build in a contingency for unexpected issues found once walls, floors or old fittings are opened up - this is common in older East Yorkshire housing stock.</li>\n<li>Decide on kitchen and bathroom specifications early, since lead times on cabinetry and fixtures can affect the schedule.</li>\n<li>Agree a payment and project schedule up front so you know what happens and when.</li>\n<li>If you're staying in the property during the renovation, plan which rooms will be affected and when, particularly for kitchen and bathroom work.</li>\n</ul>"
+   },
+   {
+    "h2": "How long does a full renovation take?",
+    "html": "<p><!-- TODO: insert a typical project duration once confirmed, e.g. based on scope (single room vs whole house). --></p>"
+   }
+  ],
+  "faqs": [],
+  "published": "2026-08-06",
+  "path": "/blog/full-house-renovation-planning-guide.html"
+ },
+ "blog-kitchen-renovation-cost-hull": {
+  "type": "blog",
+  "h1": "How Much Does a Kitchen Renovation Cost in Hull?",
+  "intro": "A guide to what affects kitchen renovation pricing in Hull and East Yorkshire, and the questions worth asking before you budget.",
+  "lead": "<p>Online cost calculators and national \"average kitchen cost\" articles rarely reflect what you'll actually pay locally, because so much depends on the size of your kitchen, the scope of work and the finish you choose. This guide walks through the main factors so you know what questions to ask when you get quotes.</p>",
+  "sections": [
+   {
+    "h2": "What affects the cost of a kitchen renovation",
+    "html": "<ul>\n<li><strong>Size and layout:</strong> a small galley kitchen costs less to fit than a large open-plan kitchen-diner, and moving the layout around (relocating a sink or hob) adds plumbing and electrical work.</li>\n<li><strong>Structural work:</strong> knocking through to a dining room or hallway adds building work and potentially a structural beam, on top of the kitchen fit itself.</li>\n<li><strong>Cabinet material:</strong> MDF and laminate cabinets cost less than solid wood or painted shaker-style units.</li>\n<li><strong>Worktop material:</strong> laminate is the most affordable option; quartz, granite and marble-effect worktops cost more but are more durable.</li>\n<li><strong>Appliances:</strong> integrated, built-in appliances cost more than freestanding ones, and the number of appliances (oven, hob, extractor, dishwasher, fridge-freezer) adds up.</li>\n<li><strong>Tiling extent:</strong> a splashback behind the hob costs less than full wall tiling.</li>\n<li><strong>Condition of existing plumbing and electrics:</strong> older properties sometimes need first-fix work redone before a new kitchen can go in.</li>\n</ul>"
+   },
+   {
+    "h2": "Typical cost tiers",
+    "html": "<p>As a rough starting point, kitchen renovations tend to fall into three broad tiers based on cabinet quality, worktop material and appliance specification:</p>\n<ul>\n<li><strong>Budget refit:</strong> <!-- TODO: insert a realistic budget-tier price range once confirmed --> [price range to be confirmed]</li>\n<li><strong>Mid-range renovation:</strong> <!-- TODO: insert a realistic mid-range price range once confirmed --> [price range to be confirmed]</li>\n<li><strong>Premium renovation:</strong> <!-- TODO: insert a realistic premium-tier price range once confirmed --> [price range to be confirmed]</li>\n</ul>\n<p>These figures depend heavily on kitchen size and specification, so the only reliable way to budget accurately is a site visit and a written quote.</p>"
+   },
+   {
+    "h2": "Hidden costs to budget for",
+    "html": "<ul>\n<li>Re-plastering walls and ceilings once old units and tiling are removed.</li>\n<li>Consumer unit or electrical upgrades if the existing wiring doesn't meet current regulations.</li>\n<li>Flooring repairs or replacement once old units are stripped out.</li>\n<li>Skip hire and waste disposal.</li>\n<li>Temporary kitchen facilities if you're staying in the property during the work.</li>\n</ul>"
+   },
+   {
+    "h2": "How long does a kitchen renovation take?",
+    "html": "<p><!-- TODO: insert a typical project duration once confirmed, e.g. \"a straightforward kitchen refit typically takes X-Y weeks, while a kitchen involving structural work takes longer.\" --></p>"
+   },
+   {
+    "h2": "Getting an accurate quote",
+    "html": "<p>The most reliable way to budget for a kitchen renovation is a site visit, where we can measure the space, talk through layout options and give you an itemised quote rather than a rough estimate.</p>"
+   }
+  ],
+  "faqs": [],
+  "published": "2026-08-06",
+  "path": "/blog/kitchen-renovation-cost-hull.html"
+ }
+}

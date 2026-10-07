@@ -4,14 +4,14 @@ const OLD = `        <a href="/work.html">Recent Work</a>
         <a href="/areas.html">Areas We Cover</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
-        <a href="/blog/">Blog</a>`;
+        <a href="/guides/">Blog</a>`;
 
 const NEW = `        <a href="/work.html">Recent Work</a>
         <a href="/areas.html">Areas We Cover</a>
         <a href="/projects/">Projects</a>
         <a href="/guides/">Guides</a>
         <a href="/about.html">About</a>
-        <a href="/blog/">Blog</a>`;
+        <a href="/guides/">Blog</a>`;
 
 const rootHtml = readdirSync(".").filter((f) => f.endsWith(".html"));
 const blogHtml = readdirSync("blog").filter((f) => f.endsWith(".html")).map((f) => `blog/${f}`);

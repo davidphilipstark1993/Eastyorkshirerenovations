@@ -61,6 +61,15 @@ export function ldBusiness(canonical) {
   return `${wrap("business", siteBusiness(canonical))}\n`;
 }
 
+// Any extra JSON-LD object, rendered like the others.
+export function ldScript(data) {
+  return `
+  <script type="application/ld+json">
+  ${JSON.stringify(data, null, 2).split("\n").join("\n  ")}
+  </script>
+`;
+}
+
 export function ldBreadcrumb(items) {
   const itemListElement = items.map((item, index) => {
     const base = {
@@ -131,7 +140,7 @@ export function ldService({ name, description, canonical, areaServed }) {
 `;
 }
 
-export function page({ title, description, canonical, ogImage, body, breadcrumbs, faq, service }) {
+export function page({ title, description, canonical, ogImage, body, breadcrumbs, faq, service, extraLd = [] }) {
   const parts = [
     headBlock({ title, description, canonical, ogImage }),
     header(canonical),
@@ -142,6 +151,7 @@ export function page({ title, description, canonical, ogImage, body, breadcrumbs
   if (breadcrumbs) parts.push(ldBreadcrumb(breadcrumbs));
   if (faq) parts.push(ldFAQ(faq));
   if (service) parts.push(ldService({ ...service, canonical }));
+  for (const data of extraLd) parts.push(ldScript(data));
   parts.push(`</body>\n</html>\n`);
   return parts.join("\n");
 }

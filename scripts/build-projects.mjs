@@ -19,8 +19,8 @@ const EMPTY_CATEGORY_COPY = {
       "Genuine timescale and any planning/building regulations position confirmed for that property",
     ],
     guides: [
-      { label: "How much does an orangery cost?", href: "/guides/how-much-does-an-orangery-cost/" },
-      { label: "Orangery ideas: what to use the extra space for", href: "/guides/orangery-ideas/" },
+      { label: "How much does an orangery cost?", href: "/guides/orangery-cost-build-time-and-planning/#how-much-does-an-orangery-cost" },
+      { label: "Orangery ideas: what to use the extra space for", href: "/guides/orangery-design-roofs-and-comparisons/#orangery-ideas" },
     ],
   },
   "conservatory-transformations": {
@@ -31,8 +31,8 @@ const EMPTY_CATEGORY_COPY = {
       "How the finished room is actually used day to day",
     ],
     guides: [
-      { label: "Conservatory transformation cost", href: "/guides/conservatory-transformation-cost/" },
-      { label: "Insulated conservatory roof", href: "/guides/insulated-conservatory-roof/" },
+      { label: "Conservatory transformation cost", href: "/guides/conservatory-transformation-cost-and-regulations/#conservatory-transformation-cost" },
+      { label: "Insulated conservatory roof", href: "/guides/conservatory-transformation-cost-and-regulations/#insulated-conservatory-roof" },
     ],
   },
   "garden-rooms": {
@@ -43,8 +43,8 @@ const EMPTY_CATEGORY_COPY = {
       "What the room's actually being used for once handed over",
     ],
     guides: [
-      { label: "How much does a garden room cost?", href: "/guides/garden-room-cost/" },
-      { label: "Garden office design ideas", href: "/guides/garden-office-ideas/" },
+      { label: "How much does a garden room cost?", href: "/guides/garden-room-cost-planning-and-regulations/#garden-room-cost" },
+      { label: "Garden office design ideas", href: "/guides/garden-room-ideas/#garden-office-ideas" },
     ],
   },
   "garage-conversions": {
@@ -55,7 +55,7 @@ const EMPTY_CATEGORY_COPY = {
       "The finished room, and what it's used for",
     ],
     guides: [
-      { label: "Garage conversion cost", href: "/guides/garage-conversion-cost/" },
+      { label: "Garage conversion cost", href: "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-cost" },
       { label: "Garage to bedroom conversions", href: "/garage-conversions/garage-to-bedroom/" },
     ],
   },
@@ -67,10 +67,19 @@ const EMPTY_CATEGORY_COPY = {
       "Whether it's covered, and how it's held up through a UK winter",
     ],
     guides: [
-      { label: "Outdoor kitchen ideas for UK gardens", href: "/guides/outdoor-kitchen-ideas/" },
+      { label: "Outdoor kitchen ideas for UK gardens", href: "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-ideas" },
       { label: "Covered outdoor kitchens", href: "/outdoor-kitchens/covered-outdoor-kitchens/" },
     ],
   },
+};
+
+// Share images: real job photos only. Categories with no real photos yet
+// (orangeries, conservatories, garden rooms, outdoor kitchens) have none.
+const SHARE_IMAGES = {
+  bathrooms: "/assets/img/og/bathroom-installs.jpg",
+  kitchens: "/assets/img/og/kitchen-installs.jpg",
+  "full-house-renovations": "/assets/img/og/full-house-renovations.jpg",
+  "garage-conversions": "/assets/img/og/garage-conversions.jpg",
 };
 
 function projectCard(p) {
@@ -151,6 +160,7 @@ ${mainSection}
       title: `${category.label} Projects | East Yorkshire Renovations`,
       description: `${category.label} projects completed by East Yorkshire Renovations in Hull and East Yorkshire.`,
       canonical,
+      ogImage: SHARE_IMAGES[categorySlug],
       body,
       breadcrumbs: [
         { name: "Home", item: `${SITE}/` },
@@ -223,6 +233,7 @@ ${recentCards}
       title: "Renovation Projects & Case Studies | East Yorkshire Renovations",
       description: "Real completed renovation projects in Hull and East Yorkshire, including orangeries, conservatory transformations, garden rooms, garage conversions, outdoor kitchens, kitchens and bathrooms.",
       canonical: `${SITE}/projects/`,
+      ogImage: "/assets/img/og/work.jpg",
       body,
       breadcrumbs: [
         { name: "Home", item: `${SITE}/` },
