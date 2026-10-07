@@ -121,7 +121,23 @@ const link = (slug, text) => `<a href="${url(slug)}">${text || PAGES[slug].label
 // ---------------------------------------------------------------------------
 // Shared blocks
 // ---------------------------------------------------------------------------
-function hero({ kicker, h1, intro, service, secondary = { label: "All damp proofing services", href: HUB } }) {
+// Above-the-fold photo on the damp hub: a real survey photo once
+// assets/img/damp/survey-hero.jpg exists (4:3 or 3:4 JPG); until then the
+// labelled AI moisture-meter illustration.
+function hubHeroImage() {
+  if (existsSync("assets/img/damp/survey-hero.jpg")) {
+    return `<figure class="hero-photo photo-slot">
+            <img src="/assets/img/damp/survey-hero.jpg" width="1200" height="900" alt="Damp survey in progress" loading="eager" fetchpriority="high">
+          </figure>`;
+  }
+  return `<!-- TODO(owner): add a real damp survey photo as assets/img/damp/survey-hero.jpg and re-run this script; it replaces the AI illustration below. -->
+          <figure class="hero-photo photo-slot">
+            <img src="/assets/img/damp/damp-surveys-before-ai.jpg" width="1200" height="900" alt="AI-generated illustration - moisture meter on a damp wall, not a photo of an EYR job" loading="eager" fetchpriority="high">
+            <span class="concept-badge">AI-generated illustration</span>
+          </figure>`;
+}
+
+function hero({ kicker, h1, intro, service, image, secondary = { label: "All damp proofing services", href: HUB } }) {
   return `    <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -133,7 +149,10 @@ function hero({ kicker, h1, intro, service, secondary = { label: "All damp proof
             <a class="btn primary" href="${bookHref(service)}">Book a damp survey</a>
             <a class="btn secondary" href="${secondary.href}">${secondary.label}</a>
           </div>
-        </div>
+        </div>${image ? `
+        <div>
+          ${image}
+        </div>` : ""}
       </div>
     </section>
 `;
@@ -354,6 +373,7 @@ const hubBody = [
     h1: "Damp proofing and damp surveys in Hull &amp; East Yorkshire.",
     intro: "We find out what&rsquo;s actually causing the damp before recommending anything. Then, if work is needed, we carry it out, replaster and make good ourselves, across Hull, the East Riding and North Lincolnshire.",
     secondary: { label: "How it works", href: "#how-it-works" },
+    image: hubHeroImage(),
   }),
   section({
     kicker: "Cause first",

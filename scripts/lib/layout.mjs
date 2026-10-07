@@ -1,5 +1,5 @@
 import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, GA4_ID, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
-import { wrap, pageContext, tracking, header as siteHeader, footer as siteFooter, business as siteBusiness } from "./site.mjs";
+import { wrap, pageContext, head as siteHead, header as siteHeader, footer as siteFooter, business as siteBusiness } from "./site.mjs";
 
 // "https://.../damp-proofing/x/" -> "damp-proofing/x/index.html"
 export function pathFromCanonical(canonical) {
@@ -8,7 +8,6 @@ export function pathFromCanonical(canonical) {
 }
 
 export function headBlock({ title, description, canonical, ogImage }) {
-  const ctx = pageContext(pathFromCanonical(canonical));
   const ogImageTags = ogImage
     ? `
   <meta property="og:image" content="${SITE}${ogImage}">
@@ -37,7 +36,7 @@ export function headBlock({ title, description, canonical, ogImage }) {
   <meta property="og:url" content="${canonical}">${ogImageTags}
   <meta name="twitter:title" content="${title}">
   <meta name="twitter:description" content="${description}">
-${wrap("tracking", tracking(ctx))}
+${wrap("head", siteHead())}
 </head>`;
 }
 

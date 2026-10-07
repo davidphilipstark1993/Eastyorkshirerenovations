@@ -1,4 +1,4 @@
-// Stamps the shared blocks from scripts/lib/site.mjs (tracking, header,
+// Stamps the shared blocks from scripts/lib/site.mjs (head, header,
 // footer, business JSON-LD) into every HTML page.
 //
 //   node scripts/sync-layout.mjs          update all pages
@@ -12,7 +12,8 @@ import { join } from "path";
 import { BLOCKS, OPTIONAL_BLOCKS, blocksFor } from "./lib/site.mjs";
 
 const LEGACY = {
-  tracking: /  <!-- Google tag \(gtag\.js\) -->[\s\S]*?<!-- End Meta Pixel Code -->/,
+  // Older pages: the inline GA4 + Pixel snippet, or the earlier "tracking" block.
+  head: /  <!-- Google tag \(gtag\.js\) -->[\s\S]*?<!-- End Meta Pixel Code -->|<!-- site:tracking -->[\s\S]*?<!-- \/site:tracking -->/,
   header: /  <header>[\s\S]*?<\/header>/,
   // The water treatment page had its own mobile bar just before the footer;
   // the shared footer block now includes one, so it is absorbed here.

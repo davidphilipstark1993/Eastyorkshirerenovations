@@ -1,16 +1,16 @@
-// Single source for everything that is shared by every page: the tracking
-// snippet in <head>, the header, the footer (with the mobile call bar) and
-// the business JSON-LD.
+// Single source for everything that is shared by every page: the <head>
+// tags (favicons and the consent/tracking script), the header, the footer
+// (with the mobile call bar) and the business JSON-LD.
 //
 // Generated pages get these through scripts/lib/layout.mjs. Hand-edited
 // pages get them from scripts/sync-layout.mjs, which rewrites the block
 // between each pair of <!-- site:NAME --> ... <!-- /site:NAME --> markers.
-// To change the header, footer or tracking site-wide: edit this file, then
+// To change any of these site-wide: edit this file, then
 // run `node scripts/sync-layout.mjs`.
 import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
 import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, sameAs } from "../data/business.mjs";
 
-export const BLOCKS = ["tracking", "header", "footer", "business"];
+export const BLOCKS = ["head", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
 export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy", "reviews"];
 export const wrap = (name, html) => `<!-- site:${name} -->\n${html}\n<!-- /site:${name} -->`;
@@ -41,13 +41,70 @@ export const phoneLink = (cls = "", label = PHONE.display) =>
   `<a${cls ? ` class="${cls}"` : ""} href="tel:${PHONE.tel}" data-contact="phone">${label}</a>`;
 
 // ---------------------------------------------------------------------------
-// <head> tracking
+// <head>
 // ---------------------------------------------------------------------------
-// GA4 and the Meta Pixel are only loaded by consent.js, after the visitor
-// accepts cookies. Nothing else in the page may load them.
-export function tracking() {
-  return `  <script src="/assets/js/consent.js" defer></script>`;
+// Shared <head> tags: favicons, and the consent script. GA4 and the Meta
+// Pixel are only ever loaded by consent.js, after the visitor accepts.
+export function head() {
+  return `  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/img/icons/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <script src="/assets/js/consent.js" defer></script>`;
 }
+
+// ---------------------------------------------------------------------------
+// Header. On desktop (1180px+) the five top-level items sit across the top
+// with hover/focus dropdowns; below that they live in the Menu panel.
+// ---------------------------------------------------------------------------
+const NAV = [
+  { label: "Services", href: "/services.html", items: [
+    ["Kitchens", "/kitchen-installs.html"],
+    ["Bathrooms", "/bathroom-installs.html"],
+    ["Full house renovations", "/full-house-renovations.html"],
+    ["Garage conversions", "/garage-conversions/"],
+    ["Conservatory transformations", "/conservatory-transformations/"],
+    ["Garden rooms", "/garden-rooms/"],
+    ["Orangeries", "/orangeries/"],
+    ["Outdoor kitchens", "/outdoor-kitchens/"],
+    ["Plastering", "/plastering.html"],
+    ["Water treatment", "/water-treatment.html"],
+    ["All services", "/services.html"],
+  ] },
+  { label: "Damp Proofing", href: "/damp-proofing/", items: [
+    ["Book a damp survey", "/damp-proofing/book-a-survey/"],
+    ["Damp surveys", "/damp-proofing/damp-surveys/"],
+    ["Pre-purchase damp surveys", "/damp-proofing/pre-purchase-damp-survey/"],
+    ["Landlord damp &amp; mould reports", "/damp-proofing/landlord-damp-mould-reports/"],
+    ["Rising damp treatment", "/damp-proofing/rising-damp-treatment/"],
+    ["Penetrating damp", "/damp-proofing/penetrating-damp/"],
+    ["Condensation control", "/damp-proofing/condensation-control/"],
+    ["Mould treatment", "/damp-proofing/mould-treatment/"],
+    ["Cellar tanking", "/damp-proofing/cellar-tanking/"],
+    ["All damp proofing", "/damp-proofing/"],
+  ] },
+  { label: "Our Work", href: "/work.html", items: [
+    ["Recent work", "/work.html"],
+    ["Project case studies", "/projects/"],
+  ] },
+  { label: "About", href: "/about.html", items: [
+    ["About us", "/about.html"],
+    ["Areas we cover", "/areas.html"],
+    ["Guides and advice", "/guides/"],
+  ] },
+  { label: "Contact", href: "/contact.html" },
+];
+
+const navItem = (n) =>
+  n.items
+    ? `        <div class="nav-dropdown">
+          <a href="${n.href}" class="nav-dropdown-toggle">${n.label}</a>
+          <div class="nav-dropdown-menu">
+${n.items.map(([label, href]) => `            <a href="${href}">${label}</a>`).join("\n")}
+          </div>
+        </div>`
+    : `        <a href="${n.href}">${n.label}</a>`;
 
 // ---------------------------------------------------------------------------
 // Header
@@ -59,50 +116,14 @@ export function header(ctx) {
   return `  <header>
     <div class="container navbar">
       <a class="brand" href="/"><img src="${LOGO_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>
+      <nav id="primary-navigation" class="nav-links" aria-label="Primary">
+${NAV.map(navItem).join("\n")}
+      </nav>
       <div class="navbar-actions">
         ${phoneLink("nav-phone", `<span class="nav-phone-label">Call</span>${PHONE.display}`)}
         <a href="${cta.href}" class="nav-cta">${cta.label}</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-icon"></span>Menu</button>
       </div>
-      <nav id="primary-navigation" class="nav-links" aria-label="Primary">
-        <a href="/">Home</a>
-        <div class="nav-dropdown">
-          <a href="/services.html" class="nav-dropdown-toggle">Services</a>
-          <div class="nav-dropdown-menu">
-            <a href="/kitchen-installs.html">Kitchen Installs</a>
-            <a href="/bathroom-installs.html">Bathroom Installs</a>
-            <a href="/full-house-renovations.html">Full House Renovations</a>
-            <a href="/orangeries/">Orangeries</a>
-            <a href="/conservatory-transformations/">Conservatory Transformations</a>
-            <a href="/garden-rooms/">Garden Rooms</a>
-            <a href="/garage-conversions/">Garage Conversions</a>
-            <a href="/outdoor-kitchens/">Outdoor Kitchens</a>
-            <a href="/water-treatment.html">Water Treatment</a>
-            <a href="/services.html">View all services</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a href="/damp-proofing/" class="nav-dropdown-toggle">Damp Proofing</a>
-          <div class="nav-dropdown-menu">
-            <a href="/damp-proofing/damp-surveys/">Damp Surveys</a>
-            <a href="/damp-proofing/pre-purchase-damp-survey/">Pre-Purchase Damp Surveys</a>
-            <a href="/damp-proofing/landlord-damp-mould-reports/">Landlord Damp &amp; Mould Reports</a>
-            <a href="/damp-proofing/rising-damp-treatment/">Rising Damp Treatment</a>
-            <a href="/damp-proofing/penetrating-damp/">Penetrating Damp</a>
-            <a href="/damp-proofing/condensation-control/">Condensation Control</a>
-            <a href="/damp-proofing/mould-treatment/">Mould Treatment</a>
-            <a href="/damp-proofing/cellar-tanking/">Cellar Tanking</a>
-            <a href="/damp-proofing/book-a-survey/">Book a damp survey</a>
-            <a href="/damp-proofing/">All damp proofing services</a>
-          </div>
-        </div>
-        <a href="/work.html">Recent Work</a>
-        <a href="/areas.html">Areas We Cover</a>
-        <a href="/projects/">Projects</a>
-        <a href="/guides/">Guides</a>
-        <a href="/about.html">About</a>
-        <a href="/blog/">Blog</a>
-      </nav>
     </div>
   </header>`;
 }
@@ -268,7 +289,7 @@ export function formPrivacy() {
 export function blocksFor(path, canonical) {
   const ctx = pageContext(path);
   return {
-    tracking: wrap("tracking", tracking(ctx)),
+    head: wrap("head", head()),
     header: wrap("header", header(ctx)),
     footer: wrap("footer", footer(ctx)),
     business: wrap("business", business(canonical)),
