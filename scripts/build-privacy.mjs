@@ -37,7 +37,6 @@ ${DRAFT ? `
         <h2>Who we are</h2>
         <p>This website is run by ${controller}, ${ADDRESS_LINE}. We decide how the personal information described here is used, which makes us the &ldquo;controller&rdquo; under UK data protection law (the UK GDPR and the Data Protection Act 2018).</p>
         <p>For any privacy question or request, email <a href="mailto:${EMAIL}">${EMAIL}</a>.</p>
-        <!-- TODO(owner): if/when the business pays the ICO data protection fee, add the registration number here (it can't be made up). -->
 
         <h2>Information you send us through our forms</h2>
         <p>We have three enquiry forms. Each one asks only for what we need to reply and quote:</p>

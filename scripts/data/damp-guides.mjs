@@ -216,7 +216,7 @@ export const DAMP_GUIDES = [
     ],
     faqs: [
       { q: "Is the £119 refundable if I don't go ahead?", a: "No. The fee pays for the survey and written report. It is deducted from the cost of treatment only if you accept our quote." },
-      { q: "Is VAT included?", a: "Please ask when you book and we will confirm the total before we visit. <!-- TODO(owner): confirm whether the £119 survey and £99 report prices include VAT. -->" },
+      { q: "Is VAT included?", a: "Yes. The £119 damp survey and the £99 landlord report are both total prices, including VAT." },
       { q: "How quickly can you survey?", a: "Get in touch and we will give you the next available date. Pre-purchase surveys are prioritised so the report is with you within 3 days." },
     ],
     related: ["/damp-proofing/book-a-survey/", "/guides/what-does-a-damp-survey-include/", "/guides/damp-proofing-cost-hull/"],
