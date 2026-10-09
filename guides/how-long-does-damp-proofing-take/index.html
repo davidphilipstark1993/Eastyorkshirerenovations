@@ -102,7 +102,7 @@
         <div class="guide-answer">
           <p><strong>In short:</strong> The treatment itself is usually the quickest part; the time goes on replastering and on letting the wall dry, and a solid wall that has been damp for years can take several months to dry out fully. You don't need to wait that long to use the room, but there are limits on how soon you can decorate.</p>
         </div>
-        <p class="byline">By East Yorkshire Renovations<!-- TODO(owner): once OWNER.name is set in scripts/data/business.mjs, guides are credited to the owner by name --> &middot; Published <time datetime="2026-10-07">7 October 2026</time></p>
+        <p class="byline">By David &middot; Published <time datetime="2026-10-07">7 October 2026</time></p>
       </div>
     </section>
 
@@ -113,10 +113,9 @@
 
         <h2 id="treatment-and-replastering">Treatment and replastering</h2>
         <p>How long the work takes on site depends on the cause and how much wall is involved. For rising damp, the plaster is hacked off, the new damp-proof course is injected and the wall is replastered with a salt-resistant plaster, then skimmed. Penetrating damp repairs depend on the repair and the weather. We give you a timescale for your job with the quote.</p>
-        <!-- TODO(owner): typical on-site durations for your damp jobs have not been supplied, so none are given here. -->
 
         <h2 id="drying-the-plaster">Drying the plaster</h2>
-        <p>Fresh plaster typically needs at least a week to dry per coat before painting, depending on room temperature, ventilation and the number of coats. Keep the room heated and ventilated to help it along.</p>
+        <p>Fresh plaster typically needs at least a week to dry per coat before painting. The biggest factor is the room itself: the warmer it is, the faster plaster and walls dry, so a heated room in summer dries much quicker than a cold one in winter. Ventilation and the number of coats matter too. Keep the room heated and ventilated to help it along.</p>
 
         <h2 id="drying-the-wall">Drying the wall</h2>
         <p>A solid wall that has been damp for years takes far longer to dry out fully than the plaster on its surface: often several months, depending on its thickness, the time of year and how well the room is heated and ventilated. That is normal, and it is why the decorating advice below matters.</p>
@@ -171,7 +170,7 @@
 <!-- site:footer -->
   <nav class="mobile-bar" aria-label="Quick contact">
     <a class="mobile-bar-call" href="tel:+447498951487" data-contact="phone">Call</a>
-    <!-- TODO(owner): WhatsApp button appears here once WHATSAPP is set in scripts/data/business.mjs -->
+    <a class="mobile-bar-whatsapp" href="https://wa.me/447498951487" data-contact="whatsapp">WhatsApp</a>
     <a class="mobile-bar-cta" href="/contact.html#quote-form">Get a quote</a>
   </nav>
 
@@ -180,10 +179,11 @@
       <div>
         <img class="footer-logo" src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovations logo">
         <h3>East Yorkshire Renovations</h3>
-        <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
         <p>Station Road, Hessle, HU13 0BG</p>
         <p>Phone: <a href="tel:+447498951487" data-contact="phone">07498 951487</a></p>
         <p>Email: <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a></p>
+        <p class="follow-links"><a href="https://www.facebook.com/profile.php?id=61594987884780" rel="noopener">Facebook</a> &middot; <a href="https://www.instagram.com/east_yorkshire_renovation/" rel="noopener">Instagram</a> &middot; <a href="https://g.page/r/CaA4QBPRUpb2EBM" rel="noopener">Google reviews</a></p>
+        <p><a href="https://g.page/r/CaA4QBPRUpb2EBM/review" rel="noopener">Leave us a Google review</a></p>
       </div>
       <div>
         <h4>Opening hours</h4>
@@ -191,9 +191,9 @@
         <p>Closed weekends</p>
       </div>
       <div>
-        <h4>Guarantees</h4>
-        <p>Damp proofing work backed by written guarantees of up to 30 years. <a href="/damp-proofing/#guarantee">Guarantee terms</a></p>
-        <!-- TODO(owner): insurance cover, qualifications, memberships and company details appear here once set in scripts/data/business.mjs. -->
+        <h4>Credentials</h4>
+        <p>Public liability insurance: £2,000,000 cover.</p>
+        <p>Trading since 2025.</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -266,11 +266,15 @@
       "North Lincolnshire",
       "Grimsby"
     ],
-    "url": "https://www.eastyorkshirerenovation.com/guides/how-long-does-damp-proofing-take/"
+    "url": "https://www.eastyorkshirerenovation.com/guides/how-long-does-damp-proofing-take/",
+    "sameAs": [
+      "https://g.page/r/CaA4QBPRUpb2EBM",
+      "https://www.facebook.com/profile.php?id=61594987884780",
+      "https://www.instagram.com/east_yorkshire_renovation/"
+    ]
   }
   </script>
-  <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->
-  <!-- TODO(owner): sameAs links appear here once GOOGLE_PROFILE / SOCIAL_PROFILES are set in scripts/data/business.mjs. -->
+  <!-- No geo coordinates or house number: the owner prefers not to publish the exact address. -->
 <!-- /site:business -->
 
 
@@ -344,9 +348,11 @@
     "datePublished": "2026-10-07",
     "dateModified": "2026-10-07",
     "author": {
-      "@type": "Organization",
-      "@id": "https://www.eastyorkshirerenovation.com/#business",
-      "name": "East Yorkshire Renovations"
+      "@type": "Person",
+      "name": "David",
+      "worksFor": {
+        "@id": "https://www.eastyorkshirerenovation.com/#business"
+      }
     },
     "publisher": {
       "@type": "Organization",

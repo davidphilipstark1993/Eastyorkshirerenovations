@@ -102,7 +102,7 @@
         <div class="guide-answer">
           <p><strong>In short:</strong> Our damp survey costs £119 across Hull, East Yorkshire and North Lincolnshire, and the £119 is deducted from the cost of any treatment if you accept our quote. A pre-purchase damp survey is also £119, on the same terms, and a landlord damp and mould report is £99.</p>
         </div>
-        <p class="byline">By East Yorkshire Renovations<!-- TODO(owner): once OWNER.name is set in scripts/data/business.mjs, guides are credited to the owner by name --> &middot; Published <time datetime="2026-10-07">7 October 2026</time></p>
+        <p class="byline">By David &middot; Published <time datetime="2026-10-07">7 October 2026</time></p>
       </div>
     </section>
 
@@ -181,7 +181,7 @@
 <!-- site:footer -->
   <nav class="mobile-bar" aria-label="Quick contact">
     <a class="mobile-bar-call" href="tel:+447498951487" data-contact="phone">Call</a>
-    <!-- TODO(owner): WhatsApp button appears here once WHATSAPP is set in scripts/data/business.mjs -->
+    <a class="mobile-bar-whatsapp" href="https://wa.me/447498951487" data-contact="whatsapp">WhatsApp</a>
     <a class="mobile-bar-cta" href="/contact.html#quote-form">Get a quote</a>
   </nav>
 
@@ -190,10 +190,11 @@
       <div>
         <img class="footer-logo" src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovations logo">
         <h3>East Yorkshire Renovations</h3>
-        <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
         <p>Station Road, Hessle, HU13 0BG</p>
         <p>Phone: <a href="tel:+447498951487" data-contact="phone">07498 951487</a></p>
         <p>Email: <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a></p>
+        <p class="follow-links"><a href="https://www.facebook.com/profile.php?id=61594987884780" rel="noopener">Facebook</a> &middot; <a href="https://www.instagram.com/east_yorkshire_renovation/" rel="noopener">Instagram</a> &middot; <a href="https://g.page/r/CaA4QBPRUpb2EBM" rel="noopener">Google reviews</a></p>
+        <p><a href="https://g.page/r/CaA4QBPRUpb2EBM/review" rel="noopener">Leave us a Google review</a></p>
       </div>
       <div>
         <h4>Opening hours</h4>
@@ -201,9 +202,9 @@
         <p>Closed weekends</p>
       </div>
       <div>
-        <h4>Guarantees</h4>
-        <p>Damp proofing work backed by written guarantees of up to 30 years. <a href="/damp-proofing/#guarantee">Guarantee terms</a></p>
-        <!-- TODO(owner): insurance cover, qualifications, memberships and company details appear here once set in scripts/data/business.mjs. -->
+        <h4>Credentials</h4>
+        <p>Public liability insurance: £2,000,000 cover.</p>
+        <p>Trading since 2025.</p>
       </div>
       <div>
         <h4>Explore</h4>
@@ -276,11 +277,15 @@
       "North Lincolnshire",
       "Grimsby"
     ],
-    "url": "https://www.eastyorkshirerenovation.com/guides/damp-survey-cost-hull/"
+    "url": "https://www.eastyorkshirerenovation.com/guides/damp-survey-cost-hull/",
+    "sameAs": [
+      "https://g.page/r/CaA4QBPRUpb2EBM",
+      "https://www.facebook.com/profile.php?id=61594987884780",
+      "https://www.instagram.com/east_yorkshire_renovation/"
+    ]
   }
   </script>
-  <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->
-  <!-- TODO(owner): sameAs links appear here once GOOGLE_PROFILE / SOCIAL_PROFILES are set in scripts/data/business.mjs. -->
+  <!-- No geo coordinates or house number: the owner prefers not to publish the exact address. -->
 <!-- /site:business -->
 
 
@@ -354,9 +359,11 @@
     "datePublished": "2026-10-07",
     "dateModified": "2026-10-07",
     "author": {
-      "@type": "Organization",
-      "@id": "https://www.eastyorkshirerenovation.com/#business",
-      "name": "East Yorkshire Renovations"
+      "@type": "Person",
+      "name": "David",
+      "worksFor": {
+        "@id": "https://www.eastyorkshirerenovation.com/#business"
+      }
     },
     "publisher": {
       "@type": "Organization",

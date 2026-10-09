@@ -7,6 +7,7 @@ import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
 import { wrap, replyTime, formPrivacy, phoneLink, reviews } from "./lib/site.mjs";
+import { WHATSAPP } from "./data/business.mjs";
 
 const HUB = "/damp-proofing/";
 const BOOK = "/damp-proofing/book-a-survey/";
@@ -1212,7 +1213,7 @@ const bookBody = `    <section class="hero landing-hero">
             <li>A written report in plain English, with photos</li>
             <li>We do the replastering and making good ourselves</li>
           </ul>
-          <p class="contact-phone">Call ${phoneLink()}</p>
+          <p class="contact-phone">Call ${phoneLink()} or <a href="${WHATSAPP}" data-contact="whatsapp">WhatsApp us</a></p>
           <p class="guarantee-line">${GUARANTEE_LINE}</p>
         </div>
         <div class="card landing-form">

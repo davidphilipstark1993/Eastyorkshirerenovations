@@ -253,8 +253,7 @@ export const DAMP_GUIDES = [
       },
       {
         h2: "Hidden costs to ask about",
-        html: `<p>Ask whether a quote includes replastering, making good and decorating, or only the treatment. Damp work that leaves bare walls means paying a separate plasterer and decorator afterwards. Our quotes cover the whole job, because we do that work ourselves.</p>
-<!-- TODO(owner): if you want to publish typical price ranges for your own damp jobs, add them here. They have not been supplied, so none are shown. -->`,
+        html: `<p>Ask whether a quote includes replastering, making good and decorating, or only the treatment. Damp work that leaves bare walls means paying a separate plasterer and decorator afterwards. Our quotes cover the whole job, because we do that work ourselves.</p>`,
       },
       {
         h2: "Guarantees",
@@ -370,12 +369,11 @@ export const DAMP_GUIDES = [
       },
       {
         h2: "Treatment and replastering",
-        html: `<p>How long the work takes on site depends on the cause and how much wall is involved. For rising damp, the plaster is hacked off, the new damp-proof course is injected and the wall is replastered with a salt-resistant plaster, then skimmed. Penetrating damp repairs depend on the repair and the weather. We give you a timescale for your job with the quote.</p>
-<!-- TODO(owner): typical on-site durations for your damp jobs have not been supplied, so none are given here. -->`,
+        html: `<p>How long the work takes on site depends on the cause and how much wall is involved. For rising damp, the plaster is hacked off, the new damp-proof course is injected and the wall is replastered with a salt-resistant plaster, then skimmed. Penetrating damp repairs depend on the repair and the weather. We give you a timescale for your job with the quote.</p>`,
       },
       {
         h2: "Drying the plaster",
-        html: `<p>Fresh plaster typically needs at least a week to dry per coat before painting, depending on room temperature, ventilation and the number of coats. Keep the room heated and ventilated to help it along.</p>`,
+        html: `<p>Fresh plaster typically needs at least a week to dry per coat before painting. The biggest factor is the room itself: the warmer it is, the faster plaster and walls dry, so a heated room in summer dries much quicker than a cold one in winter. Ventilation and the number of coats matter too. Keep the room heated and ventilated to help it along.</p>`,
       },
       {
         h2: "Drying the wall",

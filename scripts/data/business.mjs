@@ -11,45 +11,41 @@ export const PHONE = {
   schema: "+44 7498 951487",
 };
 
-// TODO(owner): is 07498 951487 on WhatsApp? If yes, set this to
-// "https://wa.me/447498951487" and the WhatsApp buttons appear site-wide.
-export const WHATSAPP = null;
+// 07498 951487 is on WhatsApp.
+export const WHATSAPP = "https://wa.me/447498951487";
 
-// TODO(owner): Google Business Profile URL (used for "Read our reviews on
-// Google" links and in the JSON-LD sameAs list).
-export const GOOGLE_PROFILE = null;
+// Google Business Profile. GOOGLE_PROFILE opens the profile (used for
+// "reviews on Google" links and the JSON-LD sameAs list); GOOGLE_REVIEW_LINK
+// opens the "write a review" box.
+export const GOOGLE_PROFILE = "https://g.page/r/CaA4QBPRUpb2EBM";
+export const GOOGLE_REVIEW_LINK = "https://g.page/r/CaA4QBPRUpb2EBM/review";
 
-// TODO(owner): Facebook / Instagram profile URLs, e.g.
-// ["https://www.facebook.com/...", "https://www.instagram.com/..."]
-export const SOCIAL_PROFILES = [];
+export const SOCIAL_PROFILES = [
+  "https://www.facebook.com/profile.php?id=61594987884780",
+  "https://www.instagram.com/east_yorkshire_renovation/",
+];
 
-// TODO(owner): a reply-time promise you can always keep, e.g.
-// "We reply to every enquiry within one working day." Shown beside the
-// forms and on the contact page once set.
-export const REPLY_TIME = null;
+// Shown beside the forms and on the contact page.
+export const REPLY_TIME = "We reply to every enquiry within 3 hours during opening hours (Monday to Friday, 8am to 4:30pm).";
 
-// TODO(owner): owner name, who carries out damp surveys and their
-// experience. Used on the About page.
+// Used on the About page and as the author of the guides.
 export const OWNER = {
-  name: null,
-  role: null,
-  experience: null,
-  surveyor: null,
-  photo: null, // e.g. "/assets/img/about/owner.jpg" once a real photo exists
+  name: "David",
+  role: "the owner",
+  experience: "I&rsquo;ve spent several years carrying out damp surveys and writing damp reports, installing damp-proof courses, and sorting out ventilation and air flow in homes.",
+  surveyor: "I carry out our damp surveys and write the reports myself, so the person who diagnoses the damp is the same person who quotes for the work and answers for it afterwards.",
+  photo: null, // TODO(owner): e.g. "/assets/img/about/owner.jpg" once a real photo exists
 };
 
-// TODO(owner): qualifications, trade memberships, training - only ones
-// actually held, e.g. [{ name: "...", detail: "membership no. ..." }]
+// Qualifications and memberships: deliberately left off the site.
 export const CREDENTIALS = [];
 
-// TODO(owner): public liability cover amount, e.g. "£2,000,000".
-export const PUBLIC_LIABILITY = null;
+export const PUBLIC_LIABILITY = "£2,000,000";
 
-// TODO(owner): legal business name, company number, year trading began.
 export const COMPANY = {
-  legalName: null,
-  companyNumber: null,
-  established: null,
+  legalName: "East Yorkshire Renovation",
+  companyNumber: null, // not a limited company
+  established: "2025",
 };
 
 // Real customer reviews only: { text, name, town, service }. The reviews

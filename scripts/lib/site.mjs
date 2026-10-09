@@ -8,7 +8,7 @@
 // To change any of these site-wide: edit this file, then
 // run `node scripts/sync-layout.mjs`.
 import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
-import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, sameAs } from "../data/business.mjs";
+import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, GOOGLE_REVIEW_LINK, SOCIAL_PROFILES, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, sameAs } from "../data/business.mjs";
 
 export const BLOCKS = ["head", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
@@ -30,11 +30,11 @@ export function pageContext(path) {
 
 // The main call to action for a page: damp pages lead to the damp form.
 function primaryCta(ctx) {
-  if (ctx.dampBooking) return { href: "#damp-enquiry-form", label: "Book a damp survey" };
-  if (ctx.damp) return { href: "/damp-proofing/book-a-survey/", label: "Book a damp survey" };
-  if (ctx.contact) return { href: "#quote-form", label: "Get a quote" };
-  if (ctx.water) return { href: "#water-assessment-form", label: "Book assessment" };
-  return { href: "/contact.html#quote-form", label: "Get a quote" };
+  if (ctx.dampBooking) return { href: "#damp-enquiry-form", label: "Book a damp survey", short: "Book survey" };
+  if (ctx.damp) return { href: "/damp-proofing/book-a-survey/", label: "Book a damp survey", short: "Book survey" };
+  if (ctx.contact) return { href: "#quote-form", label: "Get a quote", short: "Quote" };
+  if (ctx.water) return { href: "#water-assessment-form", label: "Book assessment", short: "Book" };
+  return { href: "/contact.html#quote-form", label: "Get a quote", short: "Get a quote" };
 }
 
 export const phoneLink = (cls = "", label = PHONE.display) =>
@@ -138,7 +138,7 @@ function mobileBar(ctx) {
     WHATSAPP
       ? `<a class="mobile-bar-whatsapp" href="${WHATSAPP}" data-contact="whatsapp">WhatsApp</a>`
       : `<!-- TODO(owner): WhatsApp button appears here once WHATSAPP is set in scripts/data/business.mjs -->`,
-    `<a class="mobile-bar-cta" href="${cta.href}">${cta.label}</a>`,
+    `<a class="mobile-bar-cta" href="${cta.href}">${WHATSAPP ? cta.short || cta.label : cta.label}</a>`,
   ];
   return `  <nav class="mobile-bar" aria-label="Quick contact">
     ${items.join("\n    ")}
@@ -151,7 +151,7 @@ export function credentialLines() {
   const lines = [];
   if (PUBLIC_LIABILITY) lines.push(`Public liability insurance: ${PUBLIC_LIABILITY} cover.`);
   for (const c of CREDENTIALS) lines.push(c.detail ? `${c.name} (${c.detail})` : c.name);
-  if (COMPANY.legalName) lines.push(`${COMPANY.legalName}${COMPANY.companyNumber ? `, company no. ${COMPANY.companyNumber}` : ""}`);
+  if (COMPANY.companyNumber) lines.push(`${COMPANY.legalName}, company no. ${COMPANY.companyNumber}`);
   if (COMPANY.established) lines.push(`Trading since ${COMPANY.established}.`);
   return lines;
 }
@@ -171,6 +171,17 @@ ${lines.map((l) => `        <p>${l}</p>`).join("\n")}
       </div>`;
 }
 
+// Facebook, Instagram and Google profile links for the footer.
+function followLinks() {
+  const links = [
+    ...SOCIAL_PROFILES.map((u) => [u.includes("facebook") ? "Facebook" : u.includes("instagram") ? "Instagram" : "Social", u]),
+    GOOGLE_PROFILE ? ["Google reviews", GOOGLE_PROFILE] : null,
+  ].filter(Boolean);
+  if (!links.length) return "";
+  return `        <p class="follow-links">${links.map(([label, href]) => `<a href="${href}" rel="noopener">${label}</a>`).join(" &middot; ")}</p>${GOOGLE_REVIEW_LINK ? `
+        <p><a href="${GOOGLE_REVIEW_LINK}" rel="noopener">Leave us a Google review</a></p>` : ""}`;
+}
+
 export function footer(ctx) {
   return `${mobileBar(ctx)}
 
@@ -179,10 +190,10 @@ export function footer(ctx) {
       <div>
         <img class="footer-logo" src="${LOGO_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo">
         <h3>${BUSINESS_NAME}</h3>
-        <!-- TODO: street address is missing a building/house number (currently just "Station Road"). This will cause Google Business Profile verification problems - add the number here and in the JSON-LD below. -->
         <p>${ADDRESS_LINE}</p>
         <p>Phone: ${phoneLink()}</p>
         <p>Email: <a href="mailto:${EMAIL}">${EMAIL}</a></p>
+${followLinks()}
       </div>
       <div>
         <h4>Opening hours</h4>
@@ -240,7 +251,7 @@ export function business(canonical) {
   return `  <script type="application/ld+json">
   ${JSON.stringify(data, null, 2).split("\n").join("\n  ")}
   </script>
-  <!-- TODO: geo coordinates removed - the previous placeholder (0,0) pointed to "Null Island" in the Gulf of Guinea, worse for local SEO than omitting geo. Add real latitude/longitude once the full street address is confirmed. -->${links.length ? "" : `
+  <!-- No geo coordinates or house number: the owner prefers not to publish the exact address. -->${links.length ? "" : `
   <!-- TODO(owner): sameAs links appear here once GOOGLE_PROFILE / SOCIAL_PROFILES are set in scripts/data/business.mjs. -->`}`;
 }
 

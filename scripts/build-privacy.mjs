@@ -8,8 +8,8 @@ import { page } from "./lib/layout.mjs";
 import { SITE, EMAIL, ADDRESS_LINE } from "./lib/constants.mjs";
 import { COMPANY } from "./data/business.mjs";
 
-const DRAFT = true;
-const UPDATED = "7 October 2026";
+const DRAFT = false;
+const UPDATED = "9 October 2026";
 
 const controller = COMPANY.legalName
   ? `${COMPANY.legalName}${COMPANY.companyNumber ? ` (company number ${COMPANY.companyNumber})` : ""}, trading as East Yorkshire Renovations`
@@ -37,7 +37,7 @@ ${DRAFT ? `
         <h2>Who we are</h2>
         <p>This website is run by ${controller}, ${ADDRESS_LINE}. We decide how the personal information described here is used, which makes us the &ldquo;controller&rdquo; under UK data protection law (the UK GDPR and the Data Protection Act 2018).</p>
         <p>For any privacy question or request, email <a href="mailto:${EMAIL}">${EMAIL}</a>.</p>
-        <!-- TODO(owner): if the business is registered with the ICO (data protection fee), add the registration number here. -->
+        <!-- TODO(owner): if/when the business pays the ICO data protection fee, add the registration number here (it can't be made up). -->
 
         <h2>Information you send us through our forms</h2>
         <p>We have three enquiry forms. Each one asks only for what we need to reply and quote:</p>
@@ -68,8 +68,11 @@ ${DRAFT ? `
         <p><a href="#cookies" data-cookie-settings>Change your cookie settings</a>. If you withdraw consent, we stop loading both tools and remove their cookies from this site.</p>
 
         <h2>How long we keep it</h2>
-        <!-- TODO(owner): confirm retention periods. Suggested: enquiries that don't go ahead deleted after 12 months; customer records kept for 6 years after the job, or for the length of any guarantee if longer. -->
-        <p>We keep enquiry emails only as long as we need them to deal with your enquiry and any work that follows. Customer records are kept for as long as we need them for accounts, tax and any guarantee on the work.</p>
+        <ul>
+          <li><strong>Enquiries that don&rsquo;t go ahead:</strong> deleted 12 months after our last contact with you.</li>
+          <li><strong>Customer records</strong> (quotes, invoices, survey reports, photos of the work): kept for 6 years after the job finishes, for accounts and tax, or for the length of any guarantee on the work if that is longer.</li>
+          <li><strong>Analytics and advertising data</strong> is held by Google and Meta under their own retention settings.</li>
+        </ul>
 
         <h2>Your rights</h2>
         <p>You can ask to see the information we hold about you, have it corrected or deleted, restrict or object to how we use it, or receive a copy to pass on to someone else. Email <a href="mailto:${EMAIL}">${EMAIL}</a> and we will reply within one month.</p>

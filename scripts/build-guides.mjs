@@ -354,7 +354,7 @@ for (const g of MERGED) {
     parts.push(`        <h2 id="${id}">${heading}</h2>
         <p>${relink(s.intro)}</p>${s.lead ? `\n        ${relink(s.lead).split("\n").join("\n        ")}` : ""}
 ${sections.map((sec) => `        <h3>${sec.h2}</h3>\n        ${relink(sec.html).split("\n").join("\n        ")}`).join("\n")}${dropped ? `
-        <!-- TODO(owner): ${dropped} section(s) of the original "${s.h1}" were left out because they only held placeholders (price ranges / durations not supplied). Add your own figures here once confirmed. -->` : ""}`);
+        <!-- ${dropped} section(s) of the original "${s.h1}" were left out: they held price-range and duration placeholders, and the owner prefers not to publish fixed figures because every job depends on the house. -->` : ""}`);
     for (const f of s.faqs) {
       const key = plain(f.q).toLowerCase();
       if (!seen.has(key)) {
