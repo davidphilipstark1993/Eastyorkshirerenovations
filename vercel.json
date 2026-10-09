@@ -1,0 +1,724 @@
+{
+  "redirects": [
+    {
+      "source": "/guides/conservatory-transformation-cost/",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-transformation-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-transformation-cost/index.html",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-transformation-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-transformation-cost",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-transformation-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-planning-permission/",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-planning-permission/index.html",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-planning-permission",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-roof-building-regulations/",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-roof-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-roof-building-regulations/index.html",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-roof-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-roof-building-regulations",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-roof-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-roof-replacement/",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-roof-replacement",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-roof-replacement/index.html",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-roof-replacement",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-roof-replacement",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-roof-replacement",
+      "permanent": true
+    },
+    {
+      "source": "/guides/insulated-conservatory-roof/",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#insulated-conservatory-roof",
+      "permanent": true
+    },
+    {
+      "source": "/guides/insulated-conservatory-roof/index.html",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#insulated-conservatory-roof",
+      "permanent": true
+    },
+    {
+      "source": "/guides/insulated-conservatory-roof",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/#insulated-conservatory-roof",
+      "permanent": true
+    },
+    {
+      "source": "/guides/make-conservatory-usable-all-year/",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#make-conservatory-usable-all-year",
+      "permanent": true
+    },
+    {
+      "source": "/guides/make-conservatory-usable-all-year/index.html",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#make-conservatory-usable-all-year",
+      "permanent": true
+    },
+    {
+      "source": "/guides/make-conservatory-usable-all-year",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#make-conservatory-usable-all-year",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-too-hot-in-summer/",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-too-hot-in-summer",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-too-hot-in-summer/index.html",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-too-hot-in-summer",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-too-hot-in-summer",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-too-hot-in-summer",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-too-cold-in-winter/",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-too-cold-in-winter",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-too-cold-in-winter/index.html",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-too-cold-in-winter",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-too-cold-in-winter",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-too-cold-in-winter",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-to-living-room/",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-to-living-room",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-to-living-room/index.html",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-to-living-room",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-to-living-room",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-to-living-room",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-to-dining-room/",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-to-dining-room",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-to-dining-room/index.html",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-to-dining-room",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-to-dining-room",
+      "destination": "/guides/make-a-conservatory-usable-all-year/#conservatory-to-dining-room",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-cost/",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-cost/index.html",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-cost",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-planning-permission/",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-planning-permission/index.html",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-planning-permission",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-building-regulations/",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-building-regulations/index.html",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-building-regulations",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-windows/",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-windows",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-windows/index.html",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-windows",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-windows",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/#garage-conversion-windows",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-damp-proofing/",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-damp-proofing",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-damp-proofing/index.html",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-damp-proofing",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-damp-proofing",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-damp-proofing",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-insulation/",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-insulation/index.html",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-insulation",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-heating/",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-heating",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-heating/index.html",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-heating",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-heating",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-heating",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-electrics/",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-electrics/index.html",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-electrics",
+      "destination": "/guides/what-goes-into-a-garage-conversion/#garage-conversion-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-cost/",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-cost/index.html",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-cost",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-office-cost/",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-office-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-office-cost/index.html",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-office-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-office-cost",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-office-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-planning-permission/",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-planning-permission/index.html",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-planning-permission",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-building-regulations/",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-building-regulations/index.html",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-building-regulations",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-building-regulations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-vs-extension/",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-vs-extension",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-vs-extension/index.html",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-vs-extension",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-vs-extension",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/#garden-room-vs-extension",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-foundations/",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-foundations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-foundations/index.html",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-foundations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-foundations",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-foundations",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-roof-options/",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-roof-options",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-roof-options/index.html",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-roof-options",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-roof-options",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-roof-options",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-insulation/",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-insulation/index.html",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-insulation",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-heating/",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-heating",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-heating/index.html",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-heating",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-heating",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-heating",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-electrics/",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-electrics/index.html",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-electrics",
+      "destination": "/guides/how-a-garden-room-is-built/#garden-room-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-office-ideas/",
+      "destination": "/guides/garden-room-ideas/#garden-office-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-office-ideas/index.html",
+      "destination": "/guides/garden-room-ideas/#garden-office-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-office-ideas",
+      "destination": "/guides/garden-room-ideas/#garden-office-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-gym-ideas/",
+      "destination": "/guides/garden-room-ideas/#garden-gym-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-gym-ideas/index.html",
+      "destination": "/guides/garden-room-ideas/#garden-gym-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-gym-ideas",
+      "destination": "/guides/garden-room-ideas/#garden-gym-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-bar-ideas/",
+      "destination": "/guides/garden-room-ideas/#garden-bar-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-bar-ideas/index.html",
+      "destination": "/guides/garden-room-ideas/#garden-bar-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-bar-ideas",
+      "destination": "/guides/garden-room-ideas/#garden-bar-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-much-does-an-orangery-cost/",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#how-much-does-an-orangery-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-much-does-an-orangery-cost/index.html",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#how-much-does-an-orangery-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-much-does-an-orangery-cost",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#how-much-does-an-orangery-cost",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-long-does-an-orangery-take/",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#how-long-does-an-orangery-take",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-long-does-an-orangery-take/index.html",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#how-long-does-an-orangery-take",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-long-does-an-orangery-take",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#how-long-does-an-orangery-take",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-planning-permission/",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#orangery-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-planning-permission/index.html",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#orangery-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-planning-permission",
+      "destination": "/guides/orangery-cost-build-time-and-planning/#orangery-planning-permission",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-vs-conservatory/",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-vs-conservatory",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-vs-conservatory/index.html",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-vs-conservatory",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-vs-conservatory",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-vs-conservatory",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-vs-extension/",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-vs-extension",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-vs-extension/index.html",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-vs-extension",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-vs-extension",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-vs-extension",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-roof-options/",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-roof-options",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-roof-options/index.html",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-roof-options",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-roof-options",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-roof-options",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-insulation/",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-insulation/index.html",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-insulation",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-insulation",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-ideas/",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-ideas/index.html",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-ideas",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/#orangery-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-ideas/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-ideas/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-ideas",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-ideas",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-bbq/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-bbq",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-bbq/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-bbq",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-bbq",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-bbq",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-worktops/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-worktops",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-worktops/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-worktops",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-worktops",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-worktops",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-storage/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-storage",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-storage/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-storage",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-storage",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-storage",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-electrics/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-electrics/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-electrics",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-electrics",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-plumbing/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-plumbing",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-plumbing/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-plumbing",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-plumbing",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-plumbing",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-winter/",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-winter",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-winter/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-winter",
+      "permanent": true
+    },
+    {
+      "source": "/guides/outdoor-kitchen-winter",
+      "destination": "/guides/planning-an-outdoor-kitchen/#outdoor-kitchen-winter",
+      "permanent": true
+    },
+    {
+      "source": "/blog/kitchen-renovation-cost-hull.html",
+      "destination": "/guides/kitchen-and-bathroom-renovation-costs/#kitchen-renovation-cost-hull",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bathroom-renovation-cost-east-yorkshire.html",
+      "destination": "/guides/kitchen-and-bathroom-renovation-costs/#bathroom-renovation-cost-east-yorkshire",
+      "permanent": true
+    },
+    {
+      "source": "/blog/full-house-renovation-planning-guide.html",
+      "destination": "/guides/planning-a-full-house-renovation/#full-house-renovation-planning-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "/guides/",
+      "permanent": true
+    }
+  ]
+}

@@ -2,7 +2,11 @@
   --charcoal: #1f2328;
   --soft-grey: #f5f5f2;
   --mid-grey: #c9c9c3;
-  --accent: #c07a3d;
+  /* Copper. --accent passes WCAG AA (4.5:1) for text and button text on
+     white, the grey sections and the hero; --accent-light is the original
+     brand copper, kept for decorative borders only. */
+  --accent: #9a5c29;
+  --accent-light: #c07a3d;
   --white: #ffffff;
   --max-width: 1180px;
   --radius: 18px;
@@ -23,6 +27,14 @@ body {
   color: var(--charcoal);
   background: var(--white);
   line-height: 1.6;
+}
+
+/* Headings: tighter than body text so multi-line titles read as one unit. */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
 }
 
 img {
@@ -268,11 +280,13 @@ header {
 
 .hero-grid img {
   object-fit: cover;
+  object-position: center 65%;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
 .hero h1 {
+  line-height: 1.1;
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   margin: 0 0 1rem;
@@ -331,7 +345,7 @@ main > section:nth-of-type(even) {
 .section-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   font-size: clamp(1.8rem, 2.6vw, 2.4rem);
-  line-height: 1.25;
+  line-height: 1.15;
   margin: 0 0 1.4rem;
 }
 
@@ -374,16 +388,22 @@ main > section:nth-of-type(even) {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+/* auto-fill keeps empty columns, so one or two photos stay thumbnail-sized
+   instead of stretching across the page. */
 .gallery {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
+/* Most job photos are portrait phone shots: show them at 4:5 and crop from
+   the lower part of the frame, where the work is, not the ceiling. */
 .gallery img {
   width: 100%;
-  height: 200px;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 70%;
   border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -394,7 +414,8 @@ main > section:nth-of-type(even) {
 
 .gallery-item img {
   width: 100%;
-  height: 200px;
+  height: auto;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -466,7 +487,17 @@ main > section:nth-of-type(even) {
 }
 
 .case-study {
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent-light);
+}
+
+.case-study img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 70%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 
 .review {
@@ -614,7 +645,7 @@ footer a {
 
 .trust-note {
   background: var(--soft-grey);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent-light);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
 }
@@ -626,7 +657,7 @@ footer a {
 }
 
 .system-card {
-  border-top: 4px solid var(--accent);
+  border-top: 4px solid var(--accent-light);
 }
 
 .system-card h3 {
@@ -850,7 +881,7 @@ footer a {
   padding: 1rem 1.2rem;
   border-radius: 12px;
   background: var(--soft-grey);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent-light);
 }
 
 .checker-result--error {
@@ -929,38 +960,88 @@ footer a {
   padding-left: 1.2rem;
 }
 
-.mobile-sticky-cta {
+@media (max-width: 640px) {
+  .aftercare-callout ul {
+    columns: 1;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Contact routes: header phone (desktop) and bottom call bar (mobile)     */
+/* ---------------------------------------------------------------------- */
+
+.nav-phone {
+  display: none;
+  gap: 0.3em;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--charcoal);
+}
+
+.nav-phone-label {
+  font-weight: 400;
+}
+
+@media (min-width: 900px) {
+  .nav-phone {
+    display: inline-flex;
+  }
+}
+
+.mobile-bar {
   display: none;
 }
 
-@media (max-width: 640px) {
-  .mobile-sticky-cta {
+@media (max-width: 899px) {
+  .mobile-bar {
     display: flex;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 999;
-    gap: 0.6rem;
-    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
     background: var(--white);
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.08);
   }
 
-  .mobile-sticky-cta a {
+  .mobile-bar a {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 0.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
     text-align: center;
-    padding: 0.85rem 0.5rem;
-    font-size: 0.92rem;
+    border: 1px solid var(--charcoal);
+    color: var(--charcoal);
+    background: var(--white);
+  }
+
+  .mobile-bar .mobile-bar-cta {
+    flex: 1.4;
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  .mobile-bar .mobile-bar-whatsapp {
+    border-color: #1f7a4d;
+    color: #1f7a4d;
   }
 
   body {
-    padding-bottom: 4.5rem;
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
   }
 
-  .aftercare-callout ul {
-    columns: 1;
+  /* The bottom bar carries the main call to action on small screens. */
+  .navbar .nav-cta {
+    display: none;
   }
 }
 
@@ -985,7 +1066,7 @@ html {
 
 .guarantee-line {
   font-weight: 600;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--accent-light);
   padding-left: 0.75rem;
 }
 
@@ -1054,4 +1135,449 @@ html {
   .area-list {
     columns: 3;
   }
+}
+
+.contact-phone {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.contact-phone a {
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Cookie consent banner (built by assets/js/consent.js)                   */
+/* ---------------------------------------------------------------------- */
+
+.consent-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1100;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem;
+  background: var(--white);
+  color: var(--charcoal);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.consent-banner[hidden] {
+  display: none;
+}
+
+.consent-banner p {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+}
+
+.consent-banner a {
+  text-decoration: underline;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Accept and Reject are deliberately given equal weight. */
+.consent-actions button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--charcoal);
+  background: var(--white);
+  color: var(--charcoal);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.consent-actions button:hover,
+.consent-actions button:focus-visible {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: #4a4f55;
+  margin-top: 0.75rem;
+}
+
+.form-note a {
+  text-decoration: underline;
+}
+
+/* Long-form text pages (privacy policy, guides) */
+/* Keep the column aligned with the rest of the page, but cap line length. */
+.prose > * {
+  max-width: 760px;
+}
+
+.prose h2 {
+  margin-top: 2.4rem;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+}
+
+.prose h3 {
+  margin-top: 1.6rem;
+  font-size: 1.15rem;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.draft-notice {
+  border-left: 6px solid #b3432b;
+}
+
+/* Reviews block (scripts/lib/site.mjs reviews()) */
+.review {
+  margin: 0;
+}
+
+.review blockquote {
+  margin: 0 0 1rem;
+  font-size: 1.02rem;
+}
+
+.review figcaption {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Homepage: photo cards and captions                                      */
+/* ---------------------------------------------------------------------- */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.service-card-media {
+  position: relative;
+  display: block;
+  margin: -1.85rem -1.85rem 1.2rem;
+}
+
+.service-card-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.service-card-media .concept-badge {
+  top: 0.6rem;
+  bottom: auto;
+}
+
+.cards-tight {
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.cards-five {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.cards-tight .card {
+  padding: 1.4rem;
+}
+
+.hero-photo,
+.side-photo {
+  margin: 0;
+}
+
+.hero-photo figcaption,
+.side-photo figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a4f55;
+}
+
+.side-photo img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.also-links {
+  margin-top: 1.5rem;
+}
+
+.also-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Desktop navigation: items across the top, dropdowns on hover/focus.     */
+/* Below 1180px the same links live in the Menu panel.                     */
+/* ---------------------------------------------------------------------- */
+
+@media (min-width: 1180px) {
+  .navbar {
+    gap: 1.25rem;
+  }
+
+  /* The logo carries the name; the text beside it doesn't fit alongside
+     the full navigation. Its alt text still names the link. */
+  .brand span {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links,
+  .nav-links.open {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.15rem;
+    margin: 0 auto 0 0.5rem;
+    padding: 0;
+    min-width: 0;
+    max-height: none;
+    overflow: visible;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    width: auto;
+  }
+
+  .nav-dropdown-toggle {
+    width: auto;
+    padding: 0.65rem 0.7rem;
+    border-radius: 8px;
+  }
+
+  .nav-dropdown-toggle:hover,
+  .nav-dropdown:focus-within .nav-dropdown-toggle {
+    background: var(--soft-grey);
+  }
+
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    margin: 0;
+    padding: 0.5rem;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    z-index: 1001;
+  }
+
+  .nav-dropdown-menu a {
+    font-weight: 400;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+  }
+}
+
+@media (min-width: 1180px) and (max-width: 1299px) {
+  .nav-phone-label {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Damp survey landing page (/damp-proofing/book-a-survey/)                */
+/* ---------------------------------------------------------------------- */
+
+.landing-hero {
+  padding: 2.5rem 0 3rem;
+}
+
+.landing-grid {
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .landing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.landing-offer {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.landing-form {
+  padding: 1.4rem 1.5rem;
+}
+
+.landing-form h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.landing-form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.landing-form .form-grid {
+  gap: 0 0.75rem;
+}
+
+.landing-form input,
+.landing-form select {
+  padding: 0.6rem 0.75rem;
+}
+
+.landing-form textarea {
+  min-height: 72px;
+}
+
+.landing-form button {
+  width: 100%;
+  font-size: 1.05rem;
+}
+
+.tick-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+}
+
+.tick-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.55rem;
+}
+
+.tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.35em;
+  width: 0.45rem;
+  height: 0.8rem;
+  border: solid var(--accent);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Guides */
+.guide-hero h1 {
+  max-width: 900px;
+}
+
+.guide-answer {
+  max-width: 820px;
+  margin: 0 0 1.2rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--white);
+  border-left: 4px solid var(--accent-light);
+  border-radius: 0 12px 12px 0;
+  box-shadow: var(--shadow);
+}
+
+.guide-answer p {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.byline {
+  font-size: 0.95rem;
+  color: #4a4f55;
+}
+
+.guide-toc {
+  padding: 1.1rem 1.4rem;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.guide-toc h2 {
+  margin: 0 0 0.5rem;
+  font-family: inherit;
+  font-size: 1.05rem;
+}
+
+.guide-toc ol {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.guide-toc a,
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.kicker a {
+  color: inherit;
+}
+
+.callout-note {
+  max-width: 700px;
+  padding: 1rem 1.2rem;
+  background: var(--white);
+  border-left: 4px solid var(--accent-light);
+  border-radius: 0 12px 12px 0;
+}
+
+.callout-note p {
+  margin: 0;
+}
+
+.gallery-large {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+.gallery-large figure {
+  margin: 0;
+}
+
+.gallery-large .photo-slot img {
+  aspect-ratio: 4 / 5;
+  object-position: center 70%;
+}
+
+.card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
 }

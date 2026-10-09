@@ -6,6 +6,8 @@
 import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
+import { wrap, replyTime, formPrivacy, phoneLink, reviews } from "./lib/site.mjs";
+import { WHATSAPP } from "./data/business.mjs";
 
 const HUB = "/damp-proofing/";
 const BOOK = "/damp-proofing/book-a-survey/";
@@ -19,15 +21,15 @@ const GUARANTEE_LINE = "Backed by guarantees of up to 30 years.";
 // Damp-specific coverage. Hull, Beverley, Hessle and Cottingham have their
 // own area pages, so they're linked where listed.
 const AREAS = [
-  { name: "Hull", href: "/hull.html" },
-  { name: "Beverley", href: "/beverley.html" },
+  { name: "Hull", href: "/damp-proofing/hull/" },
+  { name: "Beverley", href: "/damp-proofing/beverley/" },
   { name: "Bridlington" },
   { name: "Driffield" },
   { name: "Goole" },
   { name: "Hessle", href: "/hessle.html" },
   { name: "Cottingham", href: "/cottingham.html" },
-  { name: "Scunthorpe" },
-  { name: "Grimsby" },
+  { name: "Scunthorpe", href: "/damp-proofing/scunthorpe/" },
+  { name: "Grimsby", href: "/damp-proofing/grimsby/" },
   { name: "Brigg" },
   { name: "Barton-upon-Humber" },
 ];
@@ -55,6 +57,16 @@ const PAGE_GUARANTEE = {
   "mould-treatment": "Treatment, plastering and decorating: 2-year guarantee.",
   "cellar-tanking": "Tanking and membrane systems: 10-year guarantee.",
 };
+
+// The five steps from survey to guarantee, shown on the hub and the
+// booking page.
+const HOW_IT_WORKS = [
+  { title: "Survey", body: "We inspect the affected areas inside and out, take moisture readings and work out the cause." },
+  { title: "Written report", body: "You get a plain-English report of what we found, what&rsquo;s causing it and what we recommend." },
+  { title: "Quote", body: `If work is needed, we give you a clear written quote covering the treatment, replastering and making good. Accept it and your ${SURVEY_PRICE} survey fee is deducted.` },
+  { title: "The work", body: "We carry out the repair or treatment, then replaster, make good and decorate where needed." },
+  { title: "Guarantee", body: "Completed work is backed by a written guarantee of up to 30 years, depending on the treatment." },
+];
 
 const ph = (text) => `<span class="placeholder">[${text}]</span>`;
 
@@ -120,7 +132,23 @@ const link = (slug, text) => `<a href="${url(slug)}">${text || PAGES[slug].label
 // ---------------------------------------------------------------------------
 // Shared blocks
 // ---------------------------------------------------------------------------
-function hero({ kicker, h1, intro, service, secondary = { label: "All damp proofing services", href: HUB } }) {
+// Above-the-fold photo on the damp hub: a real survey photo once
+// assets/img/damp/survey-hero.jpg exists (4:3 or 3:4 JPG); until then the
+// labelled AI moisture-meter illustration.
+function hubHeroImage() {
+  if (existsSync("assets/img/damp/survey-hero.jpg")) {
+    return `<figure class="hero-photo photo-slot">
+            <img src="/assets/img/damp/survey-hero.jpg" width="1200" height="900" alt="Damp survey in progress" loading="eager" fetchpriority="high">
+          </figure>`;
+  }
+  return `<!-- TODO(owner): add a real damp survey photo as assets/img/damp/survey-hero.jpg and re-run this script; it replaces the AI illustration below. -->
+          <figure class="hero-photo photo-slot">
+            <img src="/assets/img/damp/damp-surveys-before-ai.jpg" width="1200" height="900" alt="AI-generated illustration - moisture meter on a damp wall, not a photo of an EYR job" loading="eager" fetchpriority="high">
+            <span class="concept-badge">AI-generated illustration</span>
+          </figure>`;
+}
+
+function hero({ kicker, h1, intro, service, image, secondary = { label: "All damp proofing services", href: HUB } }) {
   return `    <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -132,7 +160,10 @@ function hero({ kicker, h1, intro, service, secondary = { label: "All damp proof
             <a class="btn primary" href="${bookHref(service)}">Book a damp survey</a>
             <a class="btn secondary" href="${secondary.href}">${secondary.label}</a>
           </div>
-        </div>
+        </div>${image ? `
+        <div>
+          ${image}
+        </div>` : ""}
       </div>
     </section>
 `;
@@ -251,7 +282,7 @@ ${faqList(faqs)}      </div>
 `;
 }
 
-function ldService({ name, serviceType, description, canonical }) {
+function ldService({ name, serviceType, description, canonical, areaServed = AREA_SERVED }) {
   return `
   <script type="application/ld+json">
   ${JSON.stringify(
@@ -262,7 +293,7 @@ function ldService({ name, serviceType, description, canonical }) {
       name,
       description,
       provider: { "@type": "HomeAndConstructionBusiness", "@id": BUSINESS_ID, name: BUSINESS_NAME, url: `${SITE}/` },
-      areaServed: AREA_SERVED.map((n) => ({ "@type": "Place", name: n })),
+      areaServed: areaServed.map((n) => ({ "@type": "Place", name: n })),
       url: canonical,
     },
     null,
@@ -279,11 +310,12 @@ function writePage({ path, title, description, crumb, body, faqs, service }) {
   breadcrumbs.push({ name: crumb });
 
   const html = [
-    headBlock({ title, description, canonical }),
-    // On damp pages the header's "Get a Quote" button goes to the damp form.
-    header().replace('<a href="/contact.html#quote-form" class="nav-cta">', `<a href="${BOOK}" class="nav-cta">`),
+    // Share image: a room we replastered (real photo); there are no real
+    // damp job photos yet.
+    headBlock({ title, description, canonical, ogImage: "/assets/img/og/plastering.jpg" }),
+    header(canonical),
     body,
-    footer(),
+    footer(canonical),
     ldBusiness(canonical),
     ldBreadcrumb(breadcrumbs),
     faqs ? ldFAQ(faqs.map((f) => ({ q: plain(f.q), a: plain(f.a) }))) : "",
@@ -306,6 +338,7 @@ function servicePage({ slug, kicker, title, description, h1, intro, sections, ma
     makingGood(makingGoodText),
     photoSlots(slug, photos, photoHeading),
     relatedAndBook({ related, callout, service: slug }),
+    wrap("reviews", reviews()),
     faqSection(faqH2, faqs),
   ].join("\n");
   writePage({ path: url(slug), title, description, crumb: PAGES[slug].label.replace(/&amp;/g, "&"), body, faqs, service });
@@ -353,6 +386,7 @@ const hubBody = [
     h1: "Damp proofing and damp surveys in Hull &amp; East Yorkshire.",
     intro: "We find out what&rsquo;s actually causing the damp before recommending anything. Then, if work is needed, we carry it out, replaster and make good ourselves, across Hull, the East Riding and North Lincolnshire.",
     secondary: { label: "How it works", href: "#how-it-works" },
+    image: hubHeroImage(),
   }),
   section({
     kicker: "Cause first",
@@ -391,13 +425,7 @@ ${bookingCallout({ body: `Tell us where the damp is and what you&rsquo;ve notice
       <div class="container">
         <p class="kicker">How it works</p>
         <h2 class="section-title">From survey to guarantee.</h2>
-${stepsList([
-  { title: "Survey", body: "We inspect the affected areas inside and out, take moisture readings and work out the cause." },
-  { title: "Written report", body: "You get a plain-English report of what we found, what&rsquo;s causing it and what we recommend." },
-  { title: "Quote", body: `If work is needed, we give you a clear written quote covering the treatment, replastering and making good. Accept it and your ${SURVEY_PRICE} survey fee is deducted.` },
-  { title: "The work", body: "We carry out the repair or treatment, then replaster, make good and decorate where needed." },
-  { title: "Guarantee", body: "Completed work is backed by a written guarantee of up to 30 years, depending on the treatment." },
-])}      </div>
+${stepsList(HOW_IT_WORKS)}      </div>
     </section>
 `,
   `    <section class="section" id="guarantee">
@@ -441,6 +469,7 @@ ${AREAS.map((a) => `          <li>${a.href ? `<a href="${a.href}">${a.name}</a>`
       </div>
     </section>
 `,
+  wrap("reviews", reviews()),
   faqSection("Damp proofing FAQs.", hubFaqs),
 ].join("\n");
 
@@ -933,6 +962,179 @@ servicePage({
 });
 
 // ---------------------------------------------------------------------------
+// Damp town pages: Hull, Beverley, Scunthorpe, Grimsby. Each describes the
+// local housing and the damp problems that go with it. Kept to general,
+// well-established facts about each town's housing; no statistics.
+// ---------------------------------------------------------------------------
+const TOWNS = [
+  {
+    slug: "hull",
+    town: "Hull",
+    council: "Hull City Council",
+    title: "Damp Surveys & Damp Proofing in Hull | From £119 | EYR",
+    description: "Damp surveys and damp proofing in Hull. £119 survey, deducted from treatment if you go ahead. Terraces, post-war homes and condensation, diagnosed properly.",
+    intro: "Hull&rsquo;s housing has its own damp problems: solid-walled Victorian and Edwardian terraces, low-lying ground and plenty of post-war homes with condensation. We&rsquo;re based in Hessle, just west of the city, and find the cause before recommending anything.",
+    housing: [
+      "Much of Hull&rsquo;s older housing is late Victorian and Edwardian terraces, around the Avenues, Newland Park, and off Hessle Road, Holderness Road, Beverley Road and Anlaby Road, many with rear yards and the &ldquo;tenfoot&rdquo; alleys behind them. These houses have solid brick walls with no cavity, so rain that gets past failed pointing or a leaking downpipe can track straight through to the inside.",
+      "The city is low-lying and sits on the Humber estuary, with a high water table. Ground-floor walls stay in contact with damp ground, and yards, paths and back gardens raised over the years often end up above the original damp-proof course, bridging it. Cellars are less common in Hull than in many cities for the same reason.",
+      "Hull also has a large stock of inter-war and post-war housing, including big estates such as Bransholme and Orchard Park. In these homes the usual problem is condensation: replacement windows without trickle vents, weak bathroom and kitchen extraction, and cold corners where black mould takes hold.",
+      "Many Hull homes were flooded in 2007, and some still have damp-related damage or hurried repairs from that time that are worth checking.",
+    ],
+    problems: [
+      ["Bridged damp-proof courses", "Concrete yards, paths and raised flower beds against terrace walls, often above the damp-proof course. Lowering the ground level or adding a drainage channel fixes the cause.", "/damp-proofing/rising-damp-treatment/"],
+      ["Penetrating damp in solid walls", "Eroded pointing, leaking cast-iron or plastic downpipes and cracked render on gable ends.", "/damp-proofing/penetrating-damp/"],
+      ["Condensation and black mould", "Especially in post-war homes and flats with sealed windows and poor extraction.", "/damp-proofing/condensation-control/"],
+      ["Rising damp", "Genuine rising damp does occur in older terraces, but only once the look-alikes above have been ruled out.", "/guides/how-to-tell-if-its-rising-damp/"],
+    ],
+    areas: "Hull city centre, the Avenues, Newland Park, Hessle Road, Holderness Road, Beverley Road, Anlaby Road, Sutton, Bransholme, Orchard Park, Kingswood and the villages around the city, including Hessle, Anlaby, Willerby, Kirk Ella and Cottingham.",
+    faqs: [
+      { q: "How much is a damp survey in Hull?", a: "£119, and it is deducted from the cost of any treatment if you go ahead with our quote." },
+      { q: "Are Hull terraces prone to rising damp?", a: "They can be, but much of the damp we see in Hull terraces is bridging from raised yards and paths, or rain getting through solid walls. A survey tells you which before you spend money on treatment." },
+      { q: "Do you cover the whole of Hull?", a: "Yes, and the surrounding villages. We're based in Hessle, just west of the city." },
+    ],
+  },
+  {
+    slug: "beverley",
+    town: "Beverley",
+    council: "East Riding of Yorkshire Council",
+    title: "Damp Surveys & Damp Proofing in Beverley | £119 | EYR",
+    description: "Damp surveys and damp proofing in Beverley. Older solid-walled houses, conservation areas and listed buildings, diagnosed before any treatment. £119 survey.",
+    intro: "Beverley&rsquo;s older houses need a careful approach to damp: solid walls, lime mortar and plaster, conservation areas and listed buildings. We survey first and recommend treatments that suit the building, not just the damp.",
+    housing: [
+      "Beverley is a historic market town, and its centre, around the Minster, Saturday Market and the streets leading out to the Westwood, is made up largely of Georgian and Victorian houses. Much of the town centre is a conservation area, and many buildings are listed.",
+      "Older houses like these were usually built with solid walls, lime mortar and lime plaster, which let moisture in and out. Many have since had cement pointing, cement render or gypsum plaster added, and non-breathable paints. Those trap moisture in the wall, and the damp they cause is often mistaken for rising damp.",
+      "Beverley also has plenty of twentieth-century housing, from inter-war semis to newer estates on the edges of the town, where condensation and penetrating damp are the more usual problems.",
+    ],
+    problems: [
+      ["Moisture trapped by modern materials", "Cement pointing and render, gypsum plaster and plastic paints on walls built to breathe. The fix is often to remove them and repair in lime.", "/damp-proofing/penetrating-damp/"],
+      ["Penetrating damp", "Worn pointing, leaking gutters and downpipes, and defective sills on older brickwork.", "/damp-proofing/penetrating-damp/"],
+      ["Condensation", "In newer homes and in older ones where windows have been sealed up.", "/damp-proofing/condensation-control/"],
+      ["Rising damp", "Diagnosed carefully: chemical damp-proof courses are not always appropriate in historic walls.", "/damp-proofing/rising-damp-treatment/"],
+    ],
+    note: "If your house is listed, work that affects its character usually needs listed building consent from East Riding of Yorkshire Council, and some damp treatments may not be suitable. We&rsquo;ll flag this in the survey report. Check with the council before any work starts.",
+    areas: "Beverley town centre, Molescroft, Woodhall Way, Swinemoor and the surrounding villages, including Walkington, Cherry Burton and Bishop Burton.",
+    faqs: [
+      { q: "Can you damp-proof a listed building in Beverley?", a: "We can survey it and recommend work that suits the building, but works affecting a listed building's character usually need listed building consent from East Riding of Yorkshire Council. Some standard treatments are not appropriate for historic walls." },
+      { q: "Why is my old house damp after being repointed?", a: "If an old solid wall built with lime mortar has been repointed in hard cement mortar, moisture can be trapped in the bricks. A survey will show whether that is the cause." },
+      { q: "How much is a damp survey in Beverley?", a: "£119, deducted from the cost of any treatment if you go ahead with our quote." },
+    ],
+  },
+  {
+    slug: "scunthorpe",
+    town: "Scunthorpe",
+    council: "North Lincolnshire Council",
+    title: "Damp Surveys & Damp Proofing in Scunthorpe | £119 | EYR",
+    description: "Damp surveys and damp proofing in Scunthorpe and North Lincolnshire. £119 survey, deducted from treatment if you go ahead. Terraces and post-war homes.",
+    intro: "We cover Scunthorpe and the rest of North Lincolnshire from our base across the Humber in Hessle. The damp problems here follow the town&rsquo;s housing: older terraced streets with solid walls, and plenty of inter-war and post-war homes where condensation is the usual culprit.",
+    housing: [
+      "Scunthorpe grew quickly from the late nineteenth century with the iron and steel industry, and areas such as Crosby and Frodingham still have long streets of terraced houses built for the workforce. Like terraces elsewhere, they have solid brick walls, so failed pointing, leaking gutters and raised yards are common causes of damp.",
+      "Much of the rest of the town is inter-war and post-war housing, including large council-built estates. In these homes we most often find condensation and black mould, made worse by replacement windows without trickle vents and weak extraction in kitchens and bathrooms.",
+    ],
+    problems: [
+      ["Penetrating damp", "Eroded pointing, leaking rainwater goods and cracked render on older terraces.", "/damp-proofing/penetrating-damp/"],
+      ["Bridged damp-proof courses", "Yards, paths and patios raised against the walls over the years.", "/damp-proofing/rising-damp-treatment/"],
+      ["Condensation and mould", "Especially in post-war homes with sealed windows and poor extraction.", "/damp-proofing/condensation-control/"],
+      ["Landlord reports", "Damp and mould reports for landlords and letting agents, with written evidence of the work.", "/damp-proofing/landlord-damp-mould-reports/"],
+    ],
+    areas: "Scunthorpe, including Crosby, Frodingham and Ashby, and North Lincolnshire towns including Brigg and Barton-upon-Humber.",
+    faqs: [
+      { q: "Do you really cover Scunthorpe from Hessle?", a: "Yes. We cover Scunthorpe, Brigg, Barton-upon-Humber and the rest of North Lincolnshire for damp surveys and treatment." },
+      { q: "Is the survey price the same in Scunthorpe?", a: "Yes. A damp survey costs £119, deducted from the cost of any treatment if you go ahead with our quote." },
+      { q: "Do you do landlord damp and mould reports in Scunthorpe?", a: "Yes. Landlord reports cost £99, and we aim to inspect within 5 days of your request." },
+    ],
+  },
+  {
+    slug: "grimsby",
+    town: "Grimsby",
+    council: "North East Lincolnshire Council",
+    title: "Damp Surveys & Damp Proofing in Grimsby | £119 | EYR",
+    description: "Damp surveys and damp proofing in Grimsby. £119 survey, deducted from treatment if you go ahead. Exposed Victorian terraces, penetrating damp and condensation.",
+    intro: "Grimsby&rsquo;s position on the Humber estuary, near the open coast, and its streets of Victorian terraced houses make penetrating damp and condensation the problems we see most. We survey first so you only pay to fix the real cause.",
+    housing: [
+      "Grimsby grew as a fishing port, and the areas around the docks, such as East Marsh and West Marsh, along with much of the town centre, are made up of Victorian and Edwardian terraced houses with solid brick walls.",
+      "The town sits on low ground beside the Humber estuary, close to the North Sea coast, and its walls take a lot of wind-driven rain. On solid-walled houses, that means failed pointing, cracked render, poor sills and leaking gutters quickly show up as damp patches inside.",
+      "There is also a large stock of inter-war and post-war housing across the town and out towards Cleethorpes, where condensation and black mould are the more common problems.",
+    ],
+    problems: [
+      ["Penetrating damp from wind-driven rain", "Repointing, render repairs, gutter and downpipe work and, once repairs are done, masonry water-repellent treatments.", "/damp-proofing/penetrating-damp/"],
+      ["Condensation and black mould", "Ventilation sized to the house, then mould treatment and redecorating.", "/damp-proofing/condensation-control/"],
+      ["Rising and bridged damp", "On older terraces, after the look-alikes have been ruled out.", "/damp-proofing/rising-damp-treatment/"],
+      ["Buying in Grimsby?", "Pre-purchase damp surveys with the written report within 3 days.", "/damp-proofing/pre-purchase-damp-survey/"],
+    ],
+    areas: "Grimsby, including East Marsh, West Marsh, Nunsthorpe, Scartho and Great Coates, and Cleethorpes.",
+    faqs: [
+      { q: "Why do Grimsby houses get damp patches after storms?", a: "Wind-driven rain off the estuary and coast soaks into solid brick walls through worn pointing, cracked render and leaking gutters. That is penetrating damp, and the fix is the repair, not a damp-proof course." },
+      { q: "How much is a damp survey in Grimsby?", a: "£119, deducted from the cost of any treatment if you go ahead with our quote." },
+      { q: "Do you cover Cleethorpes?", a: "Yes, along with the rest of Grimsby." },
+    ],
+  },
+];
+
+function townPage(t) {
+  const path = `${HUB}${t.slug}/`;
+  const body = [
+    hero({
+      kicker: `Damp proofing in ${t.town}`,
+      h1: `Damp surveys and damp proofing in ${t.town}.`,
+      intro: t.intro,
+      secondary: { label: "All damp proofing services", href: HUB },
+    }),
+    `    <section class="section">
+      <div class="container">
+        <p class="kicker">Local housing</p>
+        <h2 class="section-title">${t.town}&rsquo;s housing and why it gets damp.</h2>
+${t.housing.map((p) => `        <p>${p}</p>`).join("\n")}${t.note ? `
+        <div class="callout-note"><p>${t.note}</p></div>` : ""}
+      </div>
+    </section>
+`,
+    `    <section class="section">
+      <div class="container">
+        <p class="kicker">What we find</p>
+        <h2 class="section-title">The damp problems we see most in ${t.town}.</h2>
+        <div class="cards">
+${t.problems.map(([h, p, href]) => `          <article class="card">
+            <h3><a href="${href}">${h}</a></h3>
+            <p>${p}</p>
+          </article>`).join("\n")}
+        </div>
+      </div>
+    </section>
+`,
+    `    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="kicker">How it works</p>
+          <h2 class="section-title">A &pound;119 survey, then a written report and quote.</h2>
+          <p>We inspect the affected areas inside and out, take moisture readings and work out the cause. You get a written report in plain English, and a quote for any work, which includes the replastering and making good because we do that ourselves. The &pound;119 is deducted from the cost if you go ahead.</p>
+          <p>Damp proofing work is backed by written guarantees of up to 30 years, depending on the treatment. <a href="${HUB}#guarantee">Guarantee terms</a>.</p>
+          <p><strong>Areas we cover:</strong> ${t.areas}</p>
+        </div>
+${bookingCallout({ body: `Damp surveys in ${t.town} cost ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Or call ${phoneLink()}.` })}      </div>
+    </section>
+`,
+    wrap("reviews", reviews()),
+    faqSection(`Damp in ${t.town}: FAQs.`, t.faqs),
+  ].join("\n");
+  writePage({
+    path,
+    title: t.title,
+    description: t.description,
+    crumb: t.town,
+    body,
+    faqs: t.faqs,
+    service: {
+      name: `Damp Surveys & Damp Proofing in ${t.town}`,
+      serviceType: "Damp proofing",
+      description: `Damp surveys, damp proofing, condensation control and mould treatment in ${t.town}, including replastering and making good.`,
+      areaServed: [t.town],
+    },
+  });
+}
+
+for (const t of TOWNS) townPage(t);
+
+// ---------------------------------------------------------------------------
 // Damp enquiry form - posts to api/damp-enquiry.js. Every "Book a damp
 // survey" button links here with ?service=<slug>, which main.js uses to
 // preselect the dropdown.
@@ -942,13 +1144,81 @@ const SERVICE_OPTIONS = [
   { value: "not-sure", label: "Not sure &ndash; I need advice" },
 ];
 
-const bookBody = `    <section class="hero">
-      <div class="container hero-grid">
+const dampForm = `${wrap("reply-time", replyTime())}
+      <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
+        <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
+        <label>
+          What would you like a quote for?
+          <select name="service" required>
+            <option value="">Please select</option>
+${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.label}</option>`).join("\n")}
+          </select>
+        </label>
+        <div class="form-grid">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Postcode of the property
+            <input type="text" name="postcode" autocomplete="postal-code" required>
+          </label>
+        </div>
+        <label>
+          I am a
+          <select name="customerType">
+            <option value="">Please select</option>
+            <option value="Homeowner">Homeowner</option>
+            <option value="Buyer">Buying the property</option>
+            <option value="Landlord or letting agent">Landlord or letting agent</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>
+          Where is the damp, and what have you noticed?
+          <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Send damp enquiry</button>
+        ${wrap("form-privacy", formPrivacy())}
+      </form>`;
+
+const SYMPTOMS = [
+  "Damp patches or tide marks on walls",
+  "Black mould on walls, ceilings or window reveals",
+  "Peeling paint or bubbling wallpaper",
+  "A musty smell that doesn&rsquo;t go away",
+  "Crumbling or blown plaster, or white salt deposits",
+  "Damp or condensation around windows",
+  "&ldquo;Damp noted&rdquo; on a mortgage or home survey",
+];
+
+// This is the page Meta ads land on: offer and form above the fold on
+// desktop, then reasons to trust the survey, then a second call to action.
+const bookBody = `    <section class="hero landing-hero">
+      <div class="container hero-grid landing-grid">
         <div>
-          <p class="kicker">Damp proofing</p>
-          <h1>Book a damp survey or get a damp quote.</h1>
-          <p>Tell us what you need and where the damp is. We&rsquo;ll get back to you to arrange a visit.</p>
+          <p class="kicker">Damp surveys in Hull, East Yorkshire &amp; North Lincolnshire</p>
+          <h1>A &pound;119 damp survey that finds the real cause.</h1>
+          <p class="landing-offer">The &pound;119 is deducted from the cost of any treatment if you go ahead with our quote.</p>
+          <ul class="tick-list">
+            <li>Moisture readings and an inspection inside and out</li>
+            <li>A written report in plain English, with photos</li>
+            <li>We do the replastering and making good ourselves</li>
+          </ul>
+          <p class="contact-phone">Call ${phoneLink()} or <a href="${WHATSAPP}" data-contact="whatsapp">WhatsApp us</a></p>
           <p class="guarantee-line">${GUARANTEE_LINE}</p>
+        </div>
+        <div class="card landing-form">
+          <h2>Book your survey</h2>
+          ${dampForm}
         </div>
       </div>
     </section>
@@ -956,58 +1226,42 @@ const bookBody = `    <section class="hero">
     <section class="section">
       <div class="container split">
         <div>
-          <p class="kicker">Damp enquiry form</p>
-          <h2 class="section-title">Tell us about the damp.</h2>
-          <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
-            <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
-            <label>
-              What would you like a quote for?
-              <select name="service" required>
-                <option value="">Please select</option>
-${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.label}</option>`).join("\n")}
-              </select>
-            </label>
-            <div class="form-grid">
-              <label>
-                Name
-                <input type="text" name="name" autocomplete="name" required>
-              </label>
-              <label>
-                Phone
-                <input type="tel" name="phone" autocomplete="tel" required>
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" autocomplete="email" required>
-              </label>
-              <label>
-                Postcode of the property
-                <input type="text" name="postcode" autocomplete="postal-code" required>
-              </label>
-            </div>
-            <label>
-              I am a
-              <select name="customerType">
-                <option value="">Please select</option>
-                <option value="Homeowner">Homeowner</option>
-                <option value="Buyer">Buying the property</option>
-                <option value="Landlord or letting agent">Landlord or letting agent</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-            <label>
-              Where is the damp, and what have you noticed?
-              <textarea name="message"></textarea>
-            </label>
-            <button type="submit">Send damp enquiry</button>
-          </form>
+          <p class="kicker">Signs of damp</p>
+          <h2 class="section-title">Do you have any of these?</h2>
+          <ul class="tick-list">
+${SYMPTOMS.map((t) => `            <li>${t}</li>`).join("\n")}
+          </ul>
+          <p>Any one of them is worth a survey. The earlier the cause is found, the less there usually is to put right.</p>
         </div>
-        <div class="card">
-          <h3>What happens next</h3>
-          <p>We&rsquo;ll contact you to arrange a survey. A damp survey costs ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}.</p>
-          <p>Landlord damp and mould reports cost &pound;99, and we aim to inspect within ${RESPONSE_TIME}. Pre-purchase survey reports are with you within ${REPORT_DAYS}.</p>
-          <p>Not a damp enquiry? Use our <a href="/contact.html#quote-form">general quote form</a>.</p>
-          <p><a href="${HUB}">All damp proofing services</a></p>
+        <div>
+          <p class="kicker">Cause first</p>
+          <h2 class="section-title">Don&rsquo;t assume it&rsquo;s rising damp.</h2>
+          <p>Damp low on a wall is often blamed on rising damp, but it is just as often a leaking gutter or downpipe, soil or a patio built up against the wall, failed pointing, or condensation. A new damp-proof course won&rsquo;t fix any of those.</p>
+          <p>That is why we survey first and tell you what is actually causing it. If the fix is simple, or no treatment is needed, the report will say so. <a href="/damp-proofing/damp-surveys/">How we tell the types of damp apart</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="kicker">How it works</p>
+        <h2 class="section-title">From survey to guarantee, in five steps.</h2>
+${stepsList(HOW_IT_WORKS)}      </div>
+    </section>
+${wrap("reviews", reviews())}
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <p class="kicker">Book now</p>
+          <h2 class="section-title">Find out what&rsquo;s causing your damp.</h2>
+          <p>A damp survey costs ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Buying a house? Pre-purchase survey reports are with you within ${REPORT_DAYS}. Landlords: damp and mould reports cost &pound;99, and we aim to inspect within ${RESPONSE_TIME}.</p>
+          <p>Not a damp problem? Use our <a href="/contact.html#quote-form">general quote form</a>, or see <a href="${HUB}">all our damp proofing services</a>.</p>
+        </div>
+        <div class="callout">
+          <h3>Book your &pound;119 damp survey</h3>
+          <p>Call ${phoneLink()} or send the form and we&rsquo;ll arrange a visit.</p>
+          <p><a class="btn" href="#damp-enquiry-form">Book a damp survey</a></p>
         </div>
       </div>
     </section>
@@ -1015,8 +1269,8 @@ ${SERVICE_OPTIONS.map((o) => `                <option value="${o.value}">${o.lab
 
 writePage({
   path: BOOK,
-  title: "Book a Damp Survey Hull & East Yorkshire | EYR",
-  description: "Book a damp survey or get a quote for damp proofing, condensation, mould or cellar tanking in Hull, East Yorkshire and North Lincolnshire.",
+  title: "Book a £119 Damp Survey | Hull & East Yorkshire | EYR",
+  description: "A £119 damp survey that finds the real cause, deducted from treatment if you go ahead. Hull, East Yorkshire and North Lincolnshire. Book online or call.",
   crumb: "Book a Damp Survey",
   body: bookBody,
 });
