@@ -4,28 +4,21 @@
 // Every personal or credential statement on this page comes from that file.
 // While a fact is blank, its sentence is left out and a TODO comment marks
 // where it will go - nothing is filled in with a guess.
-import { writeFileSync, existsSync } from "fs";
+import { writeFileSync } from "fs";
 import { page } from "./lib/layout.mjs";
-import { wrap, reviews, credentialLines, phoneLink } from "./lib/site.mjs";
+import { wrap, reviews, credentialLines, phoneLink, ownerPieces } from "./lib/site.mjs";
 import { SITE } from "./lib/constants.mjs";
 import { OWNER, CREDENTIALS, PUBLIC_LIABILITY, COMPANY } from "./data/business.mjs";
 
 const todo = (what) => `<!-- TODO(owner): ${what} - set it in scripts/data/business.mjs and re-run node scripts/build-about.mjs -->`;
 
-// Who runs it: only once the owner has given a name.
-const ownerIntro = OWNER.name
-  ? `<p>I&rsquo;m ${OWNER.name}${OWNER.role ? `, ${OWNER.role} of East Yorkshire Renovations` : ""}.${OWNER.experience ? ` ${OWNER.experience}` : ""}</p>`
-  : todo("owner name, role and experience (first person, e.g. \"I'm ..., and I've worked in ... for ... years\")");
-
-const surveyor = OWNER.surveyor
-  ? `<p>${OWNER.surveyor}</p>`
-  : todo("who carries out damp surveys, and their experience");
-
-const ownerPhoto = OWNER.photo && existsSync(OWNER.photo.replace(/^\//, ""))
-  ? `<div>
-          <picture><img src="${OWNER.photo}" width="900" height="1200" alt="${OWNER.name || "The owner"} of East Yorkshire Renovations" loading="lazy"></picture>
-        </div>`
-  : todo("a real photo of the owner or team - add the file and set OWNER.photo");
+// Who runs it: only what the owner has supplied (see ownerPieces in lib/site.mjs).
+const owner = ownerPieces();
+const ownerIntro = owner.intro;
+const surveyor = owner.surveyor;
+const ownerPhoto = owner.photo.startsWith("<!--") ? owner.photo : `<div>
+          ${owner.photo}
+        </div>`;
 
 const credentials = credentialLines();
 const credentialsSection = credentials.length
@@ -71,6 +64,8 @@ const body = `    <section class="hero">
           <p class="kicker">Who we are</p>
           <h2 class="section-title">Who runs East Yorkshire Renovations.</h2>
           ${ownerIntro}
+          ${owner.years}
+          ${owner.different}
           <p>We&rsquo;re based on Station Road in Hessle. We work across Hull, Hessle, Cottingham, Beverley and the villages west of the city, and our damp work reaches further out into the East Riding and across the Humber into North Lincolnshire.</p>
           <p>Our work falls into three parts: damp surveys and damp proofing; kitchens, bathrooms and full renovations; and bigger home improvements such as garage conversions, garden rooms and conservatory transformations.</p>
         </div>

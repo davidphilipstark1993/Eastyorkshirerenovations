@@ -35,9 +35,15 @@ export const OWNER = {
   experience: "I&rsquo;ve spent several years carrying out damp surveys and writing damp reports, installing damp-proof courses, and sorting out ventilation and air flow in homes.",
   surveyor: "I carry out our damp surveys and write the reports myself, so the person who diagnoses the damp is the same person who quotes for the work and answers for it afterwards.",
   photo: null, // TODO(owner): e.g. "/assets/img/about/owner.jpg" once a real photo exists
+  // TODO(owner): years of experience, as a first-person sentence, e.g. "I've worked in damp proofing for 8 years."
+  yearsExperience: null,
+  // TODO(owner): what makes EYR different from other firms, in your own words (one short paragraph, first person).
+  different: null,
 };
 
 // Qualifications and memberships: deliberately left off the site.
+// TODO(owner): training and memberships actually held (e.g. PCA, CSRT, if held), as
+// { name, detail }. They appear in the footer, on About and in the damp hub owner block.
 export const CREDENTIALS = [];
 
 export const PUBLIC_LIABILITY = "£2,000,000";
@@ -48,9 +54,10 @@ export const COMPANY = {
   established: "2025",
 };
 
-// Real customer reviews only: { text, name, town, service }. The reviews
-// block renders nowhere until this list has at least one entry.
-// TODO(owner): add genuine reviews (ideally ones also visible on Google).
+// Real customer reviews only: { text, name, town, date, service }. While this
+// list is empty the reviews block shows just the link to the Google reviews.
+// TODO(owner): paste 3-6 real Google reviews (name, town, date, text), exactly as
+// they appear on Google, e.g. { text: "...", name: "...", town: "...", date: "March 2026", service: "Damp survey" }.
 export const REVIEWS = [];
 
 export const sameAs = () => [GOOGLE_PROFILE, ...SOCIAL_PROFILES].filter(Boolean);

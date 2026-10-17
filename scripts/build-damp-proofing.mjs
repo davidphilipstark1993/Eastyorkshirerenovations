@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { headBlock, header, footer, ldBusiness, ldBreadcrumb, ldFAQ, stepsList, faqList } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID } from "./lib/constants.mjs";
-import { wrap, replyTime, formPrivacy, phoneLink, reviews } from "./lib/site.mjs";
+import { wrap, replyTime, formPrivacy, phoneLink, reviews, ownerBlock } from "./lib/site.mjs";
 import { WHATSAPP } from "./data/business.mjs";
 
 const HUB = "/damp-proofing/";
@@ -495,6 +495,7 @@ ${AREAS.map((a) => `          <li>${a.href ? `<a href="${a.href}">${a.name}</a>`
       </div>
     </section>
 `,
+  ownerBlock(),
   wrap("reviews", reviews()),
   faqSection("Damp proofing FAQs.", hubFaqs),
 ].join("\n");

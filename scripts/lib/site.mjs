@@ -8,7 +8,8 @@
 // To change any of these site-wide: edit this file, then
 // run `node scripts/sync-layout.mjs`.
 import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
-import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, GOOGLE_REVIEW_LINK, SOCIAL_PROFILES, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, sameAs } from "../data/business.mjs";
+import { existsSync } from "fs";
+import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, GOOGLE_REVIEW_LINK, SOCIAL_PROFILES, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, OWNER, sameAs } from "../data/business.mjs";
 
 export const BLOCKS = ["head", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
@@ -276,12 +277,23 @@ const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replac
 
 export function reviews({ heading = "What customers say.", service } = {}) {
   const list = service ? REVIEWS.filter((r) => r.service === service).concat(REVIEWS.filter((r) => r.service !== service)) : REVIEWS;
+  const readAll = GOOGLE_PROFILE ? `<a class="btn secondary" href="${GOOGLE_PROFILE}" rel="noopener">Read all our Google reviews</a>` : "";
   if (!list.length) {
-    return `<!-- TODO(owner): a reviews block appears here once real reviews are added to REVIEWS in scripts/data/business.mjs. -->`;
+    // No reviews to show yet: no invented quotes, just the way to Google.
+    if (!readAll) return `<!-- TODO(owner): paste 3-6 real Google reviews (name, town, date, text) into REVIEWS in scripts/data/business.mjs. -->`;
+    return `    <!-- TODO(owner): paste 3-6 real Google reviews (name, town, date, text) into REVIEWS in scripts/data/business.mjs and the quotes appear here. -->
+    <section class="section reviews">
+      <div class="container">
+        <p class="kicker">Reviews</p>
+        <h2 class="section-title">See what our customers say on Google.</h2>
+        <p>You can read what our customers say about us on our Google Business Profile.</p>
+        <p>${readAll}</p>
+      </div>
+    </section>`;
   }
-  const cards = list.slice(0, 3).map((r) => `          <figure class="review card">
+  const cards = list.slice(0, 6).map((r) => `          <figure class="review card">
             <blockquote>${esc(r.text)}</blockquote>
-            <figcaption>${esc(r.name)}, ${esc(r.town)}${r.service ? ` &middot; ${esc(r.service)}` : ""}</figcaption>
+            <figcaption>${esc(r.name)}, ${esc(r.town)}${r.service ? ` &middot; ${esc(r.service)}` : ""}${r.date ? ` &middot; ${esc(r.date)}` : ""}</figcaption>
           </figure>`).join("\n");
   return `    <section class="section reviews">
       <div class="container">
@@ -289,10 +301,60 @@ export function reviews({ heading = "What customers say.", service } = {}) {
         <h2 class="section-title">${heading}</h2>
         <div class="cards">
 ${cards}
-        </div>${GOOGLE_PROFILE ? `
-        <p><a href="${GOOGLE_PROFILE}" rel="noopener">Read all our reviews on Google</a></p>` : ""}
+        </div>${readAll ? `
+        <p>${readAll}</p>` : ""}
       </div>
     </section>`;
+}
+
+// ---------------------------------------------------------------------------
+// Owner / team: only what the owner has supplied (scripts/data/business.mjs).
+// Blank fields are left out and marked with a TODO comment.
+// ---------------------------------------------------------------------------
+const ownerTodo = (what) => `<!-- TODO(owner): ${what} - set it in scripts/data/business.mjs and re-run node scripts/build-all.mjs -->`;
+
+export function ownerPieces() {
+  const photo = OWNER.photo && existsSync(OWNER.photo.replace(/^\//, ""))
+    ? `<picture><img src="${OWNER.photo}" width="900" height="1200" alt="${OWNER.name || "The owner"} of East Yorkshire Renovations" loading="lazy"></picture>`
+    : ownerTodo("a real photo of the owner or team - add the file and set OWNER.photo");
+  const credentials = CREDENTIALS.map((c) => (c.detail ? `${c.name} (${c.detail})` : c.name));
+  return {
+    photo,
+    intro: OWNER.name
+      ? `<p>I&rsquo;m ${OWNER.name}${OWNER.role ? `, ${OWNER.role} of East Yorkshire Renovations` : ""}.${OWNER.experience ? ` ${OWNER.experience}` : ""}</p>`
+      : ownerTodo("owner name, role and experience (first person)"),
+    years: OWNER.yearsExperience ? `<p>${OWNER.yearsExperience}</p>` : ownerTodo("years of experience (OWNER.yearsExperience)"),
+    surveyor: OWNER.surveyor ? `<p>${OWNER.surveyor}</p>` : ownerTodo("who carries out damp surveys, and their experience"),
+    different: OWNER.different ? `<p>${OWNER.different}</p>` : ownerTodo("what makes EYR different (OWNER.different)"),
+    credentials: credentials.length
+      ? `<p><strong>Training and memberships:</strong> ${credentials.join("; ")}.</p>`
+      : ownerTodo("training and memberships actually held, e.g. PCA, CSRT (CREDENTIALS)"),
+  };
+}
+
+// "Who you'll deal with" block for the damp hub.
+export function ownerBlock({ kicker = "Who you deal with", heading = "The person who surveys is the person who quotes." } = {}) {
+  const o = ownerPieces();
+  const hasPhoto = !o.photo.startsWith("<!--");
+  return `    <section class="section">
+      <div class="container${hasPhoto ? " split" : ""}">
+        <div>
+          <p class="kicker">${kicker}</p>
+          <h2 class="section-title">${heading}</h2>
+          ${o.intro}
+          ${o.years}
+          ${o.surveyor}
+          ${o.different}
+          ${o.credentials}
+          <p><a href="/about.html">More about East Yorkshire Renovations</a></p>
+        </div>${hasPhoto ? `
+        <div>
+          ${o.photo}
+        </div>` : `
+        ${o.photo}`}
+      </div>
+    </section>
+`;
 }
 
 // One line under each form, pointing to the privacy policy.
