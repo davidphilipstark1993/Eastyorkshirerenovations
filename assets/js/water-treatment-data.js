@@ -34,8 +34,8 @@ window.WATER_TREATMENT_DATA = {
         "Water softening to reduce hardness and limescale",
         "Professional installation",
         "Commissioning and handover",
-        "Warranty",
-        "Ongoing aftercare"
+        "Warranty terms confirmed in your written quote",
+        "Aftercare details confirmed in your written quote"
       ],
       idealFor: "Homeowners who want a properly specified, professionally installed softening solution for hardness and limescale throughout the property.",
       popular: false,
@@ -54,8 +54,8 @@ window.WATER_TREATMENT_DATA = {
         "Broader water-treatment coverage throughout the property",
         "Professional installation",
         "Commissioning and handover",
-        "Warranty",
-        "Ongoing aftercare"
+        "Warranty terms confirmed in your written quote",
+        "Aftercare details confirmed in your written quote"
       ],
       idealFor: "Homeowners who want softened, filtered water throughout the whole home - our recommended starting point for most properties.",
       popular: true,
@@ -72,9 +72,9 @@ window.WATER_TREATMENT_DATA = {
         "Everything in Complete",
         "Premium-specification softening equipment",
         "Advanced filtration",
-        "Priority commissioning and handover",
-        "Warranty",
-        "Enhanced aftercare and support"
+        "Commissioning and handover",
+        "Warranty terms confirmed in your written quote",
+        "Aftercare details confirmed in your written quote"
       ],
       idealFor: "Homeowners who want a higher-specification system and an enhanced level of ongoing service.",
       popular: false,
@@ -94,8 +94,8 @@ window.WATER_TREATMENT_DATA = {
         "Premium drinking-water tap",
         "Professional installation",
         "Commissioning and handover",
-        "Warranty",
-        "Ongoing aftercare"
+        "Warranty terms confirmed in your written quote",
+        "Aftercare details confirmed in your written quote"
       ],
       idealFor: "Homeowners who want complete whole-home treatment plus the highest level of drinking-water filtration.",
       popular: false,
