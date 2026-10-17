@@ -595,8 +595,8 @@ servicePage({
   faqH2: "Damp survey FAQs.",
   faqs: [
     { q: "How much is a damp survey in Hull?", a: `A damp survey costs ${SURVEY_PRICE}, including VAT, across Hull and East Yorkshire. If you accept our quote for treatment, the ${SURVEY_PRICE} is deducted from the cost of the work.` },
-    // TODO(owner): typical survey visit length (e.g. "about an hour for a two-bed terrace").
-    { q: "How long does a damp survey take?", a: "It depends on the size of the house and how many areas are affected. We&rsquo;ll give you an idea of timing when you book." },
+    // Visit length is the typical UK figure (one to three hours); TODO(owner): confirm it matches EYR's visits.
+    { q: "How long does a damp survey take?", a: "A damp survey visit typically takes one to three hours, depending on the size of the house and how many areas are affected. We&rsquo;ll give you an idea of timing when you book, and the written report follows." },
     { q: "Is it rising damp or condensation?", a: "Rising damp sits low on ground-floor walls, often with a tide mark and salt staining, and changes little with the weather; condensation shows up as streaming windows and black mould in corners and on outside walls, and is usually worst in winter. A survey is the reliable way to tell, because the two can look alike and need completely different fixes." },
     { q: "What do I get after the survey?", a: "You get a written report with the moisture readings, photos, what we believe is causing the damp and what we recommend, in order of priority. If work is needed, it includes a quote for that work, with replastering and making good." },
     { q: "Will you just try to sell me a damp-proof course?", a: "No. A lot of damp isn&rsquo;t rising damp at all, and a new damp-proof course won&rsquo;t fix condensation or a leaking gutter. We recommend what the evidence points to, and if no treatment is needed we&rsquo;ll say so." },
@@ -804,8 +804,8 @@ servicePage({
   callout: { body: "We&rsquo;ll confirm whether it&rsquo;s rising damp before recommending any treatment." },
   faqH2: "Rising damp FAQs.",
   faqs: [
-    // TODO(owner): typical on-site time for a DPC injection (e.g. "one to two days for a terraced house").
-    { q: "How long does a DPC injection take?", a: "The injection itself is the quickest part of the job; most of the time goes on hacking off, replastering and letting the wall dry. We give you a timescale for your job with the quote, and you don&rsquo;t need to wait for the wall to dry fully before using the room." },
+    // TODO(owner): confirm these UK guide figures match EYR's own pricing (sources: Checkatrade, MyJobQuote, Bookabuilder, Trade2base, MyBuilder, 2026 UK price guides).
+    { q: "How long does a DPC injection take, and what does it cost?", a: "The injection itself usually takes one to two days on site, and a full room treatment including replastering typically takes three to seven days. As a guide, UK prices are around &pound;60 to &pound;120 per metre of wall for the injection, and roughly &pound;1,500 to &pound;5,000 for a typical terraced house including replastering. Your written quote after the survey gives the figure for your home, and you don&rsquo;t need to wait for the wall to dry fully before using the room." },
     { q: "Do I need to replaster after damp treatment?", a: "Yes, in most cases. Plaster that has been damp for years is full of salts that keep drawing in moisture, so we hack it off, typically to around a metre high or further where the damp goes higher, and replaster with a salt-resistant plaster. We do the replastering and making good ourselves." },
     { q: "How do I know if I have rising damp?", a: "Typical signs are damp and a tide mark low on ground-floor walls, salt staining and blown plaster or paint near the floor. But several other problems look similar, so a survey is the only way to be sure." },
     { q: "Why do you need to remove the plaster?", a: "Old plaster affected by rising damp is contaminated with salts that keep drawing in moisture. Unless it&rsquo;s removed and replaced with a salt-resistant plaster, the wall can stay damp and stained after treatment." },
@@ -861,8 +861,8 @@ servicePage({
     { q: "Will a water-repellent cream fix my damp on its own?", a: "Usually not. It helps reduce rain absorption on sound brickwork, but if the pointing, render or gutters are defective, those need repairing first." },
     { q: "How long does the wall take to dry after the repair?", a: "It depends on how wet the wall got and how thick it is. It can take weeks or months. We&rsquo;ll advise on when it&rsquo;s ready to replaster and decorate." },
     { q: "Do you do the inside repairs as well?", a: "Yes. We replaster, make good and redecorate the inside once the cause outside is fixed." },
-    // TODO(owner): typical price ranges for repointing, gutter/downpipe replacement and render repair.
-    { q: "How much does penetrating damp repair cost?", a: `It depends entirely on the cause: repointing a gable, replacing a gutter and repairing render are very different jobs. The ${SURVEY_PRICE} survey identifies the cause, and you then get a written quote for the repair. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
+    // TODO(owner): confirm these UK guide figures match EYR's own pricing (sources: Checkatrade, MyJobQuote, Bookabuilder, Trade2base, MyBuilder, 2026 UK price guides).
+    { q: "How much does penetrating damp repair cost?", a: `It depends entirely on the cause. As a guide, UK prices are roughly &pound;45 to &pound;110 per square metre for repointing (about &pound;2,500 to &pound;6,000 for a three-bedroom semi, plus scaffolding), &pound;150 to &pound;900 for a render repair patch, and &pound;500 to &pound;1,200 or more to replace a gutter run. The ${SURVEY_PRICE} survey identifies the cause, and you then get a written quote for the repair. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
     { q: "What does the guarantee cover?", a: `Masonry water-repellent treatments carry a 10-year guarantee and penetrating damp repairs (repointing, render repairs, gutter and downpipe work) carry 2 years. If the work fails within that period we inspect it free of charge and put it right. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
@@ -920,8 +920,8 @@ servicePage({
     { q: "Do I need a PIV unit?", a: "Not necessarily. PIV suits some homes very well, but a smaller problem may only need a better extractor fan or trickle vents. We recommend what your home actually needs." },
     { q: "Will a dehumidifier solve condensation?", a: "A dehumidifier can help in the short term, but it treats the symptom. Improving extraction and ventilation deals with the cause." },
     { q: "Can you treat the mould at the same time?", a: "Yes. We can treat and remove existing mould, repair damaged plaster and redecorate once the ventilation is sorted." },
-    // TODO(owner): typical price range for a PIV unit / extractor fan installation.
-    { q: "How much does condensation control cost?", a: `It depends on what your home needs: a better extractor fan or trickle vents cost far less than a PIV unit. The ${SURVEY_PRICE} survey works out what is causing the condensation, and you then get a written quote. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
+    // TODO(owner): confirm these UK guide figures match EYR's own pricing (sources: Checkatrade, MyJobQuote, Bookabuilder, Trade2base, MyBuilder, 2026 UK price guides).
+    { q: "How much does condensation control cost?", a: `It depends on what your home needs: a better extractor fan or trickle vents cost far less than a PIV unit. As a guide, UK prices are around &pound;300 for a typical new extractor fan (&pound;120 to &pound;950 depending on the fan and ducting) and &pound;700 to &pound;1,600 for a PIV unit fitted. The ${SURVEY_PRICE} survey works out what is causing the condensation, and you then get a written quote. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
     { q: "What does the guarantee cover?", a: `Our installation carries a 2-year guarantee, plus the manufacturer&rsquo;s warranty on the unit itself. If our work fails within that period we inspect it free of charge and put it right. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
@@ -1026,8 +1026,8 @@ servicePage({
     { q: "Can my cellar be turned into a living space?", a: "Often, yes, with the right waterproofing, ventilation and finishes. Building regulations apply to a conversion to habitable space, and we&rsquo;ll talk you through that." },
     { q: "Will I need a sump pump?", a: "Some membrane systems need a sump and pump to remove collected water, particularly in wetter cellars. We&rsquo;ll tell you if yours does and what maintenance it needs." },
     { q: "Do you finish the cellar after waterproofing?", a: "Yes. We plaster or line the walls, make good and decorate, and can help with electrics and flooring for a full conversion." },
-    // TODO(owner): typical price range per square metre for tanking / cavity drain membrane.
-    { q: "How much does cellar tanking cost?", a: `It depends on the size of the cellar, how wet it is and whether you need a tanking or membrane system. The ${SURVEY_PRICE} survey looks at the cellar and recommends a system, and you then get a written quote. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
+    // TODO(owner): confirm these UK guide figures match EYR's own pricing (sources: Checkatrade, MyJobQuote, Bookabuilder, Trade2base, MyBuilder, 2026 UK price guides).
+    { q: "How much does cellar tanking cost?", a: `It depends on the size of the cellar, how wet it is and whether you need a tanking or membrane system. As a guide, UK prices are roughly &pound;60 to &pound;150 per square metre for tanking or a cavity drain membrane, with a sump and pump adding about &pound;500 to &pound;1,500 where needed. The ${SURVEY_PRICE} survey looks at the cellar and recommends a system, and you then get a written quote. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
     { q: "What does the guarantee cover?", a: `Tanking and cavity drain membrane systems carry a 10-year guarantee. If the work fails within that period we inspect it free of charge and put it right. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
