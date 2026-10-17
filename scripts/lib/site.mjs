@@ -218,12 +218,15 @@ ${credentialsColumn()}
 // ---------------------------------------------------------------------------
 // Business JSON-LD (one per page, url = that page)
 // ---------------------------------------------------------------------------
-export function business(canonical) {
+export function business(_canonical) {
   const data = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "@id": BUSINESS_ID,
     name: BUSINESS_NAME,
+    legalName: COMPANY.legalName,
+    description: "Renovation and damp-proofing specialists based in Hessle, covering Hull, East Yorkshire and North Lincolnshire.",
+    foundingDate: COMPANY.established,
     image: `${SITE}${LOGO_PATH}`,
     logo: `${SITE}${LOGO_PATH}`,
     email: EMAIL,
@@ -244,7 +247,8 @@ export function business(canonical) {
       },
     ],
     areaServed: AREA_SERVED,
-    url: canonical,
+    // Same value on every page: the entity is the business, not the page it is mentioned on.
+    url: `${SITE}/`,
   };
   const links = sameAs();
   if (links.length) data.sameAs = links;

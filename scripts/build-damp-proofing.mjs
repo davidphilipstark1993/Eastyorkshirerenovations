@@ -282,7 +282,24 @@ ${faqList(faqs)}      </div>
 `;
 }
 
-function ldService({ name, serviceType, description, canonical, areaServed = AREA_SERVED }) {
+// A stated price becomes an Offer on the Service (survey £119, landlord report £99,
+// both total prices including VAT). Only pass one where the page shows the price.
+const SURVEY_OFFER = { name: "Damp survey", price: "119", description: "Damp survey with moisture readings and a written report. The fee is deducted from the cost of any treatment if you accept our quote." };
+const LANDLORD_OFFER = { name: "Landlord damp and mould report", price: "99", description: "Damp and mould inspection with a written report for landlords and letting agents." };
+
+function ldOffer({ name, price, description }) {
+  return {
+    "@type": "Offer",
+    name,
+    description,
+    price,
+    priceCurrency: "GBP",
+    priceSpecification: { "@type": "PriceSpecification", price, priceCurrency: "GBP", valueAddedTaxIncluded: true },
+    seller: { "@id": BUSINESS_ID },
+  };
+}
+
+function ldService({ name, serviceType, description, canonical, areaServed = AREA_SERVED, offer }) {
   return `
   <script type="application/ld+json">
   ${JSON.stringify(
@@ -294,6 +311,7 @@ function ldService({ name, serviceType, description, canonical, areaServed = ARE
       description,
       provider: { "@type": "HomeAndConstructionBusiness", "@id": BUSINESS_ID, name: BUSINESS_NAME, url: `${SITE}/` },
       areaServed: areaServed.map((n) => ({ "@type": "Place", name: n })),
+      ...(offer ? { offers: ldOffer(offer) } : {}),
       url: canonical,
     },
     null,
@@ -492,6 +510,7 @@ writePage({
     name: "Damp Proofing & Damp Surveys in Hull & East Yorkshire",
     serviceType: "Damp proofing",
     description: "Damp surveys, damp proofing, condensation control, mould treatment and cellar tanking across Hull, the East Riding and North Lincolnshire, including replastering and making good.",
+    offer: SURVEY_OFFER,
   },
 });
 
@@ -562,6 +581,7 @@ servicePage({
     name: "Damp Surveys in Hull & East Yorkshire",
     serviceType: "Damp survey",
     description: "Damp surveys with moisture readings, cause diagnosis (rising damp, penetrating damp or condensation) and a written report, across Hull, East Yorkshire and North Lincolnshire.",
+    offer: SURVEY_OFFER,
   },
 });
 
@@ -629,6 +649,7 @@ servicePage({
     name: "Pre-Purchase Damp Surveys in Hull & East Yorkshire",
     serviceType: "Pre-purchase damp survey",
     description: "Specialist damp surveys for home buyers whose mortgage or home survey has flagged damp, with a written report and quote for any remedial work.",
+    offer: { ...SURVEY_OFFER, name: "Pre-purchase damp survey", description: "Pre-purchase damp survey with a written report within 3 days. The fee is deducted from the cost of any treatment if you buy and accept our quote." },
   },
 });
 
@@ -699,6 +720,7 @@ servicePage({
     name: "Landlord Damp & Mould Reports in Hull & East Yorkshire",
     serviceType: "Damp and mould inspection for landlords",
     description: "Damp and mould inspections, written reports and completion records for landlords and letting agents across Hull, East Yorkshire and North Lincolnshire.",
+    offer: LANDLORD_OFFER,
   },
 });
 
@@ -1157,6 +1179,7 @@ ${bookingCallout({ body: `Damp surveys in ${t.town} cost ${SURVEY_PRICE}, ${SURV
       serviceType: "Damp proofing",
       description: `Damp surveys, damp proofing, condensation control and mould treatment in ${t.town}, including replastering and making good.`,
       areaServed: [t.town],
+      offer: SURVEY_OFFER,
     },
   });
 }

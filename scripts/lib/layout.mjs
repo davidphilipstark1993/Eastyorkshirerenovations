@@ -127,8 +127,9 @@ export function ldService({ name, description, canonical, areaServed }) {
       description,
       provider: {
         "@type": "HomeAndConstructionBusiness",
+        "@id": BUSINESS_ID,
         name: BUSINESS_NAME,
-        url: SITE,
+        url: `${SITE}/`,
       },
       areaServed: areaServed || AREA_SERVED,
       url: canonical,

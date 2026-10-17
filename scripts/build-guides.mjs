@@ -256,7 +256,7 @@ ${related.map((r) => `            <li><a href="${r.href}">${r.label}</a></li>`).
     datePublished: published,
     dateModified: TODAY,
     author: by.schema,
-    publisher: { "@type": "Organization", "@id": BUSINESS_ID, name: BUSINESS_NAME, logo: { "@type": "ImageObject", url: `${SITE}${LOGO_PATH}` } },
+    publisher: { "@type": "HomeAndConstructionBusiness", "@id": BUSINESS_ID, name: BUSINESS_NAME, logo: { "@type": "ImageObject", url: `${SITE}${LOGO_PATH}` } },
     mainEntityOfPage: canonical,
     ...(ogImage ? { image: `${SITE}${ogImage}` } : {}),
   };
