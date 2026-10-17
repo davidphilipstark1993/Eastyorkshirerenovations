@@ -1581,3 +1581,16 @@ html {
   margin: 0 0 0.5rem;
   font-size: 1.15rem;
 }
+
+/* Short answer-first summary directly under a service page hero. */
+.answer-summary-section {
+  padding: 2rem 0;
+}
+
+.answer-summary {
+  margin: 0;
+  max-width: 62rem;
+  font-size: 1.1rem;
+  border-left: 4px solid var(--accent-light);
+  padding-left: 1rem;
+}

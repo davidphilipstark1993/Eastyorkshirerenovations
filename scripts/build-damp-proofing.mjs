@@ -68,6 +68,28 @@ const HOW_IT_WORKS = [
   { title: "Guarantee", body: "Completed work is backed by a written guarantee of up to 30 years, depending on the treatment." },
 ];
 
+// Answer-first summary shown directly under each service page hero: what it
+// is, who it is for, the price where one is stated, and the area covered.
+const COVERED = "We cover Hull, East Yorkshire and North Lincolnshire.";
+const SURVEY_FIRST = `Start with a ${SURVEY_PRICE} damp survey (including VAT), which is deducted from the cost of the work if you go ahead.`;
+const SUMMARIES = {
+  hub: `East Yorkshire Renovations finds out what is causing damp before recommending anything, then treats it and does the replastering and making good itself. It is for homeowners, buyers and landlords with damp, mould or condensation. Damp surveys cost ${SURVEY_PRICE} including VAT, deducted from the cost of treatment if you go ahead, and landlord damp and mould reports cost &pound;99. ${COVERED}`,
+  "damp-surveys": `A damp survey finds out what is causing damp in your home, whether rising damp, penetrating damp or condensation, with moisture readings, an inspection inside and out and a written report. It is for homeowners with damp patches, mould or peeling plaster. It costs ${SURVEY_PRICE} including VAT, deducted from the cost of treatment if you go ahead. ${COVERED}`,
+  "pre-purchase-damp-survey": `A pre-purchase damp survey tells buyers whether the &ldquo;damp noted&rdquo; on a mortgage valuation or home survey is a minor fix or a real problem, with a written report within ${REPORT_DAYS}. It costs ${SURVEY_PRICE} including VAT, deducted from the cost of treatment if you buy and go ahead with our quote. ${COVERED}`,
+  "landlord-damp-mould-reports": `A landlord damp and mould report is a written inspection of damp or mould in a rental property, with dated photos, moisture readings, the cause and our recommendations. It is for landlords and letting agents, costs &pound;99 including VAT, and we aim to inspect within ${RESPONSE_TIME} of your request. ${COVERED}`,
+  "rising-damp-treatment": `Rising damp treatment stops ground moisture climbing a wall, with a chemical damp-proof course injection followed by hacking off and salt-resistant replastering. It is for homes where a survey has confirmed rising damp, and the injection carries a 30-year guarantee. ${SURVEY_FIRST} ${COVERED}`,
+  "penetrating-damp": `Penetrating damp repairs stop rain getting into walls through failed pointing, leaking gutters, cracked render or high ground levels. It is for homes with patchy damp that gets worse after rain, and repairs carry guarantees of 2 to 10 years. ${SURVEY_FIRST} ${COVERED}`,
+  "condensation-control": `Condensation control fixes the ventilation problem behind streaming windows and black mould, using PIV units, extractor fans and trickle vents sized to your home. It is for homes where a survey shows moisture from inside the house is the cause, and our installation carries a 2-year guarantee. ${SURVEY_FIRST} ${COVERED}`,
+  "mould-treatment": `Mould treatment removes and treats mould, fixes the damp or condensation feeding it, then replasters and redecorates. It is for homes and rental properties with mould that keeps coming back, and the work carries a 2-year guarantee. ${SURVEY_FIRST} ${COVERED}`,
+  "cellar-tanking": `Cellar tanking waterproofs cellars and basements with tanking or cavity drain membrane systems, then plasters and finishes the walls. It is for wet cellars and for owners who want to use a cellar as living space, and systems carry a 10-year guarantee. ${SURVEY_FIRST} ${COVERED}`,
+};
+const summarySection = (key) => `    <section class="section answer-summary-section">
+      <div class="container">
+        <p class="answer-summary"><strong>In short:</strong> ${SUMMARIES[key]}</p>
+      </div>
+    </section>
+`;
+
 const ph = (text) => `<span class="placeholder">[${text}]</span>`;
 
 // FAQ answers can hold links and entities for the page; JSON-LD wants plain text.
@@ -352,6 +374,7 @@ function writePage({ path, title, description, crumb, body, faqs, service }) {
 function servicePage({ slug, kicker, title, description, h1, intro, sections, makingGoodText, photos, photoHeading, related, callout, faqH2, faqs, service }) {
   const body = [
     hero({ kicker, h1, intro, service: slug }),
+    summarySection(slug),
     ...sections.map(section),
     makingGood(makingGoodText),
     photoSlots(slug, photos, photoHeading),
@@ -414,6 +437,7 @@ const hubBody = [
     secondary: { label: "How it works", href: "#how-it-works" },
     image: hubHeroImage(),
   }),
+  summarySection("hub"),
   section({
     kicker: "Cause first",
     h2: "Diagnose the real cause, then fix only what needs fixing.",
