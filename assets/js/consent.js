@@ -7,7 +7,7 @@
 // Also sends conversion events once consent is given:
 //  - Lead (Meta) + generate_lead (GA4) when a form redirects back with
 //    ?submitted=1, labelled general / damp / water
-//  - Contact (Meta) + contact (GA4) on phone and WhatsApp link clicks
+//  - Contact (Meta) + contact (GA4) on phone, WhatsApp and email link clicks
 (function () {
   "use strict";
 
@@ -110,9 +110,9 @@
   }
 
   document.addEventListener("click", function (e) {
-    var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href*="wa.me/"]');
+    var link = e.target.closest && e.target.closest('a[href^="tel:"], a[href*="wa.me/"], a[href^="mailto:"]');
     if (!link || !loaded) return;
-    var method = link.href.indexOf("tel:") === 0 ? "phone" : "whatsapp";
+    var method = link.href.indexOf("tel:") === 0 ? "phone" : link.href.indexOf("mailto:") === 0 ? "email" : "whatsapp";
     window.fbq("track", "Contact", { content_name: method });
     window.gtag("event", "contact", { method: method });
   });

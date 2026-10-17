@@ -1,5 +1,5 @@
 import sgMail from "@sendgrid/mail";
-import { parse as parseQS } from "querystring";
+import { readBody, line, text, validEmail, isBot, attributionLines } from "./_lib/form.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -8,23 +8,22 @@ export default async function handler(req, res) {
   }
 
   try {
-    const contentType = req.headers["content-type"] || "";
-    let body = {};
+    const body = await readBody(req);
 
-    if (contentType.includes("application/json")) {
-      body = req.body || {};
-    } else {
-      const raw = await new Promise((resolve) => {
-        let data = "";
-        req.on("data", (chunk) => (data += chunk));
-        req.on("end", () => resolve(data));
-      });
-      body = parseQS(raw);
+    if (isBot(body)) {
+      // Pretend it worked so the bot moves on; nothing is sent.
+      res.status(303).setHeader("Location", "/contact.html?submitted=1");
+      res.end();
+      return;
     }
 
-    const { name, phone, email, postcode, message } = body;
+    const name = line(body.name, 100);
+    const phone = line(body.phone, 30);
+    const email = line(body.email, 254);
+    const postcode = line(body.postcode, 12);
+    const message = text(body.message);
 
-    if (!name || !phone || !email || !postcode || !message) {
+    if (!name || !phone || !validEmail(email) || !postcode || !message) {
       res.status(400).json({ error: "Missing required fields" });
       return;
     }
@@ -53,6 +52,8 @@ export default async function handler(req, res) {
         "",
         "Message:",
         message,
+        "",
+        ...attributionLines(body),
       ].join("\n"),
     };
 

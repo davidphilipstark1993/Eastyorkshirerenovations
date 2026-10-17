@@ -317,7 +317,7 @@ export const DAMP_GUIDES = [
   {
     slug: "buying-a-house-with-damp",
     title: "Should I Buy a House With Damp? | Hull & East Yorkshire",
-    description: "What \"damp noted\" on a mortgage survey means, how to find out what the damp really is before you commit, and how to use a damp report in negotiations.",
+    description: "What “damp noted” on a mortgage survey means, how to find out what the damp really is before you commit, and how to use a damp report in negotiations.",
     h1: "Should I buy a house with damp?",
     answer: "Often yes, because many damp problems have simple causes and straightforward fixes, but you should find out what is causing it and what it will cost before you commit. A pre-purchase damp survey gives you a written report within 3 days, with a quote you can take to the seller or your lender.",
     sections: [

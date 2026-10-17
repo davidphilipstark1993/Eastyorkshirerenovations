@@ -51,6 +51,7 @@ export function head() {
   <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#ffffff">
+  <script src="/assets/js/attribution.js" defer></script>
   <script src="/assets/js/consent.js" defer></script>`;
 }
 
