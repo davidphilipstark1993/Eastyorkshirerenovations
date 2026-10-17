@@ -21,6 +21,7 @@ const steps = [
   "sync-layout.mjs", // shared head/header/footer/JSON-LD on every page
   "fix-image-sizes.mjs", // true width/height on every <img>
   "set-share-images.mjs", // og:image on pages without a generator
+  "build-llms.mjs", // /llms.txt summary for AI answer engines
   "build-sitemap.mjs", // last, so lastmod reflects everything above
 ];
 

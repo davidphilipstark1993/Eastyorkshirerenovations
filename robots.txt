@@ -1,3 +1,44 @@
+# Search and AI crawlers are all welcome. The rules below are explicit so the
+# intent is clear to each operator; they match the default for everyone else.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# OpenAI: GPTBot (training), OAI-SearchBot (ChatGPT search), ChatGPT-User (browsing on a user's behalf)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic: ClaudeBot (training), Claude-SearchBot (search), Claude-User (browsing on a user's behalf)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI features and Apple Intelligence (control tokens, not separate crawlers)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: *
 Allow: /
+
 Sitemap: https://www.eastyorkshirerenovation.com/sitemap.xml
