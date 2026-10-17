@@ -363,6 +363,14 @@ function hubCards(group) {
 
 const hubFaqs = [
   {
+    q: "How much is a damp survey in Hull and East Yorkshire?",
+    a: `A damp survey costs ${SURVEY_PRICE}, including VAT. If you go ahead with treatment, the ${SURVEY_PRICE} is deducted from the cost of the work when you accept our quote. Landlord damp and mould reports cost &pound;99.`,
+  },
+  {
+    q: "Is it rising damp or condensation?",
+    a: "Rising damp sits low on ground-floor walls, often with a tide mark and salt staining, and changes little with the weather; condensation shows up as streaming windows and black mould in corners and on cold outside walls, and is usually worst in winter. The two can look similar, which is why we take moisture readings and inspect inside and out before recommending anything.",
+  },
+  {
     q: "Do I need a damp survey before any work is done?",
     a: "Yes. We won&rsquo;t quote for damp treatment without looking at the cause first. Rising damp, penetrating damp and condensation can look similar on the wall but need completely different fixes, and treating the wrong one wastes money.",
   },
@@ -542,8 +550,11 @@ servicePage({
   callout: { body: `Surveys cost ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Tell us where the damp is and we&rsquo;ll arrange a visit.` },
   faqH2: "Damp survey FAQs.",
   faqs: [
-    { q: "How much does a damp survey cost?", a: `A damp survey costs ${SURVEY_PRICE}. If you accept our quote for treatment, the ${SURVEY_PRICE} is deducted from the cost of the work.` },
+    { q: "How much is a damp survey in Hull?", a: `A damp survey costs ${SURVEY_PRICE}, including VAT, across Hull and East Yorkshire. If you accept our quote for treatment, the ${SURVEY_PRICE} is deducted from the cost of the work.` },
+    // TODO(owner): typical survey visit length (e.g. "about an hour for a two-bed terrace").
     { q: "How long does a damp survey take?", a: "It depends on the size of the house and how many areas are affected. We&rsquo;ll give you an idea of timing when you book." },
+    { q: "Is it rising damp or condensation?", a: "Rising damp sits low on ground-floor walls, often with a tide mark and salt staining, and changes little with the weather; condensation shows up as streaming windows and black mould in corners and on outside walls, and is usually worst in winter. A survey is the reliable way to tell, because the two can look alike and need completely different fixes." },
+    { q: "What do I get after the survey?", a: "You get a written report with the moisture readings, photos, what we believe is causing the damp and what we recommend, in order of priority. If work is needed, it includes a quote for that work, with replastering and making good." },
     { q: "Will you just try to sell me a damp-proof course?", a: "No. A lot of damp isn&rsquo;t rising damp at all, and a new damp-proof course won&rsquo;t fix condensation or a leaking gutter. We recommend what the evidence points to, and if no treatment is needed we&rsquo;ll say so." },
     { q: "Do I need to do anything before the survey?", a: "Where possible, clear furniture away from the affected walls and let us know about any past damp work, leaks or building work. Don&rsquo;t redecorate over the damp beforehand, as it hides the evidence we need to see." },
   ],
@@ -607,6 +618,8 @@ servicePage({
   callout: { heading: "Buying a property with damp?", body: `Send us the address, the relevant part of your survey and your timescales, and we&rsquo;ll arrange a visit. Reports within ${REPORT_DAYS}.` },
   faqH2: "Pre-purchase damp survey FAQs.",
   faqs: [
+    { q: "How much is a pre-purchase damp survey?", a: `A pre-purchase damp survey costs ${SURVEY_PRICE}, including VAT. If you buy the property and go ahead with our quote for treatment, the ${SURVEY_PRICE} is deducted from the cost of the work.` },
+    { q: "Will damp affect my mortgage?", a: "It can. If a mortgage valuation or home survey notes damp, some lenders ask for a specialist damp report before they&rsquo;ll go ahead, so it&rsquo;s worth getting one early. Our written report is with you within 3 days and sets out the cause and a quote for putting it right, which you can share with your lender or solicitor." },
     { q: "My survey says “damp noted”. Should I pull out of the purchase?", a: "Not necessarily. Many damp problems have simple causes and straightforward fixes. A specialist survey tells you what you&rsquo;re dealing with, so you can decide with the facts in front of you." },
     { q: "How quickly will I get the report?", a: `We aim to send the written report within ${REPORT_DAYS} of the survey. Let us know your deadlines when you book.` },
     { q: "Can I use your report to negotiate on price?", a: "The report includes our findings and a quote for any work needed, which many buyers share with the seller or agent. How you use it is up to you." },
@@ -675,7 +688,9 @@ servicePage({
   callout: { heading: "Landlord or letting agent?", body: `Send us the property address, tenant contact details and a description or photos of the problem. We aim to inspect within ${RESPONSE_TIME}.` },
   faqH2: "Landlord damp and mould FAQs.",
   faqs: [
+    { q: "How much is a landlord damp and mould report?", a: "A landlord damp and mould report costs &pound;99, including VAT." },
     { q: "How quickly can you inspect?", a: `We aim to inspect within ${RESPONSE_TIME} of your request, depending on when the tenant can give us access.` },
+    { q: "What does the report include?", a: "It includes dated photos, moisture readings, the likely cause and our recommendations, plus a quote for any work needed. After the work, you also get a completion record with photos and a description of what was done." },
     { q: "Can you deal with the tenant directly?", a: "Yes. With your permission, we&rsquo;ll contact the tenant to arrange access and keep you or your agent updated." },
     { q: "Will the report blame the tenant for condensation?", a: "Only if the evidence shows it. Condensation usually has several causes, including extraction, ventilation, heating and insulation, and the report sets out each one fairly." },
     { q: "Do you provide evidence that the work has been done?", a: "Yes. After the work we provide a completion record with photos and a description of what was carried out, along with any guarantee paperwork." },
@@ -742,10 +757,13 @@ servicePage({
   callout: { body: "We&rsquo;ll confirm whether it&rsquo;s rising damp before recommending any treatment." },
   faqH2: "Rising damp FAQs.",
   faqs: [
+    // TODO(owner): typical on-site time for a DPC injection (e.g. "one to two days for a terraced house").
+    { q: "How long does a DPC injection take?", a: "The injection itself is the quickest part of the job; most of the time goes on hacking off, replastering and letting the wall dry. We give you a timescale for your job with the quote, and you don&rsquo;t need to wait for the wall to dry fully before using the room." },
+    { q: "Do I need to replaster after damp treatment?", a: "Yes, in most cases. Plaster that has been damp for years is full of salts that keep drawing in moisture, so we hack it off, typically to around a metre high or further where the damp goes higher, and replaster with a salt-resistant plaster. We do the replastering and making good ourselves." },
     { q: "How do I know if I have rising damp?", a: "Typical signs are damp and a tide mark low on ground-floor walls, salt staining and blown plaster or paint near the floor. But several other problems look similar, so a survey is the only way to be sure." },
     { q: "Why do you need to remove the plaster?", a: "Old plaster affected by rising damp is contaminated with salts that keep drawing in moisture. Unless it&rsquo;s removed and replaced with a salt-resistant plaster, the wall can stay damp and stained after treatment." },
     { q: "How long before I can decorate?", a: "Once the new plaster has dried you can use a breathable, water-based emulsion. Hold off on vinyl wallpaper and oil-based paints until the wall behind has fully dried out, which can take several months." },
-    { q: "Is the treatment guaranteed?", a: "Yes. The damp-proof course injection is guaranteed for 30 years and the replastering for 10 years. The guarantee passes to the new owner if you sell." },
+    { q: "What does the guarantee cover?", a: `The damp-proof course injection is guaranteed for 30 years and the salt-resistant replastering for 10 years. If the work fails within that period we inspect it free of charge and put it right, and the guarantee stays with the property if you sell. It doesn&rsquo;t cover damp from a different cause, or later work that bridges the damp-proof course. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
     name: "Rising Damp Treatment in Hull & East Yorkshire",
@@ -796,6 +814,9 @@ servicePage({
     { q: "Will a water-repellent cream fix my damp on its own?", a: "Usually not. It helps reduce rain absorption on sound brickwork, but if the pointing, render or gutters are defective, those need repairing first." },
     { q: "How long does the wall take to dry after the repair?", a: "It depends on how wet the wall got and how thick it is. It can take weeks or months. We&rsquo;ll advise on when it&rsquo;s ready to replaster and decorate." },
     { q: "Do you do the inside repairs as well?", a: "Yes. We replaster, make good and redecorate the inside once the cause outside is fixed." },
+    // TODO(owner): typical price ranges for repointing, gutter/downpipe replacement and render repair.
+    { q: "How much does penetrating damp repair cost?", a: `It depends entirely on the cause: repointing a gable, replacing a gutter and repairing render are very different jobs. The ${SURVEY_PRICE} survey identifies the cause, and you then get a written quote for the repair. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
+    { q: "What does the guarantee cover?", a: `Masonry water-repellent treatments carry a 10-year guarantee and penetrating damp repairs (repointing, render repairs, gutter and downpipe work) carry 2 years. If the work fails within that period we inspect it free of charge and put it right. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
     name: "Penetrating Damp Repairs in Hull & East Yorkshire",
@@ -852,6 +873,9 @@ servicePage({
     { q: "Do I need a PIV unit?", a: "Not necessarily. PIV suits some homes very well, but a smaller problem may only need a better extractor fan or trickle vents. We recommend what your home actually needs." },
     { q: "Will a dehumidifier solve condensation?", a: "A dehumidifier can help in the short term, but it treats the symptom. Improving extraction and ventilation deals with the cause." },
     { q: "Can you treat the mould at the same time?", a: "Yes. We can treat and remove existing mould, repair damaged plaster and redecorate once the ventilation is sorted." },
+    // TODO(owner): typical price range for a PIV unit / extractor fan installation.
+    { q: "How much does condensation control cost?", a: `It depends on what your home needs: a better extractor fan or trickle vents cost far less than a PIV unit. The ${SURVEY_PRICE} survey works out what is causing the condensation, and you then get a written quote. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
+    { q: "What does the guarantee cover?", a: `Our installation carries a 2-year guarantee, plus the manufacturer&rsquo;s warranty on the unit itself. If our work fails within that period we inspect it free of charge and put it right. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
     name: "Condensation Control in Hull & East Yorkshire",
@@ -905,6 +929,8 @@ servicePage({
     { q: "Why does mould keep coming back?", a: "Because the moisture feeding it is still there. That&rsquo;s usually condensation, but it can be another type of damp. Fixing the cause is what stops it returning." },
     { q: "Will painting over mould get rid of it?", a: "No. Paint over untreated mould usually lets it grow back through. The surface needs treating, and damaged material replacing, before redecorating." },
     { q: "Do you redecorate afterwards?", a: "Yes. We replaster where needed and redecorate, using a mould-resistant paint where it suits the room." },
+    { q: "Is black mould always condensation?", a: "No. Most household mould comes from condensation, but it can also come from penetrating damp, rising damp or a leak, which is why we find the cause before treating it. Our <a href=\"/guides/is-black-mould-always-condensation/\">guide to black mould</a> explains how to tell them apart." },
+    { q: "What does the guarantee cover?", a: `Mould treatment, plastering, making good and decorating carry a 2-year guarantee. If the work fails within that period we inspect it free of charge and put it right. It doesn&rsquo;t cover mould returning because of a cause we weren&rsquo;t asked to fix. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
     name: "Mould Treatment & Removal in Hull & East Yorkshire",
@@ -953,6 +979,9 @@ servicePage({
     { q: "Can my cellar be turned into a living space?", a: "Often, yes, with the right waterproofing, ventilation and finishes. Building regulations apply to a conversion to habitable space, and we&rsquo;ll talk you through that." },
     { q: "Will I need a sump pump?", a: "Some membrane systems need a sump and pump to remove collected water, particularly in wetter cellars. We&rsquo;ll tell you if yours does and what maintenance it needs." },
     { q: "Do you finish the cellar after waterproofing?", a: "Yes. We plaster or line the walls, make good and decorate, and can help with electrics and flooring for a full conversion." },
+    // TODO(owner): typical price range per square metre for tanking / cavity drain membrane.
+    { q: "How much does cellar tanking cost?", a: `It depends on the size of the cellar, how wet it is and whether you need a tanking or membrane system. The ${SURVEY_PRICE} survey looks at the cellar and recommends a system, and you then get a written quote. If you go ahead, the ${SURVEY_PRICE} is deducted.` },
+    { q: "What does the guarantee cover?", a: `Tanking and cavity drain membrane systems carry a 10-year guarantee. If the work fails within that period we inspect it free of charge and put it right. See the <a href="${TERMS}">full guarantee terms</a>.` },
   ],
   service: {
     name: "Cellar Tanking & Basement Waterproofing in Hull & East Yorkshire",
