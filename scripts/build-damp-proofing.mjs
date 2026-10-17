@@ -1146,6 +1146,7 @@ const SERVICE_OPTIONS = [
 
 const dampForm = `${wrap("reply-time", replyTime())}
       <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
+        <div class="hp-field" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
         <label>
           What would you like a quote for?

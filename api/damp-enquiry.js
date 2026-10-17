@@ -1,5 +1,5 @@
 import sgMail from "@sendgrid/mail";
-import { parse as parseQS } from "querystring";
+import { readBody, line, text, validEmail, isBot, attributionLines } from "./_lib/form.js";
 
 // Values match the <select name="service"> options on /damp-proofing/book-a-survey/.
 const SERVICES = {
@@ -21,24 +21,24 @@ export default async function handler(req, res) {
   }
 
   try {
-    const contentType = req.headers["content-type"] || "";
-    let body = {};
+    const body = await readBody(req);
 
-    if (contentType.includes("application/json")) {
-      body = req.body || {};
-    } else {
-      const raw = await new Promise((resolve) => {
-        let data = "";
-        req.on("data", (chunk) => (data += chunk));
-        req.on("end", () => resolve(data));
-      });
-      body = parseQS(raw);
+    if (isBot(body)) {
+      // Pretend it worked so the bot moves on; nothing is sent.
+      res.status(303).setHeader("Location", "/damp-proofing/book-a-survey/?submitted=1#damp-enquiry-form");
+      res.end();
+      return;
     }
 
-    const { name, phone, email, postcode, service, customerType, message } = body;
-    const serviceLabel = SERVICES[service];
+    const name = line(body.name, 100);
+    const phone = line(body.phone, 30);
+    const email = line(body.email, 254);
+    const postcode = line(body.postcode, 12);
+    const customerType = line(body.customerType, 60);
+    const message = text(body.message);
+    const serviceLabel = Object.hasOwn(SERVICES, body.service) ? SERVICES[body.service] : undefined;
 
-    if (!name || !phone || !email || !postcode || !serviceLabel) {
+    if (!name || !phone || !validEmail(email) || !postcode || !serviceLabel) {
       res.status(400).json({ error: "Missing required fields" });
       return;
     }
@@ -72,6 +72,8 @@ export default async function handler(req, res) {
         "",
         "Message:",
         message || "(none provided)",
+        "",
+        ...attributionLines(body),
       ].join("\n"),
     };
 

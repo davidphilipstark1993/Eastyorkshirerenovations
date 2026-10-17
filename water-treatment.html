@@ -23,6 +23,7 @@
   <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#ffffff">
+  <script src="/assets/js/attribution.js" defer></script>
   <script src="/assets/js/consent.js" defer></script>
 <!-- /site:head -->
 </head>
@@ -158,6 +159,7 @@
           <h3>Tell us about your home</h3>
           <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you - we've received your enquiry. We'll contact you using your preferred method below to arrange your free home water assessment. If it's easier in the meantime, you're welcome to email us directly at <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a>.</div>
           <form id="water-assessment-form" action="/api/water-assessment" method="post">
+            <div class="hp-field" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
             <input type="hidden" name="packageInterest" id="package-interest-field" value="">
             <input type="hidden" name="utmSource" id="utm-source-field" value="">
             <input type="hidden" name="utmMedium" id="utm-medium-field" value="">

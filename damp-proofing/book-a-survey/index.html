@@ -27,6 +27,7 @@
   <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#ffffff">
+  <script src="/assets/js/attribution.js" defer></script>
   <script src="/assets/js/consent.js" defer></script>
 <!-- /site:head -->
 </head>
@@ -115,6 +116,7 @@
 <p class="reply-time">We reply to every enquiry within 3 hours during opening hours (Monday to Friday, 8am to 4:30pm).</p>
 <!-- /site:reply-time -->
       <form id="damp-enquiry-form" action="/api/damp-enquiry" method="post">
+        <div class="hp-field" aria-hidden="true"><label>Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
         <div id="form-success" class="card" style="display:none; margin-bottom: 1rem;">Thank you. Your damp enquiry has been sent and we will be in touch shortly.</div>
         <label>
           What would you like a quote for?

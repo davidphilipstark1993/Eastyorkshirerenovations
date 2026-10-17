@@ -1581,3 +1581,12 @@ html {
   margin: 0 0 0.5rem;
   font-size: 1.15rem;
 }
+
+/* Spam trap: hidden from people and screen readers, filled in by bots. */
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

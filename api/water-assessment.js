@@ -1,5 +1,5 @@
 import sgMail from "@sendgrid/mail";
-import { parse as parseQS } from "querystring";
+import { readBody, line, text, validEmail, isBot, attributionLines } from "./_lib/form.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -8,39 +8,28 @@ export default async function handler(req, res) {
   }
 
   try {
-    const contentType = req.headers["content-type"] || "";
-    let body = {};
+    const body = await readBody(req);
 
-    if (contentType.includes("application/json")) {
-      body = req.body || {};
-    } else {
-      const raw = await new Promise((resolve) => {
-        let data = "";
-        req.on("data", (chunk) => (data += chunk));
-        req.on("end", () => resolve(data));
-      });
-      body = parseQS(raw);
+    if (isBot(body)) {
+      // Pretend it worked so the bot moves on; nothing is sent.
+      res.status(303).setHeader("Location", "/water-treatment.html?submitted=1#water-assessment-form");
+      res.end();
+      return;
     }
 
-    const {
-      name,
-      phone,
-      email,
-      postcode,
-      propertyType,
-      householdSize,
-      bathrooms,
-      reason,
-      preferredContact,
-      message,
-      packageInterest,
-      utmSource,
-      utmMedium,
-      utmCampaign,
-      landingPage,
-    } = body;
+    const name = line(body.name, 100);
+    const phone = line(body.phone, 30);
+    const email = line(body.email, 254);
+    const postcode = line(body.postcode, 12);
+    const propertyType = line(body.propertyType, 60);
+    const householdSize = line(body.householdSize, 40);
+    const bathrooms = line(body.bathrooms, 40);
+    const reason = line(body.reason, 120);
+    const preferredContact = line(body.preferredContact, 60);
+    const packageInterest = line(body.packageInterest, 80);
+    const message = text(body.message);
 
-    if (!name || !phone || !email || !postcode || !propertyType || !householdSize || !reason || !preferredContact) {
+    if (!name || !phone || !validEmail(email) || !postcode || !propertyType || !householdSize || !reason || !preferredContact) {
       res.status(400).json({ error: "Missing required fields" });
       return;
     }
@@ -78,10 +67,7 @@ export default async function handler(req, res) {
         `Preferred contact: ${preferredContact}`,
         "",
         `Package interest: ${packageInterest || "None (general enquiry)"}`,
-        `Marketing source: ${utmSource || "Direct / organic (no campaign parameters)"}`,
-        `Medium: ${utmMedium || "-"}`,
-        `Campaign: ${utmCampaign || "-"}`,
-        `Landing page: ${landingPage || "-"}`,
+        ...attributionLines(body),
         "",
         `Message: ${message || "(none provided)"}`,
       ].join("\n"),
