@@ -1,5 +1,5 @@
 import { mkdirSync, writeFileSync } from "fs";
-import { page, heroTextOnly, quoteCallout } from "./lib/layout.mjs";
+import { page, heroTextOnly, quoteCallout, itemListData } from "./lib/layout.mjs";
 import { SITE } from "./lib/constants.mjs";
 import { writeProjectPage } from "./lib/project-template.mjs";
 import { CATEGORIES, projects } from "./data/projects.mjs";
@@ -158,7 +158,7 @@ ${mainSection}
     `projects/${categorySlug}/index.html`,
     page({
       title: `${category.label} Projects in East Yorkshire | EYR`,
-      description: `${category.label} projects completed by East Yorkshire Renovations in Hull and East Yorkshire.`,
+      description: `${category.label} projects by East Yorkshire Renovations: photos and notes from real jobs in Hull, Beverley, Hessle and East Yorkshire.`,
       canonical,
       ogImage: SHARE_IMAGES[categorySlug],
       body,
@@ -231,7 +231,7 @@ ${recentCards}
     "projects/index.html",
     page({
       title: "Renovation Projects & Case Studies | East Yorkshire Renovations",
-      description: "Real completed renovation projects in Hull and East Yorkshire, including orangeries, conservatory transformations, garden rooms, garage conversions, outdoor kitchens, kitchens and bathrooms.",
+      description: "Completed renovation projects in Hull and East Yorkshire: orangeries, conservatory transformations, garden rooms, garage conversions, kitchens and bathrooms.",
       canonical: `${SITE}/projects/`,
       ogImage: "/assets/img/og/work.jpg",
       body,
@@ -239,6 +239,7 @@ ${recentCards}
         { name: "Home", item: `${SITE}/` },
         { name: "Projects" },
       ],
+      extraLd: [itemListData(PRIORITY_CATEGORIES.map((slug) => ({ name: CATEGORIES[slug].label, url: `${SITE}/projects/${slug}/` })))],
     })
   );
   console.log("wrote projects/index.html");

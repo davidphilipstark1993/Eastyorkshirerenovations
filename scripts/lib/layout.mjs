@@ -7,7 +7,11 @@ export function pathFromCanonical(canonical) {
   return !p || p.endsWith("/") ? `${p}index.html` : p;
 }
 
-export function headBlock({ title, description, canonical, ogImage }) {
+// Share image for pages with no photo of their own (the homepage card), so
+// every page has og:image and Article JSON-LD always has an image.
+export const DEFAULT_OG_IMAGE = "/assets/img/og/index.jpg";
+
+export function headBlock({ title, description, canonical, ogImage = DEFAULT_OG_IMAGE }) {
   const ogImageTags = ogImage
     ? `
   <meta property="og:image" content="${SITE}${ogImage}">
@@ -68,6 +72,20 @@ export function ldScript(data) {
   ${JSON.stringify(data, null, 2).split("\n").join("\n  ")}
   </script>
 `;
+}
+
+// ItemList for category/index pages: items are { name, url } in display order.
+export function itemListData(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
 }
 
 export function ldBreadcrumb(items) {

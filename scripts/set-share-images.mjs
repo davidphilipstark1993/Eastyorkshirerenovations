@@ -1,19 +1,25 @@
 // Share (og:image / twitter:image) tags for pages that aren't rebuilt by a
 // generator that sets them itself. Real job photos only: sections with no
 // real photos yet (orangeries, conservatories, garden rooms, outdoor
-// kitchens, water treatment) are left without a share image.
+// kitchens, water treatment) fall back to the homepage card, so every page
+// has an og:image (Ahrefs flags Open Graph tags as incomplete without one).
 //
 //   node scripts/set-share-images.mjs
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { htmlFiles } from "./sync-layout.mjs";
 import { SITE } from "./lib/constants.mjs";
 
+const DEFAULT = "/assets/img/og/index.jpg";
+
+// [pattern, image, onlyIfMissing]
 const RULES = [
   [/^garage-conversions\//, "/assets/img/og/garage-conversions.jpg"],
   [/^(brough|east-riding|kirk-ella|north-ferriby|south-cave|swanland|willerby)\.html$/, "/assets/img/og/areas.jpg"],
-  // The water treatment page pointed at an og image that was never added,
-  // and its only photos are AI illustrations: no share image.
-  [/^water-treatment\.html$/, null],
+  // Pages with no real photos of their own: homepage card, only where the
+  // page has no share image already.
+  [/^(orangeries|conservatory-transformations|garden-rooms|outdoor-kitchens)\//, DEFAULT, true],
+  [/^projects\/(orangeries|conservatory-transformations|garden-rooms|outdoor-kitchens)\//, DEFAULT, true],
+  [/^(guides\/|privacy\.html$|water-treatment\.html$|404\.html$)/, DEFAULT, true],
 ];
 
 const TAGS = /\n  <meta property="og:image"[^>]*>(?:\n  <meta property="og:image:(?:width|height)"[^>]*>)*|\n  <meta name="twitter:image"[^>]*>/g;
@@ -22,9 +28,10 @@ let changed = 0;
 for (const f of htmlFiles(".")) {
   const rule = RULES.find(([re]) => re.test(f));
   if (!rule) continue;
-  const image = rule[1];
+  const [, image, onlyIfMissing] = rule;
   if (image && !existsSync(image.slice(1))) throw new Error(`missing ${image}`);
   let html = readFileSync(f, "utf8");
+  if (onlyIfMissing && html.includes('property="og:image"')) continue;
   const before = html;
   html = html.replace(TAGS, "");
   if (image) {

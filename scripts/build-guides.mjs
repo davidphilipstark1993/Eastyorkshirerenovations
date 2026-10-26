@@ -11,7 +11,7 @@
 // author and published/updated dates, has visible FAQs, and carries
 // Article, FAQPage and BreadcrumbList JSON-LD.
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from "fs";
-import { page, faqList } from "./lib/layout.mjs";
+import { page, faqList, itemListData, DEFAULT_OG_IMAGE } from "./lib/layout.mjs";
 import { SITE, BUSINESS_NAME, BUSINESS_ID, LOGO_PATH } from "./lib/constants.mjs";
 import { phoneLink } from "./lib/site.mjs";
 import { OWNER } from "./data/business.mjs";
@@ -97,7 +97,7 @@ const MERGED = [
     slug: "garden-room-ideas",
     category: "garden-room",
     title: "Garden Room Ideas: Offices, Gyms and Garden Bars",
-    description: "Design ideas for garden offices, garden gyms and garden bars, and what each one needs to work well.",
+    description: "Design ideas for garden offices, garden gyms and garden bars, plus what each one needs on insulation, power and planning to work well all year.",
     h1: "Garden room ideas: offices, gyms and garden bars.",
     answer: "Each use has different priorities: a garden office needs good light, storage and connectivity; a garden gym needs tough flooring and ventilation; and a garden bar usually benefits from plumbing and lighting for evenings. Deciding the use first shapes the layout, electrics and finish.",
     sources: ["garden-office-ideas", "garden-gym-ideas", "garden-bar-ideas"],
@@ -198,7 +198,7 @@ function guidePage({ slug, category, title, description, h1, answer, bodyHtml, t
   const cta = cat.cta || DEFAULT_CTA;
   const canonical = `${SITE}/guides/${slug}/`;
   const by = author();
-  const ogImage = og || cat.og;
+  const ogImage = og || cat.og || DEFAULT_OG_IMAGE;
 
   const body = `    <section class="hero guide-hero">
       <div class="container">
@@ -419,6 +419,7 @@ writeFileSync(
     ogImage: "/assets/img/og/plastering.jpg",
     body: indexBody,
     breadcrumbs: [{ name: "Home", item: `${SITE}/` }, { name: "Guides" }],
+    extraLd: [itemListData(groups.flatMap((grp) => grp.items).map((i) => ({ name: i.title, url: `${SITE}${i.href}` })))],
   })
 );
 
