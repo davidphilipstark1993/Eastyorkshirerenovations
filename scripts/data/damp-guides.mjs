@@ -94,7 +94,7 @@ export const DAMP_GUIDES = [
       { q: "Can condensation cause a damp patch low on a wall?", a: "Yes. Cold areas behind furniture or low on outside walls can stay damp from condensation, which is one reason it is often mistaken for rising damp." },
       { q: "Is condensation the tenant's fault?", a: "Not necessarily. Everyday living produces moisture, and weak extraction, missing trickle vents and cold walls make condensation much worse. Those are building issues, not lifestyle." },
     ],
-    related: ["/damp-proofing/condensation-control/", "/guides/is-black-mould-always-condensation/", "/guides/how-to-tell-if-its-rising-damp/"],
+    related: ["/damp-proofing/condensation-control/", "/guides/is-black-mould-always-condensation/", "/guides/how-to-tell-if-its-rising-damp/", "/guides/damp-patches-on-internal-walls/"],
   },
 
   {
@@ -311,7 +311,7 @@ export const DAMP_GUIDES = [
       { q: "Should I redecorate before the survey?", a: "No. Painting over damp hides the evidence we need. Clear furniture away from the affected walls if you can." },
       { q: "Is a damp survey the same as a mortgage survey?", a: "No. Mortgage valuations and general home surveys cover the whole property and often just note damp. A damp survey looks specifically at the cause." },
     ],
-    related: ["/damp-proofing/damp-surveys/", "/guides/damp-survey-cost-hull/", "/guides/how-to-tell-if-its-rising-damp/"],
+    related: ["/damp-proofing/damp-surveys/", "/guides/damp-survey-cost-hull/", "/guides/how-to-tell-if-its-rising-damp/", "/guides/buying-a-house-with-damp/"],
   },
 
   {
