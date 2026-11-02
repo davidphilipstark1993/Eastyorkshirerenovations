@@ -29,7 +29,7 @@ const CATEGORIES = {
   conservatory: { label: "Conservatory guides", service: { href: "/conservatory-transformations/", label: "Conservatory transformations" } },
   garage: { label: "Garage conversion guides", service: { href: "/garage-conversions/", label: "Garage conversions" }, og: "/assets/img/og/garage-conversions.jpg" },
   "garden-room": { label: "Garden room guides", service: { href: "/garden-rooms/", label: "Garden rooms" } },
-  orangery: { label: "Orangery guides", service: { href: "/orangeries/", label: "Orangeries" } },
+  orangery: { label: "Orangery guides", service: { href: "/orangeries/", label: "Orangeries" }, local: [{ href: "/orangeries/beverley/", label: "Orangeries in Beverley" }] },
   "outdoor-kitchen": { label: "Outdoor kitchen guides", service: { href: "/outdoor-kitchens/", label: "Outdoor kitchens" } },
 };
 const DEFAULT_CTA = { href: "/contact.html#quote-form", label: "Get a quote" };
@@ -106,7 +106,7 @@ const MERGED = [
     slug: "orangery-cost-build-time-and-planning",
     category: "orangery",
     title: "Orangery Cost, Build Time and Planning Permission",
-    description: "What an orangery costs, how long one takes from design to finished room, and when planning permission is needed.",
+    description: "What an orangery costs, how long one takes from design to finished room, and when planning permission is needed in Hull and East Yorkshire.",
     h1: "Orangeries: cost, build time and planning permission.",
     answer: "Orangery cost depends heavily on size, glazing and roof design, and total project time is split fairly evenly between design and approvals and the build itself. Many orangeries fall within permitted development, but conservation areas, listed buildings and larger designs often need a planning application.",
     sources: ["how-much-does-an-orangery-cost", "how-long-does-an-orangery-take", "orangery-planning-permission"],
@@ -371,7 +371,7 @@ ${sections.map((sec) => `        <h3>${sec.h2}</h3>\n        ${relink(sec.html).
     bodyHtml: parts.join("\n\n"),
     toc,
     faqs: faqs.slice(0, 8),
-    related: [{ href: cat.service.href, label: cat.service.label }, ...siblings],
+    related: [{ href: cat.service.href, label: cat.service.label }, ...(cat.local || []), ...siblings],
     published,
   });
 }
