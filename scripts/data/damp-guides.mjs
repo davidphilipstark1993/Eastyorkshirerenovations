@@ -9,6 +9,51 @@
 
 export const DAMP_GUIDES = [
   {
+    slug: "awaabs-law-private-landlords",
+    title: "Awaab's Law and Private Landlords: Damp and Mould",
+    description: "What Awaab's Law requires today, where private landlords stand, and how to prepare: GOV.UK timescales, the consultation, and keeping written damp and mould records.",
+    h1: "Awaab's Law and private landlords: what to know about damp and mould.",
+    answer: "Awaab's Law already applies to social landlords in England, who must investigate significant damp and mould within 10 working days of being told. The government has committed to extending it to private rented tenancies through the Renters' Rights Act 2025 and is consulting on how, so private landlords should act on damp and mould reports promptly and keep written records now.",
+    sections: [
+      {
+        h2: "What Awaab's Law requires today",
+        html: `<p>Awaab&rsquo;s Law came into force for social landlords in England on 27 October 2025. According to <a href="https://www.gov.uk/government/news/millions-of-tenants-safe-from-black-mould-through-awaabs-law" rel="noopener">GOV.UK</a>, in this first phase landlords must:</p>
+<ul>
+<li>act on emergency health and safety hazards within 24 hours of them being reported;</li>
+<li>investigate significant damp and mould within 10 working days of being notified, and make the home safe within five working days after that;</li>
+<li>give tenants written findings within three working days of an inspection, and consider factors that could put tenants at risk, such as young children, disabilities and health conditions;</li>
+<li>offer alternative accommodation if the home cannot be made safe in time.</li>
+</ul>
+<p>GOV.UK says landlords who do not comply can face court action, enforcement orders, compensation and legal costs.</p>`,
+      },
+      {
+        h2: "Where private landlords stand",
+        html: `<p>The government has said Awaab&rsquo;s Law will be extended to private rented tenancies as part of the Renters&rsquo; Rights Act 2025. GOV.UK is currently running a <a href="https://www.gov.uk/government/consultations/extending-awaabs-law-to-private-rented-tenancies-and-to-licences" rel="noopener">consultation on extending Awaab&rsquo;s Law to private rented tenancies and to licences</a>, which closes at 11:59pm on 18 December 2026. The consultation page does not set out the timescales or start date for private landlords, so we cannot tell you what they will be.</p>
+<p>The rules above are therefore a guide to what private landlords may be asked to do, not a current legal requirement for them. Check GOV.UK for the latest position before you rely on any of it.</p>
+<!-- TODO(David): check current status. Last checked against GOV.UK on 2 November 2026. Re-check the consultation outcome, phase two/three dates and private rented sector start date before each republish. -->`,
+      },
+      {
+        h2: "What private landlords can do now",
+        html: `<p>Whatever the final rules say, tenants already expect a quick response to damp and mould, and a landlord who can show what was found and what was done is in a much stronger position. Sensible steps are to:</p>
+<ul>
+<li>log the date every damp or mould report is received and the date you respond;</li>
+<li>get the cause diagnosed rather than just cleaning the mould, since condensation, penetrating damp and rising damp need different fixes (see <a href="/guides/damp-or-condensation/">damp or condensation?</a>);</li>
+<li>keep written evidence of the inspection and any repair.</li>
+</ul>`,
+      },
+      {
+        h2: "How we help landlords",
+        html: `<p>Our <a href="/damp-proofing/landlord-damp-mould-reports/">landlord damp and mould reports</a> give you a written record of the cause and the recommended work. A report costs &pound;99 and we aim to inspect within 5 days of your request. If work is needed, we quote for treatment, replastering and making good.</p>`,
+      },
+    ],
+    faqs: [
+      { q: "Does Awaab's Law apply to private landlords yet?", a: "Not yet. It applies to social landlords in England from 27 October 2025. The government has committed to extending it to private rented tenancies and is consulting on how, with the consultation closing on 18 December 2026." },
+      { q: "How quickly must social landlords deal with damp and mould?", a: "According to GOV.UK, significant damp and mould must be investigated within 10 working days of notification, and the home made safe within five working days after that." },
+      { q: "How much is a landlord damp and mould report?", a: "£99, and we aim to inspect within 5 days of your request." },
+    ],
+    related: ["/damp-proofing/landlord-damp-mould-reports/", "/guides/damp-or-condensation/", "/guides/is-black-mould-always-condensation/"],
+  },
+  {
     slug: "how-to-tell-if-its-rising-damp",
     title: "How to Tell If It's Rising Damp | Hull & East Yorkshire",
     description: "The signs of genuine rising damp, the problems most often mistaken for it, and why a survey matters before anyone injects a damp-proof course.",

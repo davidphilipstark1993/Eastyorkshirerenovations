@@ -30,8 +30,8 @@ const AREAS = [
   { name: "Cottingham", href: "/cottingham.html" },
   { name: "Scunthorpe", href: "/damp-proofing/scunthorpe/" },
   { name: "Grimsby", href: "/damp-proofing/grimsby/" },
-  { name: "Brigg" },
-  { name: "Barton-upon-Humber" },
+  { name: "Brigg", href: "/damp-proofing/brigg/" },
+  { name: "Barton-upon-Humber", href: "/damp-proofing/barton-upon-humber/" },
 ];
 const AREA_SERVED = [...AREAS.map((a) => a.name), "East Riding of Yorkshire", "North Lincolnshire"];
 
@@ -665,6 +665,7 @@ servicePage({
       h2: "Landlords&rsquo; legal duty on damp and mould.",
       paras: [
         "Landlords already have a legal duty to keep rented homes free from serious hazards, and damp and mould are among the most common. The rules for both social and private landlords have been tightening, so it matters more than ever to act on reports promptly and to keep a record of what was found and done.",
+        "For what Awaab&rsquo;s Law means for private landlords, see our guide to <a href=\"/guides/awaabs-law-private-landlords/\">Awaab&rsquo;s Law and private landlords</a>.",
         "We&rsquo;re not legal advisers. For the specific requirements and timescales that apply to your properties, check with your letting agent, your local council or a legal adviser. What we can give you is a clear diagnosis, a proper fix and the paperwork to show it.",
       ],
     },
@@ -962,7 +963,7 @@ servicePage({
 });
 
 // ---------------------------------------------------------------------------
-// Damp town pages: Hull, Beverley, Scunthorpe, Grimsby. Each describes the
+// Damp town pages: Hull, Beverley, Scunthorpe, Brigg, Barton-upon-Humber, Grimsby. Each describes the
 // local housing and the damp problems that go with it. Kept to general,
 // well-established facts about each town's housing; no statistics.
 // ---------------------------------------------------------------------------
@@ -1041,6 +1042,56 @@ const TOWNS = [
       { q: "Do you really cover Scunthorpe from Hessle?", a: "Yes. We cover Scunthorpe, Brigg, Barton-upon-Humber and the rest of North Lincolnshire for damp surveys and treatment." },
       { q: "Is the survey price the same in Scunthorpe?", a: "Yes. A damp survey costs £119, deducted from the cost of any treatment if you go ahead with our quote." },
       { q: "Do you do landlord damp and mould reports in Scunthorpe?", a: "Yes. Landlord reports cost £99, and we aim to inspect within 5 days of your request." },
+    ],
+  },
+  {
+    slug: "brigg",
+    town: "Brigg",
+    council: "North Lincolnshire Council",
+    title: "Damp Surveys & Damp Proofing in Brigg | £119 | EYR",
+    description: "Damp surveys and damp proofing in Brigg and North Lincolnshire. £119 survey, deducted from treatment if you go ahead. Older town-centre homes and newer estates.",
+    intro: "We cover Brigg and the villages around it from our base across the Humber in Hessle. The damp here follows the housing: older solid-walled houses in the town centre, and newer homes on the edges of town where condensation is the usual problem.",
+    housing: [
+      "Brigg is a market town on the River Ancholme, and its centre around the Market Place is made up largely of Georgian and Victorian buildings. Older houses like these were usually built with solid brick walls and lime mortar, so failed pointing, leaking gutters and hard modern repairs can all let moisture in or trap it in the wall.",
+      "The town sits on low-lying land beside the river, so ground levels and drainage around older properties are worth checking, particularly where yards and paths have been raised over the years and now bridge the damp-proof course.",
+      "Beyond the centre, much of Brigg is twentieth-century and newer housing. In these homes we most often find condensation and black mould, made worse by sealed windows and weak extraction in kitchens and bathrooms.",
+    ],
+    problems: [
+      ["Penetrating damp in solid walls", "Worn pointing, leaking rainwater goods and cracked render on older town-centre houses.", "/damp-proofing/penetrating-damp/"],
+      ["Bridged damp-proof courses", "Yards, paths and patios raised against the walls, especially on low-lying ground.", "/damp-proofing/rising-damp-treatment/"],
+      ["Condensation and black mould", "Especially in newer homes with sealed windows and poor extraction.", "/damp-proofing/condensation-control/"],
+      ["Landlord reports", "Damp and mould reports for landlords and letting agents, with written evidence of the work.", "/damp-proofing/landlord-damp-mould-reports/"],
+    ],
+    areas: "Brigg town centre and the surrounding villages, and North Lincolnshire towns including Scunthorpe and Barton-upon-Humber.",
+    faqs: [
+      { q: "Do you cover Brigg?", a: "Yes. We cover Brigg and the surrounding villages for damp surveys and treatment, along with Scunthorpe, Barton-upon-Humber and the rest of North Lincolnshire." },
+      { q: "How much is a damp survey in Brigg?", a: "£119, deducted from the cost of any treatment if you go ahead with our quote." },
+      { q: "Do you do landlord damp and mould reports in Brigg?", a: "Yes. Landlord reports cost £99, and we aim to inspect within 5 days of your request." },
+    ],
+  },
+  {
+    slug: "barton-upon-humber",
+    town: "Barton-upon-Humber",
+    council: "North Lincolnshire Council",
+    title: "Damp Surveys & Damp Proofing in Barton-upon-Humber | EYR",
+    description: "Damp surveys and damp proofing in Barton-upon-Humber. £119 survey, deducted from treatment if you go ahead. Older solid-walled homes near the Humber.",
+    intro: "Barton-upon-Humber is just across the Humber Bridge from our base in Hessle. Its older houses and its position on the estuary make penetrating damp and condensation the problems we see most, and we survey first so you only pay to fix the real cause.",
+    housing: [
+      "Barton-upon-Humber is a historic market town on the south bank of the Humber, and its centre has many older houses with solid brick walls, some in conservation areas. Failed pointing, cracked render, worn sills and leaking gutters quickly show up as damp patches inside.",
+      "The town sits on low ground beside the estuary, where walls take a lot of wind-driven rain. Ground levels, yards and drainage around older properties are worth checking, as paths and patios raised over the years can bridge the damp-proof course.",
+      "Away from the centre, much of Barton is twentieth-century and newer housing, where condensation and black mould are the more usual problems, especially with sealed windows and weak extraction.",
+    ],
+    problems: [
+      ["Penetrating damp from wind-driven rain", "Repointing, render repairs and gutter and downpipe work on exposed solid walls.", "/damp-proofing/penetrating-damp/"],
+      ["Bridged damp-proof courses", "Yards, paths and patios raised against older walls.", "/damp-proofing/rising-damp-treatment/"],
+      ["Condensation and black mould", "Ventilation sized to the house, then mould treatment and redecorating.", "/damp-proofing/condensation-control/"],
+      ["Buying in Barton?", "Pre-purchase damp surveys with the written report within 3 days.", "/damp-proofing/pre-purchase-damp-survey/"],
+    ],
+    areas: "Barton-upon-Humber and the surrounding villages, and North Lincolnshire towns including Brigg and Scunthorpe.",
+    faqs: [
+      { q: "Do you cover Barton-upon-Humber?", a: "Yes. We're based in Hessle, just across the Humber Bridge, and cover Barton-upon-Humber and the rest of North Lincolnshire." },
+      { q: "How much is a damp survey in Barton-upon-Humber?", a: "£119, deducted from the cost of any treatment if you go ahead with our quote." },
+      { q: "Can you survey a house before I buy it in Barton?", a: "Yes. Pre-purchase damp surveys include a written report within 3 days." },
     ],
   },
   {
