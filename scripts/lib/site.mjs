@@ -12,7 +12,7 @@ import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, GOOGLE_REVIEW_LINK, SOCIAL
 
 export const BLOCKS = ["head", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
-export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy", "reviews", "area-links", "town-services"];
+export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy", "reviews", "area-links", "area-list", "town-services"];
 export const wrap = (name, html) => `<!-- site:${name} -->\n${html}\n<!-- /site:${name} -->`;
 
 // What kind of page this is, from its path relative to the site root
@@ -351,6 +351,14 @@ ${TOWNS.map(([slug, name]) => `          <li><a href="/${slug}.html">${name}</a>
     </section>`;
 }
 
+// The same town links as a bare list, for pages that already have their own
+// "Areas covered" section (homepage, service hubs).
+export function areaList() {
+  return `<ul class="area-list">
+${TOWNS.map(([slug, name]) => `<li><a href="/${slug}.html">${name}</a></li>`).join("\n")}
+</ul>`;
+}
+
 // Town-specific local pages that exist. Anything not listed falls back to
 // the East Yorkshire page for that service (or the service hub).
 const LOCAL_PAGES = {
@@ -395,6 +403,7 @@ export function blocksFor(path, canonical) {
     "form-privacy": wrap("form-privacy", formPrivacy()),
     reviews: wrap("reviews", reviews()),
     "area-links": wrap("area-links", areaLinks(ctx)),
+    "area-list": wrap("area-list", areaList()),
     "town-services": wrap("town-services", townServices(ctx)),
   };
 }

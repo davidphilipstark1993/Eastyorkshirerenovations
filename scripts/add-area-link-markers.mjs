@@ -2,7 +2,7 @@
 // markers (filled by sync-layout.mjs from scripts/lib/site.mjs).
 //   - .html service pages: their "Covering Hull and the wider East Riding."
 //     section becomes the shared area-links block.
-//   - Homepage, services.html and the service hubs: block inserted before
+//   - services.html: block inserted before
 //     the last section of <main>.
 //   - Town pages: the list in "Popular services in this area" becomes the
 //     shared town-services list.
@@ -20,7 +20,10 @@ const edit = (f, fn) => {
 };
 
 const SERVICE_PAGES = ["kitchen-installs.html", "bathroom-installs.html", "plastering.html", "joinery.html", "electrical.html", "decorating.html", "full-house-renovations.html"];
-const INSERT_PAGES = ["index.html", "services.html", "orangeries/index.html", "conservatory-transformations/index.html", "garage-conversions/index.html", "garden-rooms/index.html", "outdoor-kitchens/index.html"];
+// The homepage and the service hubs carry the bare list (site:area-list)
+// inside their own "Areas covered" sections instead, so only services.html
+// gets a whole section.
+const INSERT_PAGES = ["services.html"];
 const TOWN_PAGES = ["hull", "beverley", "cottingham", "hessle", "willerby", "swanland", "brough", "kirk-ella", "north-ferriby", "east-riding", "anlaby", "south-cave"].map((t) => `${t}.html`);
 
 for (const f of SERVICE_PAGES) {
