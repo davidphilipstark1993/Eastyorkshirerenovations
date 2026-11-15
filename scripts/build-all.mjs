@@ -20,6 +20,7 @@ const steps = [
   "build-404.mjs",
   "sync-layout.mjs", // shared head/header/footer/JSON-LD on every page
   "fix-image-sizes.mjs", // true width/height on every <img>
+  "responsive-images.mjs", // resized JPEGs + srcset for phones
   "set-share-images.mjs", // og:image on pages without a generator
   "build-sitemap.mjs", // last, so lastmod reflects everything above
 ];

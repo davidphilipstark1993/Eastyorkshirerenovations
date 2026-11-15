@@ -10,6 +10,7 @@
 export const DAMP_GUIDES = [
   {
     slug: "awaabs-law-private-landlords",
+    published: "2026-11-02",
     title: "Awaab's Law and Private Landlords: Damp and Mould",
     description: "What Awaab's Law requires today, where private landlords stand, and how to prepare: GOV.UK timescales, the consultation, and keeping written damp and mould records.",
     h1: "Awaab's Law and private landlords: what to know about damp and mould.",

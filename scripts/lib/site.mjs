@@ -12,7 +12,7 @@ import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, GOOGLE_REVIEW_LINK, SOCIAL
 
 export const BLOCKS = ["head", "header", "footer", "business"];
 // Blocks that only some pages carry: replaced where their markers exist.
-export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy", "reviews"];
+export const OPTIONAL_BLOCKS = ["reply-time", "form-privacy", "reviews", "area-links", "town-services"];
 export const wrap = (name, html) => `<!-- site:${name} -->\n${html}\n<!-- /site:${name} -->`;
 
 // What kind of page this is, from its path relative to the site root
@@ -298,6 +298,91 @@ export function formPrivacy() {
   return `<p class="form-note">We only use these details to reply to your enquiry. See our <a href="/privacy.html">privacy policy</a>.</p>`;
 }
 
+// ---------------------------------------------------------------------------
+// Internal links between service pages and town pages. One list drives both
+// directions, so every service page links every town page and every town
+// page links every core service (using the town's own local page where one
+// exists, e.g. /orangeries/hull/).
+// ---------------------------------------------------------------------------
+export const TOWNS = [
+  ["hull", "Hull"],
+  ["beverley", "Beverley"],
+  ["cottingham", "Cottingham"],
+  ["hessle", "Hessle"],
+  ["willerby", "Willerby"],
+  ["kirk-ella", "Kirk Ella"],
+  ["swanland", "Swanland"],
+  ["north-ferriby", "North Ferriby"],
+  ["brough", "Brough"],
+  ["anlaby", "Anlaby"],
+  ["south-cave", "South Cave"],
+  ["east-riding", "East Riding of Yorkshire"],
+];
+
+// Heading for the "areas" block, per page. Pages not listed get the generic one.
+const AREA_HEADINGS = {
+  "index.html": "Renovations across Hull and the East Riding.",
+  "services.html": "Renovation services across Hull and the East Riding.",
+  "kitchen-installs.html": "Kitchen installs across Hull and the East Riding.",
+  "bathroom-installs.html": "Bathroom renovations across Hull and the East Riding.",
+  "plastering.html": "Plasterers covering Hull and the East Riding.",
+  "joinery.html": "Joinery across Hull and the East Riding.",
+  "electrical.html": "Electrical work across Hull and the East Riding.",
+  "decorating.html": "Decorating across Hull and the East Riding.",
+  "full-house-renovations.html": "Full house renovations across Hull and the East Riding.",
+  "orangeries/index.html": "Orangeries across Hull, Beverley and the East Riding.",
+  "conservatory-transformations/index.html": "Conservatory transformations across Hull and the East Riding.",
+  "garage-conversions/index.html": "Garage conversions across Hull and the East Riding.",
+  "garden-rooms/index.html": "Garden rooms across Hull and the East Riding.",
+  "outdoor-kitchens/index.html": "Outdoor kitchens across Hull and the East Riding.",
+};
+
+export function areaLinks(ctx) {
+  const heading = AREA_HEADINGS[ctx.path] || "Covering Hull and the wider East Riding.";
+  return `    <section class="section">
+      <div class="container">
+        <p class="kicker">Areas we cover</p>
+        <h2 class="section-title">${heading}</h2>
+        <ul class="area-list">
+${TOWNS.map(([slug, name]) => `          <li><a href="/${slug}.html">${name}</a></li>`).join("\n")}
+        </ul>
+        <p><a href="/areas.html">See all areas we cover</a></p>
+      </div>
+    </section>`;
+}
+
+// Town-specific local pages that exist. Anything not listed falls back to
+// the East Yorkshire page for that service (or the service hub).
+const LOCAL_PAGES = {
+  hull: { orangeries: "/orangeries/hull/", conservatory: "/conservatory-transformations/hull/", gardenRooms: "/garden-rooms/hull/", garage: "/garage-conversions/hull/", outdoorKitchens: "/outdoor-kitchens/hull/", damp: "/damp-proofing/hull/" },
+  beverley: { orangeries: "/orangeries/beverley/", damp: "/damp-proofing/beverley/" },
+};
+
+export function townServices(ctx) {
+  const slug = ctx.path.replace(/\.html$/, "");
+  const local = LOCAL_PAGES[slug] || {};
+  const town = (TOWNS.find(([s]) => s === slug) || [, "the area"])[1];
+  const items = [
+    ["Kitchen installs", "/kitchen-installs.html"],
+    ["Bathroom renovations", "/bathroom-installs.html"],
+    ["Full house renovations", "/full-house-renovations.html"],
+    ["Plastering", "/plastering.html"],
+    ["Joinery", "/joinery.html"],
+    ["Electrical work", "/electrical.html"],
+    ["Decorating", "/decorating.html"],
+    [local.damp ? `Damp proofing in ${town}` : "Damp proofing and damp surveys", local.damp || "/damp-proofing/"],
+    [local.orangeries ? `Orangeries in ${town}` : "Orangeries", local.orangeries || "/orangeries/east-yorkshire/"],
+    ["Conservatory transformations", local.conservatory || "/conservatory-transformations/east-yorkshire/"],
+    ["Garden rooms", local.gardenRooms || "/garden-rooms/east-yorkshire/"],
+    ["Garage conversions", local.garage || "/garage-conversions/east-yorkshire/"],
+    ["Outdoor kitchens", local.outdoorKitchens || "/outdoor-kitchens/east-yorkshire/"],
+    ["Water treatment &amp; water softeners", "/water-treatment.html"],
+  ];
+  return `<ul>
+${items.map(([label, href]) => `<li><a href="${href}">${label}</a></li>`).join("\n")}
+</ul>`;
+}
+
 // All blocks for a page, already wrapped in their markers.
 export function blocksFor(path, canonical) {
   const ctx = pageContext(path);
@@ -309,5 +394,7 @@ export function blocksFor(path, canonical) {
     "reply-time": wrap("reply-time", replyTime()),
     "form-privacy": wrap("form-privacy", formPrivacy()),
     reviews: wrap("reviews", reviews()),
+    "area-links": wrap("area-links", areaLinks(ctx)),
+    "town-services": wrap("town-services", townServices(ctx)),
   };
 }
