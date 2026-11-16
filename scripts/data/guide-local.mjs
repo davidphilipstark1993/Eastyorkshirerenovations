@@ -141,7 +141,7 @@ ${DAMP_AREAS}`,
   // ----------------------------------------------------------- renovations
   "kitchen-and-bathroom-renovation-costs": {
     heading: "Kitchen and bathroom renovations in Hull and East Yorkshire",
-    html: `<p>As a guide, a typical full bathroom renovation we carry out in Hull comes to around &pound;6,000. Room size, the suite and tiles you choose, a wet room and what is found behind the old tiles all move that figure, so we confirm the price in an itemised written quote after a site visit.</p>
+    html: `<p>As a guide, a typical full bathroom renovation we carry out comes to around &pound;6,000. Room size, the suite and tiles you choose, a wet room and what is found behind the old tiles all move that figure, so we confirm the price in an itemised written quote after a site visit.</p>
 <!-- TODO(David): add a typical kitchen renovation figure if you are happy to publish one. -->
 <p>See our <a href="/bathroom-installs.html">bathroom renovations</a> and <a href="/kitchen-installs.html">kitchen installs</a> pages, or recent work such as this <a href="/projects/bathrooms/hull-bathroom-renovation/">Hull bathroom renovation</a> and <a href="/projects/kitchens/cottingham-kitchen-renovation/">Cottingham kitchen renovation</a>.</p>`,
   },
