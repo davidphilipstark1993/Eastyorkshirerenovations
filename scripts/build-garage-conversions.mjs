@@ -135,7 +135,7 @@ ${conceptVideoSection({
         </div>
         ${quoteCallout({
           heading: "Garage doing nothing but storing boxes?",
-          body: `Email <strong>info@eastyorkshirerenovation.com</strong> to arrange a site visit.`,
+          body: `Call <a href="tel:+447498951487" data-contact="phone">07498 951487</a> or email <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a> to arrange a site visit.`,
         })}
       </div>
     </section>
@@ -264,7 +264,7 @@ const hullBody = `${heroTextOnly({
         </div>
         ${quoteCallout({
           heading: "Local garage conversion specialists",
-          body: `Email <strong>info@eastyorkshirerenovation.com</strong> for a fast response.`,
+          body: `Call <a href="tel:+447498951487" data-contact="phone">07498 951487</a> or email <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a> for a fast response.`,
         })}
       </div>
     </section>
@@ -348,7 +348,7 @@ const eyBody = `${heroTextOnly({
         </div>
         ${quoteCallout({
           heading: "Local garage conversion specialists",
-          body: `Email <strong>info@eastyorkshirerenovation.com</strong> for a fast response.`,
+          body: `Call <a href="tel:+447498951487" data-contact="phone">07498 951487</a> or email <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a> for a fast response.`,
         })}
       </div>
     </section>

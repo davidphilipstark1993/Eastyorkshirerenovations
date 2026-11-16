@@ -16,21 +16,25 @@ import { SITE, BUSINESS_NAME, BUSINESS_ID, LOGO_PATH } from "./lib/constants.mjs
 import { phoneLink } from "./lib/site.mjs";
 import { OWNER } from "./data/business.mjs";
 import { DAMP_GUIDES } from "./data/damp-guides.mjs";
+import { LOCAL_CONTEXT } from "./data/guide-local.mjs";
 
-const TODAY = "2026-10-07";
+// DAMP_PUBLISHED: first publication of the damp guides (unless a guide sets
+// its own "published"). UPDATED: last content update of every guide.
+const DAMP_PUBLISHED = "2026-10-07";
+const UPDATED = "2026-11-15";
 const legacy = JSON.parse(readFileSync("scripts/data/legacy-guides.json", "utf8"));
 
 // ---------------------------------------------------------------------------
 // Categories
 // ---------------------------------------------------------------------------
 const CATEGORIES = {
-  damp: { label: "Damp guides", service: { href: "/damp-proofing/", label: "Damp proofing" }, cta: { href: "/damp-proofing/book-a-survey/", label: "Book a £119 damp survey" }, og: "/assets/img/og/plastering.jpg" },
+  damp: { label: "Damp guides", service: { href: "/damp-proofing/", label: "Damp proofing" }, local: [{ href: "/damp-proofing/hull/", label: "Damp surveys and damp proofing in Hull" }, { href: "/damp-proofing/beverley/", label: "Damp surveys and damp proofing in Beverley" }], cta: { href: "/damp-proofing/book-a-survey/", label: "Book a £119 damp survey" }, og: "/assets/img/og/plastering.jpg" },
   renovations: { label: "Renovation guides", service: { href: "/full-house-renovations.html", label: "Renovations" }, og: "/assets/img/og/kitchen-installs.jpg" },
-  conservatory: { label: "Conservatory guides", service: { href: "/conservatory-transformations/", label: "Conservatory transformations" } },
-  garage: { label: "Garage conversion guides", service: { href: "/garage-conversions/", label: "Garage conversions" }, og: "/assets/img/og/garage-conversions.jpg" },
-  "garden-room": { label: "Garden room guides", service: { href: "/garden-rooms/", label: "Garden rooms" } },
-  orangery: { label: "Orangery guides", service: { href: "/orangeries/", label: "Orangeries" }, local: [{ href: "/orangeries/beverley/", label: "Orangeries in Beverley" }] },
-  "outdoor-kitchen": { label: "Outdoor kitchen guides", service: { href: "/outdoor-kitchens/", label: "Outdoor kitchens" } },
+  conservatory: { label: "Conservatory guides", service: { href: "/conservatory-transformations/", label: "Conservatory transformations" }, local: [{ href: "/conservatory-transformations/hull/", label: "Conservatory transformations in Hull" }, { href: "/conservatory-transformations/east-yorkshire/", label: "Conservatory transformations in East Yorkshire" }] },
+  garage: { label: "Garage conversion guides", service: { href: "/garage-conversions/", label: "Garage conversions" }, local: [{ href: "/garage-conversions/hull/", label: "Garage conversions in Hull" }, { href: "/garage-conversions/goole/", label: "Garage conversions in Goole" }, { href: "/garage-conversions/east-yorkshire/", label: "Garage conversions in East Yorkshire" }], og: "/assets/img/og/garage-conversions.jpg" },
+  "garden-room": { label: "Garden room guides", service: { href: "/garden-rooms/", label: "Garden rooms" }, local: [{ href: "/garden-rooms/hull/", label: "Garden rooms in Hull" }, { href: "/garden-rooms/east-yorkshire/", label: "Garden rooms in East Yorkshire" }] },
+  orangery: { label: "Orangery guides", service: { href: "/orangeries/", label: "Orangeries" }, local: [{ href: "/orangeries/hull/", label: "Orangeries in Hull" }, { href: "/orangeries/beverley/", label: "Orangeries in Beverley" }, { href: "/orangeries/east-yorkshire/", label: "Orangeries in East Yorkshire" }] },
+  "outdoor-kitchen": { label: "Outdoor kitchen guides", service: { href: "/outdoor-kitchens/", label: "Outdoor kitchens" }, local: [{ href: "/outdoor-kitchens/hull/", label: "Outdoor kitchens in Hull" }, { href: "/outdoor-kitchens/east-yorkshire/", label: "Outdoor kitchens in East Yorkshire" }] },
 };
 const DEFAULT_CTA = { href: "/contact.html#quote-form", label: "Get a quote" };
 
@@ -195,6 +199,9 @@ function author() {
 // ---------------------------------------------------------------------------
 function guidePage({ slug, category, title, description, h1, answer, bodyHtml, toc, faqs, related, published, og }) {
   const cat = CATEGORIES[category];
+  const local = LOCAL_CONTEXT[slug];
+  if (!local) throw new Error(`guides/${slug}: no LOCAL_CONTEXT entry`);
+  const localHtml = `\n\n        <h2 id="local">${local.heading}</h2>\n${local.html.trim().split("\n").map((l) => `        ${l}`).join("\n")}`;
   const cta = cat.cta || DEFAULT_CTA;
   const canonical = `${SITE}/guides/${slug}/`;
   const by = author();
@@ -207,7 +214,7 @@ function guidePage({ slug, category, title, description, h1, answer, bodyHtml, t
         <div class="guide-answer">
           <p><strong>In short:</strong> ${answer}</p>
         </div>
-        <p class="byline">By ${by.label}${OWNER.name ? "" : `<!-- TODO(owner): once OWNER.name is set in scripts/data/business.mjs, guides are credited to the owner by name -->`} &middot; Published <time datetime="${published}">${longDate(published)}</time>${published === TODAY ? "" : ` &middot; Updated <time datetime="${TODAY}">${longDate(TODAY)}</time>`}</p>
+        <p class="byline">By ${by.label}${OWNER.name ? "" : `<!-- TODO(owner): once OWNER.name is set in scripts/data/business.mjs, guides are credited to the owner by name -->`} &middot; Published <time datetime="${published}">${longDate(published)}</time>${published === UPDATED ? "" : ` &middot; Updated <time datetime="${UPDATED}">${longDate(UPDATED)}</time>`}</p>
       </div>
     </section>
 
@@ -219,7 +226,7 @@ ${toc && toc.length > 1 ? `        <nav class="guide-toc" aria-label="In this gu
 ${toc.map((t) => `            <li><a href="#${t.id}">${t.label}</a></li>`).join("\n")}
           </ol>
         </nav>
-` : ""}${bodyHtml}
+` : ""}${bodyHtml}${localHtml}
       </div>
     </section>
 ${faqs.length ? `
@@ -254,7 +261,7 @@ ${related.map((r) => `            <li><a href="${r.href}">${r.label}</a></li>`).
     headline: plain(h1).slice(0, 110),
     description,
     datePublished: published,
-    dateModified: TODAY,
+    dateModified: UPDATED,
     author: by.schema,
     publisher: { "@type": "Organization", "@id": BUSINESS_ID, name: BUSINESS_NAME, logo: { "@type": "ImageObject", url: `${SITE}${LOGO_PATH}` } },
     mainEntityOfPage: canonical,
@@ -333,8 +340,8 @@ for (const g of DAMP_GUIDES) {
     category: "damp",
     bodyHtml,
     faqs: g.faqs,
-    related: g.related.map((href) => ({ href, label: labelFor(href) })),
-    published: TODAY,
+    related: [...g.related.map((href) => ({ href, label: labelFor(href) })), ...CATEGORIES.damp.local],
+    published: g.published || DAMP_PUBLISHED,
   });
 }
 
@@ -363,7 +370,7 @@ ${sections.map((sec) => `        <h3>${sec.h2}</h3>\n        ${relink(sec.html).
       }
     }
   }
-  const published = g.sources.map((s) => legacy[s].published).filter(Boolean).sort()[0] || TODAY;
+  const published = g.sources.map((s) => legacy[s].published).filter(Boolean).sort()[0] || DAMP_PUBLISHED;
   const cat = CATEGORIES[g.category];
   const siblings = MERGED.filter((o) => o.category === g.category && o.slug !== g.slug).map((o) => ({ href: `/guides/${o.slug}/`, label: stripStop(o.h1) }));
   guidePage({

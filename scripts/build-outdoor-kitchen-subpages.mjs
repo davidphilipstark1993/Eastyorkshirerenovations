@@ -16,7 +16,7 @@ ${sections}
         </div>
         ${quoteCallout({
           heading: "Ready to talk through your outdoor kitchen?",
-          body: `Email <strong>info@eastyorkshirerenovation.com</strong> to arrange a site visit.`,
+          body: `Call <a href="tel:+447498951487" data-contact="phone">07498 951487</a> or email <a href="mailto:info@eastyorkshirerenovation.com">info@eastyorkshirerenovation.com</a> to arrange a site visit.`,
         })}
       </div>
     </section>

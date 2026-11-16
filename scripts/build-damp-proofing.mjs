@@ -1087,11 +1087,14 @@ const TOWNS = [
       ["Condensation and black mould", "Ventilation sized to the house, then mould treatment and redecorating.", "/damp-proofing/condensation-control/"],
       ["Buying in Barton?", "Pre-purchase damp surveys with the written report within 3 days.", "/damp-proofing/pre-purchase-damp-survey/"],
     ],
-    areas: "Barton-upon-Humber and the surrounding villages, and North Lincolnshire towns including Brigg and Scunthorpe.",
+    note: "If your house is listed or in one of Barton&rsquo;s conservation areas, work that affects its character may need consent from North Lincolnshire Council, and some damp treatments may not suit older solid walls. We&rsquo;ll flag this in the survey report. Not sure whether it&rsquo;s damp or condensation? Read our guides to <a href=\"/guides/damp-or-condensation/\">damp or condensation</a> and <a href=\"/guides/damp-patches-on-internal-walls/\">damp patches on internal walls</a>.",
+    areas: "Barton-upon-Humber and the surrounding villages, and North Lincolnshire towns including <a href=\"/damp-proofing/brigg/\">Brigg</a> and <a href=\"/damp-proofing/scunthorpe/\">Scunthorpe</a>. North of the bridge, see <a href=\"/damp-proofing/hull/\">damp proofing in Hull</a>.",
     faqs: [
       { q: "Do you cover Barton-upon-Humber?", a: "Yes. We're based in Hessle, just across the Humber Bridge, and cover Barton-upon-Humber and the rest of North Lincolnshire." },
       { q: "How much is a damp survey in Barton-upon-Humber?", a: "£119, deducted from the cost of any treatment if you go ahead with our quote." },
       { q: "Can you survey a house before I buy it in Barton?", a: "Yes. Pre-purchase damp surveys include a written report within 3 days." },
+      { q: "Is the damp in my older Barton house rising damp?", a: "Not always. In older solid-walled houses near the estuary, rain getting through failed pointing or render, and paths or patios raised above the damp-proof course, are common causes that look like rising damp. A survey tells you which before you pay for treatment." },
+      { q: "Do you do landlord damp and mould reports in Barton?", a: "Yes. A landlord damp and mould report costs £99 and we aim to inspect within 5 days of your request." },
     ],
   },
   {
