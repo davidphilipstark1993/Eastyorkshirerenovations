@@ -92,7 +92,7 @@ areaPage({
     { q: "Do you cover both older and newer parts of Willerby?", a: "Yes, from the older 1930s and post-war housing to newer developments near Willerby Shopping Park." },
     { q: "Are Willerby's larger gardens good for a garden room or orangery?", a: "Often, yes. Larger plots typical of Willerby give more flexibility on footprint and design, though permitted development limits still apply and we'll confirm what's achievable for your specific garden." },
   ],
-  title: "Renovations in Willerby | East Yorkshire Renovations",
+  title: "Renovations in Willerby | East Yorkshire Renovation",
   description: "Kitchen, bathroom, orangery and garden room renovations for Willerby's family homes, from 1930s semis to newer developments near Willerby Shopping Park.",
 });
 
@@ -113,7 +113,7 @@ areaPage({
     { q: "Can you match new brickwork to an older Kirk Ella property?", a: "Yes, matching brick, render and roofline detailing to period properties is something we plan for at design stage, particularly for orangeries and extensions." },
     { q: "Do larger Kirk Ella gardens allow bigger garden rooms?", a: "Often, yes, though the final size still depends on permitted development limits and how much of the garden is already built on." },
   ],
-  title: "Renovations in Kirk Ella | East Yorkshire Renovations",
+  title: "Renovations in Kirk Ella | East Yorkshire Renovation",
   description: "Kitchen, bathroom, orangery and garden room renovations for Kirk Ella's period and detached homes, with brickwork and detailing matched to the property.",
 });
 
@@ -134,7 +134,7 @@ areaPage({
     { q: "Is my property in Swanland affected by conservation area rules?", a: "Possibly &mdash; parts of Swanland sit within or close to a conservation area, which can affect permitted development rights. We'll check this for your specific address before recommending a design." },
     { q: "Do you carry out kitchen and bathroom renovations in Swanland as well as extensions?", a: "Yes, kitchen and bathroom renovations are among our most common projects in the village, alongside orangeries and garden rooms." },
   ],
-  title: "Renovations in Swanland | East Yorkshire Renovations",
+  title: "Renovations in Swanland | East Yorkshire Renovation",
   description: "Kitchen, bathroom, orangery and garden room renovations for Swanland's village homes, with planning guidance for the village's conservation area.",
 });
 
@@ -155,7 +155,7 @@ areaPage({
     { q: "Do ground conditions near the Humber affect building work in North Ferriby?", a: "They can, particularly for groundworks and foundations. We assess ground conditions and drainage as part of the design process for any extension, orangery or garden room." },
     { q: "Is North Ferriby affected by conservation area rules?", a: "Some parts of the village are. We'll check this for your specific property before recommending a scope of work." },
   ],
-  title: "Renovations in North Ferriby | East Yorkshire Renovations",
+  title: "Renovations in North Ferriby | East Yorkshire Renovation",
   description: "Kitchen, bathroom, orangery and garden room renovations for North Ferriby's riverside village homes, with ground conditions and planning checked upfront.",
 });
 
@@ -176,7 +176,7 @@ areaPage({
     { q: "Do you cover both older and newer housing in Brough?", a: "Yes, from established properties in the town centre to newer developments built over recent decades." },
     { q: "Are there ground condition considerations for extensions near the Humber in Brough?", a: "For properties nearer the estuary, yes &mdash; we check ground conditions and drainage as part of the design process for extensions, orangeries and garden rooms." },
   ],
-  title: "Renovations in Brough | East Yorkshire Renovations",
+  title: "Renovations in Brough | East Yorkshire Renovation",
   description: "Kitchen, bathroom, orangery and garden room renovations for homes in Brough, across the town's established and newer housing.",
 });
 
@@ -197,7 +197,7 @@ areaPage({
     { q: "Is my property in South Cave affected by conservation area rules?", a: "Properties in and around the village centre and market place often are. We'll check this for your specific address before recommending a design." },
     { q: "Can you match brickwork on an older South Cave farmhouse?", a: "Yes, matching brick and detailing to period and rural properties is something we plan for at design stage." },
   ],
-  title: "Renovations in South Cave | East Yorkshire Renovations",
+  title: "Renovations in South Cave | East Yorkshire Renovation",
   description: "Kitchen, bathroom, orangery and garden room renovations for South Cave's village and rural homes, with conservation area planning checked upfront.",
 });
 
@@ -275,7 +275,7 @@ const eastRidingCanonical = `${SITE}/east-riding.html`;
 writeFileSync(
   "east-riding.html",
   page({
-    title: "Renovations East Riding of Yorkshire | East Yorkshire Renovations",
+    title: "Renovations East Riding of Yorkshire | East Yorkshire Renovation",
     description: "Kitchen, bathroom, orangery and garden room renovations across East Riding of Yorkshire's villages, market towns and rural areas.",
     canonical: eastRidingCanonical,
     body: eastRidingBody,

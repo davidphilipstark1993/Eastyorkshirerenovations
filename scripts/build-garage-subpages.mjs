@@ -84,7 +84,7 @@ subpage({
     { q: "Is soundproofing important for a garage bedroom conversion?", a: "Yes, more so than for other room types, particularly where the garage shares a party wall with a neighbouring property." },
     { q: "Can you add an en-suite to a garage-to-bedroom conversion?", a: "Where plumbing can be run from a nearby existing point, yes, this is a common addition for a guest bedroom conversion." },
   ],
-  title: "Garage to Bedroom Conversion | East Yorkshire Renovations",
+  title: "Garage to Bedroom Conversion | East Yorkshire Renovation",
   description: "Garage to bedroom conversions across Hull and East Yorkshire, covering fire safety, escape windows, sound insulation and heating.",
   serviceDesc: "Garage to bedroom conversions across Hull and East Yorkshire, including fire safety, sound insulation and heating considerations.",
 });
@@ -107,7 +107,7 @@ subpage({
     { q: "Do I need planning permission to use my garage as an office?", a: "Usually not for personal use, though if you plan to run a business with regular visiting clients, it's worth checking with East Riding of Yorkshire Council or Hull City Council, and confirming your mortgage and insurance position." },
     { q: "How much soundproofing does a garage office need?", a: "More than a typical playroom or storage conversion, since calls and video meetings are more sensitive to noise. We assess this for your specific garage and its neighbouring rooms." },
   ],
-  title: "Garage to Office Conversion | East Yorkshire Renovations",
+  title: "Garage to Office Conversion | East Yorkshire Renovation",
   description: "Garage to home office conversions across Hull and East Yorkshire, with acoustic separation, electrics and connectivity planned in from the start.",
   serviceDesc: "Garage to home office conversions across Hull and East Yorkshire, including soundproofing, electrics and network cabling.",
   video: { src: "/assets/video/garage-to-office-concept.mp4" },
@@ -130,7 +130,7 @@ subpage({
     { q: "Will a converted garage gym feel stuffy?", a: "Not if ventilation is planned in from the start. We assess extraction and ventilation needs specifically for gym conversions, given the extra heat and humidity generated." },
     { q: "Can you fit a pull-up bar or rig in a garage gym?", a: "It depends on your garage's ceiling height. We check this against your intended equipment during the design stage." },
   ],
-  title: "Garage to Gym Conversion | East Yorkshire Renovations",
+  title: "Garage to Gym Conversion | East Yorkshire Renovation",
   description: "Garage to gym conversions across Hull and East Yorkshire, with reinforced flooring, ventilation and electrics planned around your equipment.",
   serviceDesc: "Garage to gym conversions across Hull and East Yorkshire, including reinforced flooring, ventilation and electrics.",
 });
@@ -152,7 +152,7 @@ subpage({
     { q: "Can you add built-in storage to a playroom conversion?", a: "Yes, built-in shelving and storage cupboards are a common addition and help make the most of a typically compact garage footprint." },
     { q: "Will a playroom conversion need much insulation?", a: "The same insulation standard as other garage conversions applies for comfort, with sound insulation particularly useful for containing noise from the rest of the house." },
   ],
-  title: "Garage to Playroom Conversion | East Yorkshire Renovations",
+  title: "Garage to Playroom Conversion | East Yorkshire Renovation",
   description: "Garage to playroom conversions across Hull and East Yorkshire, with durable finishes, built-in storage and noise containment.",
   serviceDesc: "Garage to playroom conversions across Hull and East Yorkshire, including durable finishes and built-in storage.",
 });

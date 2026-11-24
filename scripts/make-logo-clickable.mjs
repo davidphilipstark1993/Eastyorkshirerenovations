@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync } from "fs";
 
-const OLD = '<div class="brand"><img src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>';
-const NEW = '<a class="brand" href="/"><img src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>';
+const OLD = '<div class="brand"><img src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovation logo"><span>East Yorkshire Renovation</span></div>';
+const NEW = '<a class="brand" href="/"><img src="/assets/img/logo-eyr.jpg" width="148" height="102" alt="East Yorkshire Renovation logo"><span>East Yorkshire Renovation</span></a>';
 
 function readdirDeep(dir) {
   const results = [];

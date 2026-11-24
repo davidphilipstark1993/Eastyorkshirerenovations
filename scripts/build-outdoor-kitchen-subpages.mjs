@@ -70,7 +70,7 @@ subpage({
       <div class="container">
         <p class="kicker">What drives the cost</p>
         <h2 class="section-title">Outdoor kitchen costs, broken down by component.</h2>
-        <p>Rather than a single headline figure, it's more useful to think about outdoor kitchen cost component by component &mdash; the figures below are general UK guidance, not East Yorkshire Renovations' confirmed pricing, and the only way to get an accurate total is a site visit and design conversation.</p>
+        <p>Rather than a single headline figure, it's more useful to think about outdoor kitchen cost component by component &mdash; the figures below are general UK guidance, not East Yorkshire Renovation's confirmed pricing, and the only way to get an accurate total is a site visit and design conversation.</p>
         <p><strong>BBQ unit.</strong> A built-in gas or charcoal BBQ typically costs more than a freestanding one because of the housing, ventilation and (for gas) the supply pipework, but it lasts longer and looks integrated into the design. Adding a pizza oven or side burner increases this further.</p>
         <p><strong>Worktops.</strong> Porcelain and granite are the most common weatherproof choices. Porcelain is generally the more budget-friendly of the two hard-wearing options, with granite and other natural stone sitting at the premium end.</p>
         <p><strong>Cabinetry &amp; storage.</strong> Weatherproof cabinetry for utensils, crockery and gas bottle storage adds cost proportional to how much storage you want built in, versus a simpler open-shelf approach.</p>
@@ -99,7 +99,7 @@ subpage({
     { q: "Is porcelain or granite worktop cheaper for an outdoor kitchen?", a: "Porcelain is generally the more budget-friendly of the two hard-wearing, weatherproof options, with granite and other natural stone sitting at the premium end." },
     { q: "Does adding a pizza oven cost much more than a BBQ alone?", a: "It adds to the build, mainly through the additional housing and any gas or electrical supply needed, but many people add one at the same time as the main BBQ unit to avoid remobilising later." },
   ],
-  title: "Outdoor Kitchen Cost | East Yorkshire Renovations",
+  title: "Outdoor Kitchen Cost | East Yorkshire Renovation",
   description: "A component-by-component breakdown of what drives outdoor kitchen costs in the UK, from BBQ units and worktops to plumbing and cover.",
   serviceDesc: "Outdoor kitchen cost guidance and budgeting for projects across Hull and East Yorkshire.",
 });
@@ -146,7 +146,7 @@ subpage({
     { q: "Should the outdoor kitchen be close to the house?", a: "Generally yes, for practical access back to the indoor kitchen, but positioned to avoid smoke blowing towards seating areas or windows based on your garden's typical wind direction." },
     { q: "Do you help with 3D visuals or design before building?", a: "We talk through layout and material options as part of the design consultation so you have a clear picture of the finished space before construction starts." },
   ],
-  title: "Outdoor Kitchen Design | East Yorkshire Renovations",
+  title: "Outdoor Kitchen Design | East Yorkshire Renovation",
   description: "Outdoor kitchen design guidance covering layout options, zoning and positioning, for gardens across Hull and East Yorkshire.",
   serviceDesc: "Outdoor kitchen design consultation and layout planning for gardens across Hull and East Yorkshire.",
 });
@@ -194,7 +194,7 @@ subpage({
     { q: "Does a covered outdoor kitchen need planning permission?", a: "It's more likely to need consideration than an open-air setup, particularly for a larger permanent roofed structure or one close to a boundary. We check this for your specific garden and design." },
     { q: "Can a covered outdoor kitchen be used in winter?", a: "Generally, yes, a solid-roofed outdoor kitchen can be used year-round, while an open-air setup is more of a spring-to-autumn space." },
   ],
-  title: "Covered Outdoor Kitchens | East Yorkshire Renovations",
+  title: "Covered Outdoor Kitchens | East Yorkshire Renovation",
   description: "Covered outdoor kitchens with pergolas, louvred roofs or solid roof structures, extending the usable season across Hull and East Yorkshire.",
   serviceDesc: "Covered outdoor kitchen design and installation, including pergolas, louvred roofs and solid roof structures, across Hull and East Yorkshire.",
 });

@@ -78,7 +78,7 @@ ${conceptVideoSection({
             <p>Roughly &pound;25,000&ndash;&pound;40,000+ for a full transformation including new bi-fold doors, walls, underfloor heating and a premium interior finish.</p>
           </article>
         </div>
-        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing &mdash; <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
+        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovation's confirmed pricing &mdash; <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
       </div>
     </section>
 
@@ -112,7 +112,7 @@ ${conceptVideoSection({
     <section class="section">
       <div class="container">
         <p class="kicker">Why choose us</p>
-        <h2 class="section-title">Why East Yorkshire Renovations.</h2>
+        <h2 class="section-title">Why East Yorkshire Renovation.</h2>
         <ul>
           <li>One point of contact for the whole project, from the roof down to the decorating.</li>
           <li>A local team based in Hessle, working across Hull and East Yorkshire.</li>

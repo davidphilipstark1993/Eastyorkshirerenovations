@@ -35,7 +35,7 @@ ${links.map(([label, href, text]) => `          <article class="card">
 `;
 
 const html = page({
-  title: "Page Not Found | East Yorkshire Renovations",
+  title: "Page Not Found | East Yorkshire Renovation",
   description: "The page you were looking for could not be found.",
   canonical: `${SITE}/404.html`,
   body,
