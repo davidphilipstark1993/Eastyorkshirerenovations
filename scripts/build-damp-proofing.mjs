@@ -1124,6 +1124,16 @@ const TOWNS = [
   },
 ];
 
+// Each damp town page links to the regional renovation page for its area.
+const REGION_LINKS = {
+  hull: `We also renovate homes across the city: see <a href="/hull.html">house renovations in Hull</a>.`,
+  beverley: `For renovation work in and around Beverley, see <a href="/east-riding.html">renovations across East Yorkshire</a>.`,
+  scunthorpe: `We also take on renovation work over the bridge: see <a href="/areas/north-lincolnshire/">renovations in North Lincolnshire</a>.`,
+  brigg: `We also take on renovation work over the bridge: see <a href="/areas/north-lincolnshire/">renovations in North Lincolnshire</a>.`,
+  "barton-upon-humber": `We also take on renovation work over the bridge: see <a href="/areas/north-lincolnshire/">renovations in North Lincolnshire</a>.`,
+  grimsby: `Which parts of Lincolnshire we cover: see <a href="/areas/lincolnshire/">renovations in northern Lincolnshire</a>.`,
+};
+
 function townPage(t) {
   const path = `${HUB}${t.slug}/`;
   const body = [
@@ -1162,7 +1172,8 @@ ${t.problems.map(([h, p, href]) => `          <article class="card">
           <h2 class="section-title">A &pound;119 survey, then a written report and quote.</h2>
           <p>We inspect the affected areas inside and out, take moisture readings and work out the cause. You get a written report in plain English, and a quote for any work, which includes the replastering and making good because we do that ourselves. The &pound;119 is deducted from the cost if you go ahead.</p>
           <p>Damp proofing work is backed by written guarantees of up to 30 years, depending on the treatment. <a href="${HUB}#guarantee">Guarantee terms</a>.</p>
-          <p><strong>Areas we cover:</strong> ${t.areas}</p>
+          <p><strong>Areas we cover:</strong> ${t.areas}</p>${REGION_LINKS[t.slug] ? `
+          <p>${REGION_LINKS[t.slug]}</p>` : ""}
         </div>
 ${bookingCallout({ body: `Damp surveys in ${t.town} cost ${SURVEY_PRICE}, ${SURVEY_DEDUCTION}. Or call ${phoneLink()}.` })}      </div>
     </section>

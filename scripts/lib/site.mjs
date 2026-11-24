@@ -207,7 +207,9 @@ ${credentialsColumn()}
         <p><a href="/services.html">Renovation services</a></p>
         <p><a href="/damp-proofing/">Damp proofing</a></p>
         <p><a href="/areas.html">Areas we cover</a></p>
-        <p><a href="/east-riding.html">East Riding of Yorkshire</a></p>
+        <p><a href="/hull.html">Renovations in Hull</a></p>
+        <p><a href="/east-riding.html">East Yorkshire</a></p>
+        <p><a href="/areas/north-lincolnshire/">North Lincolnshire</a></p>
         <p><a href="/work.html">Recent work</a></p>
         <p><a href="/contact.html#quote-form">Request a quote</a></p>
         <p><a href="/privacy.html">Privacy policy</a></p>
@@ -337,6 +339,12 @@ const AREA_HEADINGS = {
   "outdoor-kitchens/index.html": "Outdoor kitchens across Hull and the East Riding.",
 };
 
+// Regional pages across the Humber, listed after the East Riding towns.
+export const REGIONS = [
+  ["/areas/north-lincolnshire/", "North Lincolnshire"],
+  ["/areas/lincolnshire/", "Grimsby &amp; northern Lincolnshire"],
+];
+
 export function areaLinks(ctx) {
   const heading = AREA_HEADINGS[ctx.path] || "Covering Hull and the wider East Riding.";
   return `    <section class="section">
@@ -345,6 +353,7 @@ export function areaLinks(ctx) {
         <h2 class="section-title">${heading}</h2>
         <ul class="area-list">
 ${TOWNS.map(([slug, name]) => `          <li><a href="/${slug}.html">${name}</a></li>`).join("\n")}
+${REGIONS.map(([href, name]) => `          <li><a href="${href}">${name}</a></li>`).join("\n")}
         </ul>
         <p><a href="/areas.html">See all areas we cover</a></p>
       </div>
@@ -356,6 +365,7 @@ ${TOWNS.map(([slug, name]) => `          <li><a href="/${slug}.html">${name}</a>
 export function areaList() {
   return `<ul class="area-list">
 ${TOWNS.map(([slug, name]) => `<li><a href="/${slug}.html">${name}</a></li>`).join("\n")}
+${REGIONS.map(([href, name]) => `<li><a href="${href}">${name}</a></li>`).join("\n")}
 </ul>`;
 }
 

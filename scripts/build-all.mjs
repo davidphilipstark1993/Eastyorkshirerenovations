@@ -17,6 +17,7 @@ const steps = [
   "build-projects.mjs", // project pages and project category pages
   "build-about.mjs",
   "build-privacy.mjs",
+  "build-regional-pages.mjs", // Hull, East Yorkshire, North Lincolnshire, Lincolnshire
   "build-404.mjs",
   "sync-layout.mjs", // shared head/header/footer/JSON-LD on every page
   "fix-image-sizes.mjs", // true width/height on every <img>

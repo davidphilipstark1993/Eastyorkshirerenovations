@@ -136,7 +136,7 @@ export const projects = [
     category: "full-house-renovations",
     title: "Loft room renovation",
     location: "East Yorkshire",
-    locationLink: null,
+    locationLink: { label: "East Yorkshire", href: "/east-riding.html" },
     service: { label: "Full House Renovations", href: "/full-house-renovations.html" },
     images: {
       before: [{ src: "/assets/img/project/loft-before", alt: "Loft space before renovation, East Yorkshire" }],
