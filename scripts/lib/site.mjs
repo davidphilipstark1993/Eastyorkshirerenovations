@@ -7,7 +7,7 @@
 // between each pair of <!-- site:NAME --> ... <!-- /site:NAME --> markers.
 // To change any of these site-wide: edit this file, then
 // run `node scripts/sync-layout.mjs`.
-import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, AREA_SERVED } from "./constants.mjs";
+import { SITE, BUSINESS_NAME, BUSINESS_ID, EMAIL, ADDRESS_LINE, LOGO_PATH, LOGO_DISPLAY_PATH, AREA_SERVED } from "./constants.mjs";
 import { PHONE, WHATSAPP, REPLY_TIME, GOOGLE_PROFILE, GOOGLE_REVIEW_LINK, SOCIAL_PROFILES, PUBLIC_LIABILITY, CREDENTIALS, COMPANY, REVIEWS, sameAs } from "../data/business.mjs";
 
 export const BLOCKS = ["head", "header", "footer", "business"];
@@ -116,7 +116,7 @@ export function header(ctx) {
     : { href: "/contact.html#quote-form", label: "Get a Quote" };
   return `  <header>
     <div class="container navbar">
-      <a class="brand" href="/"><img src="${LOGO_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>
+      <a class="brand" href="/"><img src="${LOGO_DISPLAY_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
 ${NAV.map(navItem).join("\n")}
       </nav>
@@ -189,7 +189,7 @@ export function footer(ctx) {
   <footer>
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="${LOGO_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo">
+        <img class="footer-logo" src="${LOGO_DISPLAY_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo">
         <h3>${BUSINESS_NAME}</h3>
         <p>${ADDRESS_LINE}</p>
         <p>Phone: ${phoneLink()}</p>
@@ -228,6 +228,9 @@ export function business(canonical) {
     "@type": "HomeAndConstructionBusiness",
     "@id": BUSINESS_ID,
     name: BUSINESS_NAME,
+    legalName: COMPANY.legalName,
+    alternateName: [COMPANY.legalName, "EYR"].filter((n) => n && n !== BUSINESS_NAME),
+    description: "Hessle-based renovation and damp proofing firm. Kitchens, bathrooms, full house renovations, plastering, joinery, electrical work, garage conversions, garden rooms and damp surveys across Hull, the East Riding of Yorkshire and North Lincolnshire, within about 30 miles of Hessle.",
     image: `${SITE}${LOGO_PATH}`,
     logo: `${SITE}${LOGO_PATH}`,
     email: EMAIL,
@@ -248,7 +251,10 @@ export function business(canonical) {
       },
     ],
     areaServed: AREA_SERVED,
-    url: canonical,
+    ...(COMPANY.established ? { foundingDate: COMPANY.established } : {}),
+    // Always the homepage: this node has the same @id on every page, so its
+    // url must not change from page to page.
+    url: `${SITE}/`,
   };
   const links = sameAs();
   if (links.length) data.sameAs = links;

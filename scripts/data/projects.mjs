@@ -17,6 +17,7 @@
  *     after:  [{ src, alt }],
  *   },
  *   summary: string,           // one-line standfirst
+ *   metaDescription?: string,  // optional; use when summary + suffix would pass ~160 chars
  *   workCompleted: string,     // what was actually done — genuine only
  *   outcome: string,           // the result, in the customer's/site's own words
  *   materials: string[] | null,  // optional
@@ -149,6 +150,7 @@ export const projects = [
       ],
     },
     summary: "A dark, modern bathroom with large grey stone-effect tiles on the walls and floor, a black vanity unit and matt black fittings.",
+    metaDescription: "Bathroom refit in Howden, East Yorkshire: grey stone-effect wall and floor tiles, a black vanity unit and matt black fittings. Photos of the finished room.",
     workCompleted: "Bathroom refit with large-format grey stone-effect tiles on the walls and floor, a black vanity unit with a white basin, a close-coupled toilet, a black-framed mirror cabinet and a wall extractor fan.",
     outcome: "A dark, modern bathroom with large grey stone-effect tiles on the walls and floor, a black vanity unit and matt black fittings.",
     materials: ["Large-format grey stone-effect wall and floor tiles", "Black vanity unit with white basin", "Matt black basin tap", "Black-framed mirror cabinet", "Wall extractor fan"],
@@ -177,6 +179,7 @@ export const projects = [
       after: [{ src: "/assets/img/project/ensuite-cherry-burton", alt: "Ensuite shower enclosure with an electric shower, wave-pattern feature tiles and a sliding glass door" }],
     },
     summary: "A compact ensuite with a fully tiled shower enclosure, an electric shower and a wave-pattern feature wall.",
+    metaDescription: "Ensuite renovation in Cherry Burton, near Beverley: a tiled shower enclosure, electric shower and wave-pattern feature wall. Photos of the finished room.",
     workCompleted: "Ensuite refit with a shower tray and sliding glass door, an electric shower, wave-pattern feature tiles on the back wall of the shower, tiled side walls and a new basin.",
     outcome: "A compact ensuite with a fully tiled shower enclosure, an electric shower and a wave-pattern feature wall.",
     materials: ["Electric shower", "Shower tray with sliding glass door", "Wave-pattern feature wall tiles", "Basin"],

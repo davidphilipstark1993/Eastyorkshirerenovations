@@ -256,6 +256,61 @@ ${slots.map((s) => s.html).join("\n")}
 `;
 }
 
+// Guides linked from each damp service page's "Related services" block.
+const GUIDE_LABELS = {
+  "what-does-a-damp-survey-include": "What does a damp survey include?",
+  "damp-survey-cost-hull": "How much does a damp survey cost in Hull?",
+  "damp-or-condensation": "Damp or condensation? How to tell",
+  "buying-a-house-with-damp": "Should I buy a house with damp?",
+  "is-black-mould-always-condensation": "Is black mould always condensation?",
+  "how-to-tell-if-its-rising-damp": "How to tell if it&rsquo;s rising damp",
+  "does-a-new-damp-proof-course-fix-rising-damp": "Does a new damp-proof course always fix rising damp?",
+  "how-long-does-damp-proofing-take": "How long does damp proofing take?",
+  "damp-proofing-cost-hull": "How much does damp proofing cost in Hull?",
+  "damp-patches-on-internal-walls": "What causes damp patches on internal walls?",
+  "awaabs-law-private-landlords": "Awaab&rsquo;s Law and private landlords"
+};
+const SERVICE_GUIDES = {
+  "damp-surveys": [
+    "what-does-a-damp-survey-include",
+    "damp-survey-cost-hull",
+    "buying-a-house-with-damp"
+  ],
+  "pre-purchase-damp-survey": [
+    "buying-a-house-with-damp",
+    "what-does-a-damp-survey-include",
+    "damp-survey-cost-hull"
+  ],
+  "landlord-damp-mould-reports": [
+    "awaabs-law-private-landlords",
+    "is-black-mould-always-condensation"
+  ],
+  "rising-damp-treatment": [
+    "how-to-tell-if-its-rising-damp",
+    "does-a-new-damp-proof-course-fix-rising-damp",
+    "how-long-does-damp-proofing-take",
+    "damp-proofing-cost-hull"
+  ],
+  "penetrating-damp": [
+    "damp-patches-on-internal-walls",
+    "damp-or-condensation",
+    "damp-proofing-cost-hull"
+  ],
+  "condensation-control": [
+    "is-black-mould-always-condensation",
+    "damp-or-condensation"
+  ],
+  "mould-treatment": [
+    "is-black-mould-always-condensation",
+    "damp-patches-on-internal-walls",
+    "awaabs-law-private-landlords"
+  ],
+  "cellar-tanking": [
+    "how-long-does-damp-proofing-take",
+    "damp-proofing-cost-hull"
+  ]
+};
+
 function relatedAndBook({ related, callout, service }) {
   const items = [`<a href="${HUB}">All damp proofing services</a>`, ...related.map((s) => link(s))];
   return `    <section class="section">
@@ -266,9 +321,19 @@ function relatedAndBook({ related, callout, service }) {
           <ul>
 ${items.map((i) => `            <li>${i}</li>`).join("\n")}
           </ul>
-        </div>
+${guidesList(service)}        </div>
 ${bookingCallout({ ...callout, service })}      </div>
     </section>
+`;
+}
+
+function guidesList(service) {
+  const slugs = SERVICE_GUIDES[service] || [];
+  if (!slugs.length) return "";
+  return `          <h3>Guides worth reading first</h3>
+          <ul>
+${slugs.map((g) => `            <li><a href="/guides/${g}/">${GUIDE_LABELS[g]}</a></li>`).join("\n")}
+          </ul>
 `;
 }
 
