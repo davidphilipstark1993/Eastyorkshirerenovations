@@ -1,0 +1,8 @@
+# Internal files: kept in the repo but never deployed.
+# Vercel serves every file in the repo, so anything here would be public.
+/docs
+/scripts
+/node_modules
+**/README.md
+.DS_Store
+**/.DS_Store
