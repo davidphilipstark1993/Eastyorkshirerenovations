@@ -71,7 +71,7 @@ const body = `    <section class="hero">
           <p class="kicker">Who we are</p>
           <h2 class="section-title">Who runs East Yorkshire Renovations.</h2>
           ${ownerIntro}
-          <p>We&rsquo;re based on Station Road in Hessle. We work across Hull, Hessle, Cottingham, Beverley and the villages west of the city, and our damp work reaches further out into the East Riding and across the Humber into North Lincolnshire.</p>
+          <p>We&rsquo;re based on Station Road in Hessle. We work across Hull, Hessle, Cottingham, Beverley and the villages west of the city, and across the Humber into North Lincolnshire for both renovations and damp work. Our damp surveys also reach further out into the East Riding.</p>
           <p>Our work falls into three parts: damp surveys and damp proofing; kitchens, bathrooms and full renovations; and bigger home improvements such as garage conversions, garden rooms and conservatory transformations.</p>
         </div>
         ${ownerPhoto}
@@ -119,7 +119,7 @@ ${wrap("reviews", reviews())}
         <div>
           <p class="kicker">Areas</p>
           <h2 class="section-title">Where we work.</h2>
-          <p>Hull, Hessle, Beverley, Cottingham, Anlaby, Willerby, Kirk Ella, Swanland, North Ferriby, Brough and South Cave, with damp surveys and treatment further out to Bridlington, Driffield and Goole, and in North Lincolnshire to Barton-upon-Humber, Brigg, Scunthorpe and Grimsby.</p>
+          <p>Hull, Hessle, Beverley, Cottingham, Anlaby, Willerby, Kirk Ella, Swanland, North Ferriby, Brough and South Cave, with damp surveys and treatment further out to Bridlington, Driffield and Goole. Across the Humber we take on renovations, refurbishments and damp work in Barton-upon-Humber, Brigg, Scunthorpe, Winterton, Epworth, Crowle and Grimsby.</p>
           <p><a href="/areas.html">See all the areas we cover</a></p>
         </div>
         <div class="callout">
