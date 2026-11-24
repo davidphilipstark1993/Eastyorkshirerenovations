@@ -1,10 +1,12 @@
-import { mkdirSync, writeFileSync } from "fs";
+import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { page, heroTextOnly, faqList, quoteCallout } from "./layout.mjs";
 import { SITE } from "./constants.mjs";
 import { CATEGORIES } from "../data/projects.mjs";
 
 function pictureTag({ src, alt }, { width = 600, height = 400, loading = "lazy" } = {}) {
-  return `<picture><source srcset="${src}.webp" type="image/webp"><img src="${src}.jpg" width="${width}" height="${height}" alt="${alt}" loading="${loading}"></picture>`;
+  // Only offer a WebP source when one exists, so a photo without one never gets a broken source.
+  const webp = existsSync(`.${src}.webp`) ? `<source srcset="${src}.webp" type="image/webp">` : "";
+  return `<picture>${webp}<img src="${src}.jpg" width="${width}" height="${height}" alt="${alt}" loading="${loading}"></picture>`;
 }
 
 

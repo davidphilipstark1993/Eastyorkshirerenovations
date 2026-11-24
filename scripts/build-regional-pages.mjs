@@ -387,7 +387,7 @@ PAGES.push({
       kicker: "Our work in the East Riding",
       h2: "Bathrooms in Howden, Cherry Burton and Hessle.",
       paras: [
-        "We renovated a bathroom in Howden, shown at the top of this page. Near Beverley, we renovated the ensuite in Cherry Burton shown here, and in Hessle we fitted a <a href=\"/projects/bathrooms/hessle-bathroom-renovation/\">bathroom with a walk-in shower</a>.",
+        "We renovated a <a href=\"/projects/bathrooms/howden-bathroom-renovation/\">bathroom in Howden</a>, shown at the top of this page. Near Beverley, we renovated the <a href=\"/projects/bathrooms/cherry-burton-ensuite-renovation/\">ensuite in Cherry Burton</a> shown here, and in Hessle we fitted a <a href=\"/projects/bathrooms/hessle-bathroom-renovation/\">bathroom with a walk-in shower</a>.",
         "We also fitted a <a href=\"/projects/kitchens/cottingham-kitchen-renovation/\">shaker-style kitchen in Cottingham</a> and turned a bare loft into a usable room on a <a href=\"/projects/full-house-renovations/loft-room-renovation/\">loft renovation</a>.",
       ],
       photo: PHOTOS.cherryBurton,

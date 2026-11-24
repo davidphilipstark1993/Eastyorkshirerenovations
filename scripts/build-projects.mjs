@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from "fs";
+import { mkdirSync, writeFileSync, existsSync } from "fs";
 import { page, heroTextOnly, quoteCallout, itemListData } from "./lib/layout.mjs";
 import { SITE } from "./lib/constants.mjs";
 import { writeProjectPage } from "./lib/project-template.mjs";
@@ -85,7 +85,7 @@ const SHARE_IMAGES = {
 function projectCard(p) {
   const img = p.images.after[0] || p.images.during[0] || p.images.before[0];
   const picture = img
-    ? `<picture><source srcset="${img.src}.webp" type="image/webp"><img src="${img.src}.jpg" width="600" height="400" alt="${img.alt}" loading="lazy"></picture>`
+    ? `<picture>${existsSync(`.${img.src}.webp`) ? `<source srcset="${img.src}.webp" type="image/webp">` : ""}<img src="${img.src}.jpg" width="600" height="400" alt="${img.alt}" loading="lazy"></picture>`
     : "";
   return `          <article class="card case-study">
             ${picture}
