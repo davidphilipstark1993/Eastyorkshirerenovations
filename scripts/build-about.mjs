@@ -14,7 +14,7 @@ const todo = (what) => `<!-- TODO(owner): ${what} - set it in scripts/data/busin
 
 // Who runs it: only once the owner has given a name.
 const ownerIntro = OWNER.name
-  ? `<p>I&rsquo;m ${OWNER.name}${OWNER.role ? `, ${OWNER.role} of East Yorkshire Renovations` : ""}.${OWNER.experience ? ` ${OWNER.experience}` : ""}</p>`
+  ? `<p>I&rsquo;m ${OWNER.name}${OWNER.role ? `, ${OWNER.role} of East Yorkshire Renovation` : ""}.${OWNER.experience ? ` ${OWNER.experience}` : ""}</p>`
   : todo("owner name, role and experience (first person, e.g. \"I'm ..., and I've worked in ... for ... years\")");
 
 const surveyor = OWNER.surveyor
@@ -23,7 +23,7 @@ const surveyor = OWNER.surveyor
 
 const ownerPhoto = OWNER.photo && existsSync(OWNER.photo.replace(/^\//, ""))
   ? `<div>
-          <picture><img src="${OWNER.photo}" width="900" height="1200" alt="${OWNER.name || "The owner"} of East Yorkshire Renovations" loading="lazy"></picture>
+          <picture><img src="${OWNER.photo}" width="900" height="1200" alt="${OWNER.name || "The owner"} of East Yorkshire Renovation" loading="lazy"></picture>
         </div>`
   : todo("a real photo of the owner or team - add the file and set OWNER.photo");
 
@@ -69,7 +69,7 @@ const body = `    <section class="hero">
       <div class="container split">
         <div>
           <p class="kicker">Who we are</p>
-          <h2 class="section-title">Who runs East Yorkshire Renovations.</h2>
+          <h2 class="section-title">Who runs East Yorkshire Renovation.</h2>
           ${ownerIntro}
           <p>We&rsquo;re based on Station Road in Hessle. We work across Hull, Hessle, Cottingham, Beverley and the villages west of the city, and across the Humber into North Lincolnshire for both renovations and damp work. Our damp surveys also reach further out into the East Riding.</p>
           <p>Our work falls into three parts: damp surveys and damp proofing; kitchens, bathrooms and full renovations; and bigger home improvements such as garage conversions, garden rooms and conservatory transformations.</p>
@@ -134,8 +134,8 @@ ${wrap("reviews", reviews())}
 writeFileSync(
   "about.html",
   page({
-    title: "About Us | East Yorkshire Renovations, Hessle",
-    description: "East Yorkshire Renovations is a Hessle-based renovation and damp proofing firm covering Hull, the East Riding and North Lincolnshire.",
+    title: "About Us | East Yorkshire Renovation, Hessle",
+    description: "East Yorkshire Renovation is a Hessle-based renovation and damp proofing firm covering Hull, the East Riding and North Lincolnshire.",
     canonical: `${SITE}/about.html`,
     ogImage: "/assets/img/og/about.jpg",
     body,

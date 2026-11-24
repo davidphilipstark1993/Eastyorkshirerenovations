@@ -116,7 +116,7 @@ export function header(ctx) {
     : { href: "/contact.html#quote-form", label: "Get a Quote" };
   return `  <header>
     <div class="container navbar">
-      <a class="brand" href="/"><img src="${LOGO_DISPLAY_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></a>
+      <a class="brand" href="/"><img src="${LOGO_DISPLAY_PATH}" width="148" height="102" alt="East Yorkshire Renovation logo"><span>East Yorkshire Renovation</span></a>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
 ${NAV.map(navItem).join("\n")}
       </nav>
@@ -189,7 +189,7 @@ export function footer(ctx) {
   <footer>
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="${LOGO_DISPLAY_PATH}" width="148" height="102" alt="East Yorkshire Renovations logo">
+        <img class="footer-logo" src="${LOGO_DISPLAY_PATH}" width="148" height="102" alt="East Yorkshire Renovation logo">
         <h3>${BUSINESS_NAME}</h3>
         <p>${ADDRESS_LINE}</p>
         <p>Phone: ${phoneLink()}</p>
@@ -229,7 +229,8 @@ export function business(canonical) {
     "@id": BUSINESS_ID,
     name: BUSINESS_NAME,
     legalName: COMPANY.legalName,
-    alternateName: [COMPANY.legalName, "EYR"].filter((n) => n && n !== BUSINESS_NAME),
+    // Old trading name, kept so Google connects past mentions to this entity.
+    alternateName: ["East Yorkshire Renovations", "EYR"],
     description: "Hessle-based renovation and damp proofing firm. Kitchens, bathrooms, full house renovations, plastering, joinery, electrical work, garage conversions, garden rooms and damp surveys across Hull, the East Riding of Yorkshire and North Lincolnshire, within about 30 miles of Hessle.",
     image: `${SITE}${LOGO_PATH}`,
     logo: `${SITE}${LOGO_PATH}`,

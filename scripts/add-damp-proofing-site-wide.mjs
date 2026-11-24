@@ -41,10 +41,10 @@ const OLD_AREAS = [
 const NEW_AREAS = `"areaServed": ${JSON.stringify(AREA_SERVED)},`;
 
 const BUSINESS_TYPE = `    "@type": "HomeAndConstructionBusiness",
-    "name": "East Yorkshire Renovations",`;
+    "name": "East Yorkshire Renovation",`;
 const BUSINESS_TYPE_WITH_ID = `    "@type": "HomeAndConstructionBusiness",
     "@id": "${BUSINESS_ID}",
-    "name": "East Yorkshire Renovations",`;
+    "name": "East Yorkshire Renovation",`;
 
 function htmlFiles(dir) {
   const out = [];

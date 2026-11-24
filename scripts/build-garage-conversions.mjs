@@ -109,7 +109,7 @@ ${conceptVideoSection({
             <p>Roughly &pound;20,000&ndash;&pound;35,000+ where plumbing for an en-suite or kitchenette is included, along with bespoke finishes.</p>
           </article>
         </div>
-        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing &mdash; <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
+        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovation's confirmed pricing &mdash; <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
       </div>
     </section>
 
@@ -143,7 +143,7 @@ ${conceptVideoSection({
     <section class="section">
       <div class="container">
         <p class="kicker">Why choose us</p>
-        <h2 class="section-title">Why East Yorkshire Renovations.</h2>
+        <h2 class="section-title">Why East Yorkshire Renovation.</h2>
         <ul>
           <li>One point of contact for the whole project, from damp-proofing to decorating.</li>
           <li>A local team based in Hessle, working across Hull and East Yorkshire.</li>

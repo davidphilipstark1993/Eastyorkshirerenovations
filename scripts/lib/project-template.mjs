@@ -123,7 +123,7 @@ ${project.quote ? `
 
   return page({
     title: project.seoTitle,
-    description: project.metaDescription || `${project.summary} ${category.label === "Full House Renovations" ? "A renovation" : `A ${category.label.toLowerCase().replace(/s$/, "")} project`} by East Yorkshire Renovations${project.locationLink ? ` in ${project.location}` : ""}.`,
+    description: project.metaDescription || `${project.summary} ${category.label === "Full House Renovations" ? "A renovation" : `A ${category.label.toLowerCase().replace(/s$/, "")} project`} by East Yorkshire Renovation${project.locationLink ? ` in ${project.location}` : ""}.`,
     canonical,
     ogImage: heroImage ? `${heroImage.src}.jpg` : undefined,
     body,

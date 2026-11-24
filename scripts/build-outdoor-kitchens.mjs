@@ -74,7 +74,7 @@ const mainBody = `${heroTextOnly({
             <p>Roughly &pound;18,000&ndash;&pound;35,000+ for a fully covered outdoor kitchen with plumbing, electrics, refrigeration and premium materials throughout.</p>
           </article>
         </div>
-        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing &mdash; see our <a href="/outdoor-kitchens/cost/">full cost breakdown</a> by component, or <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
+        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovation's confirmed pricing &mdash; see our <a href="/outdoor-kitchens/cost/">full cost breakdown</a> by component, or <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
       </div>
     </section>
 
@@ -108,7 +108,7 @@ const mainBody = `${heroTextOnly({
     <section class="section">
       <div class="container">
         <p class="kicker">Why choose us</p>
-        <h2 class="section-title">Why East Yorkshire Renovations.</h2>
+        <h2 class="section-title">Why East Yorkshire Renovation.</h2>
         <ul>
           <li>One point of contact for the whole project, from groundworks to gas and electrics.</li>
           <li>A local team based in Hessle, working across Hull and East Yorkshire.</li>

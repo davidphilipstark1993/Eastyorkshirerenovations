@@ -82,7 +82,7 @@ const mainBody = `${heroTextOnly({
             <p>Roughly &pound;30,000&ndash;&pound;50,000+ for a bespoke design with plumbing for a bar or kitchenette, premium finishes and a larger footprint.</p>
           </article>
         </div>
-        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovations' confirmed pricing &mdash; <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
+        <p>These figures are indicative of the wider UK market and aren't East Yorkshire Renovation's confirmed pricing &mdash; <a href="/contact.html#quote-form">get in touch for a free, tailored quote</a>.</p>
       </div>
     </section>
 
@@ -116,7 +116,7 @@ const mainBody = `${heroTextOnly({
     <section class="section">
       <div class="container">
         <p class="kicker">Why choose us</p>
-        <h2 class="section-title">Why East Yorkshire Renovations.</h2>
+        <h2 class="section-title">Why East Yorkshire Renovation.</h2>
         <ul>
           <li>One point of contact for the whole project &mdash; design, trades and project management under one roof.</li>
           <li>A local team based in Hessle, working across Hull and East Yorkshire.</li>

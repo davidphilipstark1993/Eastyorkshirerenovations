@@ -171,7 +171,7 @@ function contactSection({ h2, body }) {
           </div>
         </div>
         <div class="callout">
-          <h3>East Yorkshire Renovations</h3>
+          <h3>East Yorkshire Renovation</h3>
           <p>Station Road, Hessle, HU13 0BG</p>
           <p>Phone: ${phoneLink()}</p>
           <p>WhatsApp: ${whatsapp("send us a message or photos")}</p>

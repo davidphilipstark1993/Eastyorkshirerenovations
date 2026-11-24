@@ -12,8 +12,8 @@ const DRAFT = false;
 const UPDATED = "9 October 2026";
 
 const controller = COMPANY.legalName
-  ? `${COMPANY.legalName}${COMPANY.companyNumber ? ` (company number ${COMPANY.companyNumber})` : ""}, trading as East Yorkshire Renovations`
-  : `East Yorkshire Renovations<!-- TODO(owner): add the legal business name (and company number if a limited company) in scripts/data/business.mjs -->`;
+  ? `${COMPANY.legalName}${COMPANY.companyNumber ? ` (company number ${COMPANY.companyNumber})` : ""}, trading as East Yorkshire Renovation`
+  : `East Yorkshire Renovation<!-- TODO(owner): add the legal business name (and company number if a limited company) in scripts/data/business.mjs -->`;
 
 const body = `    <section class="hero">
       <div class="container">
@@ -83,8 +83,8 @@ ${DRAFT ? `
 writeFileSync(
   "privacy.html",
   page({
-    title: "Privacy & Cookies Policy | East Yorkshire Renovations",
-    description: "How East Yorkshire Renovations uses the details you send through our forms, and the analytics and advertising cookies on this website.",
+    title: "Privacy & Cookies Policy | East Yorkshire Renovation",
+    description: "How East Yorkshire Renovation uses the details you send through our forms, and the analytics and advertising cookies on this website.",
     canonical: `${SITE}/privacy.html`,
     body,
     breadcrumbs: [{ name: "Home", item: `${SITE}/` }, { name: "Privacy and cookies policy" }],

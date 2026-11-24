@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, readdirSync } from "fs";
 
-const OLD = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
+const OLD = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovation logo"><span>East Yorkshire Renovation</span></div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
       <nav id="primary-navigation" class="nav-links" aria-label="Primary">
         <a href="/">Home</a>
@@ -28,7 +28,7 @@ const OLD = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width=
         <a href="/contact.html#quote-form" class="nav-cta">Get a Quote</a>
       </nav>`;
 
-const NEW = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovations logo"><span>East Yorkshire Renovations</span></div>
+const NEW = `      <div class="brand"><img src="/assets/img/logo-eyr.jpg" width="88" height="88" alt="East Yorkshire Renovation logo"><span>East Yorkshire Renovation</span></div>
       <div class="navbar-actions">
         <a href="/contact.html#quote-form" class="nav-cta">Get a Quote</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle-icon"></span>Menu</button>

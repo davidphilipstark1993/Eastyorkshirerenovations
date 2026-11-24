@@ -1,5 +1,5 @@
 export const SITE = "https://www.eastyorkshirerenovation.com";
-export const BUSINESS_NAME = "East Yorkshire Renovations";
+export const BUSINESS_NAME = "East Yorkshire Renovation";
 // Stable identifier for the business JSON-LD node, so Service schema on
 // individual pages can point back to it as the provider.
 export const BUSINESS_ID = `${SITE}/#business`;

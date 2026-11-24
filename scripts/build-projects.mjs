@@ -159,8 +159,8 @@ ${mainSection}
     page({
       title: `${category.label} Projects in East Yorkshire | EYR`,
       description: categoryProjects.length > 0
-        ? `${category.label} projects by East Yorkshire Renovations: photos and notes from real jobs in Hull, Beverley, Hessle and East Yorkshire.`
-        : `${category.label} case studies from East Yorkshire Renovations will appear here once a real project is finished and photographed.`,
+        ? `${category.label} projects by East Yorkshire Renovation: photos and notes from real jobs in Hull, Beverley, Hessle and East Yorkshire.`
+        : `${category.label} case studies from East Yorkshire Renovation will appear here once a real project is finished and photographed.`,
       canonical,
       // A category with no finished project has nothing to rank for, so keep
       // it out of the index (and the sitemap) until its first case study.
