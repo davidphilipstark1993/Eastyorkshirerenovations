@@ -131,6 +131,67 @@ export const projects = [
     related: [{ label: "Kitchen Installs", href: "/kitchen-installs.html" }, { label: "Electrical work", href: "/electrical.html" }],
     faqs: null,
   },
+  // Added 24 Nov 2026 from real photos already on the site. Everything below
+  // describes only what the photos show; the rest is left null for the owner.
+  {
+    slug: "howden-bathroom-renovation",
+    category: "bathrooms",
+    title: "Howden bathroom renovation",
+    location: "Howden",
+    locationLink: { label: "Howden, East Yorkshire", href: "/east-riding.html" },
+    service: { label: "Bathroom Installs", href: "/bathroom-installs.html" },
+    images: {
+      before: [],
+      during: [],
+      after: [
+        { src: "/assets/img/project/bathroom-howden-basin", alt: "Bathroom with grey stone-effect wall and floor tiles, a black vanity unit and a close-coupled toilet" },
+        { src: "/assets/img/project/bathroom-finished-howden", alt: "Black-framed mirror cabinet and matt black basin tap against large grey stone-effect wall tiles" },
+      ],
+    },
+    summary: "A dark, modern bathroom with large grey stone-effect tiles on the walls and floor, a black vanity unit and matt black fittings.",
+    workCompleted: "Bathroom refit with large-format grey stone-effect tiles on the walls and floor, a black vanity unit with a white basin, a close-coupled toilet, a black-framed mirror cabinet and a wall extractor fan.",
+    outcome: "A dark, modern bathroom with large grey stone-effect tiles on the walls and floor, a black vanity unit and matt black fittings.",
+    materials: ["Large-format grey stone-effect wall and floor tiles", "Black vanity unit with white basin", "Matt black basin tap", "Black-framed mirror cabinet", "Wall extractor fan"],
+    heading: "Howden bathroom with grey stone-effect tiles and black fittings",
+    seoTitle: "Howden Bathroom Renovation, Stone-Effect Tiles | EYR",
+    // TODO(owner): the customer's problem, what we found, time on site, a price
+    // band, before/during photos and (with permission) a customer quote.
+    problem: null,
+    found: null,
+    duration: null,
+    priceBand: null,
+    quote: null,
+    related: [{ label: "Bathroom renovations", href: "/bathroom-installs.html" }, { label: "Electrical work", href: "/electrical.html" }],
+    faqs: null,
+  },
+  {
+    slug: "cherry-burton-ensuite-renovation",
+    category: "bathrooms",
+    title: "Cherry Burton ensuite renovation",
+    location: "Cherry Burton",
+    locationLink: { label: "Cherry Burton, near Beverley", href: "/beverley.html" },
+    service: { label: "Bathroom Installs", href: "/bathroom-installs.html" },
+    images: {
+      before: [],
+      during: [],
+      after: [{ src: "/assets/img/project/ensuite-cherry-burton", alt: "Ensuite shower enclosure with an electric shower, wave-pattern feature tiles and a sliding glass door" }],
+    },
+    summary: "A compact ensuite with a fully tiled shower enclosure, an electric shower and a wave-pattern feature wall.",
+    workCompleted: "Ensuite refit with a shower tray and sliding glass door, an electric shower, wave-pattern feature tiles on the back wall of the shower, tiled side walls and a new basin.",
+    outcome: "A compact ensuite with a fully tiled shower enclosure, an electric shower and a wave-pattern feature wall.",
+    materials: ["Electric shower", "Shower tray with sliding glass door", "Wave-pattern feature wall tiles", "Basin"],
+    heading: "Cherry Burton ensuite with an electric shower and feature tiling",
+    seoTitle: "Cherry Burton Ensuite Renovation, Near Beverley | EYR",
+    // TODO(owner): the customer's problem, what we found, time on site, a price
+    // band, before/during photos and (with permission) a customer quote.
+    problem: null,
+    found: null,
+    duration: null,
+    priceBand: null,
+    quote: null,
+    related: [{ label: "Bathroom renovations", href: "/bathroom-installs.html" }, { label: "Renovations in Beverley", href: "/beverley.html" }],
+    faqs: null,
+  },
   {
     slug: "loft-room-renovation",
     category: "full-house-renovations",
