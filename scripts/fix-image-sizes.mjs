@@ -47,7 +47,7 @@ for (const f of htmlFiles(".")) {
     const src = (tag.match(/\ssrc="(\/assets\/img\/[^"]+)"/) || [])[1];
     // The shared logo is declared at its display size (same aspect ratio);
     // it is owned by scripts/lib/site.mjs, so leave it alone.
-    if (src === "/assets/img/logo-eyr.jpg") return tag;
+    if (src === "/assets/img/logo-eyr.jpg" || src === "/assets/img/logo-eyr-296.jpg") return tag;
     const size = src && sizeOf(src);
     if (!size || !/\swidth="\d+"/.test(tag) || !/\sheight="\d+"/.test(tag)) return tag;
     return tag.replace(/\swidth="\d+"/, ` width="${size.w}"`).replace(/\sheight="\d+"/, ` height="${size.h}"`);

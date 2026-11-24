@@ -11,7 +11,7 @@ export function pathFromCanonical(canonical) {
 // every page has og:image and Article JSON-LD always has an image.
 export const DEFAULT_OG_IMAGE = "/assets/img/og/index.jpg";
 
-export function headBlock({ title, description, canonical, ogImage = DEFAULT_OG_IMAGE }) {
+export function headBlock({ title, description, canonical, ogImage = DEFAULT_OG_IMAGE, noindex = false }) {
   const ogImageTags = ogImage
     ? `
   <meta property="og:image" content="${SITE}${ogImage}">
@@ -28,12 +28,12 @@ export function headBlock({ title, description, canonical, ogImage = DEFAULT_OG_
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title}</title>
-  <meta name="description" content="${description}">
+  <meta name="description" content="${description}">${noindex ? `
+  <meta name="robots" content="noindex, follow">` : ""}
   <link rel="canonical" href="${canonical}">
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
   <meta property="og:type" content="website">
@@ -158,9 +158,9 @@ export function ldService({ name, description, canonical, areaServed }) {
 `;
 }
 
-export function page({ title, description, canonical, ogImage, body, breadcrumbs, faq, service, extraLd = [] }) {
+export function page({ title, description, canonical, ogImage, body, breadcrumbs, faq, service, extraLd = [], noindex = false }) {
   const parts = [
-    headBlock({ title, description, canonical, ogImage }),
+    headBlock({ title, description, canonical, ogImage, noindex }),
     header(canonical),
     body,
     footer(canonical),

@@ -7,8 +7,12 @@ export const EMAIL = "info@eastyorkshirerenovation.com";
 export const ADDRESS_LINE = "Station Road, Hessle, HU13 0BG";
 export const GA4_ID = "G-W48LSE6YBN";
 export const LOGO_PATH = "/assets/img/logo-eyr.jpg";
+// Header/footer logo: shown at most ~104 px wide, so a 296 px copy covers
+// high-density screens (16 KB instead of 48 KB). Schema keeps the full logo.
+export const LOGO_DISPLAY_PATH = "/assets/img/logo-eyr-296.jpg";
 
-// Matches the areaServed list already used in the site's existing JSON-LD.
+// Business areaServed. Every place here is named on a visible page (regional
+// pages, About, damp town pages). Owner confirmed N Lincs coverage 24 Nov 2026.
 export const AREA_SERVED = [
   "Hull",
   "Beverley",
@@ -31,4 +35,10 @@ export const AREA_SERVED = [
   "Barton-upon-Humber",
   "North Lincolnshire",
   "Grimsby",
+  "Howden",
+  "Winterton",
+  "Epworth",
+  "Crowle",
+  "Cleethorpes",
+  "Immingham",
 ];
