@@ -373,7 +373,7 @@ PAGES.push({
     }),
     cardsSection({
       kicker: "Services across East Yorkshire",
-      h2: "Everything from a single room to a whole-house renovation.",
+      h2: "Home improvements, from a single room to a whole-house renovation.",
       cards: [
         { h: "Kitchens and bathrooms", href: "/kitchen-installs.html", p: "<a href=\"/kitchen-installs.html\">Kitchen fitting</a> and <a href=\"/bathroom-installs.html\">bathroom renovations</a>, including ensuites, walk-in showers and wet rooms." },
         { h: "Full renovations and refurbishments", href: "/full-house-renovations.html", p: "Whole-house projects managed by one team, in the right order, from strip-out to decorating." },
@@ -471,7 +471,7 @@ PAGES.push({
     }),
     cardsSection({
       kicker: "Services in North Lincolnshire",
-      h2: "What we can do for you over the bridge.",
+      h2: "Renovations and home improvements we offer over the bridge.",
       cards: [
         { h: "Damp surveys and damp proofing", href: "/damp-proofing/", p: "&pound;119 survey and written report, then <a href=\"/damp-proofing/rising-damp-treatment/\">rising damp treatment</a>, <a href=\"/damp-proofing/penetrating-damp/\">penetrating damp repairs</a>, <a href=\"/damp-proofing/condensation-control/\">condensation control</a> and <a href=\"/damp-proofing/mould-treatment/\">mould treatment</a>, with the replastering included." },
         { h: "Kitchens and bathrooms", href: "/bathroom-installs.html", p: "<a href=\"/bathroom-installs.html\">Bathroom renovations</a>, showers and wet rooms, and <a href=\"/kitchen-installs.html\">kitchen fitting</a>, with the plumbing, electrics and tiling done by one team." },
