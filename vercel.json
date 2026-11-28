@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "eastyorkshirerenovations.vercel.app"
+        }
+      ],
+      "destination": "https://www.eastyorkshirerenovation.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/guides/conservatory-transformation-cost/",
       "destination": "/guides/conservatory-transformation-cost-and-regulations/#conservatory-transformation-cost",
       "permanent": true
@@ -718,6 +729,951 @@
     {
       "source": "/blog/index.html",
       "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/lincolnshire",
+      "destination": "/areas/lincolnshire/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/lincolnshire/index.html",
+      "destination": "/areas/lincolnshire/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/north-lincolnshire",
+      "destination": "/areas/north-lincolnshire/",
+      "permanent": true
+    },
+    {
+      "source": "/areas/north-lincolnshire/index.html",
+      "destination": "/areas/north-lincolnshire/",
+      "permanent": true
+    },
+    {
+      "source": "/conservatory-transformations",
+      "destination": "/conservatory-transformations/",
+      "permanent": true
+    },
+    {
+      "source": "/conservatory-transformations/index.html",
+      "destination": "/conservatory-transformations/",
+      "permanent": true
+    },
+    {
+      "source": "/conservatory-transformations/east-yorkshire",
+      "destination": "/conservatory-transformations/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/conservatory-transformations/east-yorkshire/index.html",
+      "destination": "/conservatory-transformations/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/conservatory-transformations/hull",
+      "destination": "/conservatory-transformations/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/conservatory-transformations/hull/index.html",
+      "destination": "/conservatory-transformations/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing",
+      "destination": "/damp-proofing/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/index.html",
+      "destination": "/damp-proofing/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/barton-upon-humber",
+      "destination": "/damp-proofing/barton-upon-humber/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/barton-upon-humber/index.html",
+      "destination": "/damp-proofing/barton-upon-humber/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/beverley",
+      "destination": "/damp-proofing/beverley/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/beverley/index.html",
+      "destination": "/damp-proofing/beverley/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/book-a-survey",
+      "destination": "/damp-proofing/book-a-survey/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/book-a-survey/index.html",
+      "destination": "/damp-proofing/book-a-survey/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/brigg",
+      "destination": "/damp-proofing/brigg/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/brigg/index.html",
+      "destination": "/damp-proofing/brigg/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/cellar-tanking",
+      "destination": "/damp-proofing/cellar-tanking/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/cellar-tanking/index.html",
+      "destination": "/damp-proofing/cellar-tanking/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/condensation-control",
+      "destination": "/damp-proofing/condensation-control/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/condensation-control/index.html",
+      "destination": "/damp-proofing/condensation-control/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/damp-surveys",
+      "destination": "/damp-proofing/damp-surveys/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/damp-surveys/index.html",
+      "destination": "/damp-proofing/damp-surveys/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/grimsby",
+      "destination": "/damp-proofing/grimsby/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/grimsby/index.html",
+      "destination": "/damp-proofing/grimsby/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/hull",
+      "destination": "/damp-proofing/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/hull/index.html",
+      "destination": "/damp-proofing/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/landlord-damp-mould-reports",
+      "destination": "/damp-proofing/landlord-damp-mould-reports/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/landlord-damp-mould-reports/index.html",
+      "destination": "/damp-proofing/landlord-damp-mould-reports/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/mould-treatment",
+      "destination": "/damp-proofing/mould-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/mould-treatment/index.html",
+      "destination": "/damp-proofing/mould-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/penetrating-damp",
+      "destination": "/damp-proofing/penetrating-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/penetrating-damp/index.html",
+      "destination": "/damp-proofing/penetrating-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/pre-purchase-damp-survey",
+      "destination": "/damp-proofing/pre-purchase-damp-survey/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/pre-purchase-damp-survey/index.html",
+      "destination": "/damp-proofing/pre-purchase-damp-survey/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/rising-damp-treatment",
+      "destination": "/damp-proofing/rising-damp-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/rising-damp-treatment/index.html",
+      "destination": "/damp-proofing/rising-damp-treatment/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/scunthorpe",
+      "destination": "/damp-proofing/scunthorpe/",
+      "permanent": true
+    },
+    {
+      "source": "/damp-proofing/scunthorpe/index.html",
+      "destination": "/damp-proofing/scunthorpe/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions",
+      "destination": "/garage-conversions/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/index.html",
+      "destination": "/garage-conversions/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/east-yorkshire",
+      "destination": "/garage-conversions/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/east-yorkshire/index.html",
+      "destination": "/garage-conversions/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-bedroom",
+      "destination": "/garage-conversions/garage-to-bedroom/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-bedroom/index.html",
+      "destination": "/garage-conversions/garage-to-bedroom/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-gym",
+      "destination": "/garage-conversions/garage-to-gym/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-gym/index.html",
+      "destination": "/garage-conversions/garage-to-gym/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-office",
+      "destination": "/garage-conversions/garage-to-office/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-office/index.html",
+      "destination": "/garage-conversions/garage-to-office/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-playroom",
+      "destination": "/garage-conversions/garage-to-playroom/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/garage-to-playroom/index.html",
+      "destination": "/garage-conversions/garage-to-playroom/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/goole",
+      "destination": "/garage-conversions/goole/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/goole/index.html",
+      "destination": "/garage-conversions/goole/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/hull",
+      "destination": "/garage-conversions/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/garage-conversions/hull/index.html",
+      "destination": "/garage-conversions/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/garden-rooms",
+      "destination": "/garden-rooms/",
+      "permanent": true
+    },
+    {
+      "source": "/garden-rooms/index.html",
+      "destination": "/garden-rooms/",
+      "permanent": true
+    },
+    {
+      "source": "/garden-rooms/east-yorkshire",
+      "destination": "/garden-rooms/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/garden-rooms/east-yorkshire/index.html",
+      "destination": "/garden-rooms/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/garden-rooms/hull",
+      "destination": "/garden-rooms/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/garden-rooms/hull/index.html",
+      "destination": "/garden-rooms/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/index.html",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/awaabs-law-private-landlords",
+      "destination": "/guides/awaabs-law-private-landlords/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/awaabs-law-private-landlords/index.html",
+      "destination": "/guides/awaabs-law-private-landlords/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/buying-a-house-with-damp",
+      "destination": "/guides/buying-a-house-with-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/buying-a-house-with-damp/index.html",
+      "destination": "/guides/buying-a-house-with-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-transformation-cost-and-regulations",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/conservatory-transformation-cost-and-regulations/index.html",
+      "destination": "/guides/conservatory-transformation-cost-and-regulations/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-or-condensation",
+      "destination": "/guides/damp-or-condensation/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-or-condensation/index.html",
+      "destination": "/guides/damp-or-condensation/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-patches-on-internal-walls",
+      "destination": "/guides/damp-patches-on-internal-walls/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-patches-on-internal-walls/index.html",
+      "destination": "/guides/damp-patches-on-internal-walls/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-proofing-cost-hull",
+      "destination": "/guides/damp-proofing-cost-hull/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-proofing-cost-hull/index.html",
+      "destination": "/guides/damp-proofing-cost-hull/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-survey-cost-hull",
+      "destination": "/guides/damp-survey-cost-hull/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/damp-survey-cost-hull/index.html",
+      "destination": "/guides/damp-survey-cost-hull/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/does-a-new-damp-proof-course-fix-rising-damp",
+      "destination": "/guides/does-a-new-damp-proof-course-fix-rising-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/does-a-new-damp-proof-course-fix-rising-damp/index.html",
+      "destination": "/guides/does-a-new-damp-proof-course-fix-rising-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-cost-planning-and-regulations",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garage-conversion-cost-planning-and-regulations/index.html",
+      "destination": "/guides/garage-conversion-cost-planning-and-regulations/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-cost-planning-and-regulations",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-cost-planning-and-regulations/index.html",
+      "destination": "/guides/garden-room-cost-planning-and-regulations/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-ideas",
+      "destination": "/guides/garden-room-ideas/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/garden-room-ideas/index.html",
+      "destination": "/guides/garden-room-ideas/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-a-garden-room-is-built",
+      "destination": "/guides/how-a-garden-room-is-built/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-a-garden-room-is-built/index.html",
+      "destination": "/guides/how-a-garden-room-is-built/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-long-does-damp-proofing-take",
+      "destination": "/guides/how-long-does-damp-proofing-take/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-long-does-damp-proofing-take/index.html",
+      "destination": "/guides/how-long-does-damp-proofing-take/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-to-tell-if-its-rising-damp",
+      "destination": "/guides/how-to-tell-if-its-rising-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/how-to-tell-if-its-rising-damp/index.html",
+      "destination": "/guides/how-to-tell-if-its-rising-damp/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/is-black-mould-always-condensation",
+      "destination": "/guides/is-black-mould-always-condensation/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/is-black-mould-always-condensation/index.html",
+      "destination": "/guides/is-black-mould-always-condensation/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/kitchen-and-bathroom-renovation-costs",
+      "destination": "/guides/kitchen-and-bathroom-renovation-costs/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/kitchen-and-bathroom-renovation-costs/index.html",
+      "destination": "/guides/kitchen-and-bathroom-renovation-costs/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/make-a-conservatory-usable-all-year",
+      "destination": "/guides/make-a-conservatory-usable-all-year/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/make-a-conservatory-usable-all-year/index.html",
+      "destination": "/guides/make-a-conservatory-usable-all-year/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-cost-build-time-and-planning",
+      "destination": "/guides/orangery-cost-build-time-and-planning/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-cost-build-time-and-planning/index.html",
+      "destination": "/guides/orangery-cost-build-time-and-planning/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-design-roofs-and-comparisons",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/orangery-design-roofs-and-comparisons/index.html",
+      "destination": "/guides/orangery-design-roofs-and-comparisons/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/planning-a-full-house-renovation",
+      "destination": "/guides/planning-a-full-house-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/planning-a-full-house-renovation/index.html",
+      "destination": "/guides/planning-a-full-house-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/planning-an-outdoor-kitchen",
+      "destination": "/guides/planning-an-outdoor-kitchen/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/planning-an-outdoor-kitchen/index.html",
+      "destination": "/guides/planning-an-outdoor-kitchen/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-does-a-damp-survey-include",
+      "destination": "/guides/what-does-a-damp-survey-include/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-does-a-damp-survey-include/index.html",
+      "destination": "/guides/what-does-a-damp-survey-include/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-goes-into-a-garage-conversion",
+      "destination": "/guides/what-goes-into-a-garage-conversion/",
+      "permanent": true
+    },
+    {
+      "source": "/guides/what-goes-into-a-garage-conversion/index.html",
+      "destination": "/guides/what-goes-into-a-garage-conversion/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries",
+      "destination": "/orangeries/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/index.html",
+      "destination": "/orangeries/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/beverley",
+      "destination": "/orangeries/beverley/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/beverley/index.html",
+      "destination": "/orangeries/beverley/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/east-yorkshire",
+      "destination": "/orangeries/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/east-yorkshire/index.html",
+      "destination": "/orangeries/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/hull",
+      "destination": "/orangeries/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/orangeries/hull/index.html",
+      "destination": "/orangeries/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens",
+      "destination": "/outdoor-kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/index.html",
+      "destination": "/outdoor-kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/cost",
+      "destination": "/outdoor-kitchens/cost/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/cost/index.html",
+      "destination": "/outdoor-kitchens/cost/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/covered-outdoor-kitchens",
+      "destination": "/outdoor-kitchens/covered-outdoor-kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/covered-outdoor-kitchens/index.html",
+      "destination": "/outdoor-kitchens/covered-outdoor-kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/design",
+      "destination": "/outdoor-kitchens/design/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/design/index.html",
+      "destination": "/outdoor-kitchens/design/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/east-yorkshire",
+      "destination": "/outdoor-kitchens/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/east-yorkshire/index.html",
+      "destination": "/outdoor-kitchens/east-yorkshire/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/hull",
+      "destination": "/outdoor-kitchens/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-kitchens/hull/index.html",
+      "destination": "/outdoor-kitchens/hull/",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/index.html",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms",
+      "destination": "/projects/bathrooms/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/index.html",
+      "destination": "/projects/bathrooms/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/cherry-burton-ensuite-renovation",
+      "destination": "/projects/bathrooms/cherry-burton-ensuite-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/cherry-burton-ensuite-renovation/index.html",
+      "destination": "/projects/bathrooms/cherry-burton-ensuite-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/hessle-bathroom-renovation",
+      "destination": "/projects/bathrooms/hessle-bathroom-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/hessle-bathroom-renovation/index.html",
+      "destination": "/projects/bathrooms/hessle-bathroom-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/howden-bathroom-renovation",
+      "destination": "/projects/bathrooms/howden-bathroom-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/howden-bathroom-renovation/index.html",
+      "destination": "/projects/bathrooms/howden-bathroom-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/hull-bathroom-renovation",
+      "destination": "/projects/bathrooms/hull-bathroom-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/bathrooms/hull-bathroom-renovation/index.html",
+      "destination": "/projects/bathrooms/hull-bathroom-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/conservatory-transformations",
+      "destination": "/projects/conservatory-transformations/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/conservatory-transformations/index.html",
+      "destination": "/projects/conservatory-transformations/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/full-house-renovations",
+      "destination": "/projects/full-house-renovations/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/full-house-renovations/index.html",
+      "destination": "/projects/full-house-renovations/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/full-house-renovations/loft-room-renovation",
+      "destination": "/projects/full-house-renovations/loft-room-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/full-house-renovations/loft-room-renovation/index.html",
+      "destination": "/projects/full-house-renovations/loft-room-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/garage-conversions",
+      "destination": "/projects/garage-conversions/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/garage-conversions/index.html",
+      "destination": "/projects/garage-conversions/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/garden-rooms",
+      "destination": "/projects/garden-rooms/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/garden-rooms/index.html",
+      "destination": "/projects/garden-rooms/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/kitchens",
+      "destination": "/projects/kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/kitchens/index.html",
+      "destination": "/projects/kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/kitchens/cottingham-kitchen-renovation",
+      "destination": "/projects/kitchens/cottingham-kitchen-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/kitchens/cottingham-kitchen-renovation/index.html",
+      "destination": "/projects/kitchens/cottingham-kitchen-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/orangeries",
+      "destination": "/projects/orangeries/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/orangeries/index.html",
+      "destination": "/projects/orangeries/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/outdoor-kitchens",
+      "destination": "/projects/outdoor-kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/outdoor-kitchens/index.html",
+      "destination": "/projects/outdoor-kitchens/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/anlaby.html/",
+      "destination": "/anlaby.html",
+      "permanent": true
+    },
+    {
+      "source": "/areas.html/",
+      "destination": "/areas.html",
+      "permanent": true
+    },
+    {
+      "source": "/bathroom-installs.html/",
+      "destination": "/bathroom-installs.html",
+      "permanent": true
+    },
+    {
+      "source": "/beverley.html/",
+      "destination": "/beverley.html",
+      "permanent": true
+    },
+    {
+      "source": "/brough.html/",
+      "destination": "/brough.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/cottingham.html/",
+      "destination": "/cottingham.html",
+      "permanent": true
+    },
+    {
+      "source": "/decorating.html/",
+      "destination": "/decorating.html",
+      "permanent": true
+    },
+    {
+      "source": "/east-riding.html/",
+      "destination": "/east-riding.html",
+      "permanent": true
+    },
+    {
+      "source": "/electrical.html/",
+      "destination": "/electrical.html",
+      "permanent": true
+    },
+    {
+      "source": "/full-house-renovations.html/",
+      "destination": "/full-house-renovations.html",
+      "permanent": true
+    },
+    {
+      "source": "/hessle.html/",
+      "destination": "/hessle.html",
+      "permanent": true
+    },
+    {
+      "source": "/hull.html/",
+      "destination": "/hull.html",
+      "permanent": true
+    },
+    {
+      "source": "/joinery.html/",
+      "destination": "/joinery.html",
+      "permanent": true
+    },
+    {
+      "source": "/kirk-ella.html/",
+      "destination": "/kirk-ella.html",
+      "permanent": true
+    },
+    {
+      "source": "/kitchen-installs.html/",
+      "destination": "/kitchen-installs.html",
+      "permanent": true
+    },
+    {
+      "source": "/north-ferriby.html/",
+      "destination": "/north-ferriby.html",
+      "permanent": true
+    },
+    {
+      "source": "/plastering.html/",
+      "destination": "/plastering.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html/",
+      "destination": "/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/services.html/",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/south-cave.html/",
+      "destination": "/south-cave.html",
+      "permanent": true
+    },
+    {
+      "source": "/swanland.html/",
+      "destination": "/swanland.html",
+      "permanent": true
+    },
+    {
+      "source": "/water-treatment.html/",
+      "destination": "/water-treatment.html",
+      "permanent": true
+    },
+    {
+      "source": "/willerby.html/",
+      "destination": "/willerby.html",
+      "permanent": true
+    },
+    {
+      "source": "/work.html/",
+      "destination": "/work.html",
       "permanent": true
     }
   ]

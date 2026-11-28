@@ -960,9 +960,15 @@ footer a {
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.hero-assessment-card h3 {
+.hero-assessment-card h3,
+.hero-assessment-card .assessment-card-title {
   font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   margin-top: 0;
+}
+
+/* Visually matches the old h3; it is an h2 so the outline goes H1 → H2. */
+.hero-assessment-card .assessment-card-title {
+  font-size: 1.17em;
 }
 
 .hero-assessment-card ul {

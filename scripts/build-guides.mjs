@@ -437,8 +437,41 @@ for (const [from, to] of Object.entries(REDIRECTS)) {
   if (from.endsWith("/") && from !== "/blog/") redirects.push({ source: from + "index.html", destination: to, permanent: true });
   if (from.endsWith("/")) redirects.push({ source: from.slice(0, -1), destination: to, permanent: true });
 }
+// URL canonicalisation (added 28 Nov 2026). Vercel serves the same page at
+// several addresses; send each duplicate to the one URL that the canonical
+// tag, sitemap and internal links use, in a single 308 hop:
+//   /dir and /dir/index.html  ->  /dir/
+//   /index.html               ->  /
+//   /page.html/               ->  /page.html
+//   eastyorkshirerenovations.vercel.app/*  ->  www.eastyorkshirerenovation.com/*
+// Explicit sources, not patterns, so /api/* form posts are never touched.
+const SKIP_TOP = new Set(["api", "assets", "docs", "node_modules", "scripts"]);
+const canonical = [];
+const walkDirs = (dir) => {
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    if (!e.isDirectory() || e.name.startsWith(".") || (dir === "." && SKIP_TOP.has(e.name))) continue;
+    const d = dir === "." ? e.name : `${dir}/${e.name}`;
+    if (existsSync(`${d}/index.html`)) {
+      canonical.push({ source: `/${d}`, destination: `/${d}/`, permanent: true });
+      canonical.push({ source: `/${d}/index.html`, destination: `/${d}/`, permanent: true });
+    }
+    walkDirs(d);
+  }
+};
+walkDirs(".");
+canonical.push({ source: "/index.html", destination: "/", permanent: true });
+for (const f of readdirSync(".").filter((f) => f.endsWith(".html") && f !== "index.html" && f !== "404.html").sort()) {
+  canonical.push({ source: `/${f}/`, destination: `/${f}`, permanent: true });
+}
+const hostRedirect = {
+  source: "/:path*",
+  has: [{ type: "host", value: "eastyorkshirerenovations.vercel.app" }],
+  destination: "https://www.eastyorkshirerenovation.com/:path*",
+  permanent: true,
+};
+const seen = new Set(redirects.map((r) => r.source));
 const vercel = existsSync("vercel.json") ? JSON.parse(readFileSync("vercel.json", "utf8")) : {};
-vercel.redirects = redirects;
+vercel.redirects = [hostRedirect, ...redirects, ...canonical.filter((r) => !seen.has(r.source))];
 writeFileSync("vercel.json", JSON.stringify(vercel, null, 2) + "\n");
 writeFileSync("scripts/data/guide-redirects.json", JSON.stringify(REDIRECTS, null, 2) + "\n");
 
